@@ -5,6 +5,7 @@
     { "source": "/kot", "destination": "/kot.html" },
     { "source": "/pies", "destination": "/pies.html" },
     { "source": "/dzik", "destination": "/dzik.html" },
+    { "source": "/wilk", "destination": "/wilk.html" },
     { "source": "/", "destination": "/index.html" }
   ]
 }

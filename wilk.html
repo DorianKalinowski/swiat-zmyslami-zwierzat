@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#06090E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Zmysły Zwierząt">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <title>Wilk Szary — Świat zmysłami zwierząt</title>
+  <meta name="description" content="Poznaj świat zmysłami wilka szarego (Canis lupus). Akustyka wycia na 15 km, obalenie mitu samca alfa, paniczny lęk wilka przed człowiekiem i interaktywna mini-gra.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="nav" role="navigation" aria-label="Nawigacja główna">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon-wrapper">🐾</div>
+        <span>Świat zmysłami zwierząt</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Strona główna</a>
+        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog zwierząt</button>
+        <a href="pies.html" class="nav-link">🐕 Pies</a>
+        <a href="kot.html" class="nav-link">🐈 Kot</a>
+        <a href="dzik.html" class="nav-link">🐗 Dzik</a>
+        <a href="wilk.html" class="nav-link active">🐺 Wilk</a>
+        
+        <!-- Creator Chip (Dorian Kalinowski) -->
+        <div class="creator-chip" id="authorChip" title="Dowiedz się więcej o autorze">
+          <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="creator-avatar">
+          <div class="creator-text">
+            <span class="creator-name">Dorian Kalinowski</span>
+            <span class="creator-role">Twórca aplikacji</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Animal Page Hero -->
+  <header class="animal-hero" id="top" style="background: linear-gradient(180deg, rgba(56, 189, 248, 0.16) 0%, rgba(9, 13, 19, 0) 100%);">
+    <div class="container">
+      <div class="animal-hero-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="index.html">Główna</a>
+            <span>›</span>
+            <span>Ssaki</span>
+            <span>›</span>
+            <span style="color: var(--wolf-cyan);">Wilk</span>
+          </div>
+          <span class="animal-latin" style="color: var(--wolf-cyan-light);">Canis lupus</span>
+          <h1>Wilk szary</h1>
+          <p class="animal-hero-desc">
+            Mistrz leśnego maratonu, zwierzę o niezwykłej empatii rodzinnej i... 
+            <strong>panicznym lęku przed człowiekiem</strong>. Wokół wilków narosło najwięcej krwawych mitów, 
+            podczas gdy zdrowy dziki wilk w Polsce za wszelką cenę unika kontaktu z ludźmi.
+          </p>
+
+          <div class="hero-stats-grid">
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--wolf-cyan);">do 15 km</span>
+              <span class="stat-label">Zasięg akustyczny nocnego wycia watahy</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: #6EE7B7;">70 km</span>
+              <span class="stat-label">Nieprzerwany bieg kłusem wilczym bez postoju</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: #38BDF8;">0 zgonów</span>
+              <span class="stat-label">Od II wojny światowej w Polsce przez zdrowe wilki!</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="animal-portrait-card" style="border-color: rgba(56, 189, 248, 0.35); background: radial-gradient(circle at center, rgba(56, 189, 248, 0.18) 0%, rgba(15, 23, 42, 0.8) 70%);">
+          <div class="animal-portrait-glow" style="background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, transparent 70%);"></div>
+          <div class="animal-portrait-emoji" role="img" aria-label="Wilk">🐺</div>
+          <div class="portrait-tags">
+            <span class="portrait-tag">Gatunek: Wilk szary</span>
+            <span class="portrait-tag">Struktura: Grupa rodzinna</span>
+            <span class="portrait-tag">Status: Ściśle chroniony</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Subnavigation -->
+  <div class="sticky-subnav">
+    <div class="sticky-subnav-inner">
+      <a href="#rodzina" class="subnav-pill active">👨‍👩‍👧‍👦 Mit „Alfy” i Rodzina</a>
+      <a href="#zmysly" class="subnav-pill">🔊 Akustyka Wycia & Węch</a>
+      <a href="#anatomia" class="subnav-pill">🐺 Anatomia Maratończyka</a>
+      <a href="#bezpieczenstwo" class="subnav-pill">🛡️ Prawda: Lęk przed Ludźmi</a>
+      <a href="#gra" class="subnav-pill">🎮 Mini Gra: Zew Watahy</a>
+      <a href="#quiz" class="subnav-pill">🎯 Quiz Behawioralny</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================
+         SEKCJA 1: STRUKTURA SPOŁECZNA — OBALENIE MITU SAMCA ALFA
+         ============================================================ -->
+    <section class="section" id="rodzina">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--wolf-cyan); border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.1);">Prawda Naukowa</span>
+          <h2>Wataha to nie poligon gladiatorów, lecz czuła rodzina</h2>
+          <p>Kultura masowa karmi nas mitem bezwzględnego „samca alfa”, który siłą i terrorem podporządkowuje sobie innych. Biologia wilków wygląda zupełnie inaczej.</p>
+        </div>
+
+        <div class="timeline-stepper">
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--wolf-cyan); box-shadow: 0 0 12px var(--wolf-cyan);"></div>
+            <div class="step-header">
+              <span class="step-title">Skąd wziął się mit „Samca Alfa”?</span>
+              <span class="step-period">Badania z 1947 r.</span>
+            </div>
+            <p class="step-body">
+              W 1947 roku Rudolf Schenkel badał wilki zamknięte w ciasnej klatce w zoo w Bazylei. Były to obce osobniki zmuszone do życia na kilkunastu metrach kwadratowych — w ciągłym stresie walczyły o pozycję. To tak, jakby badać psychologię rodziny na podstawie zachowań więźniów w celi!
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--wolf-cyan); box-shadow: 0 0 12px var(--wolf-cyan);"></div>
+            <div class="step-header">
+              <span class="step-title">David Mech i odkrycie prawdziwej natury watahy</span>
+              <span class="step-period">Przełom w etologii</span>
+            </div>
+            <p class="step-body">
+              Dr L. David Mech spędził 13 lat na wyspie Ellesmere'a, badając dzikie wilki w ich naturalnym środowisku. Odkrył, że <strong>„samiec i samica alfa” to po prostu mama i tata</strong>! Reszta watahy to ich dzieci z ostatnich 2–3 lat. Nikt nie walczy o władzę — młode słuchają rodziców z naturalnego szacunku i zaufania. Mech do dziś apeluje, by wykreślić termin „samiec alfa” ze słowników.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--wolf-cyan); box-shadow: 0 0 12px var(--wolf-cyan);"></div>
+            <div class="step-header">
+              <span class="step-title">Wilcza solidarność i opieka nad rannymi</span>
+              <span class="step-period">Więzi rodzinne</span>
+            </div>
+            <p class="step-body">
+              Wataha dzieli się jedzeniem ze starszymi, schorowanymi wilkami oraz pilnuje szczeniąt na zmianę (tzw. wilcze nianie / babcia i starsze rodzeństwo). Gdy jeden z rodziców zginie, rodzeństwo przejmuje opiekę nad maluchami, przynosząc im w żołądku strawione mięso.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 2: ZMYSŁY I AKUSTYKA WYCIA (SYNTEZATOR WEB AUDIO)
+         ============================================================ -->
+    <section class="section" id="zmysly" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--wolf-cyan); border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.1);">Percepcja Drapieżnika</span>
+          <h2>Jak wilk odbiera puszczę?</h2>
+          <p>Wycie nie ma nic wspólnego z księżycem — to precyzyjny komunikator dalekiego zasięgu i akustyczny dowód tożsamości.</p>
+        </div>
+
+        <div class="sensory-grid">
+          
+          <!-- Karta 1: Akustyka i Wycie -->
+          <div class="sensory-card">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(56, 189, 248, 0.15); border: 1px solid var(--wolf-cyan); color: var(--wolf-cyan-light);">🔊</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: var(--wolf-cyan); border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.1);">Radar Akustyczny</span>
+                <h3>Wycie watahy: Polifonia i Zasięg 15 km</h3>
+                <p>Każdy wilk ma unikalną barwę głosu. Wycie służy do zbierania rodziny i ostrzegania obcych watah przed naruszeniem terytorium.</p>
+              </div>
+            </div>
+
+            <!-- Web Audio Synthesizer -->
+            <div style="background: #090E17; border: 1px solid rgba(56, 189, 248, 0.25); border-radius: var(--radius-lg); padding: 20px; margin-top: 14px;">
+              <h4 style="font-size: 1.05rem; margin-bottom: 8px; color: var(--wolf-cyan-light);">🎧 Syntezator Dźwięków Wilka (Web Audio API)</h4>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+                Kliknij przycisk, aby w czasie rzeczywistym wygenerować fale dźwiękowe wilczego wycia i sygnałów ostrzegawczych:
+              </p>
+
+              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button class="wolf-sound-btn" id="playWolfSoloHowlBtn">
+                  🐺 Wycie solo (Lokalizacyjne 240–480 Hz)
+                </button>
+                <button class="wolf-sound-btn" id="playWolfPackChorusBtn">
+                  🎶 Chór watahy (Polifoniczne rozbicie fal)
+                </button>
+                <button class="wolf-sound-btn" id="playWolfWarningBarkBtn" style="border-color: rgba(239, 68, 68, 0.4); color: #FCA5A5;">
+                  ⚠️ Głuche „Hau!” (Ostrzeżenie przed człowiekiem)
+                </button>
+              </div>
+              <div class="wolf-sound-status" id="wolfSoundStatus">Gotowy do odsłuchu.</div>
+            </div>
+
+            <div class="fact-pill-group" style="margin-top: 20px;">
+              <div class="fact-pill">
+                <div class="fact-pill-icon">🎶</div>
+                <p><strong>Złudzenie wielkiej sfory:</strong> Gdy wataha wyje chóralnie, osobniki celowo śpiewają w różnych tonacjach, a ich fale dźwiękowe nakładają się w rezonansie. Efekt? Cztery wilki brzmią z daleka jak sfora licząca dwadzieścia osobników!</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Karta 2: Węch i Wzrok -->
+          <div class="sensory-card">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(56, 189, 248, 0.15); border: 1px solid var(--wolf-cyan); color: var(--wolf-cyan-light);">👃</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: var(--wolf-cyan); border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.1);">Węch i Widzenie</span>
+                <h3>Węch 2,5 km pod wiatr i wzrok krótkowidza</h3>
+                <p>Oko wilka widzi inaczej niż oko człowieka — to tłumaczy, dlaczego wilk tak długo przygląda się ludziom z daleka.</p>
+              </div>
+            </div>
+
+            <div class="fact-pill-group" style="margin-top: 14px;">
+              <div class="fact-pill">
+                <div class="fact-pill-icon">💨</div>
+                <p><strong>Węch długodystansowy:</strong> Wilk wyczuwa zwierzynę lub człowieka z odległości 2,5 km, o ile wiatr wieje w jego stronę. Potrafi też bezbłędnie ocenić wiek tropu na śniegu po stopniu utlenienia cząsteczek zapachu.</p>
+              </div>
+              <div class="fact-pill">
+                <div class="fact-pill-icon">👁️</div>
+                <p><strong>Dlaczego wilk patrzy na Ciebie z daleka?</strong> Wilk jest <strong>krótkowidzem</strong>! Ostro widzi tylko do około 15–20 metrów. Jeżeli stoi na skraju łąki i wpatruje się w człowieka z 60 metrów, to NIE planuje ataku — po prostu nie widzi, czym jest ta dwunożna plama i czeka na podmuch wiatru. Gdy poczuje zapach człowieka, w panice ucieka!</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 3: ANATOMIA I BIOMECHANIKA MARATOŃCZYKA
+         ============================================================ -->
+    <section class="section" id="anatomia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--wolf-cyan); border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.1);">Biomechanika Przetrwania</span>
+          <h2>Anatomia Wilka: Maszyna do zimowych maratonów</h2>
+          <p>Klikaj w punkty na ciele wilka, aby poznać siłę nacisku szczęk, konstrukcję łap jak rakiety śnieżne oraz fizjologię biegu.</p>
+        </div>
+
+        <div class="body-language-inspector">
+          <!-- SVG Diagram Stage with Locked 500x320 Coordinate System -->
+          <div class="anatomy-diagram-stage" style="border-color: rgba(56, 189, 248, 0.35);">
+            <div class="anatomy-diagram-wrapper">
+              <svg class="anatomy-silhouette-svg" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <radialGradient id="wolfBgGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.18"/>
+                    <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+                  </radialGradient>
+                  <linearGradient id="wolfBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1B2636"/>
+                    <stop offset="50%" stop-color="#101826"/>
+                    <stop offset="100%" stop-color="#080D14"/>
+                  </linearGradient>
+                  <filter id="wolfGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#38BDF8" flood-opacity="0.45"/>
+                  </filter>
+                </defs>
+
+                <!-- Sensory Radar Range Rings -->
+                <circle cx="250" cy="160" r="145" fill="none" stroke="rgba(56, 189, 248, 0.12)" stroke-width="1" stroke-dasharray="4 6"/>
+                <circle cx="250" cy="160" r="95" fill="none" stroke="rgba(56, 189, 248, 0.08)" stroke-width="1"/>
+                <ellipse cx="260" cy="165" rx="190" ry="110" fill="url(#wolfBgGlow)"/>
+
+                <!-- Ground Snow Shadow -->
+                <ellipse cx="285" cy="285" rx="160" ry="12" fill="rgba(0, 0, 0, 0.6)"/>
+
+                <!-- Far Legs (Darker shade) -->
+                <path d="M 180 220 L 186 285 L 196 285 L 194 228 Z" fill="#0C131D" opacity="0.85"/>
+                <path d="M 360 215 L 366 285 L 376 285 L 372 222 Z" fill="#0C131D" opacity="0.85"/>
+
+                <!-- Far Ear -->
+                <path d="M 220 85 C 224 64, 228 58, 234 65 C 238 72, 236 84, 232 94 Z" fill="#131C28" stroke="#38BDF8" stroke-width="1.5" opacity="0.7"/>
+
+                <!-- Wolf Silhouette Main Body (Facing left, athletic loping stance) -->
+                <path d="M 88 140
+                         C 86 135, 105 128, 125 122
+                         C 138 118, 155 108, 175 102
+                         C 188 96, 198 84, 204 55
+                         C 207 48, 214 50, 218 62
+                         C 222 75, 226 88, 235 96
+                         C 252 110, 275 120, 295 122
+                         C 330 124, 370 130, 400 144
+                         C 415 150, 428 152, 436 170
+                         C 442 185, 444 215, 440 230
+                         C 436 235, 432 225, 430 205
+                         C 426 185, 420 180, 416 190
+                         C 412 208, 410 238, 406 265
+                         C 404 278, 402 285, 394 285
+                         C 386 285, 384 270, 382 248
+                         C 380 226, 370 215, 355 212
+                         C 338 208, 310 210, 280 218
+                         C 255 224, 235 222, 222 212
+                         C 216 222, 212 255, 208 285
+                         C 204 285, 194 285, 190 285
+                         C 186 285, 188 255, 187 232
+                         C 185 212, 172 195, 155 184
+                         C 138 174, 125 170, 110 162
+                         C 98 156, 89 148, 88 140 Z"
+                      fill="url(#wolfBodyGrad)"
+                      stroke="#38BDF8"
+                      stroke-width="2.5"
+                      stroke-linejoin="round"
+                      filter="url(#wolfGlow)"/>
+
+                <!-- Amber Wolf Eye -->
+                <ellipse cx="160" cy="114" rx="4.5" ry="3.2" fill="#FBBF24"/>
+                <circle cx="160" cy="114" r="1.6" fill="#1E293B"/>
+
+                <!-- Snout & Nose Leather -->
+                <path d="M 88 138 C 87 135, 90 133, 95 135 C 98 137, 97 141, 93 142 Z" fill="#0B131E"/>
+                <path d="M 96 142 C 108 145, 122 147, 132 152" fill="none" stroke="#7DD3FC" stroke-width="1.5"/>
+
+                <!-- Massive Jaw / Crushing Force Arc -->
+                <path d="M 115 150 Q 128 158 138 152" fill="none" stroke="#38BDF8" stroke-width="1.8"/>
+
+                <!-- Mane & Endurance Spine Contour Line -->
+                <path d="M 235 96 C 265 115, 320 120, 395 144" fill="none" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+                <!-- Wide Snowshoe Paw Contours -->
+                <ellipse cx="199" cy="285" rx="10" ry="4" fill="none" stroke="#38BDF8" stroke-width="1.2"/>
+                <ellipse cx="398" cy="285" rx="10" ry="4" fill="none" stroke="#38BDF8" stroke-width="1.2"/>
+              </svg>
+
+              <!-- Locked Anatomy Hotspots -->
+              <div class="anatomy-hotspots-layer">
+                <button class="wolf-hotspot active" data-part="jaws" style="left: 22%; top: 46%;" title="Szczęki i kły">1</button>
+                <button class="wolf-hotspot" data-part="ears" style="left: 42%; top: 21%;" title="Uszy zimowe">2</button>
+                <button class="wolf-hotspot" data-part="chest" style="left: 48%; top: 58%;" title="Klatka maratończyka">3</button>
+                <button class="wolf-hotspot" data-part="tail" style="left: 87%; top: 58%;" title="Ogon polano">4</button>
+                <button class="wolf-hotspot" data-part="paws" style="left: 40%; top: 86%;" title="Łapy rakiety śnieżne">5</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotspot Detail Card -->
+          <div class="hotspot-detail-card" id="wolfHotspotCard">
+            <span class="hotspot-badge-tier tier-danger" id="wolfHotspotTier">🦴 Biomechanika oręża</span>
+            <h4 class="hotspot-detail-title" id="wolfHotspotTitle">Szczęki i Kły — Miażdżący nacisk do 15 kg/cm²</h4>
+            <p class="hotspot-detail-desc" id="wolfHotspotDesc">
+              Nacisk szczęk dorosłego wilka jest dwukrotnie większy niż u dużego owczarka niemieckiego i wynosi aż <strong>15 kg/cm² (1500 kPa)</strong>. Taka siła pozwala wilkowi jednym kłapnięciem skruszyć twarde kości udowe łosia lub jelenia, uzyskując dostęp do bogatego w kalorie szpiku.
+            </p>
+            <div class="hotspot-advice-box" id="wolfHotspotTip" style="border-color: var(--wolf-cyan);">
+              Mimo tak potężnej siły, wilki traktują swoje zęby jak cenny skarb — unikają walki z człowiekiem, bo złamanie kła w puszczy oznacza powolną śmierć głodową.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 4: BEZPIECZEŃSTWO: WILK PANICZNIE BOI SIĘ LUDZI!
+         ============================================================ -->
+    <section class="section" id="bezpieczenstwo">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: #F87171; background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3);">Fakty i Bezpieczeństwo</span>
+          <h2>Prawda o Wilkach: Paniczny lęk przed człowiekiem</h2>
+          <p>Setki lat polowań z bronią palną wyryły w wilczym DNA jedną nadrzędną zasadę przetrwania: człowiek to śmiertelne niebezpieczeństwo, którego należy unikać za wszelką cenę.</p>
+        </div>
+
+        <div class="safety-master-box" style="border-color: rgba(56, 189, 248, 0.35); background: linear-gradient(180deg, rgba(56, 189, 248, 0.06) 0%, rgba(15, 23, 42, 0.7) 100%);">
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 30px;">
+            <div style="background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px;">
+              <div style="font-size: 1.8rem; margin-bottom: 8px;">🛡️ Zero śmiertelnych ataków</div>
+              <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+                Od zakończenia II wojny światowej w Polsce <strong>nie zanotowano ani jednego przypadku zabicia człowieka przez dzikiego, zdrowego wilka</strong>. Dla porównania: kleszcze, osy czy psy domowe zabijają lub ranią w Polsce dziesiątki osób każdego roku.
+              </p>
+            </div>
+
+            <div style="background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px;">
+              <div style="font-size: 1.8rem; margin-bottom: 8px;">🗑️ Dlaczego podchodzą pod wsie?</div>
+              <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+                Wilk nie przychodzi szukać ludzi — wabi go <strong>łatwe pożywienie</strong>: otwarte śmietniki, kompostowniki, wyrzucane do lasu resztki poubojowe oraz biegające luzem psy i nieogrodzone owce. Zabierz łatwe jedzenie, a wilk nie zbliży się do zabudowań!
+              </p>
+            </div>
+
+            <div style="background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px;">
+              <div style="font-size: 1.8rem; margin-bottom: 8px;">🐕 Pies ZAWSZE na smyczy!</div>
+              <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+                Niemal wszystkie incydenty w lesie mają ten sam scenariusz: puszczony wolno pies wyczuwa wilka, biegnie za nim szczekając, po czym przerażony wilczą odpowiedzią <strong>w panice przybiega z powrotem do nóg właściciela</strong>, przyprowadzając za sobą watahę!
+              </p>
+            </div>
+          </div>
+
+          <!-- Crisis Scenario Simulator -->
+          <div class="crisis-simulator-box" id="wolfCrisisSim">
+            <h4 class="crisis-scenario-title" style="color: var(--wolf-cyan-light);">🚨 Symulator Reakcji: Stajesz oko w oko z wilkiem na leśnej drodze!</h4>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 16px;">
+              Idziesz rano leśnym duktem na grzyby. Nagle 40 metrów przed Tobą z zarośli wychodzi duży wilk, zatrzymuje się w bezruchu i patrzy prosto w Twoim kierunku. Jaka jest Twoja natychmiastowa reakcja?
+            </p>
+
+            <div class="crisis-options-grid">
+              <button class="crisis-option-btn" data-action="run">
+                <strong>Opcja A:</strong> Rzucam się do panicznego biegu z powrotem do samochodu!
+              </button>
+              <button class="crisis-option-btn" data-action="stand_speak">
+                <strong>Opcja B:</strong> Staję prosto, unoszę ręce by wydać się większym i głośno, pewnie wołam: „Hej! Idź stąd!”
+              </button>
+              <button class="crisis-option-btn" data-action="feed">
+                <strong>Opcja C:</strong> Wyciągam kanapkę z plecaka i rzucam mu, by zyskać jego sympatię.
+              </button>
+              <button class="crisis-option-btn" data-action="play_dead">
+                <strong>Opcja D:</strong> Kładę się na ziemi w pozycji embrionalnej i udaję martwego.
+              </button>
+            </div>
+
+            <!-- Result Box -->
+            <div id="wolfCrisisResult" style="display: none; margin-top: 20px; padding: 20px; border-radius: var(--radius-md); border: 1px solid transparent; transition: all var(--transition-fast);">
+              <h5 id="wolfCrisisResultTitle" style="font-size: 1.1rem; margin-bottom: 6px;"></h5>
+              <p id="wolfCrisisResultDesc" style="font-size: 0.92rem; line-height: 1.6; margin: 0;"></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 5: WIELOPOZIOMOWA MINI-GRA: „ZEW WATAHY”
+         ============================================================ -->
+    <section class="section" id="gra" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--wolf-cyan); border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.1);">Zręczność i Węch</span>
+          <h2>Mini Gra: Zew Watahy — Nocny Szlak Wilka</h2>
+          <p>Wciel się w młodego wilka, podążaj za zapachem tropów i zewem wycia rodziny. Pamiętaj: unikaj stref ludzkich — wilk boi się człowieka ponad wszystko!</p>
+        </div>
+
+        <div class="minigame-card" style="border-color: rgba(56, 189, 248, 0.3);">
+          <!-- Level Header & Progress Dots -->
+          <div class="minigame-level-header">
+            <div class="minigame-level-badge" id="wolfGameLevelBadge" style="background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.4); color: var(--wolf-cyan);">
+              <span>Misja 1/3:</span> Młody Wilk w Śnieżnej Puszczy
+            </div>
+            <div class="minigame-level-dots" id="wolfGameLevelDots">
+              <span class="level-dot active"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+            </div>
+          </div>
+
+          <!-- HUD -->
+          <div class="minigame-hud">
+            <div class="hud-item">
+              <span>Szukany cel:</span>
+              <span class="hud-val" id="wolfGameTargetName" style="color: var(--wolf-cyan-light);">Ślad stada jeleni</span>
+            </div>
+            <div class="hud-item">
+              <span>Wytropiono:</span>
+              <span class="hud-val" id="wolfGameFoundCount">0 / 3</span>
+            </div>
+            <div class="hud-item">
+              <span>Czas:</span>
+              <span class="hud-val" id="wolfGameTimer">45s</span>
+            </div>
+            <div class="dog-radar-wrap">
+              <span style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted);">Sonar:</span>
+              <div class="dog-radar-bar">
+                <div class="dog-radar-fill" id="wolfGameRadarFill" style="background: linear-gradient(90deg, #0284C7 0%, #38BDF8 70%, #A5F3FC 100%);"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Viewport with Canvas & Overlay -->
+          <div class="minigame-viewport">
+            <canvas id="wolfGameCanvas" class="minigame-canvas"></canvas>
+
+            <!-- Game Overlay -->
+            <div class="minigame-overlay" id="wolfGameOverlay">
+              <div style="font-size: 3rem; margin-bottom: 10px;" id="wolfGameOverIcon">🐺❄️🌲</div>
+              <h4 id="wolfGameOverTitle">Kampania: Zew Watahy</h4>
+              <p id="wolfGameOverDesc">
+                Ruszaj w zaśnieżoną puszczę jako młody wilk! Poruszaj się myszką lub dotykiem palca na smartfonie, 
+                podążaj za sonarem zapachu i wycia rodziny, unikając świateł ludzi i ludzkich osad.
+              </p>
+              <div class="overlay-actions">
+                <button class="btn btn-primary" id="startWolfGameBtn">Rozpocznij misję 1 →</button>
+                <button class="btn btn-primary" id="nextWolfLevelBtn" style="display: none;">Następny etap →</button>
+                <button class="btn btn-outline" id="restartWolfGameBtn" style="display: none;">Powtórz etap ↺</button>
+                <button class="btn btn-outline" id="resetWolfCampaignBtn" style="display: none;">Zagraj od nowa</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 6: PODSUMOWANIE I QUIZ BEHAWIORALNY
+         ============================================================ -->
+    <section class="section" id="quiz">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--wolf-cyan); border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.1);">Sprawdź Swoją Wiedzę</span>
+          <h2>Wielki Test Prawdy o Wilkach</h2>
+          <p>Rozpraw się z fałszywymi mitami i sprawdź, czy wiesz jak zachować się w lesie.</p>
+        </div>
+
+        <div style="max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px;">
+            <h4 style="font-size: 1.05rem; margin-bottom: 8px; color: var(--wolf-cyan-light);">1. Czy wataha wilków jest rządzona przez bezwzględnego samca alfa?</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+              <strong>Nie!</strong> Wataha w naturze to po prostu <strong>rodzina</strong> (rodzice i ich potomstwo). Pojęcie samca alfa powstało w 1947 r. podczas badań nad zestresowanymi, obcymi wilkami zamkniętymi w klatce w zoo.
+            </p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px;">
+            <h4 style="font-size: 1.05rem; margin-bottom: 8px; color: var(--wolf-cyan-light);">2. Dlaczego wilk przygląda się z daleka człowiekowi na skraju lasu?</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+              Ponieważ jest <strong>krótkowidzem</strong> — ostro widzi do zaledwie 20 metrów. Czeka na powiew wiatru, by sprawdzić zapach. Gdy poczuje woń człowieka, natychmiast ucieka w panice w puszczę.
+            </p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px;">
+            <h4 style="font-size: 1.05rem; margin-bottom: 8px; color: var(--wolf-cyan-light);">3. Co jest najczęstszą przyczyną rzekomych „ataków wilków”?</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+              Pies puszczony luzem w lesie, który podbiega do wilków, a następnie przerażony przyprowadza je do swojego właściciela, oraz wyrzucanie resztek mięsa przy ludzkich osadach.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Author Profile Modal (Dorian Kalinowski) -->
+  <div class="modal-backdrop" id="authorModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeAuthorModal" aria-label="Zamknij okno">✕</button>
+      <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="author-avatar-big">
+      <h3 class="author-modal-name">Dorian Kalinowski</h3>
+      <div class="author-modal-role">Twórca aplikacji „Świat zmysłami zwierząt”</div>
+      <p class="author-bio">
+        Aplikacja powstała z pasji do zoologii kognitywnej, neuronauki percepcji oraz nowoczesnego web developmentu. Celem projektu jest przeniesienie odbiorcy w intymny świat zmysłów natury — tak, abyśmy przestali oceniać zwierzęta wyłącznie przez pryzmat ludzkich zmysłów, a zaczęli rozumieć ich unikalną perspektywę i mowę ciała.
+      </p>
+      <div style="text-align: center;">
+        <button class="btn btn-primary" id="confirmAuthorModal">Zamknij</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PWA Install Prompt Banner -->
+  <div class="pwa-install-banner" id="pwaBanner">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 1.6rem;">📱</span>
+      <div>
+        <div style="font-size: 0.92rem; font-weight: 700;">Zainstaluj jako aplikację PWA</div>
+        <div style="font-size: 0.78rem; color: var(--text-muted);">Szybki dostęp i działanie offline bez przeglądarki</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="pwaInstallBtn" style="padding: 8px 18px; font-size: 0.85rem;">Instaluj</button>
+    <button class="modal-close-btn" id="pwaDismissBtn" style="position: static; width: 28px; height: 28px; font-size: 0.8rem;">✕</button>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <div class="mobile-bottom-bar" role="navigation" aria-label="Nawigacja mobilna">
+    <a href="index.html" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🏠</span>
+      <span>Główna</span>
+    </a>
+    <button class="bottom-bar-item animal-catalog-trigger">
+      <span class="bottom-bar-icon">🐾</span>
+      <span>Katalog</span>
+    </button>
+    <a href="wilk.html" class="bottom-bar-item active">
+      <span class="bottom-bar-icon">🐺</span>
+      <span>Wilk</span>
+    </a>
+    <a href="#bezpieczenstwo" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🛡️</span>
+      <span>Zasady</span>
+    </a>
+    <button class="bottom-bar-item" id="mobileAuthorTrigger">
+      <span class="bottom-bar-icon">👤</span>
+      <span>Autor</span>
+    </button>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-author">
+        Zaprojektowane i stworzone przez: <strong>Dorian Kalinowski</strong>
+      </p>
+      <p class="footer-rights">
+        © 2026 Świat zmysłami zwierząt. Autorska aplikacja edukacyjna PWA. Wszelkie prawa zastrzeżone.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/wolf-simulators.js"></script>
+</body>
+</html>

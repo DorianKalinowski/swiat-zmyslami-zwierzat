@@ -1562,6 +1562,7 @@ button {
 /* Hotspot Buttons Unified System */
 .anatomy-hotspot,
 .boar-hotspot,
+.wolf-hotspot,
 .pet-zone-btn {
   pointer-events: auto;
   position: absolute;
@@ -1576,9 +1577,10 @@ button {
   z-index: 15;
 }
 
-/* Dog & Boar Circular Pulse Hotspots */
+/* Dog, Boar & Wolf Circular Pulse Hotspots */
 .anatomy-hotspot,
-.boar-hotspot {
+.boar-hotspot,
+.wolf-hotspot {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -1618,9 +1620,25 @@ button {
   box-shadow: 0 0 25px #F59E0B;
 }
 
+.wolf-hotspot {
+  background: rgba(56, 189, 248, 0.35);
+  border: 2px solid #38BDF8;
+  color: #FFF;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.5);
+}
+
+.wolf-hotspot:hover,
+.wolf-hotspot.active {
+  transform: translate(-50%, -50%) scale(1.22);
+  background: #38BDF8;
+  color: #08111D;
+  box-shadow: 0 0 25px #38BDF8;
+}
+
 /* Pulsing radar ring */
 .anatomy-hotspot::after,
-.boar-hotspot::after {
+.boar-hotspot::after,
+.wolf-hotspot::after {
   content: '';
   position: absolute;
   inset: -6px;
@@ -1639,7 +1657,8 @@ button {
 
 @media (max-width: 480px) {
   .anatomy-hotspot,
-  .boar-hotspot {
+  .boar-hotspot,
+  .wolf-hotspot {
     width: 30px;
     height: 30px;
     font-size: 0.78rem;
@@ -3012,9 +3031,52 @@ button {
   .overlay-actions button {
     padding: 10px 18px !important;
     font-size: 0.85rem !important;
-  }
 }
 
+/* ============================================================
+   WOLF (WILK) SPECIFIC STYLES
+   ============================================================ */
+:root {
+  --wolf-cyan: #38BDF8;
+  --wolf-cyan-light: #7DD3FC;
+  --wolf-cyan-glow: rgba(56, 189, 248, 0.4);
+  --wolf-indigo: #818CF8;
+}
 
+.wolf-sound-btn {
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: var(--wolf-cyan-light);
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--transition-fast);
+}
 
+.wolf-sound-btn:hover {
+  background: rgba(56, 189, 248, 0.18);
+  border-color: var(--wolf-cyan);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.35);
+  transform: translateY(-2px);
+}
 
+.wolf-sound-btn.playing {
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+  color: #FFF;
+  border-color: #38BDF8;
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.6);
+}
+
+.wolf-sound-status {
+  font-size: 0.84rem;
+  color: var(--wolf-cyan-light);
+  margin-top: 10px;
+  min-height: 20px;
+  font-family: var(--font-mono);
+}

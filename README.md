@@ -1,6 +1,6 @@
 # Świat zmysłami zwierząt 🐾
 
-> **Nowoczesna oraz interaktywna aplikacja edukacyjna PWA (Progressive Web App)** odkrywająca tajemnice percepcji, kognitywistyki oraz zmysłów zwierząt z perspektywy ich własnego świata (*Umwelt*).
+> **Nowoczesna, interaktywna aplikacja edukacyjna PWA (Progressive Web App)** odkrywająca tajemnice percepcji, kognitywistyki oraz zmysłów zwierząt z perspektywy ich własnego świata (*Umwelt*).
 
 Projekt stworzony z dbałością o najwyższe standardy UX/UI, estetykę typu *Claude Opus / Editorial Dark Theme*, responsywność (*Mobile-First*) oraz pełną funkcjonalność offline bez konieczności instalowania ze sklepów z aplikacjami.
 
@@ -52,6 +52,16 @@ Aplikacja **„Świat zmysłami zwierząt”** pozwala użytkownikowi dosłownie
 * **Bezpieczeństwo w Lesie:** Scenariusze kryzysowe (locha z warchlakami, pies bez smyczy jako przyczyna 80% ataków, dzik przy śmietniku).
 * **Mini Gra:** *„Buchtowanie w Puszczy — Truflowy Taran”* (3 sezony: Jesień z żołędziami, Puszcza trufli, Zmarzlina i odpady do wagi 200 kg).
 * **Quiz:** 5 pytań strażnika leśnego bezpieczeństwa.
+
+### 4. 🐺 Wilk szary (`wilk.html`)
+* **Struktura Społeczna (Obalenie Mitu Alfy):** Wataha w naturze jako kochająca się rodzina (rodzice + dzieci) wg wieloletnich badań dr. L. Davida Mecha — obalenie szkodliwego mitu samca alfa z 1947 r.
+* **Akustyka i Wycie:** Wycie lokalizacyjne na 15 km, polifonia watahy (złudzenie wielkiej sfory) oraz syntezator wycia Web Audio API.
+* **Węch i Krótkowzroczność:** Dlaczego wilk patrzy na człowieka z daleka (ostre widzenie do 20 m, oczekiwanie na zapach wiatru i natychmiastowa ucieczka w panice).
+* **Anatomia Maratończyka:** Miażdżący nacisk szczęk 15 kg/cm², klatka piersiowa do biegu na 70 km bez postoju, ogon polano, łapy jak rakiety śnieżne (nacisk tylko 100 g/cm²).
+* **Bezpieczeństwo — Paniczny Lęk przed Ludźmi:** Dlaczego wilk boi się człowieka ponad wszystko (0 śmiertelnych ataków dzikich wilków w Polsce od II WŚ), przyczyny podchodzenia pod wsie (otwarte śmietniki) i pies zawsze na smyczy.
+* **Symulator Kryzysowy:** Scenariusz spotkania z wilkiem na leśnym dukcie (uniesienie rąk i głośny ludzki głos).
+* **Mini Gra:** *„Zew Watahy — Nocny Szlak Wilka”* (3 misje: Śnieżna puszcza, Granica ludzkich osad z unikaniem świateł i ludzi, Zimowa zamieć i zew wycia watahy).
+* **Quiz:** Test prawdy o wilczej naturze.
 
 ---
 

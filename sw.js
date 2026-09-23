@@ -3,7 +3,7 @@
    Author: Dorian Kalinowski
    ============================================================ */
 
-const CACHE_NAME = 'swiat-zmyslami-zwierzat-v9';
+const CACHE_NAME = 'swiat-zmyslami-zwierzat-v10';
 
 // Core assets to pre-cache (both clean URLs and .html paths for 100% compatibility)
 const ASSETS_TO_CACHE = [
@@ -15,11 +15,14 @@ const ASSETS_TO_CACHE = [
   '/kot.html',
   '/dzik',
   '/dzik.html',
+  '/wilk',
+  '/wilk.html',
   '/css/style.css',
   '/js/app.js',
   '/js/dog-simulators.js',
   '/js/cat-simulators.js',
   '/js/boar-simulators.js',
+  '/js/wolf-simulators.js',
   '/manifest.json',
   '/icons/icon-192.svg',
   '/icons/icon-512.svg',

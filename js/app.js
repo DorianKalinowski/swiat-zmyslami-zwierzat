@@ -37,6 +37,16 @@ const ANIMAL_REGISTRY = [
     desc: 'Węch wykrywający żołędzie metr pod ziemią, słaby wzrok, oręż (szable) i protokół spokojnego odwrotu.'
   },
   {
+    id: 'wilk',
+    name: 'Wilk szary',
+    latin: 'Canis lupus',
+    emoji: '🐺',
+    category: 'ssaki',
+    url: 'wilk.html',
+    available: true,
+    desc: 'Akustyczny podpis wycia na 15 km, obalenie mitu samca alfa, paniczny lęk przed człowiekiem i kłus maratończyka.'
+  },
+  {
     id: 'orzel',
     name: 'Orzeł przedni',
     latin: 'Aquila chrysaetos',
