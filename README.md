@@ -1,6 +1,6 @@
 # Świat zmysłami zwierząt 🐾
 
-> **Nowoczesna, interaktywna aplikacja edukacyjna PWA (Progressive Web App)** odkrywająca tajemnice percepcji, kognitywistyki oraz zmysłów zwierząt z perspektywy ich własnego świata (*Umwelt*).
+> **Nowoczesna oraz interaktywna aplikacja edukacyjna PWA (Progressive Web App)** odkrywająca tajemnice percepcji, kognitywistyki oraz zmysłów zwierząt z perspektywy ich własnego świata (*Umwelt*).
 
 Projekt stworzony z dbałością o najwyższe standardy UX/UI, estetykę typu *Claude Opus / Editorial Dark Theme*, responsywność (*Mobile-First*) oraz pełną funkcjonalność offline bez konieczności instalowania ze sklepów z aplikacjami.
 
