@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Pies — interaktywna podróż przez zmysły psa. Symulator wzroku, laboratorium ultradźwięków, radar zapachowy, mowa ciała i quiz.">
+  <meta name="theme-color" content="#090D13">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Zmysły Zwierząt">
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  
+  <title>Pies — Świat zmysłami zwierząt</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="nav" role="navigation" aria-label="Nawigacja główna">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon-wrapper">🐾</div>
+        <span>Świat zmysłami zwierząt</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Strona główna</a>
+        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog zwierząt</button>
+        <a href="pies.html" class="nav-link active">🐕 Pies</a>
+        <a href="kot.html" class="nav-link">🐈 Kot</a>
+        <a href="dzik.html" class="nav-link">🐗 Dzik</a>
+        
+        <!-- Creator Chip (Dorian Kalinowski) -->
+        <div class="creator-chip" id="authorChip" title="Dowiedz się więcej o autorze">
+          <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="creator-avatar">
+          <div class="creator-text">
+            <span class="creator-name">Dorian Kalinowski</span>
+            <span class="creator-role">Twórca aplikacji</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Animal Page Hero -->
+  <header class="animal-hero" id="top">
+    <div class="container">
+      <div class="animal-hero-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="index.html">Główna</a>
+            <span>›</span>
+            <span>Ssaki</span>
+            <span>›</span>
+            <span style="color: var(--amber);">Pies</span>
+          </div>
+          <span class="animal-latin">Canis lupus familiaris</span>
+          <h1>Pies domowy</h1>
+          <p class="animal-hero-desc">
+            Twój najwierniejszy towarzysz od 15 000 lat. Choć dzielimy wspólną przestrzeń, 
+            pies żyje w zupełnie innej rzeczywistości sensorycznej — świecie zapachów 3D, 
+            niesłyszalnych ultradźwięków i żółto-niebieskiego widzenia.
+          </p>
+
+          <div class="hero-stats-grid">
+            <div class="hero-stat-card">
+              <span class="stat-value">300 mln</span>
+              <span class="stat-label">Receptorów węchu (człowiek: 6 mln)</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value">65 kHz</span>
+              <span class="stat-label">Górna granica słuchu (człowiek: 20 kHz)</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value">250°</span>
+              <span class="stat-label">Panoramiczne pole widzenia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="animal-portrait-card">
+          <div class="animal-portrait-glow"></div>
+          <div class="animal-portrait-emoji" role="img" aria-label="Pies">🐕</div>
+          <div class="portrait-tags">
+            <span class="portrait-tag">Gatunek: Pies domowy</span>
+            <span class="portrait-tag">Rzędy: Drapieżne</span>
+            <span class="portrait-tag">Tryb: Dzienno-zmierzchowy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Subnavigation -->
+  <div class="sticky-subnav">
+    <div class="sticky-subnav-inner">
+      <a href="#historia" class="subnav-pill active">📜 Historia</a>
+      <a href="#wzrok" class="subnav-pill">👁️ Wzrok</a>
+      <a href="#sluch" class="subnav-pill">👂 Słuch & Audio</a>
+      <a href="#wech" class="subnav-pill">👃 Węch Stereo</a>
+      <a href="#bezpieczenstwo" class="subnav-pill">🛡️ Bezpieczeństwo</a>
+      <a href="#gra" class="subnav-pill">🎮 Mini Gra</a>
+      <a href="#quiz" class="subnav-pill">🎯 Mini Quiz</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================
+         SEKCJA 1: HISTORIA W PIGUŁCE
+         ============================================================ -->
+    <section class="section" id="historia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline">Ewolucja i partnerstwo</span>
+          <h2>Od drapieżnego wilka do kanapowego przyjaciela</h2>
+          <p>Jak wilk szary stał się pierwszym zwierzęciem, które połączyło swój los z człowiekiem?</p>
+        </div>
+
+        <div class="timeline-stepper">
+          <div class="timeline-step">
+            <div class="timeline-step-dot"></div>
+            <div class="step-header">
+              <span class="step-title">Przełom w jaskiniach paleolitu</span>
+              <span class="step-period">~40 000 – 30 000 lat temu</span>
+            </div>
+            <p class="step-body">
+              Odważniejsze wilki o niższym poziomie hormonu stresu (kortyzolu) zaczynają żerować na odpadkach wokół obozowisk łowców-zbieraczy. Dochodzi do zjawiska <strong>samoumartwienia (self-domestication)</strong> — przeżywają osobniki najmniej agresywne wobec ludzi.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot"></div>
+            <div class="step-header">
+              <span class="step-title">Wspólne polowania i grobowiec w Ain Mallaha</span>
+              <span class="step-period">~15 000 – 12 000 lat temu</span>
+            </div>
+            <p class="step-body">
+              Na Bliskim Wschodzie w kulturze natufijskiej archeolodzy odnajdują szkielet człowieka z ręką czule spoczywającą na ciele szczenięcia. To dowód, że pies przestał być jedynie narzędziem łowieckim, a stał się pełnoprawnym członkiem rodziny.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot"></div>
+            <div class="step-header">
+              <span class="step-title">Rewolucja rolnicza i mutacja trawienia skrobi</span>
+              <span class="step-period">~8 000 lat temu</span>
+            </div>
+            <p class="step-body">
+              Gdy ludzie porzucili koczownictwo na rzecz rolnictwa, psy wykształciły dodatkowe kopie genu <em>AMY2B</em> kodującego amylazę — enzym trawiący węglowodany. Wilk pozostał ścisłym mięsożercą, pies stał się wszystkożercą.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot"></div>
+            <div class="step-header">
+              <span class="step-title">Wiktoriańska eksplozja rasowa</span>
+              <span class="step-period">XIX wiek – Dziś</span>
+            </div>
+            <p class="step-body">
+              W XIX-wiecznej Anglii narodziła się selektywna hodowla wystawowa. Dziś federacja FCI uznaje ponad <strong>360 odrębnych ras</strong> — od miniaturowego chihuahua po potężnego mastifa tybetańskiego.
+            </p>
+          </div>
+        </div>
+
+        <!-- Wolf vs Dog Evolutionary Insights -->
+        <div class="evolution-insight-box">
+          <div class="insight-col">
+            <h4>🐺 Czego wilk nie potrafi?</h4>
+            <ul class="insight-list">
+              <li>Wilki nie potrafią czytać ludzkiego gestu wskazywania palcem — pies rozumie go instynktownie.</li>
+              <li>Wilk w obliczu trudnej zagadki polega wyłącznie na sobie aż do wyczerpania.</li>
+            </ul>
+          </div>
+          <div class="insight-col">
+            <h4>🐕 Super-adaptacja psa:</h4>
+            <ul class="insight-list">
+              <li><strong>Mięsień LAOM (unosiciel kąta oka):</strong> Pies wykształcił specjalny mięsień mimiczny, którym unosi wewnętrzne kąciki brwi. To słynne „spojrzenie szczeniaka”, które stymuluje u ludzi wydzielanie oksytocyny — hormonu miłości!</li>
+              <li>W trudnej sytuacji pies natychmiast szuka kontaktu wzrokowego z człowiekiem, prosząc o pomoc.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 2: ZMYSŁY — INTERAKTYWNE SYMULATORY I ZABAWA
+         ============================================================ -->
+    <section class="section" id="zmysly" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline">Laboratorium Zmysłów</span>
+          <h2>Jak pies odbiera rzeczywistość?</h2>
+          <p>Przetestuj interaktywne symulatory, suwaki i generatory, aby na własne oczy i uszy poczuć świat z perspektywy czworonoga.</p>
+        </div>
+
+        <div class="senses-container">
+
+          <!-- ===== 1. WZROK (Interactive Split-Slider) ===== -->
+          <div class="sensory-card" id="wzrok">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge vision">👁️</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px;">Dichromatyzm & Detekcja Ruchu</span>
+                <h3>Wzrok: Mit o czerni i bieli obalony</h3>
+                <p>Pies widzi kolory — ale jak daltonista. Posiada tylko 2 rodzaje czopków (dla barwy niebieskiej i żółtej). Przeciągnij suwak w lewo i prawo, aby porównać spojrzenie człowieka i psa.</p>
+              </div>
+            </div>
+
+            <!-- Interactive Split-View Canvas Simulator -->
+            <div class="vision-simulator-box">
+              <div class="vision-viewport" id="visionViewport">
+                <!-- Human Layer -->
+                <canvas id="canvasHuman" class="vision-canvas-layer"></canvas>
+                <div class="vision-label-pill vision-label-human">🧑 Wzrok człowieka (Trichromat)</div>
+
+                <!-- Dog Layer (clipped) -->
+                <div class="vision-dog-side" id="visionDogSide">
+                  <canvas id="canvasDog" class="vision-canvas-layer"></canvas>
+                  <div class="vision-label-pill vision-label-dog">🐕 Wzrok psa (Dichromat)</div>
+                </div>
+
+                <!-- Split Handle Knob -->
+                <div class="vision-split-handle" id="visionSplitHandle">
+                  <div class="vision-split-knob">↔</div>
+                </div>
+              </div>
+
+              <!-- Simulator Controls Bar -->
+              <div class="vision-controls-bar">
+                <div class="vision-control-toggle" id="motionToggle">
+                  <div class="toggle-switch-box"></div>
+                  <span>Włącz ruch (Zając i piłka) — zobacz poświatę detekcji ruchu</span>
+                </div>
+                <div class="vision-control-toggle" id="nightToggle">
+                  <div class="toggle-switch-box"></div>
+                  <span>Tryb Nocny (Błona odblaskowa Tapetum Lucidum)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="fact-pill-strip">
+              <div class="fact-pill">
+                <div class="fact-pill-icon">🎨</div>
+                <p><strong>Czerwona piłka w zielonej trawie:</strong> Dla psa jest szaro-żółtym obiektem zlewającym się z otoczeniem. Pies nie zauważy piłki leżącej w bezruchu, ale dostrzeże ją w milisekundę, gdy tylko się potoczy!</p>
+              </div>
+              <div class="fact-pill">
+                <div class="fact-pill-icon">⚡</div>
+                <p><strong>Częstotliwość migotania (CFF):</strong> Człowiek widzi płynny obraz przy 50–60 klatkach na sekundę. Pies potrzebuje 70–80 Hz. Dlatego na starszych telewizorach kineskopowych psy widziały denerwujący, migoczący stroboskop!</p>
+              </div>
+              <div class="fact-pill">
+                <div class="fact-pill-icon">🔍</div>
+                <p><strong>Ostrość widzenia 20/75:</strong> Pies ma słabszą ostrość detali. To, co człowiek o sokolim wzroku widzi z 75 metrów, pies musi zobaczyć z odległości 20 metrów.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== 2. SŁUCH (Interactive Frequency Generator) ===== -->
+          <div class="sensory-card" id="sluch">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge hearing">👂</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px;">Zakres do 65 000 Hz</span>
+                <h3>Słuch: Ultradźwiękowy radar o 18 mięśniach</h3>
+                <p>Pies słyszy dźwięki 4-krotnie dalej niż człowiek i rejestruje wibracje powietrza niesłyszalne dla naszych uszu. Przetestuj suwak częstotliwości i uruchom próbnik syntezatora audio.</p>
+              </div>
+            </div>
+
+            <div class="hearing-lab-box">
+              <div class="frequency-meter">
+                <div>
+                  <span class="frequency-display" id="freqDisplay">15 000</span>
+                  <span class="frequency-unit">Hz</span>
+                </div>
+                <div class="frequency-status-tag" id="freqStatusTag">🧑 Słyszy człowiek i pies</div>
+              </div>
+
+              <div class="slider-container">
+                <input type="range" min="20" max="65000" step="100" value="15000" class="range-slider" id="freqSlider" aria-label="Suwak częstotliwości dźwięku">
+                <div class="spectrum-bands">
+                  <div class="spectrum-band band-human" title="Zakres człowieka (20Hz - 20kHz)"></div>
+                  <div class="spectrum-band band-dog" title="Ultradźwięki psa (20kHz - 65kHz)"></div>
+                </div>
+                <div class="spectrum-legend">
+                  <span>20 Hz (Basy)</span>
+                  <span>20 000 Hz (Limit człowieka)</span>
+                  <span>65 000 Hz (Limit psa)</span>
+                </div>
+              </div>
+
+              <button class="sound-toggle-btn" id="toggleSoundBtn">
+                🔈 Włącz próbkę audio (Web Audio API)
+              </button>
+
+              <!-- Ear Radar Widget -->
+              <div class="ear-radar-widget">
+                <div class="radar-display">
+                  <div class="radar-ear-indicator" id="radarEarL" style="left: 36px;"></div>
+                  <div class="radar-ear-indicator" id="radarEarR" style="right: 36px;"></div>
+                  <span style="font-size: 1.6rem;">🐕</span>
+                </div>
+                <div class="radar-info">
+                  <h5>Niezależne radary uszne (18 mięśni)</h5>
+                  <p>Każde ucho psa porusza się niezależnie o 180°, precyzyjnie kalkulując różnicę czasu dotarcia fali dźwiękowej (do 0,06 milisekundy) w celu zlokalizowania źródła szelestu gryzonia pod ziemią lub śniegiem.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="fact-pill-strip">
+              <div class="fact-pill">
+                <div class="fact-pill-icon">🤫</div>
+                <p><strong>Gwizdek Galtona (23–54 kHz):</strong> Wydaje dźwięk, który dla człowieka brzmi jak ledwo słyszalny syk powietrza, a dla psa jest donośnym gwizdem porównywalnym z trąbką sygnałową.</p>
+              </div>
+              <div class="fact-pill">
+                <div class="fact-pill-icon">🌪️</div>
+                <p><strong>Prognoza burzy:</strong> Pies słyszy infradźwięki i odległe wyładowania atmosferyczne na kilkadziesiąt kilometrów przed tym, jak człowiek zauważy pierwsze chmury.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== 3. WĘCH (Interactive Stereoscopic Dual-Nostril) ===== -->
+          <div class="sensory-card" id="wech">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge smell">👃</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px;">Stereoskopia Olfaktoryczna</span>
+                <h3>Węch: Przestrzenna mapa zapachów 3D</h3>
+                <p>Pies nie tylko czuje zapach — on wie, z której strony i jak dawno temu się pojawił. Lewe i prawe nozdrze zasysają powietrze niezależnie! Ruszaj kursorem lub palcem, aby zbliżyć źródło zapachu.</p>
+              </div>
+            </div>
+
+            <div class="scent-tracker-box">
+              <div class="scent-canvas-wrap">
+                <canvas id="scentCanvas"></canvas>
+              </div>
+
+              <div class="scent-dual-nostril-indicator">
+                <div class="nostril-card">
+                  <span style="font-size: 0.8rem; color: var(--text-dim);">LEWE NOZDRZE</span>
+                  <span class="nostril-val" id="nostrilValL">50%</span>
+                  <span style="font-size: 0.72rem; color: var(--text-muted);">Stężenie molekuł</span>
+                </div>
+                <div style="font-size: 1.4rem;">👃</div>
+                <div class="nostril-card">
+                  <span style="font-size: 0.8rem; color: var(--text-dim);">PRAWE NOZDRZE</span>
+                  <span class="nostril-val" id="nostrilValR">50%</span>
+                  <span style="font-size: 0.72rem; color: var(--text-muted);">Stężenie molekuł</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="fact-pill-strip">
+              <div class="fact-pill">
+                <div class="fact-pill-icon">🧪</div>
+                <p><strong>Narząd Jacobsona (lemieszowo-nosowy):</strong> Położony nad podniebieniem, bada feromony. Dzięki niemu pies odczytuje ze słupka na trawniku wiek, płeć, stan zdrowia, a nawet poziom lęku innego psa!</p>
+              </div>
+              <div class="fact-pill">
+                <div class="fact-pill-icon">🏊</div>
+                <p><strong>Rozcieńczenie 1:1 000 000 000 000:</strong> Pies potrafi wyczuć jedną łyżeczkę cukru rozpuszczoną w objętości dwóch basenów olimpijskich.</p>
+              </div>
+              <div class="fact-pill">
+                <div class="fact-pill-icon">🩺</div>
+                <p><strong>Medyczny detektyw:</strong> Węch psa wykrywa mikroskopijne lotne związki organiczne (VOC) wydzielane przy nowotworach, hipoglikemii cukrzycowej czy napadach padaczkowych.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== 4. SMAK I DOTYK ===== -->
+          <div class="sensory-card">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge touch">🐾</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px;">Dotyk, Wibrysy i Smak</span>
+                <h3>Wąsy sensoryczne i specyficzny smak wody</h3>
+                <p>Dotyk u psa to precyzyjny system nawigacyjny, a kubki smakowe mają unikalne przeznaczenie.</p>
+              </div>
+            </div>
+
+            <div class="fact-pill-strip" style="margin-top: 0;">
+              <div class="fact-pill">
+                <div class="fact-pill-icon">〰️</div>
+                <p><strong>Wibrysy czuciowe:</strong> Włosy czuciowe na pysku i nad oczami są osadzone 3-krotnie głębiej niż zwykła sierść i otoczone torebką nerwową. Rejestrują mikroskopijne prądy powietrza, informując psa o przeszkodach w ciemności.</p>
+              </div>
+              <div class="fact-pill">
+                <div class="fact-pill-icon">💧</div>
+                <p><strong>Receptory wody na języku:</strong> Podczas gdy człowiek ma 9 000 kubków smakowych, pies ma ich zaledwie 1 700. Posiada jednak unikalne receptory smaku wody na czubku języka, które uaktywniają się po słonym posiłku!</p>
+              </div>
+              <div class="fact-pill">
+                <div class="fact-pill-icon">❄️</div>
+                <p><strong>Czujnik ciepła w nosie (2020):</strong> Badacze z Uniwersytetu w Lund odkryli, że wilgotna, zimna trufla psiego nosa działa jak detektor promieniowania podczerwonego — wyczuwa ciepło ciała ofiary z odległości kilkudziesięciu centymetrów!</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 3: BEZPIECZEŃSTWO & MOWA CIAŁA („ROZKODUJ PSA”)
+         ============================================================ -->
+    <section class="section" id="bezpieczenstwo">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: #F87171; background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3);">Kluczowe Bezpieczeństwo</span>
+          <h2>Rozkoduj Psa: Jak nie dać się ugryźć</h2>
+          <p>Pies prawie NIGDY nie gryzie „bez powodu” ani z zaskoczenia. Zawsze wysyła serię sygnałów ostrzegawczych. Klikaj w punkty na ciele psa, aby odczytać jego mowę.</p>
+        </div>
+
+        <div class="safety-master-box">
+          <!-- Interactive Anatomy Inspector -->
+          <div class="body-language-inspector">
+            <div class="anatomy-diagram-stage" style="border-color: rgba(239, 68, 68, 0.3);">
+              <div class="anatomy-diagram-wrapper">
+                <svg class="anatomy-silhouette-svg" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                  <defs>
+                    <radialGradient id="dogBgGlow" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#EF4444" stop-opacity="0.16"/>
+                      <stop offset="100%" stop-color="#EF4444" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="dogBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#241B1E"/>
+                      <stop offset="50%" stop-color="#181216"/>
+                      <stop offset="100%" stop-color="#0E0A0D"/>
+                    </linearGradient>
+                    <filter id="dogGlow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#EF4444" flood-opacity="0.45"/>
+                    </filter>
+                  </defs>
+
+                  <!-- Tactical Range Rings -->
+                  <circle cx="250" cy="160" r="145" fill="none" stroke="rgba(239, 68, 68, 0.12)" stroke-width="1" stroke-dasharray="4 6"/>
+                  <circle cx="250" cy="160" r="95" fill="none" stroke="rgba(239, 68, 68, 0.08)" stroke-width="1"/>
+                  <ellipse cx="260" cy="165" rx="190" ry="110" fill="url(#dogBgGlow)"/>
+
+                  <!-- Ground Shadow -->
+                  <ellipse cx="285" cy="285" rx="160" ry="12" fill="rgba(0, 0, 0, 0.6)"/>
+
+                  <!-- Far Legs -->
+                  <path d="M 180 225 L 186 285 L 195 285 L 192 230 Z" fill="#130C10" opacity="0.85"/>
+                  <path d="M 365 220 L 372 285 L 381 285 L 378 225 Z" fill="#130C10" opacity="0.85"/>
+
+                  <!-- Far Ear -->
+                  <path d="M 224 85 C 226 62, 230 55, 236 62 C 240 70, 238 85, 235 95 Z" fill="#1A1217" stroke="#EF4444" stroke-width="1.5" opacity="0.7"/>
+
+                  <!-- Dog Silhouette Main Body (Facing left, alert Shepherd posture) -->
+                  <path d="M 95 145
+                           C 93 140, 110 134, 130 126
+                           C 142 122, 155 110, 175 102
+                           C 190 96, 202 85, 206 58
+                           C 208 52, 214 52, 218 64
+                           C 222 78, 226 90, 235 98
+                           C 250 112, 270 125, 290 126
+                           C 325 128, 365 134, 395 146
+                           C 410 152, 420 148, 432 128
+                           C 440 114, 448 112, 448 122
+                           C 448 135, 436 160, 424 175
+                           C 418 185, 412 210, 410 240
+                           C 408 265, 404 285, 396 285
+                           C 388 285, 386 270, 384 250
+                           C 382 230, 375 220, 360 215
+                           C 345 210, 320 212, 290 220
+                           C 265 226, 245 225, 230 215
+                           C 225 225, 220 255, 216 285
+                           C 212 285, 202 285, 198 285
+                           C 194 285, 195 255, 194 235
+                           C 192 215, 180 198, 165 188
+                           C 148 178, 135 174, 118 168
+                           C 105 164, 96 156, 95 145 Z"
+                        fill="url(#dogBodyGrad)"
+                        stroke="#EF4444"
+                        stroke-width="2.5"
+                        stroke-linejoin="round"
+                        filter="url(#dogGlow)"/>
+
+                  <!-- Alert Eye (Whale Eye zone) -->
+                  <ellipse cx="165" cy="115" rx="5" ry="3.5" fill="#FFF" stroke="#EF4444" stroke-width="1"/>
+                  <circle cx="164" cy="115" r="2" fill="#111"/>
+                  <path d="M 160 112 Q 165 109 171 113" fill="none" stroke="#F87171" stroke-width="1.2"/>
+
+                  <!-- Snout / Nose Leather & Mouth Line -->
+                  <path d="M 95 143 C 94 140, 97 138, 102 140 C 105 142, 104 146, 100 147 Z" fill="#111"/>
+                  <path d="M 103 147 C 115 150, 130 152, 140 156" fill="none" stroke="#F87171" stroke-width="1.5"/>
+
+                  <!-- Calming Signal: Tongue hint / lip corner -->
+                  <path d="M 125 153 Q 132 158 136 154" fill="none" stroke="#EF4444" stroke-width="1.2"/>
+
+                  <!-- Spine / Freeze Posture Indicator Line -->
+                  <path d="M 235 98 C 265 118, 320 124, 395 146" fill="none" stroke="rgba(239, 68, 68, 0.4)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                </svg>
+
+                <!-- Dog Locked Hotspots -->
+                <div class="anatomy-hotspots-layer">
+                  <button class="anatomy-hotspot hotspot-eyes active" data-part="eyes" style="left: 33%; top: 36%;" title="Oczy i spojrzenie">1</button>
+                  <button class="anatomy-hotspot hotspot-ears" data-part="ears" style="left: 42%; top: 19%;" title="Uszy">2</button>
+                  <button class="anatomy-hotspot hotspot-mouth" data-part="mouth" style="left: 21%; top: 47%;" title="Pysk i zęby">3</button>
+                  <button class="anatomy-hotspot hotspot-tail" data-part="tail" style="left: 87%; top: 36%;" title="Ogon">4</button>
+                  <button class="anatomy-hotspot hotspot-body" data-part="body" style="left: 58%; top: 48%;" title="Postawa ciała">5</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="hotspot-detail-card" id="hotspotCard">
+              <span class="hotspot-badge-tier tier-danger" id="hotspotTier">⚠️ Stan podwyższonego ryzyka</span>
+              <h4 class="hotspot-detail-title" id="hotspotTitle">Oczy i spojrzenie („Whale Eye")</h4>
+              <p class="hotspot-detail-desc" id="hotspotDesc">
+                Jeśli widzisz białka psich oczu w kształcie półksiężyca (tzw. wielorybie oko), pies czuje się skrajnie osaczony lub zagrożony. Nigdy nie wpatruj się psu prosto w źrenice — dla drapieżnika to bezpośrednie rzucenie wyzwania i zapowiedź starcia.
+              </p>
+              <div class="hotspot-advice-box" id="hotspotAdvice">
+                Odwróć wzrok lekko w bok i w dół, nie pochylaj się nad psem. Daj mu natychmiast przestrzeń do odejścia.
+              </div>
+            </div>
+          </div>
+
+          <!-- Crisis Decision Simulator: Tree Rule -->
+          <div class="crisis-simulator-box">
+            <h4 class="crisis-scenario-title">🚨 Symulator Reakcji: Nieznany pies biegnie w Twoją stronę!</h4>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">
+              Jesteś w parku lub na ulicy. Z naprzeciwka wybiega duży, pobudzony pies bez smyczy i zmierza prosto na Ciebie. Jaka jest Twoja reakcja?
+            </p>
+
+            <div class="crisis-options-grid">
+              <div class="crisis-option-card" data-choice="run">
+                <strong>Opcja A:</strong><br>
+                Odwracam się, krzyczę i uciekam ile sił w nogach.
+              </div>
+              <div class="crisis-option-card" data-choice="stare">
+                <strong>Opcja B:</strong><br>
+                Patrzę mu prosto w oczy, macham rękami i krzyczę „stój!”.
+              </div>
+              <div class="crisis-option-card" data-choice="tree">
+                <strong>Opcja C (Zasada Drzewa):</strong><br>
+                Staję nieruchomo jak drzewo, ręce przy ciele, wzrok w bok, cisza.
+              </div>
+            </div>
+
+            <div class="crisis-feedback-box" id="crisisFeedback"></div>
+          </div>
+
+          <!-- Danger Foods Matrix -->
+          <div style="margin-top: 44px;">
+            <h3 style="text-align: center; margin-bottom: 8px;">☠️ Śmiertelne pułapki pokarmowe</h3>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 24px;">To, co dla ludzi jest smakołykiem, dla psa może być zabójczą dawką toksyn:</p>
+
+            <div class="toxic-food-grid">
+              <div class="toxic-food-card">
+                <div class="toxic-food-header">
+                  <span>🍫</span>
+                  <h5>Czekolada & Kakao</h5>
+                </div>
+                <p>Zawiera teobrominę, której pies nie metabolizuje. Prowadzi do arytmii serca, drgawek i zawału. Im ciemniejsza czekolada, tym groźniejsza!</p>
+              </div>
+
+              <div class="toxic-food-card">
+                <div class="toxic-food-header">
+                  <span>🍬</span>
+                  <h5>Ksylitol (Słodzik brzozowy)</h5>
+                </div>
+                <p>Obecny w gumach bez cukru, fit-ciasteczkach i pastach do zębów. Wywołuje u psa natychmiastowy, katastrofalny spadek cukru i nieodwracalną martwicę wątroby.</p>
+              </div>
+
+              <div class="toxic-food-card">
+                <div class="toxic-food-header">
+                  <span>🍇</span>
+                  <h5>Winogrona i rodzynki</h5>
+                </div>
+                <p>Nawet zaledwie kilka rodzynek może wywołać u psa ostrą, bezmoczową niewydolność nerek i zgon w ciągu 24–48 godzin.</p>
+              </div>
+
+              <div class="toxic-food-card">
+                <div class="toxic-food-header">
+                  <span>🧅</span>
+                  <h5>Cebula, czosnek i szczypiorek</h5>
+                </div>
+                <p>Zawierają dwusiarczki niszczące czerwone krwinki psa (erytrocyty), powodując śmiertelną anemię hemolityczną. Uwaga na zupki i sosy z proszkiem cebulowym!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA MINI GRA: SUPER-NOS — TROPICIEL ZAPACHÓW
+         ============================================================ -->
+    <section class="section" id="gra">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber);">🎮 Zagraj i Wytrop</span>
+          <h2>Mini Gra: Super-Nos — Tropiciel Zapachów</h2>
+          <p>Przejmij kontrolę nad psem i wytrop 3 ukryte zapachy w parku! Steruj psem kursorem myszy lub palcem na ekranie i podążaj za radarem węchu.</p>
+        </div>
+
+        <div class="minigame-card">
+          <div class="minigame-level-header">
+            <div class="minigame-level-badge" id="dogGameLevelBadge">
+              <span>Misja 1/3:</span> Młody Szczeniak w Ogrodzie 🏡
+            </div>
+            <div class="minigame-level-dots" id="dogGameLevelDots">
+              <span class="level-dot active" title="Poziom 1"></span>
+              <span class="level-dot" title="Poziom 2"></span>
+              <span class="level-dot" title="Poziom 3"></span>
+            </div>
+          </div>
+
+          <div class="minigame-hud">
+            <div class="hud-item">
+              <span>⏱️ Czas:</span>
+              <span class="hud-val" id="dogGameTimer">45s</span>
+            </div>
+            <div class="hud-item">
+              <span>🎯 Znaleziono:</span>
+              <span class="hud-val" id="dogGameFoundCount">0 / 3</span>
+            </div>
+            <div class="hud-item dog-radar-wrap">
+              <span>👃 Intensywność:</span>
+              <div class="dog-radar-bar">
+                <div class="dog-radar-fill" id="dogGameRadarFill"></div>
+              </div>
+            </div>
+            <div class="hud-item" style="font-size: 0.8rem;">
+              <span>Szukasz:</span>
+              <span style="color: var(--amber);" id="dogGameTargetName">🦴 Smakowita kość</span>
+            </div>
+          </div>
+
+          <div class="minigame-viewport">
+            <canvas id="dogGameCanvas" class="minigame-canvas"></canvas>
+
+            <!-- Game Overlay -->
+            <div class="minigame-overlay" id="dogGameOverlay">
+              <div style="font-size: 3.5rem; margin-bottom: 12px;" id="dogGameOverIcon">🐕👃✨</div>
+              <h4 id="dogGameOverTitle">Wytrop Ukryte Zapachy!</h4>
+              <p id="dogGameOverDesc">
+                Ruszaj psem za pomocą kursora lub palca na ekranie dotykowym. Gdy zbliżysz się do ukrytego celu, radar zapachu wzrośnie, a pikanie przyspieszy. Znajdź 3 obiekty przed upływem 45 sekund!
+              </p>
+              <div class="overlay-actions">
+                <button class="btn btn-primary" id="startDogGameBtn">Rozpocznij misję 🐾</button>
+                <button class="btn btn-primary" id="nextDogLevelBtn" style="display: none;">Kolejny poziom →</button>
+                <button class="btn btn-secondary" id="restartDogGameBtn" style="display: none;">Powtórz poziom ↺</button>
+                <button class="btn btn-secondary" id="resetDogCampaignBtn" style="display: none;">Zacznij od poziomu 1 🏠</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 4: INTERAKTYWNY MINI QUIZ
+         ============================================================ -->
+    <section class="section" id="quiz" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline">Sprawdź swoją wiedzę</span>
+          <h2>Mini Quiz Mistrza Psich Zmysłów</h2>
+          <p>5 pytań z natychmiastowym feedbackiem i syntezą dźwiękową. Czy zdobędziesz certyfikat eksperta?</p>
+        </div>
+
+        <div class="quiz-wrapper">
+          <div class="quiz-meter-bar">
+            <div class="quiz-meter-progress" id="quizMeterProgress"></div>
+          </div>
+          <div id="quizDynamicBody">
+            <!-- Rendered by js/dog-simulators.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation to Hub -->
+    <section style="padding: 60px 0; text-align: center;">
+      <div class="container">
+        <h3 style="margin-bottom: 16px;">Chcesz poznać percepcję innych zwierząt?</h3>
+        <p style="margin-bottom: 24px;">Już wkrótce kolejne fascynujące analizy: Kot, Orzeł, Delfin, Wąż i Nietoperz.</p>
+        <a href="index.html" class="btn btn-secondary">
+          ← Wróć do spisu zwierząt
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Author Profile Modal (Dorian Kalinowski) -->
+  <div class="modal-backdrop" id="authorModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeAuthorModal" aria-label="Zamknij okno">✕</button>
+      <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="author-avatar-big">
+      <h3 class="author-modal-name">Dorian Kalinowski</h3>
+      <div class="author-modal-role">Twórca aplikacji „Świat zmysłami zwierząt”</div>
+      <p class="author-bio">
+        Aplikacja powstała z pasji do zoologii kognitywnej, neuronauki percepcji oraz nowoczesnego web developmentu. Celem projektu jest przeniesienie odbiorcy w intymny świat zmysłów natury — tak, abyśmy przestali oceniać zwierzęta wyłącznie przez pryzmat ludzkich zmysłów, a zaczęli rozumieć ich unikalną perspektywę i mowę ciała.
+      </p>
+      <div style="text-align: center;">
+        <button class="btn btn-primary" id="confirmAuthorModal">Zamknij</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PWA Install Prompt Banner -->
+  <div class="pwa-install-banner" id="pwaBanner">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 1.6rem;">📱</span>
+      <div>
+        <div style="font-size: 0.92rem; font-weight: 700;">Zainstaluj jako aplikację PWA</div>
+        <div style="font-size: 0.78rem; color: var(--text-muted);">Szybki dostęp i działanie offline bez przeglądarki</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="pwaInstallBtn" style="padding: 8px 18px; font-size: 0.85rem;">Instaluj</button>
+    <button class="modal-close-btn" id="pwaDismissBtn" style="position: static; width: 28px; height: 28px; font-size: 0.8rem;">✕</button>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar (Native App Feel) -->
+  <div class="mobile-bottom-bar" role="navigation" aria-label="Nawigacja mobilna">
+    <a href="index.html" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🏠</span>
+      <span>Główna</span>
+    </a>
+    <a href="pies.html" class="bottom-bar-item active">
+      <span class="bottom-bar-icon">🐕</span>
+      <span>Pies</span>
+    </a>
+    <a href="#zmysly" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🔬</span>
+      <span>Zmysły</span>
+    </a>
+    <a href="#bezpieczenstwo" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🛡️</span>
+      <span>Obrona</span>
+    </a>
+    <button class="bottom-bar-item" id="mobileAuthorTrigger">
+      <span class="bottom-bar-icon">👤</span>
+      <span>Autor</span>
+    </button>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-author">
+        Zaprojektowane i stworzone przez: <strong>Dorian Kalinowski</strong>
+      </p>
+      <p class="footer-rights">
+        © 2026 Świat zmysłami zwierząt. Autorska aplikacja edukacyjna PWA. Wszelkie prawa zastrzeżone.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/dog-simulators.js"></script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Świat zmysłami zwierząt — odkryj jak zwierzęta widzą, słyszą, czują i rozumieją otaczający świat. Nowoczesna, interaktywna encyklopedia percepcji natury.">
+  <meta name="theme-color" content="#090D13">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Zmysły Zwierząt">
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  
+  <title>Świat zmysłami zwierząt — Interaktywna podróż przez percepcję natury</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="nav" role="navigation" aria-label="Nawigacja główna">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon-wrapper">🐾</div>
+        <span>Świat zmysłami zwierząt</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link active">Strona główna</a>
+        <a href="pies.html" class="nav-link">🐕 Pies domowy</a>
+        <a href="#zwierzeta" class="nav-link">🐾 Przeglądaj gatunki</a>
+        
+        <!-- Creator Chip (Dorian Kalinowski) -->
+        <div class="creator-chip" id="authorChip" title="Dowiedz się więcej o autorze">
+          <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="creator-avatar">
+          <div class="creator-text">
+            <span class="creator-name">Dorian Kalinowski</span>
+            <span class="creator-role">Twórca aplikacji</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Hub -->
+  <header class="hero-hub" id="top">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+      <div class="hero-badge">
+        <span>🌿</span> Nowoczesne laboratorium percepcji zwierząt
+      </div>
+
+      <h1>
+        Świat widziany, słyszany i czuty <em>zmysłami zwierząt</em>
+      </h1>
+
+      <p class="subtitle">
+        Jak pies postrzega kolory? Co słyszy kot, gdy wokół panuje absolutna cisza? 
+        Zanurz się w fascynujący świat kognitywistyki zwierząt dzięki autorskim symulatorom, 
+        dźwiękom Web Audio i interaktywnym testom zachowań.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="pies.html" class="btn btn-primary">
+          <span>Odkryj zmysły psa</span>
+          <span>→</span>
+        </a>
+        <a href="#zwierzeta" class="btn btn-secondary">
+          <span>Wszystkie zwierzęta</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Animals Directory -->
+  <main>
+    <section class="section" id="zwierzeta" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline">Encyklopedia Gatunków</span>
+          <h2>Wybierz zwierzę i wejdź w jego skórę</h2>
+          <p>Każde zwierzę posiada osobną podstronę z interaktywnymi symulatorami, historią, quizem i zasadami bezpiecznego kontaktu.</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 36px;" id="catFilters">
+          <button class="btn-pill active" data-cat="all">🌍 Wszystkie</button>
+          <button class="btn-pill" data-cat="ssaki">🐾 Ssaki</button>
+          <button class="btn-pill" data-cat="ptaki">🦅 Ptaki</button>
+          <button class="btn-pill" data-cat="morskie">🐬 Morskie</button>
+          <button class="btn-pill" data-cat="gady">🦎 Gady</button>
+          <button class="btn-pill" data-cat="owady">🦋 Owady</button>
+        </div>
+
+        <!-- Animals Grid -->
+        <div class="animals-grid" id="animalsGrid">
+
+          <!-- 1. PIES (Featured & Active) -->
+          <a href="pies.html" class="animal-hub-card" data-cat="ssaki">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🐕</span>
+                <span class="card-badge available">Dostępny teraz</span>
+              </div>
+              <div class="card-content">
+                <h3>Pies domowy</h3>
+                <p>
+                  300 milionów receptorów węchu, stereoskopowy nos, słuch do 65 kHz i widzenie dichromatyczne. Poznaj też mowę ciała i Zasadę Drzewa.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta">
+              Uruchom symulatory <span>→</span>
+            </span>
+          </a>
+
+          <!-- 2. KOT (Active) -->
+          <a href="kot.html" class="animal-hub-card" data-cat="ssaki">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🐈</span>
+                <span class="card-badge available">Dostępny teraz</span>
+              </div>
+              <div class="card-content">
+                <h3>Kot domowy</h3>
+                <p>
+                  Pionowa źrenica noktowizyjna (1/6 światła), słuch do 85 kHz, wibrysy i Whisker Fatigue, mruczenie 32 Hz oraz mapa bezpiecznego dotyku.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta">
+              Uruchom symulatory <span>→</span>
+            </span>
+          </a>
+
+          <!-- 3. DZIK (Active) -->
+          <a href="dzik.html" class="animal-hub-card" data-cat="ssaki">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🐗</span>
+                <span class="card-badge available">Dostępny teraz</span>
+              </div>
+              <div class="card-content">
+                <h3>Dzik euroazjatycki</h3>
+                <p>
+                  Węch 5× czulszy niż u psa myśliwskiego, wzrok krótkowidza, pancerz chybowy, oręż ze szablami i protokół bezpiecznego odwrotu w lesie i mieście.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta">
+              Uruchom symulatory <span>→</span>
+            </span>
+          </a>
+
+          <!-- 3. ORZEŁ -->
+          <div class="animal-hub-card coming-soon" data-cat="ptaki">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🦅</span>
+                <span class="card-badge soon">W przygotowaniu</span>
+              </div>
+              <div class="card-content">
+                <h3>Orzeł przedni</h3>
+                <p>
+                  Wzrok 8-krotnie ostrzejszy od ludzkiego oka, dwa dołki środkowe siatkówki i zdolność dostrzegania światła ultrafioletowego.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta" style="color: var(--text-dim);">
+              Dostępne wkrótce
+            </span>
+          </div>
+
+          <!-- 4. DELFIN -->
+          <div class="animal-hub-card coming-soon" data-cat="morskie">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🐬</span>
+                <span class="card-badge soon">W przygotowaniu</span>
+              </div>
+              <div class="card-content">
+                <h3>Delfin butlonosy</h3>
+                <p>
+                  Akustyczny sonar 3D (echolokacja), melon czołowy skupiający wiązki ultradźwięków i magnetorecepcja do nawigacji oceanicznej.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta" style="color: var(--text-dim);">
+              Dostępne wkrótce
+            </span>
+          </div>
+
+          <!-- 5. WĄŻ -->
+          <div class="animal-hub-card coming-soon" data-cat="gady">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🐍</span>
+                <span class="card-badge soon">W przygotowaniu</span>
+              </div>
+              <div class="card-content">
+                <h3>Grzechotnik</h3>
+                <p>
+                  Termowizja w podczerwieni dzięki jamkom policzkowym, smakowanie powietrza rozwidlonym językiem i odbiór drgań sejsmicznych żuchwą.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta" style="color: var(--text-dim);">
+              Dostępne wkrótce
+            </span>
+          </div>
+
+          <!-- 6. NIETOPERZ -->
+          <div class="animal-hub-card coming-soon" data-cat="ssaki">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🦇</span>
+                <span class="card-badge soon">W przygotowaniu</span>
+              </div>
+              <div class="card-content">
+                <h3>Mroczek posrebrzany</h3>
+                <p>
+                  Precyzyjna echolokacja o częstotliwościach ponad 100 kHz, pozwalająca omijać pojedyncze nitki pajęcze w absolutnym mroku jaskini.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta" style="color: var(--text-dim);">
+              Dostępne wkrótce
+            </span>
+          </div>
+
+          <!-- 7. PSZCZOŁA -->
+          <div class="animal-hub-card coming-soon" data-cat="owady">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🐝</span>
+                <span class="card-badge soon">W przygotowaniu</span>
+              </div>
+              <div class="card-content">
+                <h3>Pszczoła miodna</h3>
+                <p>
+                  Widzenie spolaryzowanego światła słonecznego, detekcja pól elektrostatycznych kwiatów i odczytywanie ultrafioletowych pasów nektarowych.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta" style="color: var(--text-dim);">
+              Dostępne wkrótce
+            </span>
+          </div>
+
+          <!-- 8. REKIN -->
+          <div class="animal-hub-card coming-soon" data-cat="morskie">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🦈</span>
+                <span class="card-badge soon">W przygotowaniu</span>
+              </div>
+              <div class="card-content">
+                <h3>Żarłacz błękitny</h3>
+                <p>
+                  Ampułki Lorenziniego wykrywające pole elektryczne uderzenia serca ryby zagrzebanej w piasku na dnie oceanu.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta" style="color: var(--text-dim);">
+              Dostępne wkrótce
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Mission Section -->
+    <section class="section">
+      <div class="container" style="text-align: center; max-width: 760px;">
+        <span class="overline">O Misji Projektu</span>
+        <h2 style="margin-bottom: 20px;">Dlaczego zmysły zwierząt?</h2>
+        <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 24px;">
+          Niemiecki biolog Jakob von Uexküll wprowadził pojęcie <em>Umwelt</em> — unikalnego świata zmysłowego każdego stworzenia. 
+          Człowiek często zakłada, że to, co widzi i słyszy, jest jedyną wersją rzeczywistości. 
+          W rzeczywistości jesteśmy ślepi na ultrafiolet, głusi na ultradźwięki i niewrażliwi na fale feromonów.
+        </p>
+        <p style="font-size: 1rem; color: var(--text-muted);">
+          Aplikacja <strong>Świat zmysłami zwierząt</strong> została zaprojektowana tak, aby przekształcić trudną wiedzę neurobiologiczną w fascynujące, namacalne doświadczenie interaktywne.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Author Profile Modal (Dorian Kalinowski) -->
+  <div class="modal-backdrop" id="authorModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeAuthorModal" aria-label="Zamknij okno">✕</button>
+      <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="author-avatar-big">
+      <h3 class="author-modal-name">Dorian Kalinowski</h3>
+      <div class="author-modal-role">Twórca aplikacji „Świat zmysłami zwierząt”</div>
+      <p class="author-bio">
+        Aplikacja powstała z pasji do zoologii kognitywnej, neuronauki percepcji oraz nowoczesnego web developmentu. Celem projektu jest przeniesienie odbiorcy w intymny świat zmysłów natury — tak, abyśmy przestali oceniać zwierzęta wyłącznie przez pryzmat ludzkich zmysłów, a zaczęli rozumieć ich unikalną perspektywę i mowę ciała.
+      </p>
+      <div style="text-align: center;">
+        <button class="btn btn-primary" id="confirmAuthorModal">Zamknij</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PWA Install Prompt Banner -->
+  <div class="pwa-install-banner" id="pwaBanner">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 1.6rem;">📱</span>
+      <div>
+        <div style="font-size: 0.92rem; font-weight: 700;">Zainstaluj jako aplikację PWA</div>
+        <div style="font-size: 0.78rem; color: var(--text-muted);">Szybki dostęp i działanie offline bez przeglądarki</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="pwaInstallBtn" style="padding: 8px 18px; font-size: 0.85rem;">Instaluj</button>
+    <button class="modal-close-btn" id="pwaDismissBtn" style="position: static; width: 28px; height: 28px; font-size: 0.8rem;">✕</button>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar (Native App Feel) -->
+  <div class="mobile-bottom-bar" role="navigation" aria-label="Nawigacja mobilna">
+    <a href="index.html" class="bottom-bar-item active">
+      <span class="bottom-bar-icon">🏠</span>
+      <span>Główna</span>
+    </a>
+    <a href="pies.html" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🐕</span>
+      <span>Pies</span>
+    </a>
+    <a href="#zwierzeta" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🐾</span>
+      <span>Gatunki</span>
+    </a>
+    <button class="bottom-bar-item" id="mobileAuthorTrigger">
+      <span class="bottom-bar-icon">👤</span>
+      <span>Autor</span>
+    </button>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-author">
+        Zaprojektowane i stworzone przez: <strong>Dorian Kalinowski</strong>
+      </p>
+      <p class="footer-rights">
+        © 2026 Świat zmysłami zwierząt. Autorska aplikacja edukacyjna PWA. Wszelkie prawa zastrzeżone.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+</body>
+</html>

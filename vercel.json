@@ -1,0 +1,10 @@
+{
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/kot", "destination": "/kot.html" },
+    { "source": "/pies", "destination": "/pies.html" },
+    { "source": "/dzik", "destination": "/dzik.html" },
+    { "source": "/", "destination": "/index.html" }
+  ]
+}

@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Kot — interaktywna podróż przez zmysły kota. Symulator pionowej źrenicy, słuch do 85 kHz, wibrysy, mruczenie 32 Hz, mapa dotyku i bezpieczeństwo.">
+  <meta name="theme-color" content="#090D13">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Zmysły Zwierząt">
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  
+  <title>Kot — Świat zmysłami zwierząt</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="nav" role="navigation" aria-label="Nawigacja główna">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon-wrapper">🐾</div>
+        <span>Świat zmysłami zwierząt</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Strona główna</a>
+        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog zwierząt</button>
+        <a href="pies.html" class="nav-link">🐕 Pies</a>
+        <a href="kot.html" class="nav-link active">🐈 Kot</a>
+        <a href="dzik.html" class="nav-link">🐗 Dzik</a>
+        
+        <!-- Creator Chip (Dorian Kalinowski) -->
+        <div class="creator-chip" id="authorChip" title="Dowiedz się więcej o autorze">
+          <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="creator-avatar">
+          <div class="creator-text">
+            <span class="creator-name">Dorian Kalinowski</span>
+            <span class="creator-role">Twórca aplikacji</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Animal Page Hero -->
+  <header class="animal-hero" id="top" style="background: linear-gradient(180deg, rgba(139, 92, 246, 0.12) 0%, rgba(9, 13, 19, 0) 100%);">
+    <div class="container">
+      <div class="animal-hero-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="index.html">Główna</a>
+            <span>›</span>
+            <span>Ssaki</span>
+            <span>›</span>
+            <span style="color: var(--purple-light);">Kot</span>
+          </div>
+          <span class="animal-latin" style="color: var(--purple-light);">Felis catus</span>
+          <h1>Kot domowy</h1>
+          <p class="animal-hero-desc">
+            Niezależny drapieżnik, który udomowił się sam i wciąż zachował 95% DNA dzikiego tygrysa. 
+            Jego ciało to arcydzieło biomechaniki: słuch sięgający 85 000 Hz, źrenice zmieniające pole 135-krotnie 
+            oraz wibrysy czujące ruch pojedynczych cząsteczek powietrza.
+          </p>
+
+          <div class="hero-stats-grid">
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--purple-light);">85 kHz</span>
+              <span class="stat-label">Słuch ultradźwiękowy (pies: 65k, człowiek: 20k)</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--emerald-light);">1/6 światła</span>
+              <span class="stat-label">Wymóg oświetlenia do ostrego widzenia</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--amber-light);">32 mięśnie</span>
+              <span class="stat-label">W każdym uchu (obrót o 180°)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="animal-portrait-card" style="border-color: rgba(139, 92, 246, 0.35); background: radial-gradient(circle at center, rgba(139, 92, 246, 0.18) 0%, rgba(19, 27, 39, 0.8) 70%);">
+          <div class="animal-portrait-glow" style="background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);"></div>
+          <div class="animal-portrait-emoji" role="img" aria-label="Kot">🐈</div>
+          <div class="portrait-tags">
+            <span class="portrait-tag">Gatunek: Kot domowy</span>
+            <span class="portrait-tag">Rzędy: Drapieżne (Felidae)</span>
+            <span class="portrait-tag">Tryb: Zmierzchowo-nocny</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Subnavigation -->
+  <div class="sticky-subnav">
+    <div class="sticky-subnav-inner">
+      <a href="#historia" class="subnav-pill active">📜 Historia</a>
+      <a href="#wzrok" class="subnav-pill">👁️ Źrenica & Wzrok</a>
+      <a href="#sluch" class="subnav-pill">👂 Słuch 85 kHz</a>
+      <a href="#wibrysy" class="subnav-pill">〰️ Wibrysy & Mruczenie</a>
+      <a href="#bezpieczenstwo" class="subnav-pill">🛡️ Bezpieczeństwo & Dotyk</a>
+      <a href="#gra" class="subnav-pill">🎮 Mini Gra</a>
+      <a href="#quiz" class="subnav-pill">🎯 Mini Quiz</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================
+         SEKCJA 1: HISTORIA W PIGUŁCE
+         ============================================================ -->
+    <section class="section" id="historia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--purple-light); border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1);">Ewolucja i Samoumartwienie</span>
+          <h2>Jedyny drapieżnik, który udomowił się sam</h2>
+          <p>Podczas gdy wilka człowiek udomawiał przez tysiąclecia, kot zawarł z ludźmi dobrowolny pakt gospodarczy.</p>
+        </div>
+
+        <div class="timeline-stepper">
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--purple-light); box-shadow: 0 0 12px var(--purple);"></div>
+            <div class="step-header">
+              <span class="step-title">Rewolucja spichlerzowa w Żyznym Półksiężycu</span>
+              <span class="step-period">~10 000 lat temu</span>
+            </div>
+            <p class="step-body">
+              Gdy ludzie założyli pierwsze osady rolnicze i zgromadzili zboże, magazyny zostały zaatakowane przez plagę myszy. <strong>Żbik afrykański (<em>Felis lybica</em>)</strong> zwietrzył okazję i przyszedł do ludzkich spichlerzy na polowanie. Człowiek nie przeganiał kota, a kot chronił zapasy żywności.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--purple-light); box-shadow: 0 0 12px var(--purple);"></div>
+            <div class="step-header">
+              <span class="step-title">Grób na Cyprze i boski kult w Egipcie</span>
+              <span class="step-period">~9 500 – 3 000 lat temu</span>
+            </div>
+            <p class="step-body">
+              W egipskim panteonie bogini płodności i domu, <strong>Bastet</strong>, miała postać kotki. Za zabicie kota w Egipcie groziła bezwzględna kara śmierci! Koty balsamowano, mumifikowano i chowano w rodzinnych grobowcach z naczyniami pełnymi mleka i myszy.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--purple-light); box-shadow: 0 0 12px var(--purple);"></div>
+            <div class="step-header">
+              <span class="step-title">Średniowieczna histeria czarownic i Czarna Śmierć</span>
+              <span class="step-period">XIV wiek</span>
+            </div>
+            <p class="step-body">
+              W średniowiecznej Europie koty (zwłaszcza czarne) zostały uznane przez inkwizycję za pomiot diabła i masowo tępione. Skutek był katastrofalny: brak drapieżników doprowadził do bezprecedensowej eksplozji populacji szczurów roznoszących pchły dżumowe, co wywołało epidemię Czarnej Śmierci dziesiątkującą Europę.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--purple-light); box-shadow: 0 0 12px var(--purple);"></div>
+            <div class="step-header">
+              <span class="step-title">Genom drapieżnika dzisiaj</span>
+              <span class="step-period">Dziś</span>
+            </div>
+            <p class="step-body">
+              Genetycy odkryli, że kot domowy zachował aż <strong>95,6% genomu tygrysa</strong>! Jest tzw. zwierzęciem pół-udomowionym (*semi-domesticated*): fizycznie i zmysłowo jest dokładnie takim samym sprawnym łowcą, jak tysiące lat temu na sawannie.
+            </p>
+          </div>
+        </div>
+
+        <!-- Dog vs Cat Evolutionary Comparison -->
+        <div class="evolution-insight-box" style="border-color: rgba(139, 92, 246, 0.3); background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(19, 27, 39, 0.6) 100%);">
+          <div class="insight-col">
+            <h4 style="color: var(--purple-light);">🐈 Jak myśli kot?</h4>
+            <ul class="insight-list">
+              <li>Kot widzi w człowieku nie "pana i przywódcę stada", lecz gigantycznego, nieagresywnego współlokatora.</li>
+              <li>Miauczenie (*meow*) u dorosłych kotów w naturze niemal nie istnieje — koty wykształciły je specjalnie do manipulowania ludźmi!</li>
+            </ul>
+          </div>
+          <div class="insight-col">
+            <h4 style="color: var(--emerald-light);">🧬 Fenomen kociego miauczenia:</h4>
+            <ul class="insight-list">
+              <li>Badacze z University of Sussex wykazali, że w dźwięk miauczenia proszącego o jedzenie kot wplata częstotliwość <strong>płaczu ludzkiego niemowlęcia (ok. 300–600 Hz)</strong>, co sprawia, że ludzki mózg nie jest w stanie tego dźwięku zignorować!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 2: ZMYSŁY — INTERAKTYWNE SYMULATORY KOTA
+         ============================================================ -->
+    <section class="section" id="zmysly" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--emerald-light); border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">Laboratorium Zmysłów Kota</span>
+          <h2>Nocny kamuflaż, ultradźwięki i wibrysy</h2>
+          <p>Przetestuj interaktywną źrenicę szczelinową, laboratorium częstotliwości 85 kHz, syndrom zmęczenia wąsów oraz generator mruczenia.</p>
+        </div>
+
+        <div class="senses-container">
+
+          <!-- ===== 1. WZROK I PIONOWA ŹRENICA ===== -->
+          <div class="sensory-card" id="wzrok">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(132, 204, 22, 0.2); border: 1px solid #84CC16; color: #A3E635;">👁️</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: #A3E635; border-color: rgba(132, 204, 22, 0.3); background: rgba(132, 204, 22, 0.1);">Pionowa Źrenica & Noktowizja</span>
+                <h3>Wzrok: Optyczna przysłona o 135-krotnej dynamice</h3>
+                <p>Okrągła ludzka źrenica zwęża się zaledwie 15-krotnie. Pionowa szczelina kota potrafi zmniejszyć dopływ światła aż 135-krotnie! Przesuwaj suwak oświetlenia, aby zobaczyć reakcję kociego oka.</p>
+              </div>
+            </div>
+
+            <!-- Interactive Pupil Stage -->
+            <div class="cat-eye-stage">
+              <div class="cat-eye-flex">
+                <!-- Eye Iris Visualizer -->
+                <div class="cat-iris-display" id="catIrisDisplay">
+                  <div class="cat-slit-pupil" id="catPupilSlit"></div>
+                </div>
+
+                <!-- Scene comparison in darkness -->
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.85rem; font-weight: 700; color: var(--text);">Natężenie światła otoczenia:</span>
+                    <span class="mono" id="catLuxVal" style="color: var(--emerald-light); font-weight: 700;">1 Lux</span>
+                  </div>
+
+                  <input type="range" min="0" max="100" value="15" class="range-slider" id="catLuxSlider" aria-label="Suwak natężenia światła">
+                  
+                  <p id="catLuxDesc" style="font-size: 0.88rem; color: var(--text-muted); margin-top: 12px; line-height: 1.6;">
+                    🌙 Pełnia księżyca — źrenica niemal całkowicie otwarta, tapetum lucidum odbija fotony.
+                  </p>
+
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px;">
+                    <div class="cat-vision-compare-view" id="catCompareHuman" style="padding: 16px; text-align: center;">
+                      <div style="font-size: 0.76rem; font-weight: 700; color: #94A3B8; margin-bottom: 20px;">🧑 OKO CZŁOWIEKA</div>
+                      <div style="font-size: 2.2rem;">🌑 🐭</div>
+                      <div style="font-size: 0.72rem; color: #64748B; margin-top: 10px;">Ciemność i zamazane plamy</div>
+                    </div>
+                    <div class="cat-vision-compare-view" id="catCompareCat" style="padding: 16px; text-align: center; border-color: rgba(16, 185, 129, 0.4);">
+                      <div style="font-size: 0.76rem; font-weight: 700; color: var(--emerald-light); margin-bottom: 20px;">🐈 OKO KOTA (Tapetum)</div>
+                      <div style="font-size: 2.2rem; filter: drop-shadow(0 0 10px #10B981);">🌿 🐁 ✨</div>
+                      <div style="font-size: 0.72rem; color: var(--emerald-light); margin-top: 10px;">Pełny kontrast i kontur ofiary</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="fact-pill-strip">
+              <div class="fact-pill">
+                <div class="fact-pill-icon">🚫</div>
+                <p><strong>Martwe pole pod nosem (&lt;30 cm):</strong> Kot ma ogromne oczy w stosunku do czaszki, przez co nie może skupić wzroku na obiektach tuż przed swoim pyszczkiem. Jeśli rzucisz przysmak pod koci nos — kot go nie widzi, lecz bada wibrysami i węchem!</p>
+              </div>
+              <div class="fact-pill">
+                <div class="fact-pill-icon">💚</div>
+                <p><strong>Tapetum Lucidum (Kocie świecące oczy):</strong> Warstwa komórek za siatkówką działa jak lustro. Fotony, które nie zostały wchłonięte, odbijają się i trafiają w receptory po raz drugi. To dlatego kocie oczy w nocy świecą w blasku reflektorów.</p>
+              </div>
+              <div class="fact-pill">
+                <div class="fact-pill-icon">⚡</div>
+                <p><strong>Pole widzenia 200°:</strong> Nieco mniejsze niż u psa (250°), ale kot ma znacznie większe stereoskopowe nakładanie się obrazu obu oczu (140°), co daje mu chirurgiczną ocenę odległości do skoku!</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== 2. SŁUCH DO 85 000 Hz & KIESZONKA HENRY'EGO ===== -->
+          <div class="sensory-card" id="sluch">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(168, 85, 247, 0.2); border: 1px solid #A855F7; color: #D8B4FE;">👂</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: #D8B4FE; border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1);">Słuch Absolutny: do 85 000 Hz</span>
+                <h3>Słuch: Niewiarygodny łowca ultradźwięków</h3>
+                <p>Gdy pies kończy słyszenie przy 65 kHz, kot rejestruje dźwięki aż do 85 kHz. 32 niezależne mięśnie w każdym uchu pozwalają obracać małżowinę o 180° w 0,1 sekundy.</p>
+              </div>
+            </div>
+
+            <div class="hearing-lab-box" style="border-color: rgba(168, 85, 247, 0.4);">
+              <div class="frequency-meter">
+                <div>
+                  <span class="frequency-display" id="catFreqDisplay" style="color: #D8B4FE;">75 000</span>
+                  <span class="frequency-unit">Hz</span>
+                </div>
+                <div class="frequency-status-tag" id="catFreqStatusTag" style="border-color: rgba(168, 85, 247, 0.5); color: #D8B4FE;">
+                  🐈 SUPERMOC KOTA (do 85 000 Hz)
+                </div>
+              </div>
+
+              <div class="slider-container">
+                <input type="range" min="20" max="85000" step="100" value="75000" class="range-slider" id="catFreqSlider" aria-label="Suwak częstotliwości kota">
+                <div class="spectrum-bands">
+                  <div class="spectrum-band" style="width: 23%; background: #3B82F6;" title="Człowiek: 20-20kHz"></div>
+                  <div class="spectrum-band" style="width: 53%; background: #F59E0B;" title="Pies: 20-65kHz"></div>
+                  <div class="spectrum-band" style="width: 24%; background: #A855F7;" title="Tylko Kot: 65-85kHz"></div>
+                </div>
+                <div class="spectrum-legend">
+                  <span>20 Hz</span>
+                  <span>20 kHz (Człowiek)</span>
+                  <span>65 kHz (Pies)</span>
+                  <span>85 kHz (Kot!)</span>
+                </div>
+              </div>
+
+              <button class="sound-toggle-btn" id="toggleMouseSoundBtn" style="border-color: rgba(168, 85, 247, 0.4); color: #D8B4FE;">
+                🐭 Symulacja komunikacji gryzoni (ultradźwiękowy pisk Web Audio)
+              </button>
+            </div>
+
+            <div class="fact-pill-strip">
+              <div class="fact-pill">
+                <div class="fact-pill-icon">👂</div>
+                <p><strong>Kieszonka Henry'ego (Cutaneous marginal pouch):</strong> Ta tajemnicza fałdka skóry na zewnętrznym brzegu ucha kota działa jak rezonator akustyczny. Tłumi niskie szumy wiatru, wyostrzając ultradźwiękowe piski uciekającej nornicy.</p>
+              </div>
+              <div class="fact-pill">
+                <div class="fact-pill-icon">🎯</div>
+                <p><strong>Precyzja namierzania 8 cm:</strong> Z odległości 1 metra kot potrafi bezbłędnie zlokalizować źródło szmeru z dokładnością do 8 centymetrów w czasie zaledwie ułamka sekundy.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== 3. WIBRYSY I SYNDROM WHISKER FATIGUE ===== -->
+          <div class="sensory-card" id="wibrysy">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10B981; color: #6EE7B7;">〰️</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: #6EE7B7; border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">Wibrysy & Whisker Fatigue</span>
+                <h3>Wibrysy: Trójwymiarowy radar i tajemnica pustej miski</h3>
+                <p>Wąsy kota są szersze niż głowa i odpowiadają dokładnie szerokości jego ciała. Jeśli wąsy mieszczą się w otworze — kot wie, że przejdzie całe ciało!</p>
+              </div>
+            </div>
+
+            <!-- Whisker Fatigue Interactive Lab -->
+            <div class="whisker-lab-box">
+              <h4 style="margin-bottom: 6px;">Eksperyment: Dlaczego kot drapie miskę i wyjada tylko środek?</h4>
+              <p style="font-size: 0.9rem; color: var(--text-muted);">
+                Kliknij miskę, aby zobaczyć, co czuje kot podczas posiłku:
+              </p>
+
+              <div class="whisker-bowls-grid">
+                <div class="whisker-bowl-card active-danger" data-bowl="deep">
+                  <div style="font-size: 2.2rem; margin-bottom: 8px;">🥣</div>
+                  <strong>Głęboka, wąska miska</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-dim); margin-top: 4px;">Typowa miska z marketu</div>
+                </div>
+
+                <div class="whisker-bowl-card" data-bowl="flat">
+                  <div style="font-size: 2.2rem; margin-bottom: 8px;">🍽️</div>
+                  <strong>Płaski talerzyk</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-dim); margin-top: 4px;">Zalecany przez felinologów</div>
+                </div>
+              </div>
+
+              <div id="whiskerVisualStatus" style="background: rgba(0, 0, 0, 0.35); border-radius: var(--radius-md); padding: 18px; text-align: center;">
+                <div style="font-size: 3rem; margin-bottom: 8px;">😿💥</div>
+                <div style="font-weight: 700; color: #F87171;">Głęboka miska: PRZEBODŹCOWANIE!</div>
+                <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 6px;">
+                  Wąsy ocierają o brzegi przy każdym kęsie. Impulsy bólowe trafiają do mózgu. Kot zostawia jedzenie na dnie i miauczy o nową porcję!
+                </p>
+              </div>
+
+              <div id="whiskerAlertBox" style="margin-top: 16px; padding: 12px 16px; border-radius: var(--radius-md); background: rgba(239, 68, 68, 0.15); border: 1px solid #F43F5E; font-size: 0.88rem;">
+                ⚠️ <strong>Whisker Fatigue (Zmęczenie wibrysów):</strong> To nie kaprys kota! Głębokie miski wywołują realny ból sensoryczny.
+              </div>
+            </div>
+
+            <!-- Purr Frequency Synthesizer -->
+            <div class="purr-synthesizer-box">
+              <div>
+                <h4 style="margin-bottom: 4px;">Mruczenie lecznicze (25–150 Hz)</h4>
+                <p style="font-size: 0.88rem; color: var(--text-muted); max-width: 520px;">
+                  Koty mruczą za pomocą fałdów głosowych krtani. Badania medyczne wykazały, że wibracje w paśmie 25–50 Hz przyspieszają zrost kości, regenerację ścięgien i obniżają ciśnienie krwi u ludzi!
+                </p>
+              </div>
+              <button class="purr-toggle-btn" id="togglePurrBtn">
+                😻 Uruchom syntezator mruczenia kota (25–150 Hz)
+              </button>
+            </div>
+          </div>
+
+          <!-- ===== 4. SMAK & BRAK RECEPTORA CUKRU ===== -->
+          <div class="sensory-card">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(244, 63, 94, 0.2); border: 1px solid #F43F5E; color: #FDA4AF;">👅</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: #FDA4AF; border-color: rgba(244, 63, 94, 0.3); background: rgba(244, 63, 94, 0.1);">Smak & Szorstki Język</span>
+                <h3>Brak receptora słodyczy (Mutacja Tas1r2)</h3>
+                <p>Kot jest bezwzględnym mięsożercą. Jako jedyny ssak domowy nie posiada zdolności odczuwania smaku słodkiego.</p>
+              </div>
+            </div>
+
+            <div class="fact-pill-strip" style="margin-top: 0;">
+              <div class="fact-pill">
+                <div class="fact-pill-icon">🍬</div>
+                <p><strong>Cukier dla kota nie istnieje:</strong> Kot nie zje ciastka ani cukierka dlatego, że są słodkie (dla niego to neutralna masa). Jeśli kot podkrada lody, kusi go wyłącznie tłuszcz mleczny, a nie cukier!</p>
+              </div>
+              <div class="fact-pill">
+                <div class="fact-pill-icon">👅</div>
+                <p><strong>Język jak tarka (Papillae):</strong> Język kota pokryty jest setkami haczykowatych brodawek z keratyny (tego samego budulca co ludzkie paznokcie). Działa jak grzebień rozczesujący kołtuny i miniaturowa szpachelka zdzierająca mięso z kości.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 3: BEZPIECZEŃSTWO & MOWA CIAŁA („ROZKODUJ KOTA”)
+         ============================================================ -->
+    <section class="section" id="bezpieczenstwo">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: #F87171; background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3);">Kluczowe Bezpieczeństwo</span>
+          <h2>Rozkoduj Kota: Pułapka brzucha i mowa ciała</h2>
+          <p>Koty wysyłają zupełnie inne sygnały niż psy. To, co u psa oznacza prośbę o pieszczoty, u kota może być sygnałem bojowym.</p>
+        </div>
+
+        <div class="safety-master-box" style="border-color: rgba(245, 158, 11, 0.35); background: linear-gradient(180deg, rgba(245, 158, 11, 0.05) 0%, rgba(19, 27, 39, 0.7) 100%);">
+          
+          <!-- Petting Heatmap Stage -->
+          <div class="petting-stage-container">
+            <div class="anatomy-diagram-stage" style="border-color: rgba(139, 92, 246, 0.35);">
+              <div class="anatomy-diagram-wrapper">
+                <svg class="anatomy-silhouette-svg" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                  <defs>
+                    <radialGradient id="catBgGlow" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.18"/>
+                      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="catBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#221A30"/>
+                      <stop offset="50%" stop-color="#161220"/>
+                      <stop offset="100%" stop-color="#0B0912"/>
+                    </linearGradient>
+                    <filter id="catGlow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#8B5CF6" flood-opacity="0.45"/>
+                    </filter>
+                  </defs>
+
+                  <!-- Feline Zen Rings -->
+                  <circle cx="250" cy="160" r="145" fill="none" stroke="rgba(139, 92, 246, 0.12)" stroke-width="1" stroke-dasharray="4 6"/>
+                  <circle cx="250" cy="160" r="95" fill="none" stroke="rgba(139, 92, 246, 0.08)" stroke-width="1"/>
+                  <ellipse cx="265" cy="165" rx="190" ry="110" fill="url(#catBgGlow)"/>
+
+                  <!-- Ground Shadow -->
+                  <ellipse cx="285" cy="285" rx="160" ry="12" fill="rgba(0, 0, 0, 0.6)"/>
+
+                  <!-- Far Legs -->
+                  <path d="M 182 225 L 188 285 L 196 285 L 194 230 Z" fill="#120D1A" opacity="0.85"/>
+                  <path d="M 358 220 L 364 285 L 372 285 L 370 225 Z" fill="#120D1A" opacity="0.85"/>
+
+                  <!-- Far Ear -->
+                  <path d="M 188 88 C 190 70, 194 65, 198 72 C 202 80, 200 92, 196 100 Z" fill="#161022" stroke="#8B5CF6" stroke-width="1.5" opacity="0.7"/>
+
+                  <!-- Cat Silhouette Path (Facing left, graceful arched feline stance) -->
+                  <path d="M 120 140
+                           C 118 135, 126 126, 140 118
+                           C 148 112, 155 105, 168 70
+                           C 172 60, 178 60, 182 72
+                           C 188 88, 192 98, 202 105
+                           C 220 118, 245 125, 275 120
+                           C 310 114, 350 125, 375 145
+                           C 385 152, 395 150, 410 132
+                           C 425 115, 442 105, 448 115
+                           C 452 125, 442 142, 428 160
+                           C 415 175, 408 185, 405 210
+                           C 402 245, 396 285, 386 285
+                           C 378 285, 375 268, 372 245
+                           C 368 220, 355 210, 335 215
+                           C 310 222, 280 224, 255 218
+                           C 240 215, 230 222, 222 250
+                           C 218 270, 214 285, 205 285
+                           C 196 285, 194 265, 192 245
+                           C 190 220, 180 200, 165 185
+                           C 152 172, 138 165, 132 155
+                           C 126 148, 122 145, 120 140 Z"
+                        fill="url(#catBodyGrad)"
+                        stroke="#8B5CF6"
+                        stroke-width="2.5"
+                        stroke-linejoin="round"
+                        filter="url(#catGlow)"/>
+
+                  <!-- Feline Eye -->
+                  <ellipse cx="146" cy="120" rx="4.5" ry="3" fill="#6EE7B7"/>
+                  <ellipse cx="146" cy="120" rx="1.2" ry="2.6" fill="#064E3B"/>
+
+                  <!-- Whiskers -->
+                  <path d="M 125 142 Q 105 138 90 140" fill="none" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1"/>
+                  <path d="M 125 144 Q 105 145 88 149" fill="none" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1"/>
+                  <path d="M 125 146 Q 106 152 92 158" fill="none" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1"/>
+
+                  <!-- Belly Trap Danger Zone Arc -->
+                  <path d="M 260 216 Q 295 226 330 218" fill="none" stroke="#EF4444" stroke-width="2" stroke-dasharray="4 4" opacity="0.8"/>
+
+                  <!-- Spine / Euphoria Arc -->
+                  <path d="M 230 118 Q 285 110 340 125" fill="none" stroke="#F59E0B" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.75"/>
+                </svg>
+
+                <!-- Interactive Touch Zones Locked Coordinates -->
+                <div class="anatomy-hotspots-layer">
+                  <button class="pet-zone-btn pet-zone-chin active" data-zone="chin" style="left: 26%; top: 46%;">1. Pod brodą 🟢</button>
+                  <button class="pet-zone-btn pet-zone-ears" data-zone="ears" style="left: 36%; top: 23%;">2. Uszy 🟢</button>
+                  <button class="pet-zone-btn pet-zone-back" data-zone="back" style="left: 57%; top: 37%;">3. Grzbiet 🟡</button>
+                  <button class="pet-zone-btn pet-zone-belly" data-zone="belly" style="left: 55%; top: 68%;">4. BRZUCH 🔴</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="hotspot-detail-card" id="petDetailCard">
+              <span class="hotspot-badge-tier tier-safe" id="petZoneTier">🟢 100% Zgody i Błogostan</span>
+              <h4 class="hotspot-detail-title" id="petZoneTitle">Pod brodą i policzki (Strefa Euforii)</h4>
+              <p class="hotspot-detail-desc" id="petZoneDesc">
+                W kącikach pyszczka i pod brodą kot ma gruczoły zapachowe wydzielające feromony F3 (feromony zaufania i bezpieczeństwa). Gdy go tam gładzisz, kot sam ociera się o Twoją dłoń i oznacza Cię jako bezpiecznego przyjaciela.
+              </p>
+              <div class="hotspot-advice-box" style="border-color: var(--emerald);">
+                Zawsze pozwól kotu najpierw powąchać Twój wyciągnięty palec. Jeśli sam otrze się o niego policzkiem — masz pełną zgodę na pieszczoty!
+              </div>
+            </div>
+          </div>
+
+          <!-- Lethal Toxic Substances for Cats -->
+          <div style="margin-top: 40px;">
+            <h3 style="text-align: center; margin-bottom: 8px;">☠️ Śmiertelne zagrożenia dla kota w domu</h3>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 24px;">Organizm kota ma deficyt enzymów wątrobowych (glukuronidacji), przez co substancje neutralne dla ludzi i psów są dla kota śmiertelne:</p>
+
+            <div class="toxic-food-grid">
+              <div class="toxic-food-card">
+                <div class="toxic-food-header">
+                  <span>🌸</span>
+                  <h5>LILIE (Liliaceae) — ZABÓJCA NR 1</h5>
+                </div>
+                <p>Nawet ziarenko pyłku na futrze, obgryzienie płatka lub wypicie wody z wazonu po liliach wywołuje piorunującą martwicę nerek i zgon w 24–48h. Nigdy nie wnoś lilii do domu z kotem!</p>
+              </div>
+
+              <div class="toxic-food-card">
+                <div class="toxic-food-header">
+                  <span>💊</span>
+                  <h5>Paracetamol & Ibuprofen</h5>
+                </div>
+                <p>Jedna ludzka tabletka paracetamolu to dawka śmiertelna. Niszczy hemoglobinę, uniemożliwiając transport tlenu (kot dosłownie dusi się od środka).</p>
+              </div>
+
+              <div class="toxic-food-card">
+                <div class="toxic-food-header">
+                  <span>🧴</span>
+                  <h5>Permetryna (Krople psie)</h5>
+                </div>
+                <p>Preparaty przeciwpchelne dla psów często zawierają permetrynę. U kotów wywołuje drgawki, porażenie układu nerwowego i śmierć.</p>
+              </div>
+
+              <div class="toxic-food-card">
+                <div class="toxic-food-header">
+                  <span>🪟</span>
+                  <h5>Okna uchylne (Syndrom okna uchylnego)</h5>
+                </div>
+                <p>Kot próbujący wydostać się przez okno uchylone od góry zsuwa się w klin. Następuje zmiażdżenie narządów wewnętrznych i przerwanie aorty.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA MINI GRA: KOCI REFLEKS — NOCNY ŁOWCA
+         ============================================================ -->
+    <section class="section" id="gra">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--purple-light); border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1);">🎮 Zagraj i Zmierz Czas Reakcji</span>
+          <h2>Mini Gra: Koci Refleks — Nocny Łowca</h2>
+          <p>Koty reagują na ruch w ułamku sekundy. Przetestuj swój czas reakcji: zaczaj się w mroku i uderz łapą natychmiast, gdy mysz wychyli się z nory!</p>
+        </div>
+
+        <div class="minigame-card" style="border-color: rgba(139, 92, 246, 0.3);">
+          <div class="minigame-level-header">
+            <div class="minigame-level-badge" id="catGameLevelBadge" style="background: rgba(139, 92, 246, 0.15); border-color: rgba(139, 92, 246, 0.4); color: var(--purple-light);">
+              <span>Runda 1/3:</span> Zmierzch w Salonie 🛋️
+            </div>
+            <div class="minigame-level-dots" id="catGameLevelDots">
+              <span class="level-dot active" title="Poziom 1" style="background: var(--purple-light); border-color: var(--purple-light); box-shadow: 0 0 8px rgba(168, 85, 247, 0.6);"></span>
+              <span class="level-dot" title="Poziom 2"></span>
+              <span class="level-dot" title="Poziom 3"></span>
+            </div>
+          </div>
+
+          <div class="minigame-hud">
+            <div class="hud-item">
+              <span>⏱️ Czas:</span>
+              <span class="hud-val" id="catGameTimer" style="color: var(--purple-light);">30s</span>
+            </div>
+            <div class="hud-item">
+              <span>🎯 Złapano:</span>
+              <span class="hud-val" id="catGameScore" style="color: var(--purple-light);">0 / 4</span>
+            </div>
+            <div class="hud-item">
+              <span>⚡ Ostatni refleks:</span>
+              <span class="hud-val" id="catGameReaction" style="color: var(--purple-light);">--- ms</span>
+            </div>
+            <div class="hud-item">
+              <span>🏆 Średni czas:</span>
+              <span class="hud-val" id="catGameAvgReaction" style="color: #10B981;">--- ms</span>
+            </div>
+          </div>
+
+          <div class="cat-reflex-stage" id="catReflexStage">
+            <!-- Game Overlay -->
+            <div class="minigame-overlay" id="catGameOverlay">
+              <div style="font-size: 3.5rem; margin-bottom: 12px;" id="catGameOverIcon">🐾⚡🐭</div>
+              <h4 id="catGameOverTitle">Koci Refleks — Nocny Łowca</h4>
+              <p id="catGameOverDesc">
+                Mysz 🐁 pojawia się w losowym miejscu na ułamek sekundy i natychmiast ucieka! Dotknij ekranu lub kliknij myszą jak najszybciej, by wyprowadzić koci cios pazurem. Masz 5 celów do upolowania.
+              </p>
+              <div class="overlay-actions">
+                <button class="btn btn-primary" id="startCatGameBtn" style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);">Rozpocznij polowanie 🐾</button>
+                <button class="btn btn-primary" id="nextCatLevelBtn" style="display: none; background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);">Kolejny poziom →</button>
+                <button class="btn btn-secondary" id="restartCatGameBtn" style="display: none;">Powtórz poziom ↺</button>
+                <button class="btn btn-secondary" id="resetCatCampaignBtn" style="display: none;">Zacznij od poziomu 1 🛋️</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 4: INTERAKTYWNY MINI QUIZ O KOTACH
+         ============================================================ -->
+    <section class="section" id="quiz" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--purple-light); border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1);">Sprawdź swoją wiedzę</span>
+          <h2>Mini Quiz Mistrza Kocich Zmysłów</h2>
+          <p>5 pytań weryfikujących fakty o widzeniu nocnym, wibrysach i mowie ciała kota.</p>
+        </div>
+
+        <div class="quiz-wrapper" style="border-color: rgba(168, 85, 247, 0.3);">
+          <div class="quiz-meter-bar">
+            <div class="quiz-meter-progress" id="catQuizMeterProgress" style="background: linear-gradient(90deg, #8B5CF6 0%, #10B981 100%);"></div>
+          </div>
+          <div id="catQuizDynamicBody">
+            <!-- Rendered by js/cat-simulators.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation between Animals -->
+    <section style="padding: 60px 0; text-align: center;">
+      <div class="container">
+        <h3 style="margin-bottom: 16px;">Poznaj inne zwierzęta</h3>
+        <p style="margin-bottom: 24px;">Przełącz się na percepcję psa domowego lub przejrzyj pełny katalog gatunków.</p>
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a href="pies.html" class="btn btn-primary">
+            <span>🐕 Zobacz zmysły psa</span>
+          </a>
+          <button class="btn btn-secondary animal-catalog-trigger">
+            <span>🐾 Otwórz katalog wszystkich zwierząt</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Author Profile Modal (Dorian Kalinowski) -->
+  <div class="modal-backdrop" id="authorModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeAuthorModal" aria-label="Zamknij okno">✕</button>
+      <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="author-avatar-big">
+      <h3 class="author-modal-name">Dorian Kalinowski</h3>
+      <div class="author-modal-role">Twórca aplikacji „Świat zmysłami zwierząt”</div>
+      <p class="author-bio">
+        Aplikacja powstała z pasji do zoologii kognitywnej, neuronauki percepcji oraz nowoczesnego web developmentu. Celem projektu jest przeniesienie odbiorcy w intymny świat zmysłów natury — tak, abyśmy przestali oceniać zwierzęta wyłącznie przez pryzmat ludzkich zmysłów, a zaczęli rozumieć ich unikalną perspektywę i mowę ciała.
+      </p>
+      <div style="text-align: center;">
+        <button class="btn btn-primary" id="confirmAuthorModal">Zamknij</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PWA Install Prompt Banner -->
+  <div class="pwa-install-banner" id="pwaBanner">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 1.6rem;">📱</span>
+      <div>
+        <div style="font-size: 0.92rem; font-weight: 700;">Zainstaluj jako aplikację PWA</div>
+        <div style="font-size: 0.78rem; color: var(--text-muted);">Szybki dostęp i działanie offline bez przeglądarki</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="pwaInstallBtn" style="padding: 8px 18px; font-size: 0.85rem;">Instaluj</button>
+    <button class="modal-close-btn" id="pwaDismissBtn" style="position: static; width: 28px; height: 28px; font-size: 0.8rem;">✕</button>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar (Native App Feel) -->
+  <div class="mobile-bottom-bar" role="navigation" aria-label="Nawigacja mobilna">
+    <a href="index.html" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🏠</span>
+      <span>Główna</span>
+    </a>
+    <button class="bottom-bar-item animal-catalog-trigger">
+      <span class="bottom-bar-icon">🐾</span>
+      <span>Katalog</span>
+    </button>
+    <a href="kot.html" class="bottom-bar-item active">
+      <span class="bottom-bar-icon">🐈</span>
+      <span>Kot</span>
+    </a>
+    <a href="#bezpieczenstwo" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🛡️</span>
+      <span>Dotyk</span>
+    </a>
+    <button class="bottom-bar-item" id="mobileAuthorTrigger">
+      <span class="bottom-bar-icon">👤</span>
+      <span>Autor</span>
+    </button>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-author">
+        Zaprojektowane i stworzone przez: <strong>Dorian Kalinowski</strong>
+      </p>
+      <p class="footer-rights">
+        © 2026 Świat zmysłami zwierząt. Autorska aplikacja edukacyjna PWA. Wszelkie prawa zastrzeżone.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/cat-simulators.js"></script>
+</body>
+</html>
