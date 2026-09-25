@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#06090E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Zmysły Zwierząt">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <title>Pszczoła miodna — Świat zmysłami zwierząt</title>
+  <meta name="description" content="Zobacz kwiaty w ultrafiolecie (UV), rozszyfruj taniec wywijany von Frischa, poznaj ładunek elektrostatyczny owadów i zagraj w 10-poziomową grę zapylacza.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="nav" role="navigation" aria-label="Nawigacja główna">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon-wrapper">🐾</div>
+        <span>Świat zmysłami zwierząt</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+            <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Strona główna</a>
+        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog (10)</button>
+
+        <!-- Dropdown: Wybierz zwierzę (10) -->
+        <div class="nav-dropdown" id="navAnimalsDropdown">
+          <button class="nav-link nav-dropdown-btn" id="navDropdownBtn" aria-expanded="false" style="cursor: pointer;">
+            <span>🐝 Pszczoła</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu">
+            <a href="pies.html" class="nav-dropdown-item"><span class="item-emoji">🐕</span> Pies domowy</a>
+            <a href="kot.html" class="nav-dropdown-item"><span class="item-emoji">🐈</span> Kot domowy</a>
+            <a href="dzik.html" class="nav-dropdown-item"><span class="item-emoji">🐗</span> Dzik euroazjatycki</a>
+            <a href="wilk.html" class="nav-dropdown-item"><span class="item-emoji">🐺</span> Wilk szary</a>
+            <a href="nietoperz.html" class="nav-dropdown-item"><span class="item-emoji">🦇</span> Nietoperz</a>
+            <a href="zmija.html" class="nav-dropdown-item"><span class="item-emoji">🐍</span> Żmija zygzakowata</a>
+            <a href="sowa.html" class="nav-dropdown-item"><span class="item-emoji">🦉</span> Sowa (Płomykówka)</a>
+            <a href="niedzwiedz.html" class="nav-dropdown-item"><span class="item-emoji">🐻</span> Niedźwiedź brunatny</a>
+            <a href="pszczola.html" class="nav-dropdown-item active"><span class="item-emoji">🐝</span> Pszczoła miodna</a>
+            <a href="lis.html" class="nav-dropdown-item"><span class="item-emoji">🦊</span> Lis rudy</a>
+          </div>
+        </div>
+
+        <!-- Creator Chip (Dorian Kalinowski) -->
+        <div class="creator-chip" id="authorChip" title="Dowiedz się więcej o autorze">
+          <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="creator-avatar">
+          <div class="creator-text">
+            <span class="creator-name">Dorian Kalinowski</span>
+            <span class="creator-role">Twórca aplikacji</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Animal Page Hero -->
+  <header class="animal-hero" id="top" style="background: linear-gradient(180deg, rgba(234, 179, 8, 0.16) 0%, rgba(9, 13, 19, 0) 100%);">
+    <div class="container">
+      <div class="animal-hero-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="index.html">Główna</a>
+            <span>›</span>
+            <span>Owady zapylające</span>
+            <span>›</span>
+            <span style="color: var(--amber-light);">Pszczoła miodna</span>
+          </div>
+          <h1>Pszczoła: <span style="color: var(--amber-light);">Świat w Ultrafiolecie</span></h1>
+          <p class="hero-latin">Apis mellifera • Zapylacz ekosystemów Polski</p>
+          <p class="hero-desc">
+            Podczas gdy ludzie widzą zwykłe żółte płatki mleczu, pszczoła dostrzega na nich <strong>fluorescencyjne pasy startowe i tarcze UV</strong> prowadzące prosto do nektaru. Nawiguje za pomocą światła spolaryzowanego i ładuje się elektrostatycznie w locie do <strong>+100 woltów</strong>, dzięki czemu pyłek sam przyciąga się do jej ciała!
+          </p>
+          <div class="hero-stats-grid">
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--amber-light);">300-650 nm</span>
+              <span class="stat-label">Pasmo widzenia UV (nie widzi czerwieni)</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--cyan-light);">300 Hz</span>
+              <span class="stat-label">Częstotliwość fuzji błysków (człowiek: 60 Hz)</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: #F472B6;">+100 V</span>
+              <span class="stat-label">Ładunek elektrostatyczny w locie</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="animal-portrait-card" style="border-color: rgba(234, 179, 8, 0.35); background: radial-gradient(circle at center, rgba(234, 179, 8, 0.18) 0%, rgba(19, 27, 39, 0.8) 70%);">
+          <div class="animal-portrait-glow" style="background: radial-gradient(circle, rgba(234, 179, 8, 0.3) 0%, transparent 70%);"></div>
+          <div class="animal-portrait-emoji" role="img" aria-label="Pszczoła miodna">🐝</div>
+          <div class="portrait-tags">
+            <span class="portrait-tag">Gatunek: Apis mellifera</span>
+            <span class="portrait-tag">Oczy: 2 złożone + 3 przyoczka</span>
+            <span class="portrait-tag">Język: Waggle dance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Subnavigation -->
+  <div class="sticky-subnav">
+    <div class="sticky-subnav-inner">
+      <a href="#historia" class="subnav-pill active">📜 Ewolucja</a>
+      <a href="#zmysly" class="subnav-pill">✨ Widzenie UV</a>
+      <a href="#anatomia" class="subnav-pill">🧬 Budowa & Oczy</a>
+      <a href="#bezpieczenstwo" class="subnav-pill">🛡️ Protokół Żądła</a>
+      <a href="#ciekawostki" class="subnav-pill">💡 Ciekawostki</a>
+      <a href="#gra" class="subnav-pill">🎮 Mini Gra</a>
+      <a href="#quiz" class="subnav-pill">🎯 Mini Quiz</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================
+         SEKCJA 1: EWOLUCJA I BIOLOGIA W PIGUŁCE
+         ============================================================ -->
+    <section class="section" id="historia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light); border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.1);">Wielki Pakt z Kwiatami</span>
+          <h2>120 Milionów Lat Ewolucji Zapylania i Superorganizmu</h2>
+          <p>Jak mięsożerne osy z epoki dinozaurów stały się wegetariańskimi zapylaczami, tworząc najbardziej złożone społeczeństwa w świecie zwierząt.</p>
+        </div>
+
+        <div class="timeline-stepper">
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--amber-light); box-shadow: 0 0 12px var(--amber);"></div>
+            <div class="step-header">
+              <span class="step-title">Melittosphex burmensis — najstarsza pszczoła w bursztynie</span>
+              <span class="step-period">~100 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              Odkryta w birmańskim bursztynie maleńka pszczoła zachowała cechy przejściowe: anatomię osy grzebaczowatej, lecz rozgałęzione włoski na ciele przystosowane do zbierania pyłku. Zbiegło się to z eksplozją ewolucyjną roślin okrytozalążkowych (kwiatowych).
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--amber-light); box-shadow: 0 0 12px var(--amber);"></div>
+            <div class="step-header">
+              <span class="step-title">Ewolucja widzenia UV i symbioza barwna</span>
+              <span class="step-period">~80 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              Rośliny kwiatowe zaczęły konkurować o uwagę owadów. Wytworzyły barwniki flawonoidowe pochłaniające ultrafiolet w centrum kielicha, a odbijające go na płatkach. Pszczoły wykształciły omatidia czułe na UV (300–400 nm), widząc kwiaty jak świecące neony!
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--amber-light); box-shadow: 0 0 12px var(--amber);"></div>
+            <div class="step-header">
+              <span class="step-title">Eusocjalność i narodziny superorganizmu</span>
+              <span class="step-period">~30 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              Wykształcił się podział kastowy: matka (królowa), robotnice i trutnie. Pojedyncza pszczoła przestała być samodzielnym zwierzęciem — stała się jakby jedną komórką wielkiego, inteligentnego superorganizmu pasieki, zdolnego regulować temperaturę w ulu z dokładnością do 0,5°C!
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--amber-light); box-shadow: 0 0 12px var(--amber);"></div>
+            <div class="step-header">
+              <span class="step-title">Pszczoła miodna w Europie dzisiaj</span>
+              <span class="step-period">Dziś</span>
+            </div>
+            <p class="step-body">
+              <em>Apis mellifera</em> odpowiada za zapylanie ponad 80% gatunków roślin uprawnych i dzikich w Polsce. Bez jej pracy zniknęłyby jabłka, truskawki, rzepak, pomidory i kawa. Jest jednym z najważniejszych filarów biosfery.
+            </p>
+          </div>
+        </div>
+
+        <div class="evolution-insight-box" style="border-color: rgba(245, 158, 11, 0.3); background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(19, 27, 39, 0.6) 100%);">
+          <div class="insight-col">
+            <h4 style="color: var(--amber-light);">🐝 Taniec wywijany: Język symboliczny</h4>
+            <ul class="insight-list">
+              <li>Pszczoły to jedyne bezkręgowce posługujące się <strong>językiem abstrakcyjnym</strong>! Po powrocie do ciemnego ula zwiadowczyni tańczy na pionowym plastrze.</li>
+              <li>Oś jej biegu względem grawitacji (pionu) określa kąt do kwiatów względem słońca, a długość wywijania odwłokiem określa odległość co do metra!</li>
+            </ul>
+          </div>
+          <div class="insight-col">
+            <h4 style="color: var(--cyan-light);">⚡ Fizyka pyłku i elektrostatyka:</h4>
+            <ul class="insight-list">
+              <li>Pszczoła machająca skrzydłami 230 razy na sekundę traci elektrony i ładuje się dodatnio (nawet do <strong>+100 woltów</strong>). Kwiat ma ładunek ujemny. Gdy pszczoła zbliża się do pręcika, ziarna pyłku dosłownie przeskakują na jej ciało przez powietrze!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sensory Comparison Section -->
+    <section class="section" id="zmysly" style="padding-top: 2rem;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(234, 179, 8, 0.12); color: var(--amber-light); border: 1px solid rgba(234, 179, 8, 0.3);">
+            Zmysły Obezwładniające Ludzką Optykę
+          </div>
+          <h2>Jak pszczoła odbiera świat łąki i kwiatów?</h2>
+          <p class="section-lead">
+            Ewolucja wyposażyła pszczołę w zmysły, o których człowiek bez skomplikowanych przyrządów laboratoryjnych nie miał pojęcia przez tysiąclecia.
+          </p>
+        </div>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <div class="card-icon-header" style="background: rgba(168, 85, 247, 0.15); color: var(--purple-light);">✨</div>
+            <h3>Oko w Ultrafiolecie (300–650 nm)</h3>
+            <p>
+              Pszczoły nie widzą czystej czerwieni (jest dla nich ciemna jak czerń), za to widzą ultrafiolet. Rośliny kwiatowe ewolucyjnie wytworzyły na płatkach barwniki pochłaniające UV w środku kwiatu (ciemny „bullseye”) i odbijające UV na krawędziach, tworząc lądowiska dla owadów!
+            </p>
+            <div class="card-stat-pill" style="color: var(--purple-light); border-color: rgba(168, 85, 247, 0.3);">
+              Pasmo widzenia: UV, błękit, zieleń
+            </div>
+          </div>
+
+          <div class="comparison-card">
+            <div class="card-icon-header" style="background: rgba(56, 189, 248, 0.15); color: var(--cyan-light);">🧭</div>
+            <h3>Kompas Światła Spolaryzowanego</h3>
+            <p>
+              Na czubku głowy pszczoła ma 3 proste przyoczka (ocelli), które potrafią analizować płaszczyznę polaryzacji światła słonecznego na niebie. Dzięki temu wie dokładnie, gdzie znajduje się słońce, nawet gdy niebo jest w 95% zachmurzone!
+            </p>
+            <div class="card-stat-pill" style="color: var(--cyan-light); border-color: rgba(56, 189, 248, 0.3);">
+              Nawigacja w pochmurne dni bezbłędna
+            </div>
+          </div>
+
+          <div class="comparison-card">
+            <div class="card-icon-header" style="background: rgba(234, 179, 8, 0.15); color: var(--amber-light);">💃</div>
+            <h3>Taniec Wywijany (Język Komunikacji)</h3>
+            <p>
+              Odkryty przez noblistę Karla von Frischa: robotnica po powrocie do ciemnego ula tańczy na pionowym plastrze wosku. Kąt osi tańca względem pionu (grawitacji) precyzyjnie koduje kąt lotu względem słońca, a czas trwania wibracji odwłoka określa odległość (1 sekunda = ok. 1 km).
+            </p>
+            <div class="card-stat-pill" style="color: var(--amber-light); border-color: rgba(234, 179, 8, 0.3);">
+              Jedyny symboliczny język u bezkręgowców
+            </div>
+          </div>
+
+          <div class="comparison-card">
+            <div class="card-icon-header" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald-light);">⚡</div>
+            <h3>Pole Elektrostatyczne i Przyciąganie Pyłku</h3>
+            <p>
+              Machając skrzydłami 230 razy na sekundę, pszczoła trze o powietrze i wytwarza dodatni potencjał elektryczny rzędu kilkudziesięciu woltów. Kwiaty mają potencjał ujemny. Pyłek dosłownie sam przeskakuje przez powietrze na ciało pszczoły!
+            </p>
+            <div class="card-stat-pill" style="color: var(--emerald-light); border-color: rgba(16, 185, 129, 0.3);">
+              Pyłek przeskakuje elektrostatycznie
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Simulator 1: UV Vision vs Human Vision Canvas -->
+    <section class="section" style="background: rgba(255, 255, 255, 0.02);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(234, 179, 8, 0.12); color: var(--amber-light); border: 1px solid rgba(234, 179, 8, 0.3);">
+            Interaktywny Symulator Optyczny
+          </div>
+          <h2>Kwiat Oczami Człowieka vs Oczami Pszczoły (UV)</h2>
+          <p class="section-lead">
+            Przełącz tryb widzenia i zobacz, jak pozornie zwyczajny żółty kwiat mniszka ujawnia sekretne ultrafioletowe drogowskazy, które ewolucja przygotowała wyłącznie dla owadów!
+          </p>
+        </div>
+
+        <div class="simulator-wrapper" style="border: 1px solid rgba(234, 179, 8, 0.3);">
+          <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <button id="beeUVToggleBtn" class="primary-btn" style="background: var(--purple-light); border-color: var(--purple-light); color: #fff;">
+                ✨ Przełącz na Widok Pszczoły (UV)
+              </button>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <label for="beeFlowerSelect" style="font-size: 0.9rem; color: var(--text-muted); font-weight: 600;">Gatunek kwiatu:</label>
+              <select id="beeFlowerSelect" style="background: var(--bg-card); color: var(--text-bright); border: 1px solid rgba(255,255,255,0.15); padding: 6px 12px; border-radius: 8px; font-size: 0.9rem;">
+                <option value="dandelion">Mniszek lekarski (Taraxacum)</option>
+                <option value="evening_primrose">Wiesiołek dwuletni (Oenothera)</option>
+                <option value="anemone">Zawilec leśny (Anemone)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; background: #080d1a;">
+            <canvas id="beeUVCanvas" style="width: 100%; height: 300px; display: block;"></canvas>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.75rem; text-align: center;">
+            💡 Środek kwiatu pochłania UV, tworząc ciemny punkt skupiający wzrok robotnicy, a promieniście ułożone pasy działają jak strzałki wskazujące wprost do miodników z nektarem.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Simulator 2: Waggle Dance & Acoustics -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(168, 85, 247, 0.12); color: var(--purple-light); border: 1px solid rgba(168, 85, 247, 0.3);">
+            Biokomunikacja i Akustyka
+          </div>
+          <h2>Rozszyfruj Taniec Wywijany (Waggle Dance)</h2>
+          <p class="section-lead">
+            Ustaw kąt i odległość kwiatów, zobacz taniec pszczoły na pionowym plastrze i posłuchaj syntetycznych wibracji jej odwłoka (245 Hz).
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: center;">
+          <div class="simulator-wrapper" style="border: 1px solid rgba(168, 85, 247, 0.3);">
+            <div style="margin-bottom: 1.25rem;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                <label for="waggleAngleSlider" style="font-size: 0.88rem; font-weight: 600;">Kierunek względem słońca:</label>
+                <span id="waggleAngleVal" style="font-size: 0.88rem; color: var(--amber-light); font-weight: 700;">45° względem słońca</span>
+              </div>
+              <input type="range" id="waggleAngleSlider" min="0" max="360" value="45" style="width: 100%; accent-color: var(--amber-light);">
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                <label for="waggleDistSlider" style="font-size: 0.88rem; font-weight: 600;">Dystans do pożytku:</label>
+                <span id="waggleDistVal" style="font-size: 0.88rem; color: var(--cyan-light); font-weight: 700;">800 m od ula</span>
+              </div>
+              <input type="range" id="waggleDistSlider" min="100" max="3000" value="800" step="50" style="width: 100%; accent-color: var(--cyan-light);">
+            </div>
+
+            <button id="playWaggleBtn" class="primary-btn" style="width: 100%; background: var(--purple-light); border-color: var(--purple-light);">
+              🔊 Odtwórz Dźwięk Tańca (Buczenie Skrzydeł 245 Hz)
+            </button>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 16px; padding: 1.5rem; text-align: center;">
+            <h4 style="margin-bottom: 0.75rem; font-size: 1.05rem;">Wizualizacja na Plastrze Miodu</h4>
+            <div style="border-radius: 12px; overflow: hidden; background: #17120a;">
+              <canvas id="waggleDanceCanvas" style="width: 100%; height: 200px; display: block;"></canvas>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-dim); margin-top: 0.75rem; line-height: 1.5;">
+              🐝 Pszczoła biegnie po prostej linii, energicznie potrząsając odwłokiem, a następnie wraca po łuku. Towarzyszki dotykają jej czułkami w całkowitym mroku ula i natychmiast ruszają pod wskazanym kątem!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anatomy Explorer Section -->
+    <section class="section" id="anatomia" style="background: rgba(255, 255, 255, 0.02);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(234, 179, 8, 0.12); color: var(--amber-light); border: 1px solid rgba(234, 179, 8, 0.3);">
+            Mikroanatomia Owada
+          </div>
+          <h2>Budowa i Niezwykłe Narządy Pszczoły Robotnicy</h2>
+          <p class="section-lead">
+            Kliknij poszczególne elementy mikroskopijnego ciała robotnicy, aby odkryć jej zaawansowane instrumenty nawigacyjne i zbierackie.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; align-items: center;">
+          <!-- SVG Diagram -->
+          <div style="background: var(--bg-card); border: 1px solid rgba(234, 179, 8, 0.3); border-radius: 16px; padding: 2rem; text-align: center;">
+            <svg viewBox="0 0 500 320" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" aria-label="Anatomia pszczoły miodnej">
+              <defs>
+                <linearGradient id="beeGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#EAB308" stop-opacity="0.25"/>
+                  <stop offset="100%" stop-color="#713F12" stop-opacity="0.05"/>
+                </linearGradient>
+              </defs>
+              <rect width="500" height="320" rx="12" fill="url(#beeGlow)"/>
+
+              <!-- Wings (translucent) -->
+              <ellipse cx="240" cy="110" rx="70" ry="30" fill="rgba(56, 189, 248, 0.25)" stroke="#38BDF8" stroke-width="1.5" transform="rotate(-25 240 110)" />
+              <ellipse cx="280" cy="115" rx="55" ry="24" fill="rgba(56, 189, 248, 0.2)" stroke="#38BDF8" stroke-width="1.5" transform="rotate(-35 280 115)" />
+
+              <!-- Abdomen with stripes -->
+              <ellipse cx="330" cy="180" rx="65" ry="40" fill="#CA8A04" stroke="#854D0E" stroke-width="2"/>
+              <path d="M 300 150 Q 310 180 300 210" stroke="#000" stroke-width="10"/>
+              <path d="M 330 142 Q 340 180 330 218" stroke="#000" stroke-width="12"/>
+              <path d="M 360 148 Q 370 180 360 212" stroke="#000" stroke-width="10"/>
+
+              <!-- Thorax -->
+              <ellipse cx="230" cy="180" rx="45" ry="36" fill="#854D0E" stroke="#A16207" stroke-width="2"/>
+
+              <!-- Head -->
+              <circle cx="150" cy="180" r="30" fill="#713F12" stroke="#854D0E" stroke-width="2"/>
+
+              <!-- Compound Eye -->
+              <ellipse cx="140" cy="175" rx="14" ry="20" fill="#18181B" stroke="#FACC15" stroke-width="1.5"/>
+
+              <!-- Antennae -->
+              <path d="M 140 155 Q 115 130 90 135" fill="none" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
+              <path d="M 150 155 Q 130 120 110 115" fill="none" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
+
+              <!-- Legs & Pollen Basket -->
+              <path d="M 215 210 L 200 270 L 180 290" fill="none" stroke="#713F12" stroke-width="4" stroke-linecap="round"/>
+              <path d="M 245 210 L 255 275 L 240 295" fill="none" stroke="#713F12" stroke-width="4" stroke-linecap="round"/>
+              <path d="M 270 210 L 305 265 L 320 290" fill="none" stroke="#713F12" stroke-width="5" stroke-linecap="round"/>
+              <!-- Pollen Basket (Golden ball on hind leg) -->
+              <circle cx="305" cy="265" r="16" fill="#FACC15" stroke="#EAB308" stroke-width="2"/>
+
+              <!-- Stinger Tip at rear -->
+              <polygon points="395,180 415,180 400,183" fill="#000"/>
+
+              <!-- Interactive Points -->
+              <g class="anatomy-point" style="cursor: pointer;">
+                <circle cx="305" cy="265" r="12" fill="#EAB308" opacity="0.9"/>
+                <circle cx="305" cy="265" r="20" fill="none" stroke="#EAB308" stroke-width="2" opacity="0.6">
+                  <animate attributeName="r" values="12;24;12" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <text x="305" y="270" fill="#000" font-size="12" font-weight="bold" text-anchor="middle">1</text>
+              </g>
+
+              <g class="anatomy-point" style="cursor: pointer;">
+                <circle cx="140" cy="175" r="12" fill="#EAB308" opacity="0.9"/>
+                <circle cx="140" cy="175" r="20" fill="none" stroke="#EAB308" stroke-width="2" opacity="0.6">
+                  <animate attributeName="r" values="12;24;12" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+                </circle>
+                <text x="140" y="180" fill="#000" font-size="12" font-weight="bold" text-anchor="middle">2</text>
+              </g>
+
+              <g class="anatomy-point" style="cursor: pointer;">
+                <circle cx="95" cy="135" r="12" fill="#EAB308" opacity="0.9"/>
+                <circle cx="95" cy="135" r="20" fill="none" stroke="#EAB308" stroke-width="2" opacity="0.6">
+                  <animate attributeName="r" values="12;24;12" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+                </circle>
+                <text x="95" y="140" fill="#000" font-size="12" font-weight="bold" text-anchor="middle">3</text>
+              </g>
+
+              <g class="anatomy-point" style="cursor: pointer;">
+                <circle cx="410" cy="180" r="12" fill="#EAB308" opacity="0.9"/>
+                <circle cx="410" cy="180" r="20" fill="none" stroke="#EAB308" stroke-width="2" opacity="0.6">
+                  <animate attributeName="r" values="12;24;12" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+                </circle>
+                <text x="410" y="185" fill="#000" font-size="12" font-weight="bold" text-anchor="middle">4</text>
+              </g>
+
+              <g class="anatomy-point" style="cursor: pointer;">
+                <circle cx="230" cy="180" r="12" fill="#EAB308" opacity="0.9"/>
+                <circle cx="230" cy="180" r="20" fill="none" stroke="#EAB308" stroke-width="2" opacity="0.6">
+                  <animate attributeName="r" values="12;24;12" dur="2s" begin="1.6s" repeatCount="indefinite"/>
+                </circle>
+                <text x="230" y="185" fill="#000" font-size="12" font-weight="bold" text-anchor="middle">5</text>
+              </g>
+            </svg>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1.25rem;">
+              <button class="anatomy-btn active" data-bee-anatomy="corbicula">1. Koszyczek Pyłkowy</button>
+              <button class="anatomy-btn" data-bee-anatomy="eyes">2. Oczy Mozaikowe</button>
+              <button class="anatomy-btn" data-bee-anatomy="antennae">3. Czułki Węchowe</button>
+              <button class="anatomy-btn" data-bee-anatomy="stinger">4. Żądło z Zadziorami</button>
+              <button class="anatomy-btn" data-bee-anatomy="electrostatic">5. Ładunek +100V</button>
+            </div>
+          </div>
+
+          <!-- Inspector Details Card -->
+          <div class="anatomy-card" style="border: 1px solid rgba(234, 179, 8, 0.3);">
+            <div class="badge" style="background: rgba(234, 179, 8, 0.2); color: var(--amber-light); margin-bottom: 0.75rem;">
+              Mikroskopijna Biomechanika
+            </div>
+            <h3 id="beeAnatomyTitle" style="font-size: 1.4rem; margin-bottom: 0.75rem; color: #fff;">
+              Koszyczki Pyłkowe (Corbiculae na Odnóżach)
+            </h3>
+            <p id="beeAnatomyDesc" style="color: var(--text-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+              Na goleniach tylnych odnóży robotnicy znajdują się spłaszczone zagłębienia otoczone sztywnymi szczecinkami. Pszczoła w locie zbiera pyłek z całego owłosionego ciała i ubija go w tzw. obnóża pyłkowe ważące do 30% masy jej ciała.
+            </p>
+            <div id="beeAnatomyStat" class="card-stat-pill" style="color: var(--amber-light); border-color: rgba(234, 179, 8, 0.4);">
+              Pojemność koszyczka: do 15 mg pyłku
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- First Aid Protocol: Crucial Safety Section -->
+    <section class="section" id="bezpieczenstwo">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(239, 68, 68, 0.12); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3);">
+            Pierwsza Pomoc i Ratownictwo Medyczne
+          </div>
+          <h2>Jak Prawidłowo Usunąć Żądło Pszczoły?</h2>
+          <p class="section-lead">
+            Większość ludzi popełnia błąd, który drastycznie pogarsza skutki użądlenia. Wybierz, jak zareagujesz:
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+          <div class="bee-aid-card" data-action="tweezers" style="background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem; cursor: pointer; text-align: center; transition: all 0.2s;">
+            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🤏❌</div>
+            <h4 style="margin-bottom: 0.25rem;">A. Chwytam pęsetą lub palcami</h4>
+            <p style="font-size: 0.82rem; color: var(--text-dim); margin: 0;">Ściskam wystające żądło i wyciągam</p>
+          </div>
+
+          <div class="bee-aid-card" data-action="suck" style="background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem; cursor: pointer; text-align: center; transition: all 0.2s;">
+            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">👄❌</div>
+            <h4 style="margin-bottom: 0.25rem;">B. Próbuję wyssać jad ustami</h4>
+            <p style="font-size: 0.82rem; color: var(--text-dim); margin: 0;">Odsysam toksynę z miejsca wkłucia</p>
+          </div>
+
+          <div class="bee-aid-card" data-action="scrape" style="background: var(--bg-card); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 1.25rem; cursor: pointer; text-align: center; transition: all 0.2s;">
+            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">💳✅</div>
+            <h4 style="margin-bottom: 0.25rem; color: var(--emerald-light);">C. Zeskrobuję krawędzią karty</h4>
+            <p style="font-size: 0.82rem; color: var(--text-dim); margin: 0;">Płaskim ruchem paznokciem lub kartą</p>
+          </div>
+        </div>
+
+        <div id="beeAidResult" class="crisis-feedback-box"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 4: FASCYNUJĄCE CIEKAWOSTKI
+         ============================================================ -->
+    <section class="section" id="ciekawostki" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light); border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.1);">Sekrety Natury</span>
+          <h2>Niezwykłe Fakty o Pszczołach Miodnych</h2>
+          <p>Oto zjawiska matematyczne, fizyczne i społeczne, które zadziwiają biologów i fizyków kwantowych.</p>
+        </div>
+
+        <div class="curiosity-grid">
+          <div class="curiosity-card" style="border-color: rgba(245, 158, 11, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🍯</span>
+              <h4 style="color: var(--amber-light);">Miód nigdy się nie psuje</h4>
+            </div>
+            <p>
+              Miód ma niską wilgotność (poniżej 18%), kwasowe pH (~3.9) oraz zawiera enzym oksydazę glukozową produkującą nadtlenek wodoru. Bakterie i grzyby nie mają w nim szans na przeżycie. Archeolodzy w grobowcach faraonów znaleźli naczynia z miodem sprzed 3000 lat, który wciąż nadawał się do spożycia!
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(56, 189, 248, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🌍</span>
+              <h4 style="color: var(--cyan-light);">1/12 łyżeczki za całe życie</h4>
+            </div>
+            <p>
+              Pojedyncza pszczoła robotnica przez całe swoje kilkutygodniowe pracowite życie produkuje zaledwie około 1/12 łyżeczki miodu. Aby zebrać słoik miodu (1 kg), pszczoły z ula muszą przelecieć łącznie ponad 150 000 kilometrów — czyli prawie 4 razy okrążyć kulę ziemską!
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(239, 68, 68, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🔥</span>
+              <h4 style="color: #F87171;">Obronna kula termiczna (47°C)</h4>
+            </div>
+            <p>
+              Gdy gigantyczny szerszeń próbuje zaatakować ul, pszczoły nie walczą z nim pojedynczo. Rzucają się na niego w setkach, tworząc szczelną kulę i wibrując mięśniami skrzydeł. Podnoszą temperaturę w środku kuli do dokładnie 47°C — pszczoły wytrzymują do 48°C, a szerszeń ginie z przegrzania!
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(168, 85, 247, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🧠</span>
+              <h4 style="color: var(--purple-light);">Rozpoznawanie ludzkich twarzy</h4>
+            </div>
+            <p>
+              Badania opublikowane w <em>Journal of Experimental Biology</em> dowiodły, że miniaturowy mózg pszczoły (liczący zaledwie 1 milion neuronów) potrafi uczyć się i rozpoznawać zdjęcia konkretnych ludzkich twarzy na zasadzie całościowego przetwarzania konfiguracji oczu, nosa i ust!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10-Level Mini-Game Section -->
+    <section class="section" id="gra" style="background: rgba(255, 255, 255, 0.02);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(234, 179, 8, 0.12); color: var(--amber-light); border: 1px solid rgba(234, 179, 8, 0.3);">
+            10-Poziomowa Gra Zręcznościowa
+          </div>
+          <h2>Zapylacz Łąkowy: Lot po Nektar 🐝🌸</h2>
+          <p class="section-lead">
+            Wciel się w pszczołę robotnicę! Zbieraj nektar z kwiatów, walcz z bocznym wiatrem, omijaj spadające krople deszczu i szerszenie, aby dostarczyć pożytek do ula.
+          </p>
+        </div>
+
+        <div class="minigame-wrapper" style="border: 1px solid rgba(234, 179, 8, 0.35);">
+          <!-- Game HUD -->
+          <div class="game-hud">
+            <div class="hud-left">
+              <div class="game-level-badge" id="beeGameLevelBadge">
+                <span>Misja 1/10:</span> Mniszek na Słonecznym Trawniku 🌼
+              </div>
+              <div class="level-dots-container" id="beeGameLevelDots"></div>
+            </div>
+
+            <div class="hud-right">
+              <div class="hud-stat">
+                <span class="hud-label">Nektar:</span>
+                <span class="hud-value" id="beeGameNectar">0 mg</span>
+              </div>
+              <div class="hud-stat">
+                <span class="hud-label">Cel:</span>
+                <span class="hud-value" id="beeGameTargetNectar" style="color: var(--amber-light);">100 mg</span>
+              </div>
+              <div class="hud-stat">
+                <span class="hud-label">Czas:</span>
+                <span class="hud-value" id="beeGameTimer" style="color: #f87171;">35s</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Canvas Container -->
+          <div class="game-canvas-container" style="position: relative; overflow: hidden; background: #10151E;">
+            <canvas id="beeGameCanvas" style="width: 100%; height: 340px; display: block; cursor: crosshair;"></canvas>
+
+            <!-- Game Overlay -->
+            <div class="game-overlay show" id="beeGameOverlay">
+              <div class="overlay-modal">
+                <div class="overlay-icon" id="beeGameOverIcon">🐝🌸🍯</div>
+                <h3 id="beeGameOverTitle">Lot Zbieraczek na Łąkę</h3>
+                <p id="beeGameOverDesc">
+                  Steruj pszczołą myszą lub palcem na ekranie smartfona. Zbieraj kwiaty (🌼🌸🌻). <strong>Uważaj na krople deszczu i szerszenie (🌧️⚠️)</strong> — zderzenie oznacza upadek!
+                </p>
+                <div class="game-controls-row">
+                  <button id="startBeeGameBtn" class="primary-btn" style="background: var(--amber); border-color: var(--amber);">
+                    🎮 Rozpocznij Poziom 1
+                  </button>
+                  <button id="nextBeeLevelBtn" class="primary-btn" style="background: var(--emerald); border-color: var(--emerald); display: none;">
+                    ▶️ Kolejny Poziom
+                  </button>
+                  <button id="restartBeeGameBtn" class="secondary-btn" style="display: none;">
+                    🔄 Spróbuj Ponownie
+                  </button>
+                  <button id="resetBeeCampaignBtn" class="secondary-btn" style="display: none;">
+                    🏆 Zagraj Ponownie od Zera
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="padding: 1rem 1.5rem; background: rgba(0,0,0,0.3); font-size: 0.85rem; color: var(--text-dim); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+            <span>📱 <strong>Sterowanie:</strong> Ruszaj palcem po ekranie lub prowadź kursor myszą.</span>
+            <span>🐝 <strong>10 Poziomów:</strong> Od wiosennego mniszka aż po taniec w ulu!</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Myth Busting Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(16, 185, 129, 0.12); color: var(--emerald-light); border: 1px solid rgba(16, 185, 129, 0.3);">
+            Obalamy Mity
+          </div>
+          <h2>Prawda o Pszczołach Miodnych w Polsce</h2>
+          <p class="section-lead">
+            Wokół użądleń i zachowania pszczół narosło wiele nieuzasadnionych lęków.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+          <div class="comparison-card" style="border-left: 4px solid #ef4444;">
+            <h4 style="color: #ef4444; font-size: 1.1rem; margin-bottom: 0.5rem;">❌ MIT: Pszczoła na łące chce mnie użądlić</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+              <strong>Fakt:</strong> Robotnica poza ulem ma w głowie wyłącznie zbiór nektaru i pyłku. Jest łagodna i całkowicie ignoruje ludzi, dopóki jej nie przygnieciesz lub nie nadepniesz bosą stopą. W odróżnieniu od osy — pszczoła po użądleniu natychmiast ginie.
+            </p>
+          </div>
+
+          <div class="comparison-card" style="border-left: 4px solid #ef4444;">
+            <h4 style="color: #ef4444; font-size: 1.1rem; margin-bottom: 0.5rem;">❌ MIT: Wymachiwanie rękami odpędza pszczołę</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+              <strong>Fakt:</strong> Gwałtowne ruchy rąk i wydychany dwutlenek węgla (CO₂) są przez pszczoły interpretowane jako atak drapieżnika na ul (np. niedźwiedzia). Zachowaj spokój, nie wykonuj gwałtownych ruchów i powoli odejdź w cień.
+            </p>
+          </div>
+
+          <div class="comparison-card" style="border-left: 4px solid #10b981;">
+            <h4 style="color: var(--emerald-light); font-size: 1.1rem; margin-bottom: 0.5rem;">✅ FAKT: Pszczoły produkują miód z 4 mln kwiatów</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+              <strong>Fakt:</strong> Do wytworzenia 1 kg miodu pszczoły muszą odwiedzić około 4 miliony kwiatów i pokonać dystans odpowiadający niemal trzykrotnemu okrążeniu kuli ziemskiej!
+            </p>
+          </div>
+    <!-- ============================================================
+         SEKCJA 6: INTERAKTYWNY MINI QUIZ
+         ============================================================ -->
+    <section class="section" id="quiz" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light); border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.1);">Sprawdź swoją wiedzę</span>
+          <h2>Mini Quiz Mistrza Zmysłów Pszczoły</h2>
+          <p>5 pytań weryfikujących wiedzę o widzeniu UV, tańcu wywijanym i zasadach pierwszej pomocy przy użądleniu.</p>
+        </div>
+
+        <div class="quiz-wrapper" style="border-color: rgba(245, 158, 11, 0.3);">
+          <div class="quiz-meter-bar">
+            <div class="quiz-meter-progress" id="beeQuizMeterProgress" style="background: linear-gradient(90deg, #F59E0B 0%, #06B6D4 100%);"></div>
+          </div>
+          <div id="beeQuizDynamicBody">
+            <!-- Rendered dynamically by js/bee-simulators.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation between Animals -->
+    <section style="padding: 60px 0; text-align: center;">
+      <div class="container">
+        <h3 style="margin-bottom: 16px;">Poznaj inne zwierzęta</h3>
+        <p style="margin-bottom: 24px; color: var(--text-muted);">Przełącz się na percepcję lisa rudego lub przejrzyj katalog wszystkich 10 gatunków.</p>
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a href="lis.html" class="btn btn-primary" style="background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);">
+            <span>🦊 Zobacz zmysły lisa</span>
+          </a>
+          <button class="btn btn-secondary animal-catalog-trigger">
+            <span>🐾 Otwórz katalog wszystkich zwierząt</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <span style="font-size: 1.6rem;">🐾</span>
+            <span>Świat zmysłami zwierząt</span>
+          </div>
+          <p class="footer-desc">
+            Interaktywna platforma edukacyjna prezentująca percepcję zmysłową zwierząt. Zrozumienie zmysłów to klucz do empatii i bezpiecznego współistnienia ludzi i dzikiej fauny.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Katalog Zwierząt</h4>
+          <ul class="footer-links">
+            <li><a href="pies.html">🐕 Pies domowy</a></li>
+            <li><a href="kot.html">🐈 Kot domowy</a></li>
+            <li><a href="dzik.html">🐗 Dzik euroazjatycki</a></li>
+            <li><a href="wilk.html">🐺 Wilk szary</a></li>
+            <li><a href="nietoperz.html">🦇 Nietoperz</a></li>
+            <li><a href="zmija.html">🐍 Żmija zygzakowata</a></li>
+            <li><a href="sowa.html">🦉 Sowa (Płomykówka)</a></li>
+            <li><a href="niedzwiedz.html">🐻 Niedźwiedź brunatny</a></li>
+            <li><a href="pszczola.html">🐝 Pszczoła miodna</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">O Projekcie</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#misja">Dlaczego zmysły?</a></li>
+            <li><a href="index.html#bezpieczenstwo">Zasady bezpiecznych spotkań</a></li>
+            <li><a href="#" id="triggerAuthorModalFromFooter">O autorze (Dorian Kalinowski)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Świat zmysłami zwierząt • Projekt edukacyjny non-profit • V1</p>
+        <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 4px;">
+          Stworzone przez <a href="https://linkedin.com/in/dorian-kalinowski" target="_blank" rel="noopener noreferrer" style="color: var(--amber-light); text-decoration: underline;">Doriana Kalinowskiego</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Bottom Sticky Navigation -->
+  <div class="mobile-bottom-bar" role="navigation" aria-label="Szybka nawigacja mobilna">
+    <a href="index.html" class="mobile-bar-btn">
+      <span class="mobile-bar-icon">🏠</span>
+      <span>Główna</span>
+    </a>
+    <a href="#gra" class="mobile-bar-btn">
+      <span class="mobile-bar-icon">🎮</span>
+      <span>10 Gier</span>
+    </a>
+    <button class="mobile-bar-btn animal-catalog-trigger" id="mobileCatalogBtn">
+      <span class="mobile-bar-icon">🐾</span>
+      <span>Zwierzęta</span>
+    </button>
+    <button class="mobile-bar-btn" id="mobileAuthorBtn">
+      <span class="mobile-bar-icon">👨‍💻</span>
+      <span>Autor</span>
+    </button>
+  </div>
+
+  <!-- PWA Install Banner -->
+  <div class="pwa-install-banner" id="pwaBanner">
+    <div class="pwa-content">
+      <span style="font-size: 1.8rem;">📱</span>
+      <div>
+        <div style="font-weight: 700; font-size: 0.95rem;">Zainstaluj jako aplikację</div>
+        <div style="font-size: 0.8rem; color: var(--text-dim);">Działa 100% offline w lesie i na łące bez internetu!</div>
+      </div>
+    </div>
+    <div class="pwa-actions">
+      <button class="primary-btn" id="pwaInstallBtn" style="padding: 6px 14px; font-size: 0.85rem;">Instaluj</button>
+      <button class="pwa-dismiss" id="pwaDismissBtn" aria-label="Zamknij">✕</button>
+    </div>
+  </div>
+
+  <!-- Animal Catalog Modal -->
+  <div class="modal-backdrop" id="animalCatalogModal" role="dialog" aria-modal="true" aria-labelledby="catalogModalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="catalogModalTitle" style="display: flex; align-items: center; gap: 0.5rem; margin: 0; font-size: 1.25rem;">
+          <span>🐾</span> Katalog Zwierząt
+        </h3>
+        <button class="modal-close" id="closeAnimalModal" aria-label="Zamknij katalog">✕</button>
+      </div>
+      <div class="catalog-grid" id="modalAnimalsGrid"></div>
+    </div>
+  </div>
+
+  <!-- Author Modal -->
+  <div class="modal-backdrop" id="authorModal" role="dialog" aria-modal="true" aria-labelledby="authorModalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="authorModalTitle" style="display: flex; align-items: center; gap: 0.5rem; margin: 0; font-size: 1.25rem;">
+          <span>👨‍💻</span> O Twórcy Projektu
+        </h3>
+        <button class="modal-close" id="closeAuthorModal" aria-label="Zamknij profil autora">✕</button>
+      </div>
+      <div class="author-modal-content">
+        <div class="author-modal-top">
+          <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="author-modal-avatar">
+          <div>
+            <h4 style="font-size: 1.2rem; margin-bottom: 2px;">Dorian Kalinowski</h4>
+            <p style="color: var(--amber-light); font-size: 0.88rem; font-weight: 600; margin-bottom: 6px;">
+              Twórca projektu i miłośnik zwierząt
+            </p>
+            <div style="display: flex; gap: 0.5rem;">
+              <a href="https://linkedin.com/in/dorian-kalinowski" target="_blank" rel="noopener noreferrer" class="hero-pill" style="font-size: 0.78rem; text-decoration: none; padding: 3px 10px; border-color: rgba(56, 189, 248, 0.4); color: var(--cyan-light);">
+                🔗 Profil LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-top: 1rem;">
+          Cześć! Mam na imię Dorian i po prostu bardzo lubię zwierzaki. Od zawsze najbardziej ciekawi mnie to, jak niesamowicie odbierają otaczający nas świat – zupełnie inaczej niż my, ludzie. Wierzę, że gdybyśmy naprawdę dobrze wiedzieli, jak myślą, widzą i czują, na świecie byłoby znacznie mniej nieporozumień i niepotrzebnych konfrontacji między nami a nimi.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/bee-simulators.js"></script>
+</body>
+</html>

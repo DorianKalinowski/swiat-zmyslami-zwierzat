@@ -401,7 +401,7 @@ function initWolfTrackingGame() {
     beep(120, 0.22, 'sawtooth');
   }
 
-  // 3-Level Campaign Config
+  // 10 Progressive Wilderness Missions Configuration
   const levels = [
     {
       name: 'Młody Wilk w Śnieżnej Puszczy ❄️🌲',
@@ -419,12 +419,43 @@ function initWolfTrackingGame() {
       humanThreats: []
     },
     {
+      name: 'Brzeg Rzeki San i Przeprawa Przez Bród 🌊🐾',
+      desc: 'Przejście doliną rzeki w Bieszczadach. Wytrop bezpieczną płyciznę i ślady zwierzyny.',
+      time: 42,
+      bg: '#0C1824',
+      accent: 'rgba(14, 165, 233, 0.14)',
+      rangeFactor: 0.48,
+      hasWind: false,
+      targets: [
+        { name: '🐟 Cień pstrąga w nurcie', emoji: '🐟', x: 0, y: 0, found: false },
+        { name: '💧 Bezpieczny kamienisty bród', emoji: '💧', x: 0, y: 0, found: false },
+        { name: '🐾 Ślad łapy wydry rzecznej', emoji: '🐾', x: 0, y: 0, found: false }
+      ],
+      humanThreats: []
+    },
+    {
+      name: 'Dojrzewanie Watahy: Węszenie Jeleni 🦌🌲',
+      desc: 'Wytropienie stada jeleni w gęstej buczynie. Ciche poruszanie się po zeszłorocznych liściach.',
+      time: 40,
+      bg: '#141812',
+      accent: 'rgba(34, 197, 94, 0.14)',
+      rangeFactor: 0.45,
+      hasWind: false,
+      targets: [
+        { name: '🦌 Zdarta kora na pniu', emoji: '🦌', x: 0, y: 0, found: false },
+        { name: '🐾 Ciepły trop łani', emoji: '🐾', x: 0, y: 0, found: false },
+        { name: '🌿 Gęsty młodnik jodłowy', emoji: '🌿', x: 0, y: 0, found: false },
+        { name: '🌾 Polana z ziołami', emoji: '🌾', x: 0, y: 0, found: false }
+      ],
+      humanThreats: []
+    },
+    {
       name: 'Skraj Ludzkich Osad — Paniczny Strach 🏘️⚠️',
       desc: 'Przejście skrajem lasu. Unikaj stref ludzkich (latarki, hałas samochodów). Wilk boi się ludzi ponad wszystko!',
       time: 40,
       bg: '#14141E',
       accent: 'rgba(129, 140, 248, 0.14)',
-      rangeFactor: 0.44,
+      rangeFactor: 0.42,
       hasWind: false,
       targets: [
         { name: '🌲 Bezpieczny parów leśny', emoji: '🌲', x: 0, y: 0, found: false },
@@ -439,23 +470,118 @@ function initWolfTrackingGame() {
       ]
     },
     {
-      name: 'Zimowa Zamieć i Zew Watahy 🌪️🐺',
-      desc: 'Gwałtowna śnieżyca i silny wiatr boczny! Podążaj za falami wycia watahy i bezpiecznie połącz się z rodziną.',
-      time: 45,
-      bg: '#0A1822',
-      accent: 'rgba(14, 165, 233, 0.18)',
+      name: 'Nocny Przemarsz Przez Grzbiet Otrytu 🏔️🌙',
+      desc: 'Długi nocny kłus granią. Wiatr przynosi zapachy z odległości 3 kilometrów.',
+      time: 38,
+      bg: '#0E1426',
+      accent: 'rgba(168, 85, 247, 0.15)',
+      rangeFactor: 0.40,
+      hasWind: false,
+      targets: [
+        { name: '🪨 Skała punkt widokowy', emoji: '🪨', x: 0, y: 0, found: false },
+        { name: '🐾 Świeży trop rodzeństwa', emoji: '🐾', x: 0, y: 0, found: false },
+        { name: '💨 Powiew czystego wiatru', emoji: '💨', x: 0, y: 0, found: false },
+        { name: '🌲 Bezpieczny wąwóz', emoji: '🌲', x: 0, y: 0, found: false }
+      ],
+      humanThreats: [
+        { name: 'Światło schroniska', emoji: '🏡', x: 0, y: 0, radius: 40 }
+      ]
+    },
+    {
+      name: 'Granica Terytorium: Obca Wataha na Horyzoncie 🐺🚩',
+      desc: 'Granica sąsiedniego terytorium. Zlokalizuj punkty znakowania zapachem (gruczoł fiołkowy) i unikaj konfrontacji.',
+      time: 38,
+      bg: '#181320',
+      accent: 'rgba(234, 179, 8, 0.15)',
       rangeFactor: 0.38,
+      hasWind: false,
+      targets: [
+        { name: '🌲 Pień znakowany zapachem', emoji: '🌲', x: 0, y: 0, found: false },
+        { name: '🐾 Znakowanie moczem na śniegu', emoji: '🐾', x: 0, y: 0, found: false },
+        { name: '🔊 Echo dalekiego wycia', emoji: '🔊', x: 0, y: 0, found: false },
+        { name: '🛡️ Bezpieczna ścieżka odwrotu', emoji: '🛡️', x: 0, y: 0, found: false }
+      ],
+      humanThreats: [
+        { name: 'Zimowy patrol myśliwski', emoji: '🚙', x: 0, y: 0, radius: 45 }
+      ]
+    },
+    {
+      name: 'Bieg Maratoński: 50 km Bez Zmęczenia ❄️🏃',
+      desc: 'Anatomia maratończyka: wąska klatka piersiowa i elastyczne ścięgna. Wytrop 5 punktów w zamieci!',
+      time: 42,
+      bg: '#0F1A24',
+      accent: 'rgba(56, 189, 248, 0.16)',
+      rangeFactor: 0.36,
       hasWind: true,
       targets: [
-        { name: '🐺 Zew matki watahy', emoji: '🐺', x: 0, y: 0, found: false },
+        { name: '🫎 Trop bieszczadzkiego łosia', emoji: '🫎', x: 0, y: 0, found: false },
+        { name: '🐾 Ślad kłusa starszego wilka', emoji: '🐾', x: 0, y: 0, found: false },
+        { name: '🌲 Kryjówka pod wykrotem', emoji: '🌲', x: 0, y: 0, found: false },
+        { name: '🧊 Zamarznięte oczko wodne', emoji: '🧊', x: 0, y: 0, found: false },
+        { name: '🦌 Ciepłe legowisko stada', emoji: '🦌', x: 0, y: 0, found: false }
+      ],
+      humanThreats: [
+        { name: 'Stare wnyki w zaroślach', emoji: '⚠️', x: 0, y: 0, radius: 40 }
+      ]
+    },
+    {
+      name: 'Zimowa Zamieć i Zew Watahy 🌪️🐺',
+      desc: 'Gwałtowna śnieżyca i silny wiatr boczny! Podążaj za falami wycia watahy i bezpiecznie połącz się z rodziną.',
+      time: 42,
+      bg: '#0A1822',
+      accent: 'rgba(14, 165, 233, 0.18)',
+      rangeFactor: 0.34,
+      hasWind: true,
+      targets: [
+        { name: '🐺 Zew rodziców watahy', emoji: '🐺', x: 0, y: 0, found: false },
         { name: '🐾 Trop rodzeństwa', emoji: '🐾', x: 0, y: 0, found: false },
         { name: '🏔️ Skalny przesmyk', emoji: '🏔️', x: 0, y: 0, found: false },
         { name: '🌲 Zimowa ostoja watahy', emoji: '🌲', x: 0, y: 0, found: false },
-        { name: '🏰 Bezpieczna nora (Azyl)', emoji: '🐺', x: 0, y: 0, found: false }
+        { name: '🐺 Bezpieczna nora rodzinna', emoji: '🐺', x: 0, y: 0, found: false }
       ],
       humanThreats: [
         { name: 'Hałas pił spalinowych', emoji: '🪓', x: 0, y: 0, radius: 42 },
-        { name: 'Kłusownicze wnyki', emoji: '⚠️', x: 0, y: 0, radius: 38 }
+        { name: 'Kłusownicze sidła', emoji: '⚠️', x: 0, y: 0, radius: 38 }
+      ]
+    },
+    {
+      name: 'Korytarz Ekologiczny: Zielony Most 🌉🦌',
+      desc: 'Przejście ponad ruchliwą drogą ekspresową po specjalnym moście dla zwierzyny. Omiń bariery akustyczne!',
+      time: 40,
+      bg: '#141E18',
+      accent: 'rgba(16, 185, 129, 0.18)',
+      rangeFactor: 0.32,
+      hasWind: true,
+      targets: [
+        { name: '🌉 Zielone przejście dla zwierząt', emoji: '🌉', x: 0, y: 0, found: false },
+        { name: '🐾 Świeży ślad łani', emoji: '🐾', x: 0, y: 0, found: false },
+        { name: '🌲 Spokojny zagajnik bukowy', emoji: '🌲', x: 0, y: 0, found: false },
+        { name: '💧 Czyste leśne źródlisko', emoji: '💧', x: 0, y: 0, found: false },
+        { name: '🐺 Woń przewodnika watahy', emoji: '🐺', x: 0, y: 0, found: false }
+      ],
+      humanThreats: [
+        { name: 'Reflektory ciężarówek', emoji: '💡', x: 0, y: 0, radius: 46 },
+        { name: 'Szum autostrady', emoji: '🚗', x: 0, y: 0, radius: 44 }
+      ]
+    },
+    {
+      name: 'Noc Pełni: Zjednoczona Wataha Bieszczadzka 🌕🐺👑',
+      desc: 'Wielki finał! Pełnia księżyca nad Połoniną Wetlińską. Cała rodzina śpiewa w polifonicznym chórze wolności.',
+      time: 45,
+      bg: '#10142A',
+      accent: 'rgba(56, 189, 248, 0.22)',
+      rangeFactor: 0.30,
+      hasWind: true,
+      targets: [
+        { name: '🌕 Połonina w blasku pełni', emoji: '🌕', x: 0, y: 0, found: false },
+        { name: '🐺 Mama i tata (para rodzicielska)', emoji: '🐺', x: 0, y: 0, found: false },
+        { name: '🐾 Wilcze szczenięta', emoji: '🐾', x: 0, y: 0, found: false },
+        { name: '🌲 Odwieczna Puszcza Karpacka', emoji: '🌲', x: 0, y: 0, found: false },
+        { name: '👑 Niezłomny Zew Wolności', emoji: '👑', x: 0, y: 0, found: false }
+      ],
+      humanThreats: [
+        { name: 'Światło latarek turystów', emoji: '🔦', x: 0, y: 0, radius: 40 },
+        { name: 'Hałas quada w górach', emoji: '🏍️', x: 0, y: 0, radius: 44 }
       ]
     }
   ];
@@ -479,9 +605,12 @@ function initWolfTrackingGame() {
   function updateHUD() {
     const lvl = levels[currentLevelIdx];
     if (levelBadge) {
-      levelBadge.innerHTML = `<span>Misja ${currentLevelIdx + 1}/3:</span> ${lvl.name}`;
+      levelBadge.innerHTML = `<span>Misja ${currentLevelIdx + 1}/${levels.length}:</span> ${lvl.name}`;
     }
     if (levelDotsContainer) {
+      if (levelDotsContainer.children.length !== levels.length) {
+        levelDotsContainer.innerHTML = levels.map((_, i) => `<span class="level-dot" title="Poziom ${i + 1}"></span>`).join('');
+      }
       const dots = levelDotsContainer.querySelectorAll('.level-dot');
       dots.forEach((dot, idx) => {
         dot.className = 'level-dot';

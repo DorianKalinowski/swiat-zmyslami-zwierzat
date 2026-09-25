@@ -590,38 +590,138 @@ function initBoarRootingGame() {
     } catch (e) {}
   }
 
-  // 3 Seasons Configurations
+  // 10 Progressive Seasons Configuration
   const seasons = [
     {
-      name: 'Złota Jesień — Sezon Żołędzi 🍂',
-      desc: 'Ściółka w dąbrowie jest miękka i bogata w opadłe żołędzie. Zgromadź pierwsze zapasy tłuszczu na zimę!',
-      startWeight: 90,
-      targetWeight: 125,
+      name: 'Wiosenne Przebudzenie i Młode Pędy 🌱🐗',
+      desc: 'Młody przelatkek szuka pierwszych pędów traw i miękkich korzonków po zejściu śniegu.',
+      startWeight: 45,
+      targetWeight: 65,
       time: 35,
+      items: [
+        { type: 'root', name: 'Młody pęd', emoji: '🌱', delta: 6, label: '+6 kg' },
+        { type: 'root', name: 'Młody pęd', emoji: '🌱', delta: 6, label: '+6 kg' },
+        { type: 'root', name: 'Kłącze paproci', emoji: '🌿', delta: 5, label: '+5 kg' },
+        { type: 'grub', name: 'Dżdżownica', emoji: '🪱', delta: 6, label: '+6 kg' },
+        { type: 'grub', name: 'Dżdżownica', emoji: '🪱', delta: 6, label: '+6 kg' },
+        { type: 'acorn', name: 'Ubiegłoroczny żołądź', emoji: '🌰', delta: 7, label: '+7 kg' },
+        { type: 'acorn', name: 'Ubiegłoroczny żołądź', emoji: '🌰', delta: 7, label: '+7 kg' },
+        { type: 'root', name: 'Soczysty korzonek', emoji: '🥕', delta: 6, label: '+6 kg' },
+        { type: 'stone', name: 'Kamień rzeczny', emoji: '🪨', delta: -4, label: '-4 kg' },
+        { type: 'root', name: 'Kłącze paproci', emoji: '🌿', delta: 5, label: '+5 kg' },
+        { type: 'grub', name: 'Larwa', emoji: '🐛', delta: 8, label: '+8 kg' },
+        { type: 'root', name: 'Młody pęd', emoji: '🌱', delta: 6, label: '+6 kg' },
+        { type: 'root', name: 'Młody pęd', emoji: '🌱', delta: 6, label: '+6 kg' },
+        { type: 'acorn', name: 'Ubiegłoroczny żołądź', emoji: '🌰', delta: 7, label: '+7 kg' },
+        { type: 'grub', name: 'Dżdżownica', emoji: '🪱', delta: 6, label: '+6 kg' },
+        { type: 'root', name: 'Kłącze paproci', emoji: '🌿', delta: 5, label: '+5 kg' }
+      ]
+    },
+    {
+      name: 'Brzegi Rzeczne i Kłącza Tataraku 💧🌾',
+      desc: 'Błotniste brzegi rzeki kryją soczyste kłącza tataraku i mięczaki. Nabieraj siły!',
+      startWeight: 65,
+      targetWeight: 85,
+      time: 35,
+      items: [
+        { type: 'root', name: 'Kłącze tataraku', emoji: '🌾', delta: 7, label: '+7 kg' },
+        { type: 'root', name: 'Kłącze tataraku', emoji: '🌾', delta: 7, label: '+7 kg' },
+        { type: 'grub', name: 'Pędrak nadrzeczny', emoji: '🐛', delta: 8, label: '+8 kg' },
+        { type: 'grub', name: 'Pędrak nadrzeczny', emoji: '🐛', delta: 8, label: '+8 kg' },
+        { type: 'root', name: 'Bulwa wodna', emoji: '🌿', delta: 6, label: '+6 kg' },
+        { type: 'truffle', name: 'Młoda letnia trufla', emoji: '🍄', delta: 12, label: '+12 kg' },
+        { type: 'root', name: 'Kłącze tataraku', emoji: '🌾', delta: 7, label: '+7 kg' },
+        { type: 'stone', name: 'Śliski otoczak', emoji: '🪨', delta: -5, label: '-5 kg' },
+        { type: 'root', name: 'Bulwa wodna', emoji: '🌿', delta: 6, label: '+6 kg' },
+        { type: 'grub', name: 'Pędrak nadrzeczny', emoji: '🐛', delta: 8, label: '+8 kg' },
+        { type: 'root', name: 'Kłącze tataraku', emoji: '🌾', delta: 7, label: '+7 kg' },
+        { type: 'stone', name: 'Śliski otoczak', emoji: '🪨', delta: -5, label: '-5 kg' },
+        { type: 'root', name: 'Bulwa wodna', emoji: '🌿', delta: 6, label: '+6 kg' },
+        { type: 'grub', name: 'Larwa', emoji: '🐛', delta: 8, label: '+8 kg' },
+        { type: 'root', name: 'Bulwa wodna', emoji: '🌿', delta: 6, label: '+6 kg' },
+        { type: 'root', name: 'Kłącze tataraku', emoji: '🌾', delta: 7, label: '+7 kg' }
+      ]
+    },
+    {
+      name: 'Letnie Jagodowisko i Chrząszcze 🫐🪲',
+      desc: 'Letnia obfitość w borze sosnowym. Chrząszcze, larwy i jagody budują sylwetkę wycinka.',
+      startWeight: 85,
+      targetWeight: 105,
+      time: 34,
+      items: [
+        { type: 'grub', name: 'Tłusty pędrak', emoji: '🐛', delta: 9, label: '+9 kg' },
+        { type: 'grub', name: 'Tłusty pędrak', emoji: '🐛', delta: 9, label: '+9 kg' },
+        { type: 'root', name: 'Borówki leśne', emoji: '🫐', delta: 6, label: '+6 kg' },
+        { type: 'root', name: 'Borówki leśne', emoji: '🫐', delta: 6, label: '+6 kg' },
+        { type: 'truffle', name: 'Trufla leśna', emoji: '🍄', delta: 14, label: '+14 kg' },
+        { type: 'root', name: 'Korzenie wrzosu', emoji: '🌿', delta: 5, label: '+5 kg' },
+        { type: 'grub', name: 'Żuk gnojowy', emoji: '🪲', delta: 7, label: '+7 kg' },
+        { type: 'stone', name: 'Kamień granitowy', emoji: '🪨', delta: -6, label: '-6 kg' },
+        { type: 'root', name: 'Borówki leśne', emoji: '🫐', delta: 6, label: '+6 kg' },
+        { type: 'grub', name: 'Tłusty pędrak', emoji: '🐛', delta: 9, label: '+9 kg' },
+        { type: 'root', name: 'Korzenie wrzosu', emoji: '🌿', delta: 5, label: '+5 kg' },
+        { type: 'stone', name: 'Kamień granitowy', emoji: '🪨', delta: -6, label: '-6 kg' },
+        { type: 'grub', name: 'Tłusty pędrak', emoji: '🐛', delta: 9, label: '+9 kg' },
+        { type: 'truffle', name: 'Trufla leśna', emoji: '🍄', delta: 14, label: '+14 kg' },
+        { type: 'root', name: 'Borówki leśne', emoji: '🫐', delta: 6, label: '+6 kg' },
+        { type: 'root', name: 'Korzenie wrzosu', emoji: '🌿', delta: 5, label: '+5 kg' }
+      ]
+    },
+    {
+      name: 'Złota Jesień — Sezon Żołędzi 🍂🌰',
+      desc: 'Ściółka w dąbrowie jest miękka i bogata w opadłe żołędzie. Zgromadź pierwsze zapasy tłuszczu na zimę!',
+      startWeight: 105,
+      targetWeight: 130,
+      time: 33,
       items: [
         { type: 'acorn', name: 'Żołędzie dębu', emoji: '🌰', delta: 8, label: '+8 kg' },
         { type: 'acorn', name: 'Żołędzie dębu', emoji: '🌰', delta: 8, label: '+8 kg' },
         { type: 'acorn', name: 'Żołędzie dębu', emoji: '🌰', delta: 8, label: '+8 kg' },
         { type: 'acorn', name: 'Żołędzie dębu', emoji: '🌰', delta: 8, label: '+8 kg' },
-        { type: 'acorn', name: 'Żołędzie dębu', emoji: '🌰', delta: 8, label: '+8 kg' },
-        { type: 'acorn', name: 'Żołędzie dębu', emoji: '🌰', delta: 8, label: '+8 kg' },
-        { type: 'grub', name: 'Pędrak chrabąszcza', emoji: '🐛', delta: 10, label: '+10 kg' },
-        { type: 'grub', name: 'Pędrak chrabąszcza', emoji: '🐛', delta: 10, label: '+10 kg' },
         { type: 'grub', name: 'Pędrak chrabąszcza', emoji: '🐛', delta: 10, label: '+10 kg' },
         { type: 'grub', name: 'Pędrak chrabąszcza', emoji: '🐛', delta: 10, label: '+10 kg' },
         { type: 'truffle', name: 'Młoda trufla', emoji: '🍄', delta: 15, label: '+15 kg' },
         { type: 'truffle', name: 'Młoda trufla', emoji: '🍄', delta: 15, label: '+15 kg' },
         { type: 'root', name: 'Kłącze paproci', emoji: '🌿', delta: 5, label: '+5 kg' },
+        { type: 'stone', name: 'Kamień', emoji: '🪨', delta: -5, label: '-5 kg' },
+        { type: 'acorn', name: 'Żołędzie dębu', emoji: '🌰', delta: 8, label: '+8 kg' },
+        { type: 'grub', name: 'Pędrak chrabąszcza', emoji: '🐛', delta: 10, label: '+10 kg' },
         { type: 'root', name: 'Kłącze paproci', emoji: '🌿', delta: 5, label: '+5 kg' },
-        { type: 'root', name: 'Kłącze paproci', emoji: '🌿', delta: 5, label: '+5 kg' },
-        { type: 'stone', name: 'Kamień', emoji: '🪨', delta: -5, label: '-5 kg' }
+        { type: 'stone', name: 'Kamień', emoji: '🪨', delta: -5, label: '-5 kg' },
+        { type: 'acorn', name: 'Żołędzie dębu', emoji: '🌰', delta: 8, label: '+8 kg' },
+        { type: 'grub', name: 'Pędrak chrabąszcza', emoji: '🐛', delta: 10, label: '+10 kg' }
+      ]
+    },
+    {
+      name: 'Bukowy Las — Orzeszki Bukwi 🌳🌰',
+      desc: 'Stara buczyna karpacka obrodziła bukwiami (wysokotłuszczowe orzeszki). Wyczuj je nosem pod liśćmi!',
+      startWeight: 130,
+      targetWeight: 155,
+      time: 32,
+      items: [
+        { type: 'acorn', name: 'Tłusta bukiew', emoji: '🌰', delta: 9, label: '+9 kg' },
+        { type: 'acorn', name: 'Tłusta bukiew', emoji: '🌰', delta: 9, label: '+9 kg' },
+        { type: 'acorn', name: 'Tłusta bukiew', emoji: '🌰', delta: 9, label: '+9 kg' },
+        { type: 'truffle', name: 'Czarna trufla', emoji: '🍄', delta: 18, label: '+18 kg' },
+        { type: 'grub', name: 'Larwa kornika', emoji: '🐛', delta: 8, label: '+8 kg' },
+        { type: 'grub', name: 'Larwa kornika', emoji: '🐛', delta: 8, label: '+8 kg' },
+        { type: 'root', name: 'Korzeń buka', emoji: '🌿', delta: 6, label: '+6 kg' },
+        { type: 'stone', name: 'Wapienny głaz', emoji: '🪨', delta: -7, label: '-7 kg' },
+        { type: 'acorn', name: 'Tłusta bukiew', emoji: '🌰', delta: 9, label: '+9 kg' },
+        { type: 'truffle', name: 'Czarna trufla', emoji: '🍄', delta: 18, label: '+18 kg' },
+        { type: 'root', name: 'Korzeń buka', emoji: '🌿', delta: 6, label: '+6 kg' },
+        { type: 'stone', name: 'Wapienny głaz', emoji: '🪨', delta: -7, label: '-7 kg' },
+        { type: 'acorn', name: 'Tłusta bukiew', emoji: '🌰', delta: 9, label: '+9 kg' },
+        { type: 'grub', name: 'Larwa kornika', emoji: '🐛', delta: 8, label: '+8 kg' },
+        { type: 'root', name: 'Korzeń buka', emoji: '🌿', delta: 6, label: '+6 kg' },
+        { type: 'acorn', name: 'Tłusta bukiew', emoji: '🌰', delta: 9, label: '+9 kg' }
       ]
     },
     {
       name: 'Puszcza Trufli i Próchnicy 🍄🌧️',
       desc: 'Wilgotna puszcza kryje bezcenne czarne trufle podziemne (+20 kg)! Uważaj na twarde głazy w podszycie.',
-      startWeight: 125,
-      targetWeight: 160,
+      startWeight: 155,
+      targetWeight: 180,
       time: 30,
       items: [
         { type: 'truffle', name: 'Czarna trufla', emoji: '🍄', delta: 20, label: '+20 kg' },
@@ -629,42 +729,117 @@ function initBoarRootingGame() {
         { type: 'truffle', name: 'Czarna trufla', emoji: '🍄', delta: 20, label: '+20 kg' },
         { type: 'grub', name: 'Tłusty pędrak', emoji: '🐛', delta: 10, label: '+10 kg' },
         { type: 'grub', name: 'Tłusty pędrak', emoji: '🐛', delta: 10, label: '+10 kg' },
-        { type: 'grub', name: 'Tłusty pędrak', emoji: '🐛', delta: 10, label: '+10 kg' },
-        { type: 'acorn', name: 'Dojrzałe żołędzie', emoji: '🌰', delta: 8, label: '+8 kg' },
         { type: 'acorn', name: 'Dojrzałe żołędzie', emoji: '🌰', delta: 8, label: '+8 kg' },
         { type: 'acorn', name: 'Dojrzałe żołędzie', emoji: '🌰', delta: 8, label: '+8 kg' },
         { type: 'root', name: 'Kłącze paproci', emoji: '🌿', delta: 5, label: '+5 kg' },
-        { type: 'root', name: 'Kłącze paproci', emoji: '🌿', delta: 5, label: '+5 kg' },
-        { type: 'stone', name: 'Ostry głaz', emoji: '🪨', delta: -8, label: '-8 kg' },
         { type: 'stone', name: 'Ostry głaz', emoji: '🪨', delta: -8, label: '-8 kg' },
         { type: 'trash', name: 'Puszka w lesie', emoji: '🥫', delta: -6, label: '-6 kg' },
+        { type: 'truffle', name: 'Czarna trufla', emoji: '🍄', delta: 20, label: '+20 kg' },
+        { type: 'grub', name: 'Tłusty pędrak', emoji: '🐛', delta: 10, label: '+10 kg' },
+        { type: 'stone', name: 'Ostry głaz', emoji: '🪨', delta: -8, label: '-8 kg' },
         { type: 'root', name: 'Kłącze paproci', emoji: '🌿', delta: 5, label: '+5 kg' },
+        { type: 'acorn', name: 'Dojrzałe żołędzie', emoji: '🌰', delta: 8, label: '+8 kg' },
         { type: 'grub', name: 'Tłusty pędrak', emoji: '🐛', delta: 10, label: '+10 kg' }
       ]
     },
     {
-      name: 'Mroźna Zima — Zmarzlina i Śmieci ❄️🐗',
-      desc: 'Zmrożona gleba i trudne warunki. Pokonaj zmarzlinę, omijaj niebezpieczne odpady i zostań 200-kilogramowym Królem Puszczy!',
-      startWeight: 160,
-      targetWeight: 200,
+      name: 'Skraj Pola Kukurydzy — Nocne Żerowanie 🌽🌙',
+      desc: 'Kuszące pole kukurydzy przy ścianie lasu. Słodkie kolby (+12 kg), ale uważaj na ogrodzenia i druty!',
+      startWeight: 180,
+      targetWeight: 205,
+      time: 29,
+      items: [
+        { type: 'acorn', name: 'Kolba kukurydzy', emoji: '🌽', delta: 12, label: '+12 kg' },
+        { type: 'acorn', name: 'Kolba kukurydzy', emoji: '🌽', delta: 12, label: '+12 kg' },
+        { type: 'acorn', name: 'Kolba kukurydzy', emoji: '🌽', delta: 12, label: '+12 kg' },
+        { type: 'truffle', name: 'Podziemna trufla', emoji: '🍄', delta: 18, label: '+18 kg' },
+        { type: 'grub', name: 'Pędrak glebowy', emoji: '🐛', delta: 9, label: '+9 kg' },
+        { type: 'grub', name: 'Pędrak glebowy', emoji: '🐛', delta: 9, label: '+9 kg' },
+        { type: 'trash', name: 'Drut kolczasty', emoji: '⛓️', delta: -10, label: '-10 kg' },
+        { type: 'stone', name: 'Polny głaz', emoji: '🪨', delta: -8, label: '-8 kg' },
+        { type: 'acorn', name: 'Kolba kukurydzy', emoji: '🌽', delta: 12, label: '+12 kg' },
+        { type: 'truffle', name: 'Podziemna trufla', emoji: '🍄', delta: 18, label: '+18 kg' },
+        { type: 'root', name: 'Korzeń perzu', emoji: '🌿', delta: 5, label: '+5 kg' },
+        { type: 'stone', name: 'Polny głaz', emoji: '🪨', delta: -8, label: '-8 kg' },
+        { type: 'acorn', name: 'Kolba kukurydzy', emoji: '🌽', delta: 12, label: '+12 kg' },
+        { type: 'grub', name: 'Pędrak glebowy', emoji: '🐛', delta: 9, label: '+9 kg' },
+        { type: 'trash', name: 'Drut kolczasty', emoji: '⛓️', delta: -10, label: '-10 kg' },
+        { type: 'acorn', name: 'Kolba kukurydzy', emoji: '🌽', delta: 12, label: '+12 kg' }
+      ]
+    },
+    {
+      name: 'Podmokłe Olchy i Tłuściutkie Pędraki 🪵🐛',
+      desc: 'Bagnisty ols. Odyniec wbija potężny gwizd w gęste błoto — tu zimują największe larwy!',
+      startWeight: 205,
+      targetWeight: 225,
       time: 28,
+      items: [
+        { type: 'grub', name: 'Wielki pędrak olszowy', emoji: '🐛', delta: 14, label: '+14 kg' },
+        { type: 'grub', name: 'Wielki pędrak olszowy', emoji: '🐛', delta: 14, label: '+14 kg' },
+        { type: 'truffle', name: 'Trufla bagnista', emoji: '🍄', delta: 20, label: '+20 kg' },
+        { type: 'root', name: 'Kłącze twarde', emoji: '🪵', delta: 6, label: '+6 kg' },
+        { type: 'root', name: 'Kłącze twarde', emoji: '🪵', delta: 6, label: '+6 kg' },
+        { type: 'stone', name: 'Ukryty pniak', emoji: '🪵', delta: -7, label: '-7 kg' },
+        { type: 'stone', name: 'Kamień bagnisty', emoji: '🪨', delta: -8, label: '-8 kg' },
+        { type: 'trash', name: 'Butelka plastikowa', emoji: '🍾', delta: -9, label: '-9 kg' },
+        { type: 'grub', name: 'Wielki pędrak olszowy', emoji: '🐛', delta: 14, label: '+14 kg' },
+        { type: 'truffle', name: 'Trufla bagnista', emoji: '🍄', delta: 20, label: '+20 kg' },
+        { type: 'acorn', name: 'Ostatnie żołędzie', emoji: '🌰', delta: 8, label: '+8 kg' },
+        { type: 'stone', name: 'Kamień bagnisty', emoji: '🪨', delta: -8, label: '-8 kg' },
+        { type: 'grub', name: 'Wielki pędrak olszowy', emoji: '🐛', delta: 14, label: '+14 kg' },
+        { type: 'root', name: 'Kłącze twarde', emoji: '🪵', delta: 6, label: '+6 kg' },
+        { type: 'truffle', name: 'Trufla bagnista', emoji: '🍄', delta: 20, label: '+20 kg' },
+        { type: 'stone', name: 'Kamień bagnisty', emoji: '🪨', delta: -8, label: '-8 kg' }
+      ]
+    },
+    {
+      name: 'Przedzimie — Zmarzlina i Śmieci ❄️🐗',
+      desc: 'Pierwsze silne mrozy. Gleba stwardniała, zmarzlina utrudnia buchtowanie. Pokonaj chłód!',
+      startWeight: 225,
+      targetWeight: 245,
+      time: 26,
       items: [
         { type: 'truffle', name: 'Zimowa trufla', emoji: '🍄', delta: 20, label: '+20 kg' },
         { type: 'truffle', name: 'Zimowa trufla', emoji: '🍄', delta: 20, label: '+20 kg' },
         { type: 'grub', name: 'Zimujący pędrak', emoji: '🐛', delta: 12, label: '+12 kg' },
         { type: 'grub', name: 'Zimujący pędrak', emoji: '🐛', delta: 12, label: '+12 kg' },
         { type: 'acorn', name: 'Zimowe żołędzie', emoji: '🌰', delta: 10, label: '+10 kg' },
+        { type: 'root', name: 'Zmarznięta bulwa', emoji: '🌿', delta: 6, label: '+6 kg' },
+        { type: 'stone', name: 'Głaz w zmarzlinie', emoji: '🪨', delta: -8, label: '-8 kg' },
+        { type: 'stone', name: 'Głaz w zmarzlinie', emoji: '🪨', delta: -8, label: '-8 kg' },
+        { type: 'trash', name: 'Odpady / drut', emoji: '🥫', delta: -12, label: '-12 kg' },
+        { type: 'trash', name: 'Odpady / drut', emoji: '🥫', delta: -12, label: '-12 kg' },
+        { type: 'truffle', name: 'Zimowa trufla', emoji: '🍄', delta: 20, label: '+20 kg' },
+        { type: 'grub', name: 'Zimujący pędrak', emoji: '🐛', delta: 12, label: '+12 kg' },
+        { type: 'stone', name: 'Głaz w zmarzlinie', emoji: '🪨', delta: -8, label: '-8 kg' },
         { type: 'acorn', name: 'Zimowe żołędzie', emoji: '🌰', delta: 10, label: '+10 kg' },
         { type: 'root', name: 'Zmarznięta bulwa', emoji: '🌿', delta: 6, label: '+6 kg' },
-        { type: 'root', name: 'Zmarznięta bulwa', emoji: '🌿', delta: 6, label: '+6 kg' },
-        { type: 'root', name: 'Zmarznięta bulwa', emoji: '🌿', delta: 6, label: '+6 kg' },
-        { type: 'stone', name: 'Głaz w zmarzlinie', emoji: '🪨', delta: -8, label: '-8 kg' },
-        { type: 'stone', name: 'Głaz w zmarzlinie', emoji: '🪨', delta: -8, label: '-8 kg' },
-        { type: 'stone', name: 'Głaz w zmarzlinie', emoji: '🪨', delta: -8, label: '-8 kg' },
-        { type: 'trash', name: 'Odpady / drut', emoji: '🥫', delta: -12, label: '-12 kg' },
-        { type: 'trash', name: 'Odpady / drut', emoji: '🥫', delta: -12, label: '-12 kg' },
-        { type: 'grub', name: 'Zimujący pędrak', emoji: '🐛', delta: 12, label: '+12 kg' },
-        { type: 'acorn', name: 'Zimowe żołędzie', emoji: '🌰', delta: 10, label: '+10 kg' }
+        { type: 'stone', name: 'Głaz w zmarzlinie', emoji: '🪨', delta: -8, label: '-8 kg' }
+      ]
+    },
+    {
+      name: 'Głęboka Zima — Król Puszczy 265 kg 👑🐗❄️',
+      desc: 'Potężny Odyniec w zimowej sukni chybowej. Ostateczna próba przetrwania w puszczańskiej zmarzlinie!',
+      startWeight: 245,
+      targetWeight: 265,
+      time: 25,
+      items: [
+        { type: 'truffle', name: 'Królewska trufla puszczy', emoji: '🍄', delta: 25, label: '+25 kg' },
+        { type: 'truffle', name: 'Królewska trufla puszczy', emoji: '🍄', delta: 25, label: '+25 kg' },
+        { type: 'grub', name: 'Głęboki pędrak', emoji: '🐛', delta: 15, label: '+15 kg' },
+        { type: 'grub', name: 'Głęboki pędrak', emoji: '🐛', delta: 15, label: '+15 kg' },
+        { type: 'acorn', name: 'Święty żołądź', emoji: '🌰', delta: 12, label: '+12 kg' },
+        { type: 'stone', name: 'Zamarznięty głaz', emoji: '🪨', delta: -10, label: '-10 kg' },
+        { type: 'stone', name: 'Zamarznięty głaz', emoji: '🪨', delta: -10, label: '-10 kg' },
+        { type: 'trash', name: 'Metalowy złom', emoji: '⛓️', delta: -15, label: '-15 kg' },
+        { type: 'truffle', name: 'Królewska trufla puszczy', emoji: '🍄', delta: 25, label: '+25 kg' },
+        { type: 'grub', name: 'Głęboki pędrak', emoji: '🐛', delta: 15, label: '+15 kg' },
+        { type: 'stone', name: 'Zamarznięty głaz', emoji: '🪨', delta: -10, label: '-10 kg' },
+        { type: 'acorn', name: 'Święty żołądź', emoji: '🌰', delta: 12, label: '+12 kg' },
+        { type: 'stone', name: 'Zamarznięty głaz', emoji: '🪨', delta: -10, label: '-10 kg' },
+        { type: 'truffle', name: 'Królewska trufla puszczy', emoji: '🍄', delta: 25, label: '+25 kg' },
+        { type: 'trash', name: 'Metalowy złom', emoji: '⛓️', delta: -15, label: '-15 kg' },
+        { type: 'grub', name: 'Głęboki pędrak', emoji: '🐛', delta: 15, label: '+15 kg' }
       ]
     }
   ];
@@ -674,16 +849,19 @@ function initBoarRootingGame() {
   let isPlaying = false;
   let timeLeft = 35;
   let timerInterval = null;
-  let currentWeight = 90;
+  let currentWeight = 45;
   let trufflesFound = 0;
   let dugCountInWave = 0;
 
   function updateHUD() {
     const s = seasons[currentSeasonIdx];
     if (levelBadge) {
-      levelBadge.innerHTML = `<span>Sezon ${currentSeasonIdx + 1}/3:</span> ${s.name}`;
+      levelBadge.innerHTML = `<span>Sezon ${currentSeasonIdx + 1}/${seasons.length}:</span> ${s.name}`;
     }
     if (levelDotsContainer) {
+      if (levelDotsContainer.children.length !== seasons.length) {
+        levelDotsContainer.innerHTML = seasons.map((_, i) => `<span class="level-dot" title="Sezon ${i + 1}"></span>`).join('');
+      }
       const dots = levelDotsContainer.querySelectorAll('.level-dot');
       dots.forEach((dot, idx) => {
         dot.className = 'level-dot';

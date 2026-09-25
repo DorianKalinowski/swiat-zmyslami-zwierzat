@@ -32,14 +32,30 @@
         <span></span><span></span><span></span>
       </button>
 
-      <div class="nav-links" id="navLinks">
+            <div class="nav-links" id="navLinks">
         <a href="index.html" class="nav-link">Strona główna</a>
-        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog zwierząt</button>
-        <a href="pies.html" class="nav-link active">🐕 Pies</a>
-        <a href="kot.html" class="nav-link">🐈 Kot</a>
-        <a href="dzik.html" class="nav-link">🐗 Dzik</a>
-        <a href="wilk.html" class="nav-link">🐺 Wilk</a>
-        
+        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog (10)</button>
+
+        <!-- Dropdown: Wybierz zwierzę (10) -->
+        <div class="nav-dropdown" id="navAnimalsDropdown">
+          <button class="nav-link nav-dropdown-btn" id="navDropdownBtn" aria-expanded="false" style="cursor: pointer;">
+            <span>🐕 Pies</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu">
+            <a href="pies.html" class="nav-dropdown-item active"><span class="item-emoji">🐕</span> Pies domowy</a>
+            <a href="kot.html" class="nav-dropdown-item"><span class="item-emoji">🐈</span> Kot domowy</a>
+            <a href="dzik.html" class="nav-dropdown-item"><span class="item-emoji">🐗</span> Dzik euroazjatycki</a>
+            <a href="wilk.html" class="nav-dropdown-item"><span class="item-emoji">🐺</span> Wilk szary</a>
+            <a href="nietoperz.html" class="nav-dropdown-item"><span class="item-emoji">🦇</span> Nietoperz</a>
+            <a href="zmija.html" class="nav-dropdown-item"><span class="item-emoji">🐍</span> Żmija zygzakowata</a>
+            <a href="sowa.html" class="nav-dropdown-item"><span class="item-emoji">🦉</span> Sowa (Płomykówka)</a>
+            <a href="niedzwiedz.html" class="nav-dropdown-item"><span class="item-emoji">🐻</span> Niedźwiedź brunatny</a>
+            <a href="pszczola.html" class="nav-dropdown-item"><span class="item-emoji">🐝</span> Pszczoła miodna</a>
+            <a href="lis.html" class="nav-dropdown-item"><span class="item-emoji">🦊</span> Lis rudy</a>
+          </div>
+        </div>
+
         <!-- Creator Chip (Dorian Kalinowski) -->
         <div class="creator-chip" id="authorChip" title="Dowiedz się więcej o autorze">
           <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="creator-avatar">
@@ -603,12 +619,19 @@
         <div class="minigame-card">
           <div class="minigame-level-header">
             <div class="minigame-level-badge" id="dogGameLevelBadge">
-              <span>Misja 1/3:</span> Młody Szczeniak w Ogrodzie 🏡
+              <span>Misja 1/10:</span> Młody Szczeniak w Ogrodzie 🏡
             </div>
             <div class="minigame-level-dots" id="dogGameLevelDots">
               <span class="level-dot active" title="Poziom 1"></span>
               <span class="level-dot" title="Poziom 2"></span>
               <span class="level-dot" title="Poziom 3"></span>
+              <span class="level-dot" title="Poziom 4"></span>
+              <span class="level-dot" title="Poziom 5"></span>
+              <span class="level-dot" title="Poziom 6"></span>
+              <span class="level-dot" title="Poziom 7"></span>
+              <span class="level-dot" title="Poziom 8"></span>
+              <span class="level-dot" title="Poziom 9"></span>
+              <span class="level-dot" title="Poziom 10"></span>
             </div>
           </div>
 
@@ -695,9 +718,9 @@
       <button class="modal-close-btn" id="closeAuthorModal" aria-label="Zamknij okno">✕</button>
       <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="author-avatar-big">
       <h3 class="author-modal-name">Dorian Kalinowski</h3>
-      <div class="author-modal-role">Twórca aplikacji „Świat zmysłami zwierząt”</div>
+      <div class="author-modal-role">Twórca projektu i miłośnik zwierząt</div>
       <p class="author-bio">
-        Aplikacja powstała z pasji do zoologii kognitywnej, neuronauki percepcji oraz nowoczesnego web developmentu. Celem projektu jest przeniesienie odbiorcy w intymny świat zmysłów natury — tak, abyśmy przestali oceniać zwierzęta wyłącznie przez pryzmat ludzkich zmysłów, a zaczęli rozumieć ich unikalną perspektywę i mowę ciała.
+        Cześć! Mam na imię Dorian i po prostu bardzo lubię zwierzaki. Od zawsze najbardziej ciekawi mnie to, jak niesamowicie odbierają otaczający nas świat – zupełnie inaczej niż my, ludzie. Wierzę, że gdybyśmy naprawdę dobrze wiedzieli, jak myślą, widzą i czują, na świecie byłoby znacznie mniej nieporozumień i niepotrzebnych konfrontacji między nami a nimi.
       </p>
       <div style="text-align: center;">
         <button class="btn btn-primary" id="confirmAuthorModal">Zamknij</button>
@@ -749,7 +772,7 @@
         Zaprojektowane i stworzone przez: <strong>Dorian Kalinowski</strong>
       </p>
       <p class="footer-rights">
-        © 2026 Świat zmysłami zwierząt. Autorska aplikacja edukacyjna PWA. Wszelkie prawa zastrzeżone.
+        © 2026 Świat zmysłami zwierząt • Projekt edukacyjny non-profit • V1
       </p>
     </div>
   </footer>

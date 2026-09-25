@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#06090E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Zmysły Zwierząt">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <title>Niedźwiedź brunatny — Świat zmysłami zwierząt</title>
+  <meta name="description" content="Poznaj zmysły największego drapieżnika Polski: węch wyczuwający zapach z 20 km, 50 km/h sprintu, procedury spotkania na szlaku TPN/GOPR i 10-poziomowa gra.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="nav" role="navigation" aria-label="Nawigacja główna">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon-wrapper">🐾</div>
+        <span>Świat zmysłami zwierząt</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+            <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Strona główna</a>
+        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog (10)</button>
+
+        <!-- Dropdown: Wybierz zwierzę (10) -->
+        <div class="nav-dropdown" id="navAnimalsDropdown">
+          <button class="nav-link nav-dropdown-btn" id="navDropdownBtn" aria-expanded="false" style="cursor: pointer;">
+            <span>🐻 Niedźwiedź</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu">
+            <a href="pies.html" class="nav-dropdown-item"><span class="item-emoji">🐕</span> Pies domowy</a>
+            <a href="kot.html" class="nav-dropdown-item"><span class="item-emoji">🐈</span> Kot domowy</a>
+            <a href="dzik.html" class="nav-dropdown-item"><span class="item-emoji">🐗</span> Dzik euroazjatycki</a>
+            <a href="wilk.html" class="nav-dropdown-item"><span class="item-emoji">🐺</span> Wilk szary</a>
+            <a href="nietoperz.html" class="nav-dropdown-item"><span class="item-emoji">🦇</span> Nietoperz</a>
+            <a href="zmija.html" class="nav-dropdown-item"><span class="item-emoji">🐍</span> Żmija zygzakowata</a>
+            <a href="sowa.html" class="nav-dropdown-item"><span class="item-emoji">🦉</span> Sowa (Płomykówka)</a>
+            <a href="niedzwiedz.html" class="nav-dropdown-item active"><span class="item-emoji">🐻</span> Niedźwiedź brunatny</a>
+            <a href="pszczola.html" class="nav-dropdown-item"><span class="item-emoji">🐝</span> Pszczoła miodna</a>
+            <a href="lis.html" class="nav-dropdown-item"><span class="item-emoji">🦊</span> Lis rudy</a>
+          </div>
+        </div>
+
+        <!-- Creator Chip (Dorian Kalinowski) -->
+        <div class="creator-chip" id="authorChip" title="Dowiedz się więcej o autorze">
+          <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="creator-avatar">
+          <div class="creator-text">
+            <span class="creator-name">Dorian Kalinowski</span>
+            <span class="creator-role">Twórca aplikacji</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Animal Page Hero -->
+  <header class="animal-hero" id="top" style="background: linear-gradient(180deg, rgba(217, 119, 6, 0.16) 0%, rgba(9, 13, 19, 0) 100%);">
+    <div class="container">
+      <div class="animal-hero-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="index.html">Główna</a>
+            <span>›</span>
+            <span>Duże drapieżniki Polski</span>
+            <span>›</span>
+            <span style="color: var(--amber-light);">Niedźwiedź brunatny</span>
+          </div>
+          <h1>Niedźwiedź: <span style="color: var(--amber-light);">Absolutny Władca Węchu</span></h1>
+          <p class="hero-latin">Ursus arctos • Tatry i Bieszczady</p>
+          <p class="hero-desc">
+            Najpotężniejszy ssak lądowy polskich gór. Choć waży nawet do <strong>350 kg</strong> i biega z prędkością <strong>50 km/h</strong>, jego najniebezpieczniejszą i najbardziej wyrafinowaną bronią jest <strong>węch — 7 razy czulszy niż u psa myśliwskiego</strong>, wyczuwający zapach człowieka z odległości 2 km i padlinę z 20 km!
+          </p>
+          <div class="hero-stats-grid">
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--amber-light);">30 km</span>
+              <span class="stat-label">Wyczucie zapachu padliny z wiatrem</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: #F87171;">50 km/h</span>
+              <span class="stat-label">Prędkość sprintu pod górę (szybszy od konia)</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--emerald-light);">7x pies</span>
+              <span class="stat-label">2100x czulszy węch niż u człowieka</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="animal-portrait-card" style="border-color: rgba(245, 158, 11, 0.35); background: radial-gradient(circle at center, rgba(245, 158, 11, 0.18) 0%, rgba(19, 27, 39, 0.8) 70%);">
+          <div class="animal-portrait-glow" style="background: radial-gradient(circle, rgba(245, 158, 11, 0.3) 0%, transparent 70%);"></div>
+          <div class="animal-portrait-emoji" role="img" aria-label="Niedźwiedź brunatny">🐻</div>
+          <div class="portrait-tags">
+            <span class="portrait-tag">Gatunek: Ursus arctos</span>
+            <span class="portrait-tag">Ochrona w PL: Ścisła (~110 os.)</span>
+            <span class="portrait-tag">Siedlisko: Tatry i Bieszczady</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Subnavigation -->
+  <div class="sticky-subnav">
+    <div class="sticky-subnav-inner">
+      <a href="#historia" class="subnav-pill active">📜 Ewolucja</a>
+      <a href="#zmysly" class="subnav-pill">👃 Super-Węch</a>
+      <a href="#anatomia" class="subnav-pill">🧬 Biomechanika</a>
+      <a href="#bezpieczenstwo" class="subnav-pill">🛡️ Protokół Spotkania</a>
+      <a href="#ciekawostki" class="subnav-pill">💡 Ciekawostki</a>
+      <a href="#gra" class="subnav-pill">🎮 Mini Gra</a>
+      <a href="#quiz" class="subnav-pill">🎯 Mini Quiz</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================
+         SEKCJA 1: EWOLUCJA I BIOLOGIA W PIGUŁCE
+         ============================================================ -->
+    <section class="section" id="historia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light); border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.1);">Ewolucja i Megafauna</span>
+          <h2>Władca Karpackiej Puszczy: 20 Milionów Lat Ewolucji Siły</h2>
+          <p>Jak mały nadrzewny ssak wielkości lisa przekształcił się w największego drapieżnika lądowego Europy o zmyśle powonienia nie mającym sobie równych.</p>
+        </div>
+
+        <div class="timeline-stepper">
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--amber-light); box-shadow: 0 0 12px var(--amber);"></div>
+            <div class="step-header">
+              <span class="step-title">Ursavus elmensis — praniiedźwiedź z miocenu</span>
+              <span class="step-period">~20 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              Przodkowie niedźwiedzi wywodzą się od małych ssaków z rodziny Amphicynodontidae. <em>Ursavus</em> ważył zaledwie kilkanaście kilogramów i wspinał się na drzewa w subtropikalnych lasach Eurazji, żywiąc się głównie owocami i owadami.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--amber-light); box-shadow: 0 0 12px var(--amber);"></div>
+            <div class="step-header">
+              <span class="step-title">Rozwój gigantyzmu i wszystkożerności</span>
+              <span class="step-period">~5 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              Ochłodzenie klimatu i zanik lasów wymusiły przejście na dietę wszystkożerną. Wykształciły się potężne zęby trzonowe o szerokich koronach do miażdżenia pędów i korzeni, a nos uległ wydłużeniu, tworząc gigantyczną komorę labiryntu węchowego.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--amber-light); box-shadow: 0 0 12px var(--amber);"></div>
+            <div class="step-header">
+              <span class="step-title">Epoka lodowcowa i niedźwiedź jaskiniowy</span>
+              <span class="step-period">~100 000 lat temu</span>
+            </div>
+            <p class="step-body">
+              W Karpatach i Tatrach niedźwiedź brunatny koegzystował z potężnym roślinożernym niedźwiedziem jaskiniowym (<em>Ursus spelaeus</em>). Podczas gdy wyspecjalizowany niedźwiedź jaskiniowy wymarł wraz ze zmianą flory, elastyczny brunatny przetrwał dzięki bezkonkurencyjnej zdolności adaptacji!
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--amber-light); box-shadow: 0 0 12px var(--amber);"></div>
+            <div class="step-header">
+              <span class="step-title">Niedźwiedź w polskich górach dzisiaj</span>
+              <span class="step-period">Dziś</span>
+            </div>
+            <p class="step-body">
+              W Polsce żyje zaledwie ok. 110–120 niedźwiedzi brunatnych, głównie w Bieszczadach i Tatrach. Objęte są ścisłą ochroną gatunkową. Ich obecność jest dowodem najwyższej dzikości i zdrowia karpackiego ekosystemu.
+            </p>
+          </div>
+        </div>
+
+        <div class="evolution-insight-box" style="border-color: rgba(245, 158, 11, 0.3); background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(19, 27, 39, 0.6) 100%);">
+          <div class="insight-col">
+            <h4 style="color: var(--amber-light);">🐻 Dlaczego gawrowanie to nie jest zwykła hibernacja?</h4>
+            <ul class="insight-list">
+              <li>Prawdziwi hibernatorzy (np. świstaki) obniżają temperaturę ciała niemal do 0°C i są w stanie śpiączki. Niedźwiedź obniża temperaturę zaledwie o <strong>4–5°C</strong> — śpi czujnie i w razie zagrożenia może zerwać się do ataku w 2 sekundy!</li>
+              <li>Samice niedźwiedzia <strong>rodzą i karmią młode w środku zimy</strong> w gawrze, nie przyjmując pokarmu ani wody przez 4–5 miesięcy!</li>
+            </ul>
+          </div>
+          <div class="insight-col">
+            <h4 style="color: var(--emerald-light);">🧬 Recykling mocznika — medyczny cud:</h4>
+            <ul class="insight-list">
+              <li>Przez całą zimę niedźwiedź nie oddaje moczu ani kału. Toksyczny mocznik jest wchłaniany przez pęcherz i transportowany do jelit, gdzie bakterie rozkładają go na aminokwasy, które odbudowują masę mięśniową!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sensory Comparison Section -->
+    <section class="section" id="zmysly" style="padding-top: 2rem;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(245, 158, 11, 0.12); color: var(--amber-light); border: 1px solid rgba(245, 158, 11, 0.3);">
+            Biologia Percepcji
+          </div>
+          <h2>Jak widzi, słyszy i czuje niedźwiedź brunatny?</h2>
+          <p class="section-lead">
+            Wielu uważa niedźwiedzia za powolnego grubasa o słabym wzroku. To śmiertelnie niebezpieczny mit. Niedźwiedź to zwinny sprinter, doskonały pływak i mistrz biochemicznej nawigacji zapachowej.
+          </p>
+        </div>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <div class="card-icon-header" style="background: rgba(245, 158, 11, 0.15); color: var(--amber-light);">👃</div>
+            <h3>Super-Węch (Organ Jacobsona i Błędnik Węchowy)</h3>
+            <p>
+              Powierzchnia błony węchowej niedźwiedzia jest 100-krotnie większa niż u człowieka. Niedźwiedź nieustannie bada kierunek wiatru. Gdy staje na tylnych łapach, nie szykuje się do ataku — <strong>unosi nos na wysokość 2,5 metra</strong>, by złapać wyższe prądy powietrzne zza grani!
+            </p>
+            <div class="card-stat-pill" style="color: var(--amber-light); border-color: rgba(245, 158, 11, 0.3);">
+              Wyczuwa zapach padliny: 20 km pod wiatr
+            </div>
+          </div>
+
+          <div class="comparison-card">
+            <div class="card-icon-header" style="background: rgba(56, 189, 248, 0.15); color: var(--cyan-light);">👁️</div>
+            <h3>Wzrok: Kolorowy i Wyczulony na Ruch</h3>
+            <p>
+              Przez dekady uważano niedźwiedzie za krótkowidzów. Nowe badania udowodniły, że widzą w pełnym spektrum barw (rozróżniają dojrzałe czerwone i granatowe jagody od zielonych liści), a kąt widzenia pozwala dostrzec poruszenie gałązki z kilkuset metrów.
+            </p>
+            <div class="card-stat-pill" style="color: var(--cyan-light); border-color: rgba(56, 189, 248, 0.3);">
+              Widzenie barwne + noktowizja leśna
+            </div>
+          </div>
+
+          <div class="comparison-card">
+            <div class="card-icon-header" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald-light);">👂</div>
+            <h3>Słuch Ultradźwiękowy do 50 000 Hz</h3>
+            <p>
+              Okrągłe, gęsto owłosione uszy rejestrują dźwięki o częstotliwościach ponad 2-krotnie wyższych niż ludzkie ucho. Niedźwiedź słyszy chrzęst butów turysty na kamieniach szlaku z ponad 1 kilometra i natychmiast schodzi w gęstą kosodrzewinę.
+            </p>
+            <div class="card-stat-pill" style="color: var(--emerald-light); border-color: rgba(16, 185, 129, 0.3);">
+              Pasmo słuchu: 16 Hz – 50 000 Hz
+            </div>
+          </div>
+
+          <div class="comparison-card">
+            <div class="card-icon-header" style="background: rgba(239, 68, 68, 0.15); color: #f87171;">⚡</div>
+            <h3>Masa, Zwinność i Letarg Zimowy</h3>
+            <p>
+              Niedźwiedź to potężny wspinacz i nurek. Zimą nie zapada w głęboką hibernację z wychłodzeniem, lecz w <strong>letarg (torpor)</strong>: jego temperatura spada zaledwie o kilka stopni, a tętno z 40 do 8 uderzeń/min. Może błyskawicznie obudzić się w gawrze w razie zagrożenia!
+            </p>
+            <div class="card-stat-pill" style="color: #f87171; border-color: rgba(239, 68, 68, 0.3);">
+              Zimowy letarg: do 5 miesięcy bez jedzenia i picia
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Simulator 1: Scent Wind Drift Canvas -->
+    <section class="section" style="background: rgba(255, 255, 255, 0.02);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(245, 158, 11, 0.12); color: var(--amber-light); border: 1px solid rgba(245, 158, 11, 0.3);">
+            Interaktywny Symulator
+          </div>
+          <h2>Rozprzestrzenianie Cząsteczek Zapachu w Górach</h2>
+          <p class="section-lead">
+            Zobacz, jak wiatr przenosi molekuły zapachowe wzdłuż bieszczadzkich połonin i jak czuły nos niedźwiedzia przechwytuje stożek zapachu z potężnego dystansu.
+          </p>
+        </div>
+
+        <div class="simulator-wrapper" style="border: 1px solid rgba(245, 158, 11, 0.3);">
+          <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <label for="bearFoodSelect" style="font-size: 0.9rem; color: var(--text-muted); font-weight: 600;">Źródło zapachu:</label>
+              <select id="bearFoodSelect" style="background: var(--bg-card); color: var(--text-bright); border: 1px solid rgba(255,255,255,0.15); padding: 6px 12px; border-radius: 8px; font-size: 0.9rem;">
+                <option value="honey">Dziki miód w barci (3 km)</option>
+                <option value="berries">Borówki na połoninie (1 km)</option>
+                <option value="meat">Padlina po wilkach (20 km)</option>
+              </select>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <label for="bearWindSlider" style="font-size: 0.9rem; color: var(--text-muted); font-weight: 600;">Siła wiatru górskiego:</label>
+              <input type="range" id="bearWindSlider" min="1" max="8" value="3.5" step="0.5" style="accent-color: var(--amber-light);">
+            </div>
+          </div>
+
+          <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; background: #0D110D;">
+            <canvas id="bearScentCanvas" style="width: 100%; height: 280px; display: block;"></canvas>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.75rem; text-align: center;">
+            💡 Stożek feromonowo-zapachowy rozszerza się w prądach konwekcyjnych. Niedźwiedź porusza się zygzakiem pod wiatr, by zlokalizować źródło z dokładnością do centymetra.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Audio Synthesizer: Bear Warning Signals -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(239, 68, 68, 0.12); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3);">
+            Syntezator Web Audio API
+          </div>
+          <h2>Mowa Ciała i Dźwięki Ostrzegawcze Niedźwiedzia</h2>
+          <p class="section-lead">
+            Niedźwiedź rzadko ryczy bez powodu — ryk to ostateczność. Ostrzega człowieka subtelniejszymi, głuchymi sygnałami. Posłuchaj syntetycznych rekonstrukcji:
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          <div class="comparison-card" style="text-align: center; border-color: rgba(245, 158, 11, 0.25);">
+            <div style="font-size: 2.8rem; margin-bottom: 0.75rem;">😤</div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Fukanie Nosowe (Huff)</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+              Gwałtowny wyrzut powietrza przez nozdrza przy pierwszym zaskoczeniu. Oznacza: <em>„Widzę cię, nie podchodź bliżej”</em>.
+            </p>
+            <button id="playBearHuffBtn" class="primary-btn" style="background: var(--amber); border-color: var(--amber); width: 100%;">
+              🔊 Odtwórz Fukanie
+            </button>
+          </div>
+
+          <div class="comparison-card" style="text-align: center; border-color: rgba(239, 68, 68, 0.25);">
+            <div style="font-size: 2.8rem; margin-bottom: 0.75rem;">🦷</div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Kłapanie Zębami (Jaw Pop)</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+              Dźwięk uderzania zębami trzonowymi. Objaw skrajnego zdenerwowania, obrony młodych lub zdobytej padliny.
+            </p>
+            <button id="playBearPopBtn" class="primary-btn" style="background: #dc2626; border-color: #dc2626; width: 100%;">
+              🔊 Odtwórz Kłapanie
+            </button>
+          </div>
+
+          <div class="comparison-card" style="text-align: center; border-color: rgba(168, 85, 247, 0.25);">
+            <div style="font-size: 2.8rem; margin-bottom: 0.75rem;">📢</div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Głęboki Basowy Ryk</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+              Rezonujący bas (70–120 Hz) używany w walce z rywalami o samicę lub podczas obrony terytorium. Niesie się echem po dolinach.
+            </p>
+            <button id="playBearRoarBtn" class="primary-btn" style="background: #9333ea; border-color: #9333ea; width: 100%;">
+              🔊 Odtwórz Basowy Ryk
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anatomy Explorer Section -->
+    <section class="section" id="anatomia" style="background: rgba(255, 255, 255, 0.02);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(245, 158, 11, 0.12); color: var(--amber-light); border: 1px solid rgba(245, 158, 11, 0.3);">
+            Biomechanika Niedźwiedzia
+          </div>
+          <h2>Anatomia i Narządy Zmysłów Niedźwiedzia Brunatnego</h2>
+          <p class="section-lead">
+            Kliknij poszczególne elementy sylwetki, aby odkryć biomechaniczne tajemnice tego 300-kilogramowego giganta.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; align-items: center;">
+          <!-- SVG Diagram -->
+          <div style="background: var(--bg-card); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 16px; padding: 2rem; text-align: center;">
+            <svg viewBox="0 0 500 320" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" aria-label="Anatomia niedźwiedzia brunatnego">
+              <!-- Background gradient -->
+              <defs>
+                <linearGradient id="bearGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#D97706" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#78350F" stop-opacity="0.1"/>
+                </linearGradient>
+              </defs>
+              <rect width="500" height="320" rx="12" fill="url(#bearGlow)"/>
+
+              <!-- Bear Body Silhouette (Brown Bear stylized contour) -->
+              <path d="M 90 230 C 80 180, 110 130, 160 110 C 200 80, 230 75, 260 100 C 290 120, 320 125, 360 140 C 400 155, 430 180, 440 220 L 410 270 L 370 270 L 350 210 L 220 210 L 190 270 L 140 270 Z" fill="#451A03" stroke="#B45309" stroke-width="3" />
+              <!-- Massive Shoulder Hump -->
+              <path d="M 170 110 C 200 65, 250 70, 275 105" fill="none" stroke="#F59E0B" stroke-width="4" stroke-dasharray="6,4" />
+              <!-- Head and Snout -->
+              <path d="M 90 170 C 60 180, 40 195, 35 210 C 45 220, 75 225, 105 210" fill="#3B1702" stroke="#B45309" stroke-width="2" />
+              <!-- Ears -->
+              <circle cx="115" cy="145" r="14" fill="#5A2304" stroke="#F59E0B" stroke-width="2" />
+              <!-- Massive Front Paws & Claws -->
+              <path d="M 125 270 L 115 285 M 135 270 L 130 288 M 145 270 L 145 288" stroke="#FCD34D" stroke-width="3" stroke-linecap="round" />
+
+              <!-- Interactive Hotspots -->
+              <g class="anatomy-point" style="cursor: pointer;">
+                <circle cx="215" cy="85" r="12" fill="#F59E0B" opacity="0.9"/>
+                <circle cx="215" cy="85" r="20" fill="none" stroke="#F59E0B" stroke-width="2" opacity="0.6">
+                  <animate attributeName="r" values="12;24;12" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <text x="215" y="90" fill="#000" font-size="12" font-weight="bold" text-anchor="middle">1</text>
+              </g>
+
+              <g class="anatomy-point" style="cursor: pointer;">
+                <circle cx="45" cy="205" r="12" fill="#F59E0B" opacity="0.9"/>
+                <circle cx="45" cy="205" r="20" fill="none" stroke="#F59E0B" stroke-width="2" opacity="0.6">
+                  <animate attributeName="r" values="12;24;12" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+                </circle>
+                <text x="45" y="210" fill="#000" font-size="12" font-weight="bold" text-anchor="middle">2</text>
+              </g>
+
+              <g class="anatomy-point" style="cursor: pointer;">
+                <circle cx="130" cy="275" r="12" fill="#F59E0B" opacity="0.9"/>
+                <circle cx="130" cy="275" r="20" fill="none" stroke="#F59E0B" stroke-width="2" opacity="0.6">
+                  <animate attributeName="r" values="12;24;12" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+                </circle>
+                <text x="130" y="280" fill="#000" font-size="12" font-weight="bold" text-anchor="middle">3</text>
+              </g>
+
+              <g class="anatomy-point" style="cursor: pointer;">
+                <circle cx="115" cy="145" r="12" fill="#F59E0B" opacity="0.9"/>
+                <circle cx="115" cy="145" r="20" fill="none" stroke="#F59E0B" stroke-width="2" opacity="0.6">
+                  <animate attributeName="r" values="12;24;12" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+                </circle>
+                <text x="115" y="150" fill="#000" font-size="12" font-weight="bold" text-anchor="middle">4</text>
+              </g>
+
+              <g class="anatomy-point" style="cursor: pointer;">
+                <circle cx="70" cy="210" r="12" fill="#F59E0B" opacity="0.9"/>
+                <circle cx="70" cy="210" r="20" fill="none" stroke="#F59E0B" stroke-width="2" opacity="0.6">
+                  <animate attributeName="r" values="12;24;12" dur="2s" begin="1.6s" repeatCount="indefinite"/>
+                </circle>
+                <text x="70" y="215" fill="#000" font-size="12" font-weight="bold" text-anchor="middle">5</text>
+              </g>
+            </svg>
+
+            <!-- Buttons for mobile/accessible selection -->
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1.25rem;">
+              <button class="anatomy-btn active" data-bear-anatomy="hump">1. Garb Mięśniowy</button>
+              <button class="anatomy-btn" data-bear-anatomy="nose">2. Super-Nos</button>
+              <button class="anatomy-btn" data-bear-anatomy="claws">3. Pazury 10 cm</button>
+              <button class="anatomy-btn" data-bear-anatomy="ears">4. Uszy i Słuch</button>
+              <button class="anatomy-btn" data-bear-anatomy="teeth">5. Zęby Wszystkożercy</button>
+            </div>
+          </div>
+
+          <!-- Inspector Details Card -->
+          <div class="anatomy-card" style="border: 1px solid rgba(245, 158, 11, 0.3);">
+            <div class="badge" style="background: rgba(245, 158, 11, 0.2); color: var(--amber-light); margin-bottom: 0.75rem;">
+              Analiza Narządu
+            </div>
+            <h3 id="bearAnatomyTitle" style="font-size: 1.4rem; margin-bottom: 0.75rem; color: #fff;">
+              Garb Mięśniowy Łopatek (Potęga Kopania)
+            </h3>
+            <p id="bearAnatomyDesc" style="color: var(--text-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+              Masywny garb na karku niedźwiedzia brunatnego to nie tłuszcz, lecz potężny zespół mięśni łączący łopatki z kręgosłupem. Daje mu nieludzką siłę do rozrywania pni drzew, przewracania głazów ważących 200 kg i kopania głębokich gawr zimowych.
+            </p>
+            <div id="bearAnatomyStat" class="card-stat-pill" style="color: var(--amber-light); border-color: rgba(245, 158, 11, 0.4);">
+              Siła uderzenia łapy: do 1200 kg
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Crisis Simulator: Encounter on Trail -->
+    <section class="section" id="bezpieczenstwo">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(239, 68, 68, 0.12); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3);">
+            Edukacja i Bezpieczeństwo TPN / GOPR
+          </div>
+          <h2>Spotkanie z Niedźwiedziem na Szlaku: Co Robisz?</h2>
+          <p class="section-lead">
+            Idziesz szlakiem w Dolinie Roztoki lub w Bieszczadach. Nagle 40 metrów przed Tobą z zarośli wychodzi niedźwiedź. Wybierz swoją reakcję i sprawdź ocenę ekspertów:
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+          <div class="bear-crisis-card" data-action="run" style="background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem; cursor: pointer; text-align: center; transition: all 0.2s;">
+            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🏃💨</div>
+            <h4 style="margin-bottom: 0.25rem;">A. Rzucam się do ucieczki</h4>
+            <p style="font-size: 0.82rem; color: var(--text-dim); margin: 0;">Biegnę co sił w dół szlaku</p>
+          </div>
+
+          <div class="bear-crisis-card" data-action="scream_attack" style="background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem; cursor: pointer; text-align: center; transition: all 0.2s;">
+            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">😱🪨</div>
+            <h4 style="margin-bottom: 0.25rem;">B. Krzyczę i rzucam plecakiem</h4>
+            <p style="font-size: 0.82rem; color: var(--text-dim); margin: 0;">Próbuję go odstraszyć krzykiem</p>
+          </div>
+
+          <div class="bear-crisis-card" data-action="tree" style="background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem; cursor: pointer; text-align: center; transition: all 0.2s;">
+            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🌲🧗</div>
+            <h4 style="margin-bottom: 0.25rem;">C. Wchodzę szybko na drzewo</h4>
+            <p style="font-size: 0.82rem; color: var(--text-dim); margin: 0;">Szukam wysokiego świerku</p>
+          </div>
+
+          <div class="bear-crisis-card" data-action="calm_retreat" style="background: var(--bg-card); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 1.25rem; cursor: pointer; text-align: center; transition: all 0.2s;">
+            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🚶‍♂️🗣️</div>
+            <h4 style="margin-bottom: 0.25rem; color: var(--emerald-light);">D. Spokój i powolny odwrót</h4>
+            <p style="font-size: 0.82rem; color: var(--text-dim); margin: 0;">Mówię spokojnym głosem i cofam się</p>
+          </div>
+        </div>
+
+        <div id="bearCrisisResult" class="crisis-feedback-box"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 4: FASCYNUJĄCE CIEKAWOSTKI
+         ============================================================ -->
+    <section class="section" id="ciekawostki" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light); border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.1);">Sekrety Natury</span>
+          <h2>Niezwykłe Fakty o Niedźwiedziach Brunatnych</h2>
+          <p>Oto zjawiska fizjologiczne, które czynią niedźwiedzia jednym z najbardziej zdumiewających ssaków na świecie.</p>
+        </div>
+
+        <div class="curiosity-grid">
+          <div class="curiosity-card" style="border-color: rgba(245, 158, 11, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🚀</span>
+              <h4 style="color: var(--amber-light);">Medyczny fenomen dla astronautów</h4>
+            </div>
+            <p>
+              Gdyby człowiek leżał w łóżku bez ruchu przez 5 miesięcy, straciłby połowę masy mięśniowej i uległ odwapnieniu kości (osteoporozie). Niedźwiedź po 5 miesiącach snu zimowego wstaje z gawry z nienaruszonymi kośćmi i pełną siłą mięśni! Naukowcy badają jego krew, by opracować leki dla astronautów podróżujących na Marsa.
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(239, 68, 68, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🫐</span>
+              <h4 style="color: #F87171;">Hiperfagia: 20 000 kalorii dziennie</h4>
+            </div>
+            <p>
+              Późnym latem i jesienią niedźwiedź wpada w stan niepohamowanego apetytu (hiperfagia). Żeruje niemal 20 godzin na dobę, zjadając setki kilogramów borówek, jeżyn, orzechów bukowych i jabłek, przybierając na wadze nawet 2–3 kg każdego dnia!
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(16, 185, 129, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🐾</span>
+              <h4 style="color: var(--emerald-light);">Pazury jak zęby koparki</h4>
+            </div>
+            <p>
+              Pazury przednich łap niedźwiedzia brunatnego osiągają do 10–12 cm długości. W przeciwieństwie do kota niedźwiedź nie potrafi ich chować. Działają jak potężne lemiesze spychacza — jednym ruchem potrafi przewrócić głaz o masie ćwierć tony w poszukiwaniu larw owadów.
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(56, 189, 248, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🧍</span>
+              <h4 style="color: var(--cyan-light);">Stanie na łapach to nie agresja</h4>
+            </div>
+            <p>
+              Kiedy niedźwiedź unosi się na tylnych łapach, turyści często myślą, że zaraz skoczy do ataku. To błąd: niedźwiedź staje pionowo tylko dlatego, że ma słaby wzrok i chce unieść nozdrza wysoko, by złapać strugi wiatru i zidentyfikować intruza.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10-Level Mini-Game Section -->
+    <section class="section" id="gra" style="background: rgba(255, 255, 255, 0.02);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(245, 158, 11, 0.12); color: var(--amber-light); border: 1px solid rgba(245, 158, 11, 0.3);">
+            10-Poziomowa Gra Zręcznościowa
+          </div>
+          <h2>Zapachowy Szlak Bieszczadów 🐻🧭</h2>
+          <p class="section-lead">
+            Wciel się w niedźwiedzia brunatnego! Zbieraj wysokokaloryczny pokarm przed zimą, omijaj nieostrożnych turystów i przygotuj się do gawrowania na Połoninie Wetlińskiej.
+          </p>
+        </div>
+
+        <div class="minigame-wrapper" style="border: 1px solid rgba(245, 158, 11, 0.35);">
+          <!-- Game HUD -->
+          <div class="game-hud">
+            <div class="hud-left">
+              <div class="game-level-badge" id="bearGameLevelBadge">
+                <span>Misja 1/10:</span> Wiosenne Polany nad Potokiem 🌿🐻
+              </div>
+              <div class="level-dots-container" id="bearGameLevelDots"></div>
+            </div>
+
+            <div class="hud-right">
+              <div class="hud-stat">
+                <span class="hud-label">Kalorie:</span>
+                <span class="hud-value" id="bearGameCalories">0 kcal</span>
+              </div>
+              <div class="hud-stat">
+                <span class="hud-label">Cel:</span>
+                <span class="hud-value" id="bearGameTargetCalories" style="color: var(--amber-light);">600 kcal</span>
+              </div>
+              <div class="hud-stat">
+                <span class="hud-label">Czas:</span>
+                <span class="hud-value" id="bearGameTimer" style="color: #f87171;">40s</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Canvas Container -->
+          <div class="game-canvas-container" style="position: relative; overflow: hidden; background: #0F140D;">
+            <canvas id="bearGameCanvas" style="width: 100%; height: 340px; display: block; cursor: crosshair;"></canvas>
+
+            <!-- Game Overlay -->
+            <div class="game-overlay show" id="bearGameOverlay">
+              <div class="overlay-modal">
+                <div class="overlay-icon" id="bearGameOverIcon">🐻🌲</div>
+                <h3 id="bearGameOverTitle">Wyprawa w Karpacką Puszczę</h3>
+                <p id="bearGameOverDesc">
+                  Steruj niedźwiedziem myszą lub dotykiem palca na ekranie telefonu. Zbieraj borówki (🫐), miód (🍯), ryby (🐟) i padlinę (🥩). <strong>Unikaj turystów z plecakami (🎒)</strong> — spotkanie z człowiekiem to ryzyko konfliktu!
+                </p>
+                <div class="game-controls-row">
+                  <button id="startBearGameBtn" class="primary-btn" style="background: var(--amber); border-color: var(--amber);">
+                    🎮 Rozpocznij Misję 1
+                  </button>
+                  <button id="nextBearLevelBtn" class="primary-btn" style="background: var(--emerald); border-color: var(--emerald); display: none;">
+                    ▶️ Następna Misja
+                  </button>
+                  <button id="restartBearGameBtn" class="secondary-btn" style="display: none;">
+                    🔄 Spróbuj Ponownie
+                  </button>
+                  <button id="resetBearCampaignBtn" class="secondary-btn" style="display: none;">
+                    🏆 Zagraj Ponownie od Zera
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="padding: 1rem 1.5rem; background: rgba(0,0,0,0.3); font-size: 0.85rem; color: var(--text-dim); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+            <span>📱 <strong>Sterowanie:</strong> Przesuwaj palec po ekranie lub ruszaj myszką.</span>
+            <span>🐻 <strong>10 Misji:</strong> Od wiosennych traw aż po sen zimowy w gawrze!</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Myth Busting & Crucial Facts -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(16, 185, 129, 0.12); color: var(--emerald-light); border: 1px solid rgba(16, 185, 129, 0.3);">
+            Obalamy Szkodliwe Mity
+          </div>
+          <h2>Prawda o Polskich Niedźwiedziach Brunatnych</h2>
+          <p class="section-lead">
+            Większość tragedii wynika z karmienia dzikich zwierząt (synantropizacji) i ludzkiej bezmyślności.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+          <div class="comparison-card" style="border-left: 4px solid #ef4444;">
+            <h4 style="color: #ef4444; font-size: 1.1rem; margin-bottom: 0.5rem;">❌ MIT: Niedźwiedź poluje na ludzi</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+              <strong>Fakt:</strong> Człowiek NIE jest pokarmem niedźwiedzia. Niedźwiedzie boją się ludzi i schodzą z drogi na długo przed tym, jak ich dostrzeżemy. Do 99% ataków dochodzi, gdy człowiek zaskoczy niedźwiedzia pod wiatr w gęstym młodniku lub podejdzie pod gawrę z młodymi.
+            </p>
+          </div>
+
+          <div class="comparison-card" style="border-left: 4px solid #ef4444;">
+            <h4 style="color: #ef4444; font-size: 1.1rem; margin-bottom: 0.5rem;">❌ MIT: Rzucenie kanapki odwróci jego uwagę</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+              <strong>Fakt:</strong> Zostawianie jedzenia lub karmienie to <strong>wyrok śmierci na niedźwiedzia</strong>! Tzw. niedźwiedź zsynantropizowany traci lęk przed człowiekiem, zaczyna podchodzić pod schroniska i w konsekwencji musi zostać odstrzelony lub uśpiony.
+            </p>
+          </div>
+
+          <div class="comparison-card" style="border-left: 4px solid #10b981;">
+            <h4 style="color: var(--emerald-light); font-size: 1.1rem; margin-bottom: 0.5rem;">✅ FAKT: Dzwoneczek i rozmowa ratują życie</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+              <strong>Fakt:</strong> Idąc bieszczadzkimi lub tatrzańskimi szlakami o zmierzchu, nie skradaj się jak ninja! Rozmawiaj ze współtowarzyszem, pogwizduj lub noś metalowy element. Słysząc Cię z daleka, niedźwiedź spokojnie odejdzie w głąb lasu.
+            </p>
+          </div>
+        </div>
+    <!-- ============================================================
+         SEKCJA 6: INTERAKTYWNY MINI QUIZ
+         ============================================================ -->
+    <section class="section" id="quiz" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light); border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.1);">Sprawdź swoją wiedzę</span>
+          <h2>Mini Quiz Mistrza Zmysłów Niedźwiedzia</h2>
+          <p>5 pytań weryfikujących wiedzę o potędze węchu, zasadach bezpieczeństwa TPN i biologii niedźwiedzi.</p>
+        </div>
+
+        <div class="quiz-wrapper" style="border-color: rgba(245, 158, 11, 0.3);">
+          <div class="quiz-meter-bar">
+            <div class="quiz-meter-progress" id="bearQuizMeterProgress" style="background: linear-gradient(90deg, #F59E0B 0%, #10B981 100%);"></div>
+          </div>
+          <div id="bearQuizDynamicBody">
+            <!-- Rendered dynamically by js/bear-simulators.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation between Animals -->
+    <section style="padding: 60px 0; text-align: center;">
+      <div class="container">
+        <h3 style="margin-bottom: 16px;">Poznaj inne zwierzęta</h3>
+        <p style="margin-bottom: 24px; color: var(--text-muted);">Przełącz się na percepcję pszczoły miodnej lub przejrzyj katalog wszystkich 10 gatunków.</p>
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a href="pszczola.html" class="btn btn-primary" style="background: linear-gradient(135deg, #F59E0B 0%, #06B6D4 100%);">
+            <span>🐝 Zobacz zmysły pszczoły</span>
+          </a>
+          <button class="btn btn-secondary animal-catalog-trigger">
+            <span>🐾 Otwórz katalog wszystkich zwierząt</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <span style="font-size: 1.6rem;">🐾</span>
+            <span>Świat zmysłami zwierząt</span>
+          </div>
+          <p class="footer-desc">
+            Interaktywna platforma edukacyjna prezentująca percepcję zmysłową zwierząt. Zrozumienie zmysłów to klucz do empatii i bezpiecznego współistnienia ludzi i dzikiej fauny.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Katalog Zwierząt</h4>
+          <ul class="footer-links">
+            <li><a href="pies.html">🐕 Pies domowy</a></li>
+            <li><a href="kot.html">🐈 Kot domowy</a></li>
+            <li><a href="dzik.html">🐗 Dzik euroazjatycki</a></li>
+            <li><a href="wilk.html">🐺 Wilk szary</a></li>
+            <li><a href="nietoperz.html">🦇 Nietoperz</a></li>
+            <li><a href="zmija.html">🐍 Żmija zygzakowata</a></li>
+            <li><a href="sowa.html">🦉 Sowa (Płomykówka)</a></li>
+            <li><a href="niedzwiedz.html">🐻 Niedźwiedź brunatny</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">O Projekcie</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#misja">Dlaczego zmysły?</a></li>
+            <li><a href="index.html#bezpieczenstwo">Zasady bezpiecznych spotkań</a></li>
+            <li><a href="#" id="triggerAuthorModalFromFooter">O autorze (Dorian Kalinowski)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Świat zmysłami zwierząt • Projekt edukacyjny non-profit • V1</p>
+        <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 4px;">
+          Stworzone przez <a href="https://linkedin.com/in/dorian-kalinowski" target="_blank" rel="noopener noreferrer" style="color: var(--amber-light); text-decoration: underline;">Doriana Kalinowskiego</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Bottom Sticky Navigation -->
+  <div class="mobile-bottom-bar" role="navigation" aria-label="Szybka nawigacja mobilna">
+    <a href="index.html" class="mobile-bar-btn">
+      <span class="mobile-bar-icon">🏠</span>
+      <span>Główna</span>
+    </a>
+    <a href="#gra" class="mobile-bar-btn">
+      <span class="mobile-bar-icon">🎮</span>
+      <span>10 Gier</span>
+    </a>
+    <button class="mobile-bar-btn animal-catalog-trigger" id="mobileCatalogBtn">
+      <span class="mobile-bar-icon">🐾</span>
+      <span>Zwierzęta</span>
+    </button>
+    <button class="mobile-bar-btn" id="mobileAuthorBtn">
+      <span class="mobile-bar-icon">👨‍💻</span>
+      <span>Autor</span>
+    </button>
+  </div>
+
+  <!-- PWA Install Banner -->
+  <div class="pwa-install-banner" id="pwaBanner">
+    <div class="pwa-content">
+      <span style="font-size: 1.8rem;">📱</span>
+      <div>
+        <div style="font-weight: 700; font-size: 0.95rem;">Zainstaluj jako aplikację</div>
+        <div style="font-size: 0.8rem; color: var(--text-dim);">Działa 100% offline w lesie i górach bez internetu!</div>
+      </div>
+    </div>
+    <div class="pwa-actions">
+      <button class="primary-btn" id="pwaInstallBtn" style="padding: 6px 14px; font-size: 0.85rem;">Instaluj</button>
+      <button class="pwa-dismiss" id="pwaDismissBtn" aria-label="Zamknij">✕</button>
+    </div>
+  </div>
+
+  <!-- Animal Catalog Modal -->
+  <div class="modal-backdrop" id="animalCatalogModal" role="dialog" aria-modal="true" aria-labelledby="catalogModalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="catalogModalTitle" style="display: flex; align-items: center; gap: 0.5rem; margin: 0; font-size: 1.25rem;">
+          <span>🐾</span> Katalog Zwierząt
+        </h3>
+        <button class="modal-close" id="closeAnimalModal" aria-label="Zamknij katalog">✕</button>
+      </div>
+      <div class="catalog-grid" id="modalAnimalsGrid"></div>
+    </div>
+  </div>
+
+  <!-- Author Modal -->
+  <div class="modal-backdrop" id="authorModal" role="dialog" aria-modal="true" aria-labelledby="authorModalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="authorModalTitle" style="display: flex; align-items: center; gap: 0.5rem; margin: 0; font-size: 1.25rem;">
+          <span>👨‍💻</span> O Twórcy Projektu
+        </h3>
+        <button class="modal-close" id="closeAuthorModal" aria-label="Zamknij profil autora">✕</button>
+      </div>
+      <div class="author-modal-content">
+        <div class="author-modal-top">
+          <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="author-modal-avatar">
+          <div>
+            <h4 style="font-size: 1.2rem; margin-bottom: 2px;">Dorian Kalinowski</h4>
+            <p style="color: var(--amber-light); font-size: 0.88rem; font-weight: 600; margin-bottom: 6px;">
+              Twórca projektu i miłośnik zwierząt
+            </p>
+            <div style="display: flex; gap: 0.5rem;">
+              <a href="https://linkedin.com/in/dorian-kalinowski" target="_blank" rel="noopener noreferrer" class="hero-pill" style="font-size: 0.78rem; text-decoration: none; padding: 3px 10px; border-color: rgba(56, 189, 248, 0.4); color: var(--cyan-light);">
+                🔗 Profil LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-top: 1rem;">
+          Cześć! Mam na imię Dorian i po prostu bardzo lubię zwierzaki. Od zawsze najbardziej ciekawi mnie to, jak niesamowicie odbierają otaczający nas świat – zupełnie inaczej niż my, ludzie. Wierzę, że gdybyśmy naprawdę dobrze wiedzieli, jak myślą, widzą i czują, na świecie byłoby znacznie mniej nieporozumień i niepotrzebnych konfrontacji między nami a nimi.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/bear-simulators.js"></script>
+</body>
+</html>

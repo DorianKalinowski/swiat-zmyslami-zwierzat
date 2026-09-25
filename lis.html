@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#06090E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Zmysły Zwierząt">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <title>Lis rudy — Świat zmysłami zwierząt</title>
+  <meta name="description" content="Odkryj tajemnicę polowań lisa rudego: widzenie ziemskiego pola magnetycznego, skok myszkujący z 73% sukcesu na północny wschód i 10-poziomowa gra.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="nav" role="navigation" aria-label="Nawigacja główna">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon-wrapper">🐾</div>
+        <span>Świat zmysłami zwierząt</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+            <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Strona główna</a>
+        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog (10)</button>
+
+        <!-- Dropdown: Wybierz zwierzę (10) -->
+        <div class="nav-dropdown" id="navAnimalsDropdown">
+          <button class="nav-link nav-dropdown-btn" id="navDropdownBtn" aria-expanded="false" style="cursor: pointer;">
+            <span>🦊 Lis</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu">
+            <a href="pies.html" class="nav-dropdown-item"><span class="item-emoji">🐕</span> Pies domowy</a>
+            <a href="kot.html" class="nav-dropdown-item"><span class="item-emoji">🐈</span> Kot domowy</a>
+            <a href="dzik.html" class="nav-dropdown-item"><span class="item-emoji">🐗</span> Dzik euroazjatycki</a>
+            <a href="wilk.html" class="nav-dropdown-item"><span class="item-emoji">🐺</span> Wilk szary</a>
+            <a href="nietoperz.html" class="nav-dropdown-item"><span class="item-emoji">🦇</span> Nietoperz</a>
+            <a href="zmija.html" class="nav-dropdown-item"><span class="item-emoji">🐍</span> Żmija zygzakowata</a>
+            <a href="sowa.html" class="nav-dropdown-item"><span class="item-emoji">🦉</span> Sowa (Płomykówka)</a>
+            <a href="niedzwiedz.html" class="nav-dropdown-item"><span class="item-emoji">🐻</span> Niedźwiedź brunatny</a>
+            <a href="pszczola.html" class="nav-dropdown-item"><span class="item-emoji">🐝</span> Pszczoła miodna</a>
+            <a href="lis.html" class="nav-dropdown-item active"><span class="item-emoji">🦊</span> Lis rudy</a>
+          </div>
+        </div>
+
+        <!-- Creator Chip (Dorian Kalinowski) -->
+        <div class="creator-chip" id="authorChip" title="Dowiedz się więcej o autorze">
+          <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="creator-avatar">
+          <div class="creator-text">
+            <span class="creator-name">Dorian Kalinowski</span>
+            <span class="creator-role">Twórca aplikacji</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Animal Page Hero -->
+  <header class="animal-hero" id="top" style="background: linear-gradient(180deg, rgba(234, 88, 12, 0.16) 0%, rgba(9, 13, 19, 0) 100%);">
+    <div class="container">
+      <div class="animal-hero-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="index.html">Główna</a>
+            <span>›</span>
+            <span>Psowate drapieżniki</span>
+            <span>›</span>
+            <span style="color: #fb923c;">Lis rudy</span>
+          </div>
+          <h1>Lis: <span style="color: #fb923c;">Geomagnetyczny Snajper</span></h1>
+          <p class="hero-latin">Vulpes vulpes • Mistrz zimowego myszkowania</p>
+          <p class="hero-desc">
+            Czy ssak potrafi „widzieć” ziemskie pole magnetyczne? Badania czeskich naukowców potwierdziły sensację: polujący pod śniegiem lis skacze w kierunku <strong>Północno-Wschodnim (20°) z nieprawdopodobną skutecznością 73%</strong>, podczas gdy w innych kierunkach trafia zaledwie w 18% prób!
+          </p>
+          <div class="hero-stats-grid">
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: #fb923c;">73%</span>
+              <span class="stat-label">Skuteczność skoku myszkującego na NE (20°)</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--cyan-light);">do 65 kHz</span>
+              <span class="stat-label">Czułość słuchu pod 1 m śniegu (z 30 m)</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--emerald-light);">260°</span>
+              <span class="stat-label">Pole widzenia i pionowe źrenice szczelinowe</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="animal-portrait-card" style="border-color: rgba(234, 88, 12, 0.35); background: radial-gradient(circle at center, rgba(234, 88, 12, 0.18) 0%, rgba(19, 27, 39, 0.8) 70%);">
+          <div class="animal-portrait-glow" style="background: radial-gradient(circle, rgba(234, 88, 12, 0.3) 0%, transparent 70%);"></div>
+          <div class="animal-portrait-emoji" role="img" aria-label="Lis rudy">🦊</div>
+          <div class="portrait-tags">
+            <span class="portrait-tag">Gatunek: Vulpes vulpes</span>
+            <span class="portrait-tag">Zmysł: Kompas magnetyczny</span>
+            <span class="portrait-tag">Dieta: Gryzonie, owoce, owady</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Subnavigation -->
+  <div class="sticky-subnav">
+    <div class="sticky-subnav-inner">
+      <a href="#historia" class="subnav-pill active">📜 Ewolucja</a>
+      <a href="#zmysly" class="subnav-pill">🧭 Zmysły & Kompas</a>
+      <a href="#anatomia" class="subnav-pill">🧬 Budowa & Słuch</a>
+      <a href="#bezpieczenstwo" class="subnav-pill">🛡️ Bezpieczeństwo</a>
+      <a href="#ciekawostki" class="subnav-pill">💡 Ciekawostki</a>
+      <a href="#gra" class="subnav-pill">🎮 Mini Gra</a>
+      <a href="#quiz" class="subnav-pill">🎯 Mini Quiz</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================
+         SEKCJA 1: EWOLUCJA I BIOLOGIA W PIGUŁCE
+         ============================================================ -->
+    <section class="section" id="historia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: #fb923c; border-color: rgba(234, 88, 12, 0.3); background: rgba(234, 88, 12, 0.1);">Ścieżka Samotnego Łowcy</span>
+          <h2>10 Milionów Lat Ewolucji Lisa Rudego</h2>
+          <p>Jak leśny psowaty oddzielił się od stadnych wilków, zminiaturyzował ciało i rozwinął zmysły dorównujące zaawansowanym radarom wojskowym.</p>
+        </div>
+
+        <div class="timeline-stepper">
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: #fb923c; box-shadow: 0 0 12px #ea580c;"></div>
+            <div class="step-header">
+              <span class="step-title">Oddzielenie linii Vulpes od pra-psowatych</span>
+              <span class="step-period">~10–12 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              Podczas gdy linia wilków i psów postawiła na siłę masywnej szczęki, polowanie w watahach i pogoń za dużymi roślinożercami, przodkowie lisa wybrali samotną niszę mikro-drapieżnika. Zredukowali masę ciała do 5–8 kg, zyskując zwinność i bezszelestny chód.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: #fb923c; box-shadow: 0 0 12px #ea580c;"></div>
+            <div class="step-header">
+              <span class="step-title">Ewolucja kryptochromów i pionowych źrenic</span>
+              <span class="step-period">~5 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              Przejście na polowanie o świcie i zmierzchu wymusiło rewolucję w oku lisa. Jako jedyny dziki psowaty na świecie wykształcił pionowe źrenice szczelinowe (kocie) oraz fotoreceptory kryptochromowe Cry1 w siatkówce, zdolne reagować na pole magnetyczne Ziemi.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: #fb923c; box-shadow: 0 0 12px #ea580c;"></div>
+            <div class="step-header">
+              <span class="step-title">Zlodowacenia plejstoceńskie i śnieżny kamuflaż</span>
+              <span class="step-period">~1 mln – 20 tys. lat temu</span>
+            </div>
+            <p class="step-body">
+              Mroźny klimat Eurazji dopracował mechanizmy termoregulacji: futro poduszek łap chroniące przed odmrożeniem na lodzie, niezwykle gęsty podszerstek oraz puszystą kitę (ogon), służącą w czasie snu jako naturalna kołdra chroniąca wilgotne nozdrza.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: #fb923c; box-shadow: 0 0 12px #ea580c;"></div>
+            <div class="step-header">
+              <span class="step-title">Współczesność: eliminacja wścieklizny i synantropizacja</span>
+              <span class="step-period">XX–XXI wiek</span>
+            </div>
+            <p class="step-body">
+              Ogólnopolski program zrzucania doustnych szczepionek dla lisów zredukował wściekliznę w Polsce praktycznie do zera. Zdrowe i inteligentne lisy wkroczyły do polskich aglomeracji (Warszawa, Trójmiasto, Kraków), wykazując genialną elastyczność pokarmową.
+            </p>
+          </div>
+        </div>
+
+        <div class="evolution-insight-box" style="margin-top: 2rem; border-color: rgba(234, 88, 12, 0.3);">
+          <div class="insight-badge" style="background: rgba(234, 88, 12, 0.2); color: #fb923c;">💡 Klucz do Ewolucyjnego Sukcesu</div>
+          <p style="margin: 0.5rem 0 0 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-muted);">
+            Lis rudy posiada największy zasięg geograficzny ze wszystkich lądowych ssaków drapieżnych na świecie. Nie jest wyspecjalizowanym zabójcą jednego gatunku: zjada myszy, dżdżownice, chrząszcze, opadłe śliwki, a w zimie wyszukuje padlinę. Jego zmysł geomagnetyczny to unikalna innowacja biologiczna, która pozwala mu przeżyć najcięższe mrozy, gdy gryzonie ukrywają się głęboko pod lodem i śniegiem.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sensory Comparison Section -->
+    <section class="section" id="zmysly" style="padding-top: 2rem;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(234, 88, 12, 0.12); color: #fb923c; border: 1px solid rgba(234, 88, 12, 0.3);">
+            Sensoryczna Hybryda Psa i Kota
+          </div>
+          <h2>Jak poluje i postrzega świat polski lis rudy?</h2>
+          <p class="section-lead">
+            Pod względem systematyki to pies, ale jego zmysły i technika polowania łączą najlepsze cechy drapieżników lądowych.
+          </p>
+        </div>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <div class="card-icon-header" style="background: rgba(234, 88, 12, 0.15); color: #fb923c;">🧭</div>
+            <h3>Nawigacja Geomagnetyczna (Kryptochromy)</h3>
+            <p>
+              Badania nad lisami rudymi (dr Červený) wykazały, że siatkówka lisa posiada światłoczułe białka kryptochromy. Lis nakłada "cień" ziemskiego wektora magnetycznego na docierający do uszu dźwięk gryzonia, wykonując skok z chirurgiczną precyzją.
+            </p>
+            <div class="card-stat-pill" style="color: #fb923c; border-color: rgba(234, 88, 12, 0.3);">
+              Kąt ataku: 20° na północny wschód
+            </div>
+          </div>
+
+          <div class="comparison-card">
+            <div class="card-icon-header" style="background: rgba(56, 189, 248, 0.15); color: var(--cyan-light);">👂</div>
+            <h3>Słuch Triangulacyjny Pod Śniegiem</h3>
+            <p>
+              Ruchome małżowiny uszne lisa działają jak talerze radaru. Lis obraca głowę w lewo i prawo, aż głośność szelestu w obu uszach zrówna się. Dzięki temu wie dokładnie, na jakiej głębokości i w którym centymetrze pod śniegiem siedzi nornica!
+            </p>
+            <div class="card-stat-pill" style="color: var(--cyan-light); border-color: rgba(56, 189, 248, 0.3);">
+              Pasmo słuchu: do 65 000 Hz
+            </div>
+          </div>
+
+          <div class="comparison-card">
+            <div class="card-icon-header" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald-light);">👁️</div>
+            <h3>Pionowe Źrenice (Unikat u Psowatych)</h3>
+            <p>
+              Psy i wilki mają źrenice okrągłe. Lis — jako jedyny psowaty na świecie — ma pionowe źrenice szczelinowe jak kot domowy. Pozwala mu to bezbłędnie polować przy samej ziemi i błyskawicznie adaptować się do blasku słońca odbitego od śniegu.
+            </p>
+            <div class="card-stat-pill" style="color: var(--emerald-light); border-color: rgba(16, 185, 129, 0.3);">
+              Pole widzenia: 260° + noktowizja
+            </div>
+          </div>
+
+          <div class="comparison-card">
+            <div class="card-icon-header" style="background: rgba(168, 85, 247, 0.15); color: var(--purple-light);">🦊</div>
+            <h3>Skok Myszkujący (Mousing Pounce)</h3>
+            <p>
+              Lis nie kopie nerwowo w śniegu — wybija się wszystkimi czterema łapami do 2 metrów w górę w paraboliczny łuk i pikuje pionowo głową w dół w zaspę. Ogon (kita) obraca się w locie, korygując trajektorię jak żyroskop.
+            </p>
+            <div class="card-stat-pill" style="color: var(--purple-light); border-color: rgba(168, 85, 247, 0.3);">
+              Wysokość wyskoku: do 2 metrów
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Simulator 1: Geomagnetic Compass -->
+    <section class="section" style="background: rgba(255, 255, 255, 0.02);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(234, 88, 12, 0.12); color: #fb923c; border: 1px solid rgba(234, 88, 12, 0.3);">
+            Interaktywne Odkrycie Naukowe
+          </div>
+          <h2>Symulator Polowania Geomagnetycznego</h2>
+          <p class="section-lead">
+            Obracaj wektor skoku lisa względem pola magnetycznego Ziemi. Przekonaj się, dlaczego skok w stronę północno-wschodnią (20°) daje aż 73% skuteczności!
+          </p>
+        </div>
+
+        <div class="simulator-wrapper" style="border: 1px solid rgba(234, 88, 12, 0.3);">
+          <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem; flex-grow: 1; max-width: 450px;">
+              <label for="foxHeadingSlider" style="font-size: 0.88rem; color: var(--text-muted); font-weight: 600;">Kierunek skoku:</label>
+              <input type="range" id="foxHeadingSlider" min="0" max="360" value="20" style="flex-grow: 1; accent-color: #ea580c;">
+              <span id="foxHeadingVal" style="font-size: 0.88rem; color: #fb923c; font-weight: 700; min-width: 140px;">20° (NE - OPTIMUM!)</span>
+            </div>
+
+            <button id="foxTestPounceBtn" class="primary-btn" style="background: #ea580c; border-color: #ea580c; color: #fff;">
+              🎯 Wykonaj Skok Myszkujący
+            </button>
+          </div>
+
+          <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; background: #080E14;">
+            <canvas id="foxCompassCanvas" style="width: 100%; height: 280px; display: block;"></canvas>
+          </div>
+
+          <div id="foxPounceResultText" style="margin-top: 0.75rem; text-align: center; font-size: 0.95rem; color: var(--text-bright);">
+            Szansa na udany skok myszkujący: <strong>73%</strong> 🎯 (Idealny wektor geomagnetyczny!)
+          </div>
+          <p style="font-size: 0.82rem; color: var(--text-dim); margin-top: 0.5rem; text-align: center;">
+            💡 Kąt nachylenia linii magnetycznych Ziemi w Polsce tworzy punkt fuzji z odległością do dźwięku szeleszczącej myszy. Lis widzi ten wektor jako stałą plamkę na siatkówce oka!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Simulator 2: Acoustics & Fox Calls -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(56, 189, 248, 0.12); color: var(--cyan-light); border: 1px solid rgba(56, 189, 248, 0.3);">
+            Akustyka Śnieżna & Syntezator Web Audio
+          </div>
+          <h2>Dźwięki Zimy: Co Słyszy Lis i Jak Komunikuje Się z Watahą?</h2>
+          <p class="section-lead">
+            Posłuchaj wytłumionego przez zaspę chrobotu nornicy oraz charakterystycznych wokalizacji lisa rudego:
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          <div class="comparison-card" style="text-align: center; border-color: rgba(56, 189, 248, 0.25);">
+            <div style="font-size: 2.8rem; margin-bottom: 0.75rem;">🐭❄️</div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Chrobot pod 1 m Śniegu</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+              Śnieg działa jak filtr dolnoprzepustowy. Lis słyszy ten wąski szelest z 30 metrów i bezbłędnie lokalizuje ofiarę.
+            </p>
+            <button id="playFoxRustleBtn" class="primary-btn" style="background: var(--cyan); border-color: var(--cyan); width: 100%;">
+              🔊 Posłuchaj Szmeru pod Śniegiem
+            </button>
+          </div>
+
+          <div class="comparison-card" style="text-align: center; border-color: rgba(234, 88, 12, 0.25);">
+            <div style="font-size: 2.8rem; margin-bottom: 0.75rem;">📢🦊</div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Nocny Szczek Ostrzegawczy</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+              Ostry, piskliwy i skrzeczący szczek lisa w lesie, który często mylony jest przez turystów z krzykiem człowieka.
+            </p>
+            <button id="playFoxBarkBtn" class="primary-btn" style="background: #ea580c; border-color: #ea580c; width: 100%;">
+              🔊 Odtwórz Szczek Lisa
+            </button>
+          </div>
+
+          <div class="comparison-card" style="text-align: center; border-color: rgba(168, 85, 247, 0.25);">
+            <div style="font-size: 2.8rem; margin-bottom: 0.75rem;">💬✨</div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Chichot / Gaworzenie (Geckering)</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+              Seria szybkich, gardłowych klaśnięć dźwiękowych wydawana podczas powitania partnera lub zabaw z młodymi w norze.
+            </p>
+            <button id="playFoxGeckerBtn" class="primary-btn" style="background: #9333ea; border-color: #9333ea; width: 100%;">
+              🔊 Odtwórz Chichot Geckering
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anatomy Explorer Section -->
+    <section class="section" id="anatomia" style="background: rgba(255, 255, 255, 0.02);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(234, 88, 12, 0.12); color: #fb923c; border: 1px solid rgba(234, 88, 12, 0.3);">
+            Biomechanika i Ewolucja
+          </div>
+          <h2>Anatomia Lisa Rudego (*Vulpes vulpes*)</h2>
+          <p class="section-lead">
+            Kliknij punkty na sylwetce lisa, aby poznać jego unikalne narzędzia łowieckie i przystosowania do mroźnych polskich zim.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; align-items: center;">
+          <!-- SVG Diagram -->
+          <div style="background: var(--bg-card); border: 1px solid rgba(234, 88, 12, 0.3); border-radius: 16px; padding: 2rem; text-align: center;">
+            <svg viewBox="0 0 500 320" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" aria-label="Anatomia lisa rudego">
+              <defs>
+                <linearGradient id="foxGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#EA580C" stop-opacity="0.25"/>
+                  <stop offset="100%" stop-color="#7C2D12" stop-opacity="0.05"/>
+                </linearGradient>
+              </defs>
+              <rect width="500" height="320" rx="12" fill="url(#foxGlow)"/>
+
+              <!-- Fox Body -->
+              <path d="M 120 190 C 130 150, 180 145, 260 150 C 310 155, 360 170, 390 195 L 360 270 L 335 270 L 325 210 L 220 210 L 195 270 L 170 270 Z" fill="#C2410C" stroke="#9A3412" stroke-width="2" />
+              <!-- White Chest / Throat -->
+              <path d="M 125 185 C 140 195, 150 215, 145 235 C 130 225, 120 205, 125 185 Z" fill="#F1F5F9" />
+
+              <!-- Fox Head & Muzzle -->
+              <polygon points="135,175 60,195 110,215" fill="#EA580C" stroke="#9A3412" stroke-width="2"/>
+              <circle cx="60" cy="195" r="4" fill="#0F172A"/> <!-- Black Nose Tip -->
+
+              <!-- Bushy Fox Tail (Kita) with White Tip -->
+              <path d="M 380 190 C 440 200, 480 230, 470 265 C 450 280, 410 260, 370 220 Z" fill="#C2410C" stroke="#9A3412" stroke-width="2"/>
+              <path d="M 470 265 C 460 275, 435 268, 430 250 C 450 245, 470 255, 470 265 Z" fill="#F8FAFC" /> <!-- White Tail Tip -->
+
+              <!-- Large Triangular Upright Ears -->
+              <polygon points="120,150 145,95 155,150" fill="#18181B" stroke="#EA580C" stroke-width="2"/>
+              <polygon points="125,145 143,105 149,145" fill="#FEE2E2"/>
+
+              <!-- Slit Eye -->
+              <ellipse cx="100" cy="183" rx="5" ry="7" fill="#F59E0B"/>
+              <line x1="100" y1="178" x2="100" y2="188" stroke="#000" stroke-width="2"/> <!-- Slit Pupil -->
+
+              <!-- Front & Hind Legs with Black Stockings -->
+              <path d="M 180 240 L 170 270" stroke="#0F172A" stroke-width="8" stroke-linecap="round"/>
+              <path d="M 345 240 L 335 270" stroke="#0F172A" stroke-width="8" stroke-linecap="round"/>
+
+              <!-- Interactive Hotspots -->
+              <g class="anatomy-point" style="cursor: pointer;">
+                <circle cx="145" cy="115" r="12" fill="#EA580C" opacity="0.9"/>
+                <circle cx="145" cy="115" r="20" fill="none" stroke="#EA580C" stroke-width="2" opacity="0.6">
+                  <animate attributeName="r" values="12;24;12" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <text x="145" y="120" fill="#fff" font-size="12" font-weight="bold" text-anchor="middle">1</text>
+              </g>
+
+              <g class="anatomy-point" style="cursor: pointer;">
+                <circle cx="100" cy="183" r="12" fill="#EA580C" opacity="0.9"/>
+                <circle cx="100" cy="183" r="20" fill="none" stroke="#EA580C" stroke-width="2" opacity="0.6">
+                  <animate attributeName="r" values="12;24;12" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+                </circle>
+                <text x="100" y="188" fill="#fff" font-size="12" font-weight="bold" text-anchor="middle">2</text>
+              </g>
+
+              <g class="anatomy-point" style="cursor: pointer;">
+                <circle cx="210" cy="155" r="12" fill="#EA580C" opacity="0.9"/>
+                <circle cx="210" cy="155" r="20" fill="none" stroke="#EA580C" stroke-width="2" opacity="0.6">
+                  <animate attributeName="r" values="12;24;12" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+                </circle>
+                <text x="210" y="160" fill="#fff" font-size="12" font-weight="bold" text-anchor="middle">3</text>
+              </g>
+
+              <g class="anatomy-point" style="cursor: pointer;">
+                <circle cx="430" cy="240" r="12" fill="#EA580C" opacity="0.9"/>
+                <circle cx="430" cy="240" r="20" fill="none" stroke="#EA580C" stroke-width="2" opacity="0.6">
+                  <animate attributeName="r" values="12;24;12" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+                </circle>
+                <text x="430" y="245" fill="#fff" font-size="12" font-weight="bold" text-anchor="middle">4</text>
+              </g>
+
+              <g class="anatomy-point" style="cursor: pointer;">
+                <circle cx="170" cy="270" r="12" fill="#EA580C" opacity="0.9"/>
+                <circle cx="170" cy="270" r="20" fill="none" stroke="#EA580C" stroke-width="2" opacity="0.6">
+                  <animate attributeName="r" values="12;24;12" dur="2s" begin="1.6s" repeatCount="indefinite"/>
+                </circle>
+                <text x="170" y="275" fill="#fff" font-size="12" font-weight="bold" text-anchor="middle">5</text>
+              </g>
+            </svg>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1.25rem;">
+              <button class="anatomy-btn active" data-fox-anatomy="ears">1. Uszy Radaru</button>
+              <button class="anatomy-btn" data-fox-anatomy="eyes">2. Pionowa Źrenica</button>
+              <button class="anatomy-btn" data-fox-anatomy="magnetic">3. Kompas Magnetyczny</button>
+              <button class="anatomy-btn" data-fox-anatomy="tail">4. Puszysta Kita</button>
+              <button class="anatomy-btn" data-fox-anatomy="paws">5. Ocieplane Łapy</button>
+            </div>
+          </div>
+
+          <!-- Inspector Details Card -->
+          <div class="anatomy-card" style="border: 1px solid rgba(234, 88, 12, 0.3);">
+            <div class="badge" style="background: rgba(234, 88, 12, 0.2); color: #fb923c; margin-bottom: 0.75rem;">
+              Anatomia Przetrwania
+            </div>
+            <h3 id="foxAnatomyTitle" style="font-size: 1.4rem; margin-bottom: 0.75rem; color: #fff;">
+              Trójkątne Małżowiny (Słuch Pod Śniegiem)
+            </h3>
+            <p id="foxAnatomyDesc" style="color: var(--text-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+              Uszy lisa obracają się niezależnie o 180 stopni. Posiadają zdolność triangulacji dźwięku w pionie i poziomie z dokładnością do 1 stopnia. Lis potrafi usłyszeć chrobot ząbków myszy pod warstwą 1 metra ubitego śniegu z odległości 30 metrów!
+            </p>
+            <div id="foxAnatomyStat" class="card-stat-pill" style="color: #fb923c; border-color: rgba(234, 88, 12, 0.4);">
+              Czułość słuchu: do 65 kHz (ultradźwięki gryzoni)
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Health & Safety Section: Echinococcosis & Urban Foxes -->
+    <section class="section" id="bezpieczenstwo">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(239, 68, 68, 0.12); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3);">
+            Zdrowie i Bezpieczeństwo Sanitarne
+          </div>
+          <h2>Bąblowica i Lisy w Mieście: Jak Się Chronić?</h2>
+          <p class="section-lead">
+            Wybierz sytuację, aby poznać zalecenia epidemiologów i lekarzy dotyczące obcowania z fauną leśną i miejską:
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+          <div class="fox-aid-card" data-action="eat_unwashed" style="background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem; cursor: pointer; text-align: center; transition: all 0.2s;">
+            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🫐😋</div>
+            <h4 style="margin-bottom: 0.25rem;">A. Jem jagody prosto z krzaczka</h4>
+            <p style="font-size: 0.82rem; color: var(--text-dim); margin: 0;">Świeże owoce leśne bez mycia</p>
+          </div>
+
+          <div class="fox-aid-card" data-action="touch_urban" style="background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem; cursor: pointer; text-align: center; transition: all 0.2s;">
+            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🦊🏙️</div>
+            <h4 style="margin-bottom: 0.25rem;">B. Głaskam lisa w parku miejskim</h4>
+            <p style="font-size: 0.82rem; color: var(--text-dim); margin: 0;">Podchodzę do oswojonego lisa</p>
+          </div>
+
+          <div class="fox-aid-card" data-action="wash_berries" style="background: var(--bg-card); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 1.25rem; cursor: pointer; text-align: center; transition: all 0.2s;">
+            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🚰✅</div>
+            <h4 style="margin-bottom: 0.25rem; color: var(--emerald-light);">C. Myję owoce i trzymam dystans</h4>
+            <p style="font-size: 0.82rem; color: var(--text-dim); margin: 0;">Ciepła woda + ochrona śmietników</p>
+          </div>
+        </div>
+
+        <div id="foxAidResult" class="crisis-feedback-box"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 4: FASCYNUJĄCE CIEKAWOSTKI O LISIE
+         ============================================================ -->
+    <section class="section" id="ciekawostki" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: #fb923c; border-color: rgba(234, 88, 12, 0.3); background: rgba(234, 88, 12, 0.1);">Sekrety Natury</span>
+          <h2>Niezwykłe Fakty o Lisach Rudych</h2>
+          <p>Oto zjawiska geomagnetyczne, genetyczne i adaptacyjne, które zadziwiają biologów na całym świecie.</p>
+        </div>
+
+        <div class="curiosity-grid">
+          <div class="curiosity-card" style="border-color: rgba(234, 88, 12, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🧭</span>
+              <h4 style="color: #fb923c;">Czeski eksperyment Červený'ego</h4>
+            </div>
+            <p>
+              Przez dwa lata zespół prof. Hyneka Burdy i Jaroslava Červený'ego monitorował 84 lisy i udokumentował 592 skoki myszkujące w śniegu. Odkryli, że gdy lis skakał w osi północno-wschodniej (20°), celność wynosiła aż 73%. W każdym innym kierunku skuteczność spadała do zaledwie 18%! To pierwszy udowodniony przypadek ssaka używającego magnetorecepcji do celowania w ofiarę.
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(56, 189, 248, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">💉</span>
+              <h4 style="color: var(--cyan-light);">Triumf zrzutów szczepionek w Polsce</h4>
+            </div>
+            <p>
+              Jeszcze w latach 80. wścieklizna u lisów zbierała w Polsce śmiertelne żniwo. Przełom przyniosła skoordynowana akcja zrzutów z samolotów milionów kostek zanętowych z rybim zapachem zawierających doustną szczepionkę. Dziś wścieklizna u dzikich lisów w Polsce występuje incydentalnie na wschodnich granicach, a populacja jest w 99% bezpieczna!
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(168, 85, 247, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🧬</span>
+              <h4 style="color: var(--purple-light);">Eksperyment Biełajewa w Nowosybirsku</h4>
+            </div>
+            <p>
+              Radziecki genetyk Dymitr Biełajew rozpoczął w 1959 roku eksperyment: rozmnażał lisy, wybierając wyłącznie te najbardziej przyjazne człowiekowi. Po 40 pokoleniach lisy nie tylko zachowywały się jak psy (lizały ręce, merdały ogonem), ale zmienił się ich wygląd: zyskały klapnięte uszy, krótsze pyszczki i białe łaty na futrze!
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(16, 185, 129, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🧣</span>
+              <h4 style="color: var(--emerald-light);">Kita: Żyroskop, Kołdra i Fiołki</h4>
+            </div>
+            <p>
+              Puszysta kita lisa stanowi 1/3 jego długości. Podczas 2-metrowego skoku w górę kita stabilizuje lot niczym ogon samolotu. Podczas snu na mrozie -30°C lis owija kitą pyszczek, ogrzewając wdychane powietrze. Ponadto u nasady ogona znajduje się tzw. "organ Violi" – gruczoł zapachowy wydzielający woń przypominającą fiołki!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10-Level Mini-Game Section -->
+    <section class="section" id="gra" style="background: rgba(255, 255, 255, 0.02);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(234, 88, 12, 0.12); color: #fb923c; border: 1px solid rgba(234, 88, 12, 0.3);">
+            10-Poziomowa Gra Zręcznościowa
+          </div>
+          <h2>Magnetyczny Skok w Śnieg (Myszkowanie) 🦊❄️</h2>
+          <p class="section-lead">
+            Wciel się w lisa rudego! Słuchaj fal akustycznych wydobywających się spod zasp, poluj na myszy za pomocą zmysłu magnetycznego i unikaj psów wiejskich.
+          </p>
+        </div>
+
+        <div class="minigame-wrapper" style="border: 1px solid rgba(234, 88, 12, 0.35);">
+          <!-- Game HUD -->
+          <div class="game-hud">
+            <div class="hud-left">
+              <div class="game-level-badge" id="foxGameLevelBadge">
+                <span>Misja 1/10:</span> Zaśnieżone Ściernisko pod Białymstokiem 🌾❄️
+              </div>
+              <div class="level-dots-container" id="foxGameLevelDots"></div>
+            </div>
+
+            <div class="hud-right">
+              <div class="hud-stat">
+                <span class="hud-label">Złowione:</span>
+                <span class="hud-value" id="foxGameMice">0 myszy</span>
+              </div>
+              <div class="hud-stat">
+                <span class="hud-label">Cel:</span>
+                <span class="hud-value" id="foxGameTargetMice" style="color: #fb923c;">4 myszy</span>
+              </div>
+              <div class="hud-stat">
+                <span class="hud-label">Czas:</span>
+                <span class="hud-value" id="foxGameTimer" style="color: #f87171;">35s</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Canvas Container -->
+          <div class="game-canvas-container" style="position: relative; overflow: hidden; background: #0F1A24;">
+            <canvas id="foxGameCanvas" style="width: 100%; height: 340px; display: block; cursor: crosshair;"></canvas>
+
+            <!-- Game Overlay -->
+            <div class="game-overlay show" id="foxGameOverlay">
+              <div class="overlay-modal">
+                <div class="overlay-icon" id="foxGameOverIcon">🦊❄️🐭</div>
+                <h3 id="foxGameOverTitle">Zimowe Łowy Lisa Rudego</h3>
+                <p id="foxGameOverDesc">
+                  Prowadź lisa myszą lub dotykiem palca na smartfonie. Celuj w pulsujące fale dźwiękowe pod śniegiem (🔊). <strong>Omijaj wiejskie psy i kruchy lód (🐕🧊)</strong>!
+                </p>
+                <div class="game-controls-row">
+                  <button id="startFoxGameBtn" class="primary-btn" style="background: #ea580c; border-color: #ea580c;">
+                    🎮 Rozpocznij Poziom 1
+                  </button>
+                  <button id="nextFoxLevelBtn" class="primary-btn" style="background: var(--emerald); border-color: var(--emerald); display: none;">
+                    ▶️ Kolejny Poziom
+                  </button>
+                  <button id="restartFoxGameBtn" class="secondary-btn" style="display: none;">
+                    🔄 Spróbuj Ponownie
+                  </button>
+                  <button id="resetFoxCampaignBtn" class="secondary-btn" style="display: none;">
+                    🏆 Zagraj Ponownie od Zera
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="padding: 1rem 1.5rem; background: rgba(0,0,0,0.3); font-size: 0.85rem; color: var(--text-dim); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+            <span>📱 <strong>Sterowanie:</strong> Ruszaj palcem po ekranie lub prowadź kursor myszką.</span>
+            <span>🦊 <strong>10 Poziomów:</strong> Od mazowieckich miedz po mroźną Suwalszczyznę!</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Myth Busting Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="background: rgba(16, 185, 129, 0.12); color: var(--emerald-light); border: 1px solid rgba(16, 185, 129, 0.3);">
+            Obalamy Mity
+          </div>
+          <h2>Prawda o Lisach Rudych w Polsce</h2>
+          <p class="section-lead">
+            Lis to jeden z najbardziej pożytecznych sprzymierzeńców rolnika i leśnika.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+          <div class="comparison-card" style="border-left: 4px solid #ef4444;">
+            <h4 style="color: #ef4444; font-size: 1.1rem; margin-bottom: 0.5rem;">❌ MIT: Każdy lis, który nie ucieka, ma wściekliznę</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+              <strong>Fakt:</strong> Dzięki ogólnopolskim zrzutom szczepionek z samolotów wścieklizna u lisów w Polsce została praktycznie wyeliminowana! Lisy w miastach nie uciekają przed ludźmi, bo nauczyły się, że człowiek zostawia łatwo dostępne jedzenie w śmietnikach.
+            </p>
+          </div>
+
+          <div class="comparison-card" style="border-left: 4px solid #ef4444;">
+            <h4 style="color: #ef4444; font-size: 1.1rem; margin-bottom: 0.5rem;">❌ MIT: Lis to wyłącznie szkodnik wyjadający drób</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+              <strong>Fakt:</strong> Pojedynczy lis zjada rocznie do <strong>3000–4000 gryzoni</strong> (nornic i myszy)! Bez lisów populacja gryzoni niszczących uprawy zbożowe i młode drzewostany wymknęłaby się spod jakiejkolwiek kontroli.
+            </p>
+          </div>
+
+          <div class="comparison-card" style="border-left: 4px solid #10b981;">
+            <h4 style="color: var(--emerald-light); font-size: 1.1rem; margin-bottom: 0.5rem;">✅ FAKT: Lis jest monogamicznym i opiekuńczym rodzicem</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+              <strong>Fakt:</strong> Samiec lisa (pies) jest niezwykle oddanym ojcem — przynosi karmiącej lisicy i młodym pożywienie do nory przez wiele tygodni, a w razie śmierci matki potrafi samodzielnie wychować potomstwo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 6: INTERAKTYWNY MINI QUIZ
+         ============================================================ -->
+    <section class="section" id="quiz" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: #fb923c; border-color: rgba(234, 88, 12, 0.3); background: rgba(234, 88, 12, 0.1);">Sprawdź swoją wiedzę</span>
+          <h2>Mini Quiz Mistrza Zmysłów Lisa Rudego</h2>
+          <p>5 pytań weryfikujących wiedzę o geomagnetycznym polowaniu, pionowych źrenicach, profilaktyce bąblowicy i biologii lisa.</p>
+        </div>
+
+        <div class="quiz-wrapper" style="border-color: rgba(234, 88, 12, 0.3);">
+          <div class="quiz-meter-bar">
+            <div class="quiz-meter-progress" id="foxQuizMeterProgress" style="background: linear-gradient(90deg, #EA580C 0%, #38BDF8 100%);"></div>
+          </div>
+          <div id="foxQuizDynamicBody">
+            <!-- Rendered dynamically by js/fox-simulators.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation between Animals -->
+    <section style="padding: 60px 0; text-align: center;">
+      <div class="container">
+        <h3 style="margin-bottom: 16px;">Poznaj inne zwierzęta</h3>
+        <p style="margin-bottom: 24px; color: var(--text-muted);">Przełącz się na percepcję innego polskiego gatunku lub otwórz katalog wszystkich 10 zwierząt.</p>
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a href="wilk.html" class="btn btn-primary" style="background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);">
+            <span>🐺 Zobacz zmysły wilka</span>
+          </a>
+          <a href="pszczola.html" class="btn btn-primary" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);">
+            <span>🐝 Zobacz zmysły pszczoły</span>
+          </a>
+          <button class="btn btn-secondary animal-catalog-trigger">
+            <span>🐾 Otwórz katalog wszystkich zwierząt</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <span style="font-size: 1.6rem;">🐾</span>
+            <span>Świat zmysłami zwierząt</span>
+          </div>
+          <p class="footer-desc">
+            Interaktywna platforma edukacyjna prezentująca percepcję zmysłową zwierząt. Zrozumienie zmysłów to klucz do empatii i bezpiecznego współistnienia ludzi i dzikiej fauny.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Katalog Zwierząt</h4>
+          <ul class="footer-links">
+            <li><a href="pies.html">🐕 Pies domowy</a></li>
+            <li><a href="kot.html">🐈 Kot domowy</a></li>
+            <li><a href="dzik.html">🐗 Dzik euroazjatycki</a></li>
+            <li><a href="wilk.html">🐺 Wilk szary</a></li>
+            <li><a href="nietoperz.html">🦇 Nietoperz</a></li>
+            <li><a href="zmija.html">🐍 Żmija zygzakowata</a></li>
+            <li><a href="sowa.html">🦉 Sowa (Płomykówka)</a></li>
+            <li><a href="niedzwiedz.html">🐻 Niedźwiedź brunatny</a></li>
+            <li><a href="pszczola.html">🐝 Pszczoła miodna</a></li>
+            <li><a href="lis.html">🦊 Lis rudy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">O Projekcie</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#misja">Dlaczego zmysły?</a></li>
+            <li><a href="index.html#bezpieczenstwo">Zasady bezpiecznych spotkań</a></li>
+            <li><a href="#" id="triggerAuthorModalFromFooter">O autorze (Dorian Kalinowski)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Świat zmysłami zwierząt • Projekt edukacyjny non-profit • V1</p>
+        <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 4px;">
+          Stworzone przez <a href="https://linkedin.com/in/dorian-kalinowski" target="_blank" rel="noopener noreferrer" style="color: #fb923c; text-decoration: underline;">Doriana Kalinowskiego</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Bottom Sticky Navigation -->
+  <div class="mobile-bottom-bar" role="navigation" aria-label="Szybka nawigacja mobilna">
+    <a href="index.html" class="mobile-bar-btn">
+      <span class="mobile-bar-icon">🏠</span>
+      <span>Główna</span>
+    </a>
+    <a href="#gra" class="mobile-bar-btn">
+      <span class="mobile-bar-icon">🎮</span>
+      <span>10 Gier</span>
+    </a>
+    <button class="mobile-bar-btn animal-catalog-trigger" id="mobileCatalogBtn">
+      <span class="mobile-bar-icon">🐾</span>
+      <span>Zwierzęta</span>
+    </button>
+    <button class="mobile-bar-btn" id="mobileAuthorBtn">
+      <span class="mobile-bar-icon">👨‍💻</span>
+      <span>Autor</span>
+    </button>
+  </div>
+
+  <!-- PWA Install Banner -->
+  <div class="pwa-install-banner" id="pwaBanner">
+    <div class="pwa-content">
+      <span style="font-size: 1.8rem;">📱</span>
+      <div>
+        <div style="font-weight: 700; font-size: 0.95rem;">Zainstaluj jako aplikację</div>
+        <div style="font-size: 0.8rem; color: var(--text-dim);">Działa 100% offline w lesie i na śniegu bez internetu!</div>
+      </div>
+    </div>
+    <div class="pwa-actions">
+      <button class="primary-btn" id="pwaInstallBtn" style="padding: 6px 14px; font-size: 0.85rem;">Instaluj</button>
+      <button class="pwa-dismiss" id="pwaDismissBtn" aria-label="Zamknij">✕</button>
+    </div>
+  </div>
+
+  <!-- Animal Catalog Modal -->
+  <div class="modal-backdrop" id="animalCatalogModal" role="dialog" aria-modal="true" aria-labelledby="catalogModalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="catalogModalTitle" style="display: flex; align-items: center; gap: 0.5rem; margin: 0; font-size: 1.25rem;">
+          <span>🐾</span> Katalog Zwierząt
+        </h3>
+        <button class="modal-close" id="closeAnimalModal" aria-label="Zamknij katalog">✕</button>
+      </div>
+      <div class="catalog-grid" id="modalAnimalsGrid"></div>
+    </div>
+  </div>
+
+  <!-- Author Modal -->
+  <div class="modal-backdrop" id="authorModal" role="dialog" aria-modal="true" aria-labelledby="authorModalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="authorModalTitle" style="display: flex; align-items: center; gap: 0.5rem; margin: 0; font-size: 1.25rem;">
+          <span>👨‍💻</span> O Twórcy Projektu
+        </h3>
+        <button class="modal-close" id="closeAuthorModal" aria-label="Zamknij profil autora">✕</button>
+      </div>
+      <div class="author-modal-content">
+        <div class="author-modal-top">
+          <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="author-modal-avatar">
+          <div>
+            <h4 style="font-size: 1.2rem; margin-bottom: 2px;">Dorian Kalinowski</h4>
+            <p style="color: #fb923c; font-size: 0.88rem; font-weight: 600; margin-bottom: 6px;">
+              Twórca projektu i miłośnik zwierząt
+            </p>
+            <div style="display: flex; gap: 0.5rem;">
+              <a href="https://linkedin.com/in/dorian-kalinowski" target="_blank" rel="noopener noreferrer" class="hero-pill" style="font-size: 0.78rem; text-decoration: none; padding: 3px 10px; border-color: rgba(56, 189, 248, 0.4); color: var(--cyan-light);">
+                🔗 Profil LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-top: 1rem;">
+          Cześć! Mam na imię Dorian i po prostu bardzo lubię zwierzaki. Od zawsze najbardziej ciekawi mnie to, jak niesamowicie odbierają otaczający nas świat – zupełnie inaczej niż my, ludzie. Wierzę, że gdybyśmy naprawdę dobrze wiedzieli, jak myślą, widzą i czują, na świecie byłoby znacznie mniej nieporozumień i niepotrzebnych konfrontacji między nami a nimi.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/fox-simulators.js"></script>
+</body>
+</html>

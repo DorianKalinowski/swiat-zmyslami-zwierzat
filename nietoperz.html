@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#06090E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Zmysły Zwierząt">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <title>Nietoperz — Świat zmysłami zwierząt</title>
+  <meta name="description" content="Odkryj świat zmysłami nietoperza (Chiroptera). Echolokacja ponad 100 kHz, 'widzenie uszami', obalenie mitów o wkręcaniu we włosy i 10-poziomowa gra sonarowa.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="nav" role="navigation" aria-label="Nawigacja główna">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon-wrapper">🐾</div>
+        <span>Świat zmysłami zwierząt</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+            <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Strona główna</a>
+        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog (10)</button>
+
+        <!-- Dropdown: Wybierz zwierzę (10) -->
+        <div class="nav-dropdown" id="navAnimalsDropdown">
+          <button class="nav-link nav-dropdown-btn" id="navDropdownBtn" aria-expanded="false" style="cursor: pointer;">
+            <span>🦇 Nietoperz</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu">
+            <a href="pies.html" class="nav-dropdown-item"><span class="item-emoji">🐕</span> Pies domowy</a>
+            <a href="kot.html" class="nav-dropdown-item"><span class="item-emoji">🐈</span> Kot domowy</a>
+            <a href="dzik.html" class="nav-dropdown-item"><span class="item-emoji">🐗</span> Dzik euroazjatycki</a>
+            <a href="wilk.html" class="nav-dropdown-item"><span class="item-emoji">🐺</span> Wilk szary</a>
+            <a href="nietoperz.html" class="nav-dropdown-item active"><span class="item-emoji">🦇</span> Nietoperz</a>
+            <a href="zmija.html" class="nav-dropdown-item"><span class="item-emoji">🐍</span> Żmija zygzakowata</a>
+            <a href="sowa.html" class="nav-dropdown-item"><span class="item-emoji">🦉</span> Sowa (Płomykówka)</a>
+            <a href="niedzwiedz.html" class="nav-dropdown-item"><span class="item-emoji">🐻</span> Niedźwiedź brunatny</a>
+            <a href="pszczola.html" class="nav-dropdown-item"><span class="item-emoji">🐝</span> Pszczoła miodna</a>
+            <a href="lis.html" class="nav-dropdown-item"><span class="item-emoji">🦊</span> Lis rudy</a>
+          </div>
+        </div>
+
+        <!-- Creator Chip (Dorian Kalinowski) -->
+        <div class="creator-chip" id="authorChip" title="Dowiedz się więcej o autorze">
+          <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="creator-avatar">
+          <div class="creator-text">
+            <span class="creator-name">Dorian Kalinowski</span>
+            <span class="creator-role">Twórca aplikacji</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Animal Page Hero -->
+  <header class="animal-hero" id="top" style="background: linear-gradient(180deg, rgba(168, 85, 247, 0.16) 0%, rgba(9, 13, 19, 0) 100%);">
+    <div class="container">
+      <div class="animal-hero-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="index.html">Główna</a>
+            <span>›</span>
+            <span>Ssaki latające</span>
+            <span>›</span>
+            <span style="color: var(--purple-light);">Nietoperz</span>
+          </div>
+          <h1>Nietoperz: <span style="color: var(--purple-light);">Widzenie Uszami</span></h1>
+          <p class="hero-latin">Chiroptera • Nocek duży / Mroczek posrebrzany</p>
+          <p class="hero-desc">
+            Podczas gdy ludzkie oko potrzebuje światła, nietoperz rozświetla mrok nocy <strong>falami ultradźwiękowymi o częstotliwości do 120 kHz</strong>. Skanuje otoczenie z wojskową precyzją, potrafi ominąć pojedynczą nitkę pajęczą i schwytać do <strong>1000 komarów na godzinę</strong>!
+          </p>
+          <div class="hero-stats-grid">
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--purple-light);">120 kHz</span>
+              <span class="stat-label">Górny zakres sonaru (człowiek: 20 kHz)</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--cyan-light);">1000/h</span>
+              <span class="stat-label">Złowionych komarów w letnią noc</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: #F472B6;">135 dB</span>
+              <span class="stat-label">Natężenie sonaru przy pyszczku</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="animal-portrait-card" style="border-color: rgba(168, 85, 247, 0.35); background: radial-gradient(circle at center, rgba(168, 85, 247, 0.18) 0%, rgba(19, 27, 39, 0.8) 70%);">
+          <div class="animal-portrait-glow" style="background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 70%);"></div>
+          <div class="animal-portrait-emoji" role="img" aria-label="Nietoperz">🦇</div>
+          <div class="portrait-tags">
+            <span class="portrait-tag">Rząd: Chiroptera (rękoskrzydłe)</span>
+            <span class="portrait-tag">Gatunki w PL: 27 (chronione)</span>
+            <span class="portrait-tag">Tryb: Nocny (echolokacja)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Subnavigation -->
+  <div class="sticky-subnav">
+    <div class="sticky-subnav-inner">
+      <a href="#historia" class="subnav-pill active">📜 Ewolucja</a>
+      <a href="#zmysly" class="subnav-pill">📡 Echolokacja</a>
+      <a href="#anatomia" class="subnav-pill">🧬 Anatomia</a>
+      <a href="#bezpieczenstwo" class="subnav-pill">🛡️ Mity & Ochrona</a>
+      <a href="#ciekawostki" class="subnav-pill">💡 Ciekawostki</a>
+      <a href="#gra" class="subnav-pill">🎮 Mini Gra</a>
+      <a href="#quiz" class="subnav-pill">🎯 Mini Quiz</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================
+         SEKCJA 1: EWOLUCJA I BIOLOGIA W PIGUŁCE
+         ============================================================ -->
+    <section class="section" id="historia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--purple-light); border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1);">Ewolucja i Narządy Latania</span>
+          <h2>Jedyne ssaki na Ziemi obdarzone aktywnym lotem</h2>
+          <p>Ponad 50 milionów lat ewolucji przekształciło dłoń ssaka w elastyczne skrzydło i wyposażyło mózg w biologiczny radar 3D.</p>
+        </div>
+
+        <div class="timeline-stepper">
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--purple-light); box-shadow: 0 0 12px var(--purple);"></div>
+            <div class="step-header">
+              <span class="step-title">Onychonycteris — pierwsi lotnicy eocenu</span>
+              <span class="step-period">~52 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              Skamieniałości z formacji Green River w USA ujawniły niezwykłego ssaka <em>Onychonycteris finneyi</em>. Miał w pełni ukształtowane skrzydła i potrafił latać, zanim jeszcze wykształcił zaawansowany aparat echolokacyjny — to dowód, że zdolność aktywnego lotu wyprzedziła ewolucyjnie rozwój sonaru!
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--purple-light); box-shadow: 0 0 12px var(--purple);"></div>
+            <div class="step-header">
+              <span class="step-title">Rozwój ucha wewnętrznego i fałdu tragus</span>
+              <span class="step-period">~45 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              W toku ewolucji ucho wewnętrzne uległo gigantycznemu powiększeniu, a mięsień krtani zaczął kurczyć się z oszałamiającą prędkością 200 razy na sekundę. Powstał skrawek ucha (<em>tragus</em>), który odbija fale docierające z pionu, dając nietoperzom widzenie otoczenia w 3 osiach (X, Y, Z).
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--purple-light); box-shadow: 0 0 12px var(--purple);"></div>
+            <div class="step-header">
+              <span class="step-title">Wojna zmysłów: Koewolucja z ćmami</span>
+              <span class="step-period">~30 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              Nocne motyle (ćmy z rodziny Noctuidae) w odpowiedzi na sonar nietoperzy wykształciły „uszy” na odwłoku wykrywające pisk drapieżnika. Część ciem emituje nawet własne ultradźwiękowe trzaski, które zagłuszają radar polującego nietoperza lub symulują toksyczny smak!
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--purple-light); box-shadow: 0 0 12px var(--purple);"></div>
+            <div class="step-header">
+              <span class="step-title">20% wszystkich gatunków ssaków</span>
+              <span class="step-period">Dziś</span>
+            </div>
+            <p class="step-body">
+              Na świecie żyje ponad 1400 gatunków nietoperzy — co piąty ssak na Ziemi potrafi latać! W Polsce występuje 27 gatunków (m.in. nocek duży, gacek brunatny, borowiec wielki). Wszystkie są owadożerne i podlegają bezwzględnej, ścisłej ochronie gatunkowej.
+            </p>
+          </div>
+        </div>
+
+        <div class="evolution-insight-box" style="border-color: rgba(168, 85, 247, 0.3); background: linear-gradient(135deg, rgba(168, 85, 247, 0.08) 0%, rgba(19, 27, 39, 0.6) 100%);">
+          <div class="insight-col">
+            <h4 style="color: var(--purple-light);">🦇 Dlaczego nietoperz nie ogłusza sam siebie?</h4>
+            <ul class="insight-list">
+              <li>Krzyk nietoperza przy pyszczku osiąga natężenie aż <strong>130–140 dB</strong> — głośniej niż startujący odrzutowiec myśliwski czy syrena strażacka!</li>
+              <li>W uchu środkowym nietoperza znajduje się miniaturowy <strong>mięsień strzemiączkowy</strong>. Kurczy się on na ułamek milisekundy tuż przed każdym krzykiem, rozłączając kosteczki słuchowe i chroniąc bębenek przed pęknięciem!</li>
+            </ul>
+          </div>
+          <div class="insight-col">
+            <h4 style="color: var(--cyan-light);">🧬 Skrzydło to elastyczna ludzka dłoń:</h4>
+            <ul class="insight-list">
+              <li>Skrzydło nietoperza składa się z dokładnie tych samych kości co ludzka dłoń — kciuka z pazurkiem oraz czterech niebywale wydłużonych palców oplecionych podwójną warstwą unerwionej, elastycznej skóry (<em>patagium</em>).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 2: LABORATORIUM ZMYSŁÓW
+         ============================================================ -->
+    <section class="section" id="zmysly">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--purple-light);">Fizyka Percepcji</span>
+          <h2>Echolokacja: Jak brzmi świat ponad progiem ludzkiego słuchu?</h2>
+          <p>Ludzkie ucho słyszy dźwięki maksymalnie do 20 kHz. Nietoperze emitują fale od 25 do ponad 100 kHz. Przetestuj syntezator częstotliwości i sprawdź, jak działa akustyczny radar w jaskini!</p>
+        </div>
+
+        <div class="senses-container">
+          <!-- Ultrasound Audio Synthesizer Card -->
+          <div class="sensory-card">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(168, 85, 247, 0.2); border: 1px solid var(--purple); color: var(--purple-light);">📡</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: var(--purple-light);">Web Audio API • Synteza FM</span>
+                <h3>Generator Fali Echolokacyjnej</h3>
+                <p>Klikaj przyciski, by wygenerować impuls sonaru sprowadzony do pasma słyszalnego dla człowieka.</p>
+              </div>
+            </div>
+
+            <div style="background: #090D14; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px;">
+              <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 18px;">
+                Nietoperz podczas poszukiwania owadów emituje <strong>10 impulsów na sekundę</strong>. Gdy namierzy cel, zagęszcza impulsy do ponad <strong>200 na sekundę</strong> (tzw. <em>Feeding Buzz</em>), aż zleją się w ciągły terkot tuż przed schwytaniem ćmy!
+              </p>
+
+              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <button class="sound-toggle-btn" id="playBatPitchBtn" style="flex: 1; min-width: 220px; border-color: rgba(168, 85, 247, 0.4); color: var(--purple-light);">
+                  🔊 Pojedynczy świerk sonaru (FM)
+                </button>
+                <button class="sound-toggle-btn" id="playBatEchoPingBtn" style="flex: 1; min-width: 220px; border-color: rgba(56, 189, 248, 0.4); color: var(--cyan-light);">
+                  📡 Impuls + Odbite echo przeszkody
+                </button>
+                <button class="sound-toggle-btn" id="playBatSwarmBtn" style="flex: 1; min-width: 220px; border-color: rgba(236, 72, 153, 0.4); color: #F472B6;">
+                  ⚡ Finisz ataku (Terminal Buzz)
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Cave Sonar Visualizer -->
+          <div class="sensory-card">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(56, 189, 248, 0.2); border: 1px solid #38BDF8; color: var(--cyan-light);">🌌</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: var(--cyan-light);">Wizualizacja Echa w Czasie Rzeczywistym</span>
+                <h3>Interaktywny Radar Jaskiniowy</h3>
+                <p>Klikaj wewnątrz czarnej jaskini lub użyj przycisku pingu, by zobaczyć, jak fala dźwiękowa oświetla obiekty w mroku.</p>
+              </div>
+            </div>
+
+            <div style="background: #060810; border: 1px solid rgba(168, 85, 247, 0.25); border-radius: var(--radius-lg); padding: 18px; text-align: center;">
+              <canvas id="batSonarCanvas" style="width: 100%; height: 300px; display: block; border-radius: var(--radius-md); cursor: crosshair;"></canvas>
+              
+              <div style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                <span style="font-size: 0.85rem; color: var(--text-dim);">
+                  💡 Kliknij w dowolne miejsce ekranu, aby wysłać falę sonaru.
+                </span>
+                <button class="btn btn-primary" id="triggerSonarPingBtn" style="padding: 8px 20px; font-size: 0.88rem; background: linear-gradient(135deg, #A855F7 0%, #7E22CE 100%);">
+                  Wyślij impuls sonaru 📡
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 2: ANATOMIA I BIOMECHANIKA
+         ============================================================ -->
+    <section class="section" id="anatomia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--purple-light);">Biomechanika Nocnego Łowcy</span>
+          <h2>Anatomia Nietoperza: Ręka jako Skrzydło</h2>
+          <p>Nietoperze to jedyne ssaki zdolne do aktywnego, kontrolowanego lotu. Klikaj w punkty na modelu, by odkryć sekrety ich anatomii.</p>
+        </div>
+
+        <div class="sensory-card">
+          <div class="body-language-inspector">
+            <div class="anatomy-diagram-stage" style="border-color: rgba(168, 85, 247, 0.35);">
+              <div class="anatomy-diagram-wrapper">
+                <svg class="anatomy-silhouette-svg" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                  <defs>
+                    <radialGradient id="batGlowGrad" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.25"/>
+                      <stop offset="100%" stop-color="#A855F7" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="batBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#221832"/>
+                      <stop offset="50%" stop-color="#140E20"/>
+                      <stop offset="100%" stop-color="#0B0712"/>
+                    </linearGradient>
+                    <filter id="batNeon" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#A855F7" flood-opacity="0.45"/>
+                    </filter>
+                  </defs>
+
+                  <!-- Radar Circles -->
+                  <circle cx="250" cy="160" r="140" fill="none" stroke="rgba(168, 85, 247, 0.12)" stroke-width="1" stroke-dasharray="4 6"/>
+                  <circle cx="250" cy="160" r="85" fill="none" stroke="rgba(168, 85, 247, 0.1)" stroke-width="1"/>
+                  <ellipse cx="250" cy="160" rx="190" ry="110" fill="url(#batGlowGrad)"/>
+
+                  <!-- Left Wing Membrane -->
+                  <path d="M 235 150 
+                           C 210 110, 160 70, 70 85 
+                           C 95 130, 105 175, 120 220 
+                           C 140 200, 165 210, 185 235 
+                           C 205 210, 220 215, 235 220 Z" 
+                        fill="rgba(168, 85, 247, 0.14)" stroke="#A855F7" stroke-width="2" filter="url(#batNeon)"/>
+                  
+                  <!-- Left Wing Bones (Finger Rays) -->
+                  <line x1="235" y1="150" x2="70" y2="85" stroke="#D8B4FE" stroke-width="2.5"/>
+                  <line x1="170" y1="110" x2="120" y2="220" stroke="#C084FC" stroke-width="1.8"/>
+                  <line x1="205" y1="130" x2="185" y2="235" stroke="#C084FC" stroke-width="1.8"/>
+
+                  <!-- Right Wing Membrane -->
+                  <path d="M 265 150 
+                           C 290 110, 340 70, 430 85 
+                           C 405 130, 395 175, 380 220 
+                           C 360 200, 335 210, 315 235 
+                           C 295 210, 280 215, 265 220 Z" 
+                        fill="rgba(168, 85, 247, 0.14)" stroke="#A855F7" stroke-width="2" filter="url(#batNeon)"/>
+
+                  <!-- Right Wing Bones (Finger Rays) -->
+                  <line x1="265" y1="150" x2="430" y2="85" stroke="#D8B4FE" stroke-width="2.5"/>
+                  <line x1="330" y1="110" x2="380" y2="220" stroke="#C084FC" stroke-width="1.8"/>
+                  <line x1="295" y1="130" x2="315" y2="235" stroke="#C084FC" stroke-width="1.8"/>
+
+                  <!-- Central Torso & Head -->
+                  <ellipse cx="250" cy="175" rx="26" ry="46" fill="url(#batBodyGrad)" stroke="#A855F7" stroke-width="2.5"/>
+                  <circle cx="250" cy="120" r="22" fill="url(#batBodyGrad)" stroke="#A855F7" stroke-width="2.5"/>
+
+                  <!-- Left Ear with Tragus -->
+                  <path d="M 236 108 L 222 65 Q 235 75 244 102 Z" fill="#3B1C56" stroke="#D8B4FE" stroke-width="2"/>
+                  <!-- Right Ear with Tragus -->
+                  <path d="M 264 108 L 278 65 Q 265 75 256 102 Z" fill="#3B1C56" stroke="#D8B4FE" stroke-width="2"/>
+
+                  <!-- Nose Leaf & Eyes -->
+                  <ellipse cx="250" cy="126" rx="6" ry="8" fill="#A855F7"/>
+                  <circle cx="242" cy="116" r="3" fill="#F1F5F9"/>
+                  <circle cx="258" cy="116" r="3" fill="#F1F5F9"/>
+
+                  <!-- Uropatagium (Tail Membrane) & Claws -->
+                  <path d="M 238 220 Q 250 255 262 220 Z" fill="rgba(168, 85, 247, 0.2)" stroke="#A855F7" stroke-width="1.5"/>
+                  <path d="M 243 230 L 243 245 M 257 230 L 257 245" stroke="#D8B4FE" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+
+                <!-- Interactive Hotspots -->
+                <button class="anatomy-hotspot active" data-bat-anatomy="ears" style="left: 47%; top: 22%;" aria-label="Uszy i tragus">
+                  <span class="hotspot-pulse"></span>
+                  <span class="hotspot-dot"></span>
+                </button>
+                <button class="anatomy-hotspot" data-bat-anatomy="wings" style="left: 18%; top: 32%;" aria-label="Skrzydła">
+                  <span class="hotspot-pulse"></span>
+                  <span class="hotspot-dot"></span>
+                </button>
+                <button class="anatomy-hotspot" data-bat-anatomy="nose" style="left: 50%; top: 40%;" aria-label="Pyszczek i nos sonaru">
+                  <span class="hotspot-pulse"></span>
+                  <span class="hotspot-dot"></span>
+                </button>
+                <button class="anatomy-hotspot" data-bat-anatomy="claws" style="left: 50%; top: 76%;" aria-label="Pazury tylne">
+                  <span class="hotspot-pulse"></span>
+                  <span class="hotspot-dot"></span>
+                </button>
+                <button class="anatomy-hotspot" data-bat-anatomy="tail" style="left: 50%; top: 66%;" aria-label="Błona ogonowa">
+                  <span class="hotspot-pulse"></span>
+                  <span class="hotspot-dot"></span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Detail Panel -->
+            <div class="anatomy-info-panel" style="border-color: rgba(168, 85, 247, 0.3);">
+              <span class="overline" style="color: var(--purple-light);">Aktywny Punkt Anatomiczny</span>
+              <h3 id="batAnatomyTitle" style="color: var(--purple-light); margin-bottom: 10px;">Wielkie Małżowiny i Skrawek (Tragus)</h3>
+              <p id="batAnatomyDesc" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 20px;">
+                Uszy nietoperza potrafią poruszać się niezależnie. Kluczowym elementem jest fałd skórny zwany skrawkiem (tragus) — odbija fale docierające od góry i od dołu pod różnymi kątami, co pozwala nietoperzowi bezbłędnie określić wysokość lotu owada!
+              </p>
+              <div style="background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: var(--radius-md); padding: 14px 18px;">
+                <span style="font-size: 0.8rem; color: var(--purple-light); font-weight: 700;">PARAMETR BIOMECHANICZNY:</span>
+                <div id="batAnatomyStat" style="font-size: 1.1rem; font-weight: 800; color: #fff; margin-top: 4px;">Częstotliwość do 120 000 Hz</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 3: ZASADY BEZPIECZEŃSTWA I MITY
+         ============================================================ -->
+    <section class="section" id="bezpieczenstwo">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--emerald-light);">Edukacja i Koegzystencja</span>
+          <h2>Nietoperz w Pokoju: Fakty kontra Mity</h2>
+          <p>Co zrobić, gdy w letni wieczór nietoperz wpadnie przez okno? Odkryj zasady bezpiecznego zachowania i obal wielowiekowe zabobony.</p>
+        </div>
+
+        <div class="safety-grid">
+          <!-- Card 1 -->
+          <div class="toxic-food-card" style="border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.05);">
+            <div class="toxic-food-header">
+              <span>🪟</span>
+              <h5 style="color: var(--emerald-light);">1. Otwórz okno i zgaś światło</h5>
+            </div>
+            <p>Nietoperz w pokoju nie planuje Cię zaatakować — jest przerażony ścianami i meblami. Zgaś światło, otwórz okno na oścież i wyjdź na 10 minut. Użyje sonaru i sam odleci.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="toxic-food-card" style="border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05);">
+            <div class="toxic-food-header">
+              <span>🚫</span>
+              <h5 style="color: #F87171;">2. Żadnych mioteł ani gazet!</h5>
+            </div>
+            <p>Kości skrzydeł nietoperza są cieńsze od wykałaczek. Uderzenie miotłą łamie mu palce i skazuje na bolesną śmierć. Zwierzę lata w kółko, bo bada fale echa od ścian.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="toxic-food-card" style="border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.05);">
+            <div class="toxic-food-header">
+              <span>🧤</span>
+              <h5 style="color: var(--amber-light);">3. Nigdy nie łap gołymi rękami</h5>
+            </div>
+            <p>Jeśli nietoperz wylądował na podłodze, załóż grube rękawice ochronne lub nakryj go pudełkiem po butach z tekturką pod spodem. Choć wścieklizna jest rzadka, może ugryźć w obronie.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="toxic-food-card" style="border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.05);">
+            <div class="toxic-food-header">
+              <span>💇</span>
+              <h5 style="color: var(--purple-light);">4. Mit o wkręcaniu we włosy</h5>
+            </div>
+            <p>Nietoperze NIE wkręcają się we włosy! Ich echolokacja omija niteczkę pajęczą o grubości ułamka milimetra — Twoja głowa to dla nich potężna przeszkoda, którą omijają z daleka.</p>
+          </div>
+        </div>
+
+        <!-- Crisis Interactive Simulator -->
+        <div style="margin-top: 36px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px;">
+          <h4 style="margin-bottom: 8px;">🎮 Symulator Decyzji: Nietoperz wleciał do sypialni! Co robisz?</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+            Wybierz jedną z poniższych reakcji, aby sprawdzić jej konsekwencje:
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 20px;">
+            <div class="crisis-option-card bat-crisis-card" data-action="broom">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">🧹</span>
+              <strong>Biorę miotłę i próbuję go strącić</strong>
+            </div>
+            <div class="crisis-option-card bat-crisis-card" data-action="catch_bare">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">✋</span>
+              <strong>Próbuję złapać go w locie gołymi rękami</strong>
+            </div>
+            <div class="crisis-option-card bat-crisis-card" data-action="open_window">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">🪟</span>
+              <strong>Gaszę światło, otwieram okno i wychodzę</strong>
+            </div>
+            <div class="crisis-option-card bat-crisis-card" data-action="box">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">📦</span>
+              <strong>W rękawicach nakrywam go kartonikiem (gdy siądzie)</strong>
+            </div>
+          </div>
+
+          <div id="batCrisisResult" class="crisis-feedback-box"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 4: FASCYNUJĄCE CIEKAWOSTKI
+         ============================================================ -->
+    <section class="section" id="ciekawostki" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--purple-light); border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1);">Sekrety Natury</span>
+          <h2>Niezwykłe Fakty o Nietoperzach</h2>
+          <p>Oto zjawiska biologiczne i adaptacje, które zadziwiają inżynierów i lekarzy na całym świecie.</p>
+        </div>
+
+        <div class="curiosity-grid">
+          <div class="curiosity-card" style="border-color: rgba(168, 85, 247, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🙃</span>
+              <h4 style="color: var(--purple-light);">Dlaczego śpią głową w dół?</h4>
+            </div>
+            <p>
+              Ich kości są zbyt lekkie, by mogły wybić się do lotu z ziemi jak ptaki. Zwisanie pozwala im po prostu puścić gałąź i natychmiast przejść do lotu nurkowego! Co niezwykłe, ścięgna w stopach zaciskają pazury pod wpływem samego ciężaru ciała — wiszenie nie wymaga żadnego wysiłku mięśni!
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(56, 189, 248, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🥶</span>
+              <h4 style="color: var(--cyan-light);">Ekstremalna hibernacja w jaskiniach</h4>
+            </div>
+            <p>
+              Zimą nietoperze zapadają w torpor: obniżają temperaturę ciała z 38°C do zaledwie 1–2°C (stają się zimne jak skała), a ich serce spowalnia z 800 do zaledwie 4 uderzeń na minutę! Jedno niepotrzebne wybudzenie przez człowieka kosztuje je zapas tłuszczu na kilka tygodni.
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(16, 185, 129, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🦟</span>
+              <h4 style="color: var(--emerald-light);">Darmowy leśny i miejski odkurzacz</h4>
+            </div>
+            <p>
+              Pojedynczy mały karlik malutki (ważący zaledwie 5 gramów) w ciągu jednej nocy potrafi schwytać i zjeść nawet 1000–1500 komarów, muchówek i owadów niszczących uprawy leśne. Kolonia kilkuset osobników to tona owadów w sezonie!
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(244, 114, 182, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🩸</span>
+              <h4 style="color: #F472B6;">Brak zastoju krwi w głowie</h4>
+            </div>
+            <p>
+              Gdyby człowiek wisiał głową w dół przez kilkanaście godzin, doszłoby do obrzęku mózgu. Nietoperze mają w żyłach system jednokierunkowych zastawek oraz wyjątkowo wydajne mikrokrążenie, dzięki czemu krew krąży swobodnie bez względu na ułożenie ciała.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 5: 10-POZIOMOWA MINI GRA
+         ============================================================ -->
+    <section class="section" id="gra">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--purple-light); border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1);">🎮 Zagraj i Zmierz Się z Ciemnością</span>
+          <h2>Mini Gra: Echolokacja w Jaskini — Nocny Łowca Ciem</h2>
+          <p>Steruj nietoperzem palcem lub myszką. Ekran jest ciemny — musisz wysyłać impulsy sonaru, aby zobaczyć kontury jaskini i złapać latające ćmy. Uważaj na stalaktyty!</p>
+        </div>
+
+        <div class="minigame-card" style="border-color: rgba(168, 85, 247, 0.35);">
+          <!-- Level Header & Progress Dots -->
+          <div class="minigame-level-header">
+            <div class="minigame-level-badge" id="batGameLevelBadge" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: var(--purple-light);">
+              <span>Misja 1/10:</span> Płytka Grota Wapienna 🪨
+            </div>
+            <div class="minigame-level-dots" id="batGameLevelDots">
+              <span class="level-dot active"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+            </div>
+          </div>
+
+          <!-- HUD -->
+          <div class="minigame-hud">
+            <div class="hud-item">
+              <span>🦋 Złapane ćmy:</span>
+              <span class="hud-val" id="batGameCaught" style="color: var(--cyan-light);">0 / 3</span>
+            </div>
+            <div class="hud-item">
+              <span>⏱️ Czas:</span>
+              <span class="hud-val" id="batGameTimer" style="color: var(--purple-light);">40s</span>
+            </div>
+            <div class="hud-item">
+              <span>📡 Impulsy sonaru:</span>
+              <span class="hud-val" id="batGamePulses" style="color: #F472B6;">0</span>
+            </div>
+          </div>
+
+          <div class="minigame-viewport">
+            <canvas id="batGameCanvas" class="minigame-canvas" style="background: #060810;"></canvas>
+
+            <!-- Game Overlay -->
+            <div class="minigame-overlay" id="batGameOverlay">
+              <div style="font-size: 3.5rem; margin-bottom: 12px;" id="batGameOverIcon">🦇🌌🦋</div>
+              <h4 id="batGameOverTitle">Echolokacja w Jaskini</h4>
+              <p id="batGameOverDesc">
+                Wciel się w nietoperza i poluj na ćmy w całkowitej ciemności! Poruszaj się kursorem lub palcem — Twój sonar wysyła fale, które odbijają się od ścian i zwierzyny. Unikaj zderzenia z czerwonymi przeszkodami!
+              </p>
+              <div class="overlay-actions">
+                <button class="btn btn-primary" id="startBatGameBtn">Rozpocznij polowanie 🦇</button>
+                <button class="btn btn-primary" id="nextBatLevelBtn" style="display: none;">Kolejna jaskinia →</button>
+                <button class="btn btn-secondary" id="restartBatGameBtn" style="display: none;">Powtórz jaskinię ↺</button>
+                <button class="btn btn-secondary" id="resetBatCampaignBtn" style="display: none;">Zacznij od poziomu 1 ↺</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- ============================================================
+         SEKCJA 6: INTERAKTYWNY MINI QUIZ
+         ============================================================ -->
+    <section class="section" id="quiz" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--purple-light); border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1);">Sprawdź swoją wiedzę</span>
+          <h2>Mini Quiz Mistrza Echolokacji</h2>
+          <p>5 pytań weryfikujących wiedzę o bioakustyce, mechanice lotu i zasadach koegzystencji z nietoperzami.</p>
+        </div>
+
+        <div class="quiz-wrapper" style="border-color: rgba(168, 85, 247, 0.3);">
+          <div class="quiz-meter-bar">
+            <div class="quiz-meter-progress" id="batQuizMeterProgress" style="background: linear-gradient(90deg, #A855F7 0%, #38BDF8 100%);"></div>
+          </div>
+          <div id="batQuizDynamicBody">
+            <!-- Rendered dynamically by js/bat-simulators.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation between Animals -->
+    <section style="padding: 60px 0; text-align: center;">
+      <div class="container">
+        <h3 style="margin-bottom: 16px;">Poznaj inne zwierzęta</h3>
+        <p style="margin-bottom: 24px; color: var(--text-muted);">Przełącz się na percepcję nocnej sowy lub przejrzyj katalog wszystkich 10 gatunków.</p>
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a href="sowa.html" class="btn btn-primary" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);">
+            <span>🦉 Zobacz zmysły sowy</span>
+          </a>
+          <button class="btn btn-secondary animal-catalog-trigger">
+            <span>🐾 Otwórz katalog wszystkich zwierząt</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Author Profile Modal (Dorian Kalinowski) -->
+  <div class="modal-backdrop" id="authorModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeAuthorModal" aria-label="Zamknij okno">✕</button>
+      <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="author-avatar-big">
+      <h3 class="author-modal-name">Dorian Kalinowski</h3>
+      <div class="author-modal-role">Twórca projektu i miłośnik zwierząt</div>
+      <p class="author-bio">
+        Cześć! Mam na imię Dorian i po prostu bardzo lubię zwierzaki. Od zawsze najbardziej ciekawi mnie to, jak niesamowicie odbierają otaczający nas świat – zupełnie inaczej niż my, ludzie. Wierzę, że gdybyśmy naprawdę dobrze wiedzieli, jak myślą, widzą i czują, na świecie byłoby znacznie mniej nieporozumień i niepotrzebnych konfrontacji między nami a nimi.
+      </p>
+      <div style="text-align: center;">
+        <button class="btn btn-primary" id="confirmAuthorModal">Zamknij</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PWA Install Prompt Banner -->
+  <div class="pwa-install-banner" id="pwaBanner">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 1.6rem;">📱</span>
+      <div>
+        <div style="font-size: 0.92rem; font-weight: 700;">Zainstaluj jako aplikację PWA</div>
+        <div style="font-size: 0.78rem; color: var(--text-muted);">Szybki dostęp i działanie offline bez przeglądarki</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="pwaInstallBtn" style="padding: 8px 18px; font-size: 0.85rem;">Instaluj</button>
+    <button class="modal-close-btn" id="pwaDismissBtn" style="position: static; width: 28px; height: 28px; font-size: 0.8rem;">✕</button>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <div class="mobile-bottom-bar" role="navigation" aria-label="Nawigacja mobilna">
+    <a href="index.html" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🏠</span>
+      <span>Główna</span>
+    </a>
+    <button class="bottom-bar-item animal-catalog-trigger">
+      <span class="bottom-bar-icon">🐾</span>
+      <span>Katalog</span>
+    </button>
+    <a href="nietoperz.html" class="bottom-bar-item active">
+      <span class="bottom-bar-icon">🦇</span>
+      <span>Nietoperz</span>
+    </a>
+    <a href="#bezpieczenstwo" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🛡️</span>
+      <span>Zasady</span>
+    </a>
+    <button class="bottom-bar-item" id="mobileAuthorTrigger">
+      <span class="bottom-bar-icon">👤</span>
+      <span>Autor</span>
+    </button>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-author">
+        Zaprojektowane i stworzone przez: <strong>Dorian Kalinowski</strong>
+      </p>
+      <p class="footer-rights">
+        © 2026 Świat zmysłami zwierząt • Projekt edukacyjny non-profit • V1
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/bat-simulators.js"></script>
+</body>
+</html>

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#06090E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Zmysły Zwierząt">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <title>Żmija Zygzakowata — Świat zmysłami zwierząt</title>
+  <meta name="description" content="Poznaj zmysły żmii zygzakowatej (Vipera berus). Brak uszu i detekcja drgań sejsmicznych żuchwą, narząd Jacobsona, protokół ratunkowy po ukąszeniu i 10-poziomowa gra.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="nav" role="navigation" aria-label="Nawigacja główna">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon-wrapper">🐾</div>
+        <span>Świat zmysłami zwierząt</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+            <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Strona główna</a>
+        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog (10)</button>
+
+        <!-- Dropdown: Wybierz zwierzę (10) -->
+        <div class="nav-dropdown" id="navAnimalsDropdown">
+          <button class="nav-link nav-dropdown-btn" id="navDropdownBtn" aria-expanded="false" style="cursor: pointer;">
+            <span>🐍 Żmija</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu">
+            <a href="pies.html" class="nav-dropdown-item"><span class="item-emoji">🐕</span> Pies domowy</a>
+            <a href="kot.html" class="nav-dropdown-item"><span class="item-emoji">🐈</span> Kot domowy</a>
+            <a href="dzik.html" class="nav-dropdown-item"><span class="item-emoji">🐗</span> Dzik euroazjatycki</a>
+            <a href="wilk.html" class="nav-dropdown-item"><span class="item-emoji">🐺</span> Wilk szary</a>
+            <a href="nietoperz.html" class="nav-dropdown-item"><span class="item-emoji">🦇</span> Nietoperz</a>
+            <a href="zmija.html" class="nav-dropdown-item active"><span class="item-emoji">🐍</span> Żmija zygzakowata</a>
+            <a href="sowa.html" class="nav-dropdown-item"><span class="item-emoji">🦉</span> Sowa (Płomykówka)</a>
+            <a href="niedzwiedz.html" class="nav-dropdown-item"><span class="item-emoji">🐻</span> Niedźwiedź brunatny</a>
+            <a href="pszczola.html" class="nav-dropdown-item"><span class="item-emoji">🐝</span> Pszczoła miodna</a>
+            <a href="lis.html" class="nav-dropdown-item"><span class="item-emoji">🦊</span> Lis rudy</a>
+          </div>
+        </div>
+
+        <!-- Creator Chip (Dorian Kalinowski) -->
+        <div class="creator-chip" id="authorChip" title="Dowiedz się więcej o autorze">
+          <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="creator-avatar">
+          <div class="creator-text">
+            <span class="creator-name">Dorian Kalinowski</span>
+            <span class="creator-role">Twórca aplikacji</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Animal Page Hero -->
+  <header class="animal-hero" id="top" style="background: linear-gradient(180deg, rgba(16, 185, 129, 0.16) 0%, rgba(9, 13, 19, 0) 100%);">
+    <div class="container">
+      <div class="animal-hero-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="index.html">Główna</a>
+            <span>›</span>
+            <span>Gady</span>
+            <span>›</span>
+            <span style="color: var(--emerald-light);">Żmija zygzakowata</span>
+          </div>
+          <h1>Żmija Zygzakowata: <span style="color: var(--emerald-light);">Zmysł Sejsmiczny</span></h1>
+          <p class="hero-latin">Vipera berus • Jedyny jadowity gad w Polsce</p>
+          <p class="hero-desc">
+            Żmija nie posiada uszu zewnętrznych i jest całkowicie głucha na dźwięki w powietrzu. Zamiast tego jej <strong>żuchwa dotykająca ziemi odbiera najmniejsze drgania kroków człowieka z odległości kilkunastu metrów</strong>. Rozwidlonym językiem „chwyta” cząsteczki zapachu, wsuwając je do narządu Jacobsona.
+          </p>
+          <div class="hero-stats-grid">
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--emerald-light);">5-1000 Hz</span>
+              <span class="stat-label">Odbiór sejsmiki przez kość żuchwy</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--amber-light);">30-50%</span>
+              <span class="stat-label">Ukąszeń bez jadu (dry bites)</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: #38BDF8;">Jacobson</span>
+              <span class="stat-label">Chemiczny stereo-węch w podniebieniu</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="animal-portrait-card" style="border-color: rgba(16, 185, 129, 0.35); background: radial-gradient(circle at center, rgba(16, 185, 129, 0.18) 0%, rgba(19, 27, 39, 0.8) 70%);">
+          <div class="animal-portrait-glow" style="background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);"></div>
+          <div class="animal-portrait-emoji" role="img" aria-label="Żmija zygzakowata">🐍</div>
+          <div class="portrait-tags">
+            <span class="portrait-tag">Gatunek: Vipera berus</span>
+            <span class="portrait-tag">Źrenica: Pionowa (wąska)</span>
+            <span class="portrait-tag">Rozmnażanie: Jajożyworodna</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Subnavigation -->
+  <div class="sticky-subnav">
+    <div class="sticky-subnav-inner">
+      <a href="#historia" class="subnav-pill active">📜 Ewolucja</a>
+      <a href="#zmysly" class="subnav-pill">⚡ Sejsmika & Zapach</a>
+      <a href="#anatomia" class="subnav-pill">🧬 Anatomia & Kły</a>
+      <a href="#bezpieczenstwo" class="subnav-pill">🛡️ Protokół 112</a>
+      <a href="#ciekawostki" class="subnav-pill">💡 Ciekawostki</a>
+      <a href="#gra" class="subnav-pill">🎮 Mini Gra</a>
+      <a href="#quiz" class="subnav-pill">🎯 Mini Quiz</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================
+         SEKCJA 1: EWOLUCJA I BIOLOGIA W PIGUŁCE
+         ============================================================ -->
+    <section class="section" id="historia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--emerald-light); border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">Ewolucja i Anatomia Gadów</span>
+          <h2>Od Podziemnych Jaszczurek do Perfekcyjnego Aparatu Jadowego</h2>
+          <p>Jak w toku 100 milionów lat redukcja kończyn i uszu zewnętrznych zrodziła niezwykły zmysł odbioru sejsmiki gruntu i chemiczny język.</p>
+        </div>
+
+        <div class="timeline-stepper">
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--emerald-light); box-shadow: 0 0 12px var(--emerald);"></div>
+            <div class="step-header">
+              <span class="step-title">Podziemni przodkowie z kredy</span>
+              <span class="step-period">~100 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              Przodkowie węży (pochodzący od jaszczurek z grupy Varanoidea) zeszli do podziemnych nor. W ciasnych tunelach kończyny stały się zbędne i uległy redukcji, a błona bębenkowa zanikła, by nie ulegać zapiaszczeniu — narodził się ruch falisty i odbiór drgań podłoża!
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--emerald-light); box-shadow: 0 0 12px var(--emerald);"></div>
+            <div class="step-header">
+              <span class="step-title">Wytworzenie aparatu jadowego Solenoglypha</span>
+              <span class="step-period">~25 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              Żmijowate (Viperidae) wykształciły najbardziej zaawansowany aparat jadowy w świecie przyrody: długie, puste w środku kły umieszczone na obrotowej kości szczękowej. W spoczynku leżą złożone wzdłuż podniebienia, a w momencie ataku prostują się jak scyzoryk pod kątem niemal 90°!
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--emerald-light); box-shadow: 0 0 12px var(--emerald);"></div>
+            <div class="step-header">
+              <span class="step-title">Jajożyworodność i podbój chłodnej Europy</span>
+              <span class="step-period">~5 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              Większość gadów to stworzenia ciepłolubne składające jaja w nagrzanej ziemi. Żmija zygzakowata wykształciła <strong>jajożyworodność (ovoviviparia)</strong>: samica nosi jaja w swoim ciele, wygrzewając je własnym brzuchem na słońcu. Dzięki temu dotarła aż za koło podbiegunowe!
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--emerald-light); box-shadow: 0 0 12px var(--emerald);"></div>
+            <div class="step-header">
+              <span class="step-title">Żmija zygzakowata w Polsce dzisiaj</span>
+              <span class="step-period">Dziś</span>
+            </div>
+            <p class="step-body">
+              <em>Vipera berus</em> to jedyny jadowity wąż w Polsce. Występuje w 3 odmianach barwnych: popielatej, brunatno-rdzawej oraz całkowicie czarnej (melanistycznej). Jest gatunkiem chronionym, pełniącym bezcenną rolę w ograniczaniu populacji gryzoni leśnych.
+            </p>
+          </div>
+        </div>
+
+        <div class="evolution-insight-box" style="border-color: rgba(16, 185, 129, 0.3); background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(19, 27, 39, 0.6) 100%);">
+          <div class="insight-col">
+            <h4 style="color: var(--emerald-light);">🐍 Dlaczego żmija wystawia rozwidlony język?</h4>
+            <ul class="insight-list">
+              <li>Język żmii nie służy do kłucia ani syczenia! Działa jak <strong>stereofoniczny próbnik chemiczny</strong>. W ułamku sekundy zbiera z powietrza i gruntu molekuły zapachowe.</li>
+              <li>Po wciągnięciu do pyska końcówki języka trafiają do dwóch zagłębień <strong>narządu Jacobsona</strong> na podniebieniu. Mózg porównuje natężenie zapachu z lewej i prawej strony, pozwalając żmii iść jak po sznurku śladem nornicy!</li>
+            </ul>
+          </div>
+          <div class="insight-col">
+            <h4 style="color: var(--amber-light);">⚠️ Wstęga Kainowa (Zygzak):</h4>
+            <ul class="insight-list">
+              <li>Ciemny zygzak na grzbiecie to nie tylko ostrzeżenie. Podczas szybkiego zygzakowatego pełzania węża wywołuje u drapieżnika <strong>złudzenie stroboskopowe</strong> — oko ptaka traci ostrość i nie potrafi ocenić prędkości ani kierunku ucieczki!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 2: LABORATORIUM ZMYSŁÓW
+         ============================================================ -->
+    <section class="section" id="zmysly">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--emerald-light);">Percepcja Podłoża</span>
+          <h2>Drgania Ziemi i Chemiczny Język</h2>
+          <p>Jak wąż bez uszu orientuje się w gęstym lesie? Przetestuj interaktywny symulator fal sejsmicznych i posłuchaj dźwięków ostrzegawczych żmii.</p>
+        </div>
+
+        <div class="senses-container">
+          <!-- Audio Synthesizer Card -->
+          <div class="sensory-card">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(16, 185, 129, 0.2); border: 1px solid var(--emerald); color: var(--emerald-light);">🔊</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: var(--emerald-light);">Web Audio API</span>
+                <h3>Dźwięki i Sygnały Żmii</h3>
+                <p>Odsłuchaj syk ostrzegawczy oraz niskoczęstotliwościowe drgania kroków sejsmicznych.</p>
+              </div>
+            </div>
+
+            <div style="background: #090D14; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px;">
+              <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 18px;">
+                Żmija nigdy nie marnuje cennego jadu na człowieka, którego nie może zjeść. Przed atakiem zawsze **sykiem ostrzega intruza**, dając mu czas na wycofanie się.
+              </p>
+
+              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <button class="sound-toggle-btn" id="playViperHissBtn" style="flex: 1; min-width: 220px; border-color: rgba(239, 68, 68, 0.4); color: #F87171;">
+                  💨 Syk ostrzegawczy (Hiss)
+                </button>
+                <button class="sound-toggle-btn" id="playViperThudBtn" style="flex: 1; min-width: 220px; border-color: rgba(245, 158, 11, 0.4); color: var(--amber-light);">
+                  🥾 Drgania kroku sejsmicznego (45 Hz)
+                </button>
+                <button class="sound-toggle-btn" id="playViperTongueBtn" style="flex: 1; min-width: 220px; border-color: rgba(16, 185, 129, 0.4); color: var(--emerald-light);">
+                  👅 Próbkowanie językiem (Jacobson)
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seismic Canvas Visualizer -->
+          <div class="sensory-card">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(245, 158, 11, 0.2); border: 1px solid #F59E0B; color: var(--amber-light);">⚡</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: var(--amber-light);">Odbiór Drgań Żuchwą</span>
+                <h3>Wizualizacja Fal Sejsmicznych</h3>
+                <p>Klikaj na planszy, by wywołać kroki turysty i zobaczyć, jak żuchwa żmii odbiera fale uderzeniowe.</p>
+              </div>
+            </div>
+
+            <div style="background: #080F0B; border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-lg); padding: 18px; text-align: center;">
+              <canvas id="viperSeismicCanvas" style="width: 100%; height: 280px; display: block; border-radius: var(--radius-md); cursor: pointer;"></canvas>
+              
+              <div style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                <span style="font-size: 0.85rem; color: var(--text-dim);">
+                  💡 Kliknij na podłożu, aby wywołać tupnięcie buta turysty.
+                </span>
+                <button class="btn btn-primary" id="triggerViperStepBtn" style="padding: 8px 20px; font-size: 0.88rem; background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+                  Tupnij w podłoże 🥾
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 2: ANATOMIA I BIOMECHANIKA
+         ============================================================ -->
+    <section class="section" id="anatomia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--emerald-light);">Budowa i Narząd Jadowy</span>
+          <h2>Anatomia Żmii: Precyzyjny Aparat Jadowy</h2>
+          <p>Odkryj budowę składanych kłów jadowych, trójkątnej głowy i narządu Jacobsona.</p>
+        </div>
+
+        <div class="sensory-card">
+          <div class="body-language-inspector">
+            <div class="anatomy-diagram-stage" style="border-color: rgba(16, 185, 129, 0.35);">
+              <div class="anatomy-diagram-wrapper">
+                <svg class="anatomy-silhouette-svg" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                  <defs>
+                    <radialGradient id="viperGlowGrad" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#10B981" stop-opacity="0.25"/>
+                      <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="viperBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#1A2E20"/>
+                      <stop offset="50%" stop-color="#0E1D13"/>
+                      <stop offset="100%" stop-color="#060C08"/>
+                    </linearGradient>
+                    <filter id="viperNeon" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#10B981" flood-opacity="0.45"/>
+                    </filter>
+                  </defs>
+
+                  <!-- Radar Rings -->
+                  <circle cx="250" cy="160" r="140" fill="none" stroke="rgba(16, 185, 129, 0.12)" stroke-width="1" stroke-dasharray="4 6"/>
+                  <ellipse cx="250" cy="170" rx="190" ry="110" fill="url(#viperGlowGrad)"/>
+
+                  <!-- Coiled Snake Body -->
+                  <path d="M 120 220 
+                           C 110 260, 200 280, 290 270 
+                           C 390 260, 420 210, 390 170 
+                           C 360 130, 280 140, 240 180 
+                           C 200 220, 160 210, 150 170 
+                           C 140 130, 200 90, 270 95 
+                           C 330 100, 360 80, 340 55 
+                           C 310 25, 230 40, 180 70 
+                           C 120 110, 100 170, 120 220 Z" 
+                        fill="url(#viperBodyGrad)" stroke="#10B981" stroke-width="3" filter="url(#viperNeon)"/>
+
+                  <!-- Zigzag Pattern (Wstęga Kainowa) -->
+                  <path d="M 140 200 L 160 180 L 180 210 L 210 170 L 250 190 L 290 160 L 330 180 L 360 150 L 380 180 L 370 230 L 330 250 L 280 250 L 230 260 L 170 250 L 130 230" 
+                        fill="none" stroke="#050C07" stroke-width="7" stroke-linejoin="miter"/>
+                  <path d="M 140 200 L 160 180 L 180 210 L 210 170 L 250 190 L 290 160 L 330 180 L 360 150 L 380 180 L 370 230 L 330 250 L 280 250 L 230 260 L 170 250 L 130 230" 
+                        fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-dasharray="6 4"/>
+
+                  <!-- Triangular Head -->
+                  <polygon points="340,55 395,75 365,105" fill="#1A2E20" stroke="#10B981" stroke-width="2.5"/>
+
+                  <!-- Slit Pupil Eye -->
+                  <ellipse cx="365" cy="72" rx="4" ry="7" fill="#F59E0B"/>
+                  <line x1="365" y1="65" x2="365" y2="79" stroke="#000" stroke-width="2"/>
+
+                  <!-- Forked Tongue -->
+                  <path d="M 395 75 L 425 75 L 438 68 M 425 75 L 438 82" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+
+                  <!-- Folded Fangs Indication -->
+                  <line x1="388" y1="78" x2="380" y2="88" stroke="#FFFBEB" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+
+                <!-- Hotspots -->
+                <button class="anatomy-hotspot active" data-viper-anatomy="head" style="left: 74%; top: 24%;" aria-label="Trójkątna głowa">
+                  <span class="hotspot-pulse"></span>
+                  <span class="hotspot-dot"></span>
+                </button>
+                <button class="anatomy-hotspot" data-viper-anatomy="eye" style="left: 73%; top: 22%;" aria-label="Pionowa źrenica">
+                  <span class="hotspot-pulse"></span>
+                  <span class="hotspot-dot"></span>
+                </button>
+                <button class="anatomy-hotspot" data-viper-anatomy="fangs" style="left: 78%; top: 28%;" aria-label="Kły jadowe">
+                  <span class="hotspot-pulse"></span>
+                  <span class="hotspot-dot"></span>
+                </button>
+                <button class="anatomy-hotspot" data-viper-anatomy="zigzag" style="left: 55%; top: 60%;" aria-label="Zygzak">
+                  <span class="hotspot-pulse"></span>
+                  <span class="hotspot-dot"></span>
+                </button>
+                <button class="anatomy-hotspot" data-viper-anatomy="tongue" style="left: 86%; top: 24%;" aria-label="Rozwidlony język">
+                  <span class="hotspot-pulse"></span>
+                  <span class="hotspot-dot"></span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Detail Panel -->
+            <div class="anatomy-info-panel" style="border-color: rgba(16, 185, 129, 0.3);">
+              <span class="overline" style="color: var(--emerald-light);">Aktywny Punkt Anatomiczny</span>
+              <h3 id="viperAnatomyTitle" style="color: var(--emerald-light); margin-bottom: 10px;">Trójkątna, Płaska Głowa z Drobnymi Łuskami</h3>
+              <p id="viperAnatomyDesc" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 20px;">
+                W odróżnieniu od nieszkodliwego zaskrońca, żmija ma głowę wyraźnie odcinającą się od tułowia w kształcie grotu strzały. Pokrywają ją liczne drobne tarczki, a z tyłu głowy mieszczą się potężne mięśnie zaciskające gruczoły jadowe.
+              </p>
+              <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-md); padding: 14px 18px;">
+                <span style="font-size: 0.8rem; color: var(--emerald-light); font-weight: 700;">PARAMETR ANATOMICZNY:</span>
+                <div id="viperAnatomyStat" style="font-size: 1.1rem; font-weight: 800; color: #fff; margin-top: 4px;">Kształt: sercowaty / grot strzały</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 3: PROTOKÓŁ RATUNKOWY I BEZPIECZEŃSTWO
+         ============================================================ -->
+    <section class="section" id="bezpieczenstwo">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--emerald-light);">Pierwsza Pomoc i Prawda Medyczna</span>
+          <h2>Ukąszenie Żmii: Fakty, Mity i Numer 112</h2>
+          <p>Obalamy szkodliwe mity filmowe. Dowiedz się, dlaczego opaska uciskowa i nacinanie rany to najgorsze, co można zrobić poszkodowanemu.</p>
+        </div>
+
+        <div class="safety-grid">
+          <div class="toxic-food-card" style="border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.05);">
+            <div class="toxic-food-header">
+              <span>🧘</span>
+              <h5 style="color: var(--emerald-light);">1. Spokój i unieruchomienie</h5>
+            </div>
+            <p>Panika i szybkie bicie serca pompują krew z jadem. Usiądź, zdejmij natychmiast pierścionki/buty (opuchlizna!) i trzymaj kończynę <strong>poniżej serca</strong>.</p>
+          </div>
+
+          <div class="toxic-food-card" style="border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05);">
+            <div class="toxic-food-header">
+              <span>🚫</span>
+              <h5 style="color: #F87171;">2. ŻADNYCH opasek uciskowych!</h5>
+            </div>
+            <p>Zaciśnięcie stazy zatrzymuje jad w jednym miejscu i wywołuje błyskawiczną martwicę mięśni, często prowadząc do amputacji! Nigdy nie stosuj opasek uciskowych.</p>
+          </div>
+
+          <div class="toxic-food-card" style="border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05);">
+            <div class="toxic-food-header">
+              <span>🔪</span>
+              <h5 style="color: #F87171;">3. Zero nacinania i wysysania</h5>
+            </div>
+            <p>Wysysanie jadu ustami grozi zatruciem przez mikrouszkodzenia w jamie ustnej, a nacinanie skóry nożem wywołuje zakażenie bakteryjne i sepsę.</p>
+          </div>
+
+          <div class="toxic-food-card" style="border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.05);">
+            <div class="toxic-food-header">
+              <span>📞</span>
+              <h5 style="color: var(--cyan-light);">4. Telefon na 112 lub 985</h5>
+            </div>
+            <p>Zadzwoń po pomoc. W szpitalu lekarz oceni, czy ukąszenie było „suche” (40% przypadków), czy konieczne jest podanie surowicy przeciw jadowi żmii.</p>
+          </div>
+        </div>
+
+        <!-- Crisis Simulator -->
+        <div style="margin-top: 36px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px;">
+          <h4 style="margin-bottom: 8px;">🎮 Symulator Pierwszej Pomocy: Ukąszenie w stopę na szlaku!</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+            Co robisz w pierwszej kolejności? Wybierz procedurę:
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 20px;">
+            <div class="crisis-option-card viper-crisis-card" data-action="tourniquet">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">🩹</span>
+              <strong>Zaciskam ciasno pasek od spodni nad kolanem</strong>
+            </div>
+            <div class="crisis-option-card viper-crisis-card" data-action="suck_cut">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">🔪</span>
+              <strong>Nacinam rankę scyzorykiem i wysysam jad</strong>
+            </div>
+            <div class="crisis-option-card viper-crisis-card" data-action="run">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">🏃</span>
+              <strong>Biegnę co sił w nogach do najbliższego schroniska</strong>
+            </div>
+            <div class="crisis-option-card viper-crisis-card" data-action="immobilize_112">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">🧘</span>
+              <strong>Siadam, zdejmuję but, unieruchamiam nogę i dzwonię na 112</strong>
+            </div>
+          </div>
+
+          <div id="viperCrisisResult" class="crisis-feedback-box"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 4: FASCYNUJĄCE CIEKAWOSTKI
+         ============================================================ -->
+    <section class="section" id="ciekawostki" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--emerald-light); border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">Sekrety Natury</span>
+          <h2>Niezwykłe Fakty o Żmijach</h2>
+          <p>Oto fakty obalające mity i pokazujące, jak fascynującym stworzeniem jest jedyny jadowity gad w Polsce.</p>
+        </div>
+
+        <div class="curiosity-grid">
+          <div class="curiosity-card" style="border-color: rgba(16, 185, 129, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🛡️</span>
+              <h4 style="color: var(--emerald-light);">Aż do 50% ukąszeń „suchych”</h4>
+            </div>
+            <p>
+              Żmija doskonale wie, że człowiek jest za duży, by go zjeść. Wstrzyknięcie jadu w obronie to dla niej ostateczność, która pozbawia ją broni na polowanie na gryzonie. Dlatego niemal połowa ukąszeń obronnych to tzw. <em>dry bites</em> bez wprowadzenia toksyn!
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(245, 158, 11, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🚫</span>
+              <h4 style="color: var(--amber-light);">Obalamy mit wysysania jadu</h4>
+            </div>
+            <p>
+              Sceny z westernów, gdzie bohater nacina ranę nożem i wysysa jad, to śmiertelnie groźny mit! Nacinanie rany niszczy naczynia krwionośne i przyspiesza wchłanianie toksyn, a bakterie w ślinie powodują sepsę. Wystarczy unieruchomić nogę i wezwać pogotowie.
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(56, 189, 248, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">👢</span>
+              <h4 style="color: var(--cyan-light);">Buty za kostkę i tupanie</h4>
+            </div>
+            <p>
+              Kły żmii zygzakowatej mają zaledwie 3–5 mm długości. Zwykłe wysokie buty trekkingowe i długie spodnie stanowią 100% barierę ochronną! Dodatkowo głośne stąpanie wywołuje fale sejsmiczne w gruncie, przed którymi żmija natychmiast ucieka w krzaki.
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(168, 85, 247, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🖤</span>
+              <h4 style="color: var(--purple-light);">Czarna żmija — odmiana melanistyczna</h4>
+            </div>
+            <p>
+              W Bieszczadach czy Tatrach można spotkać żmiję o smoliście czarnej barwie bez widocznego zygzaka. To ta sama <em>Vipera berus</em>! Czarny barwnik (melanina) pozwala jej znacznie szybciej nagrzewać ciało w chłodnym górskim klimacie.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 5: 10-POZIOMOWA MINI GRA
+         ============================================================ -->
+    <section class="section" id="gra">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--emerald-light); border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">🎮 Zagraj i Wczuj Się w Drgania</span>
+          <h2>Mini Gra: Ścieżka Drgań — Cichy Wąż we Wrzosowisku</h2>
+          <p>Steruj żmiją w poszukiwaniu gryzoni i jaszczurek. Uważaj na nadchodzących turystów — gdy widzisz czerwone kręgi kroków, **zastygnij w bezruchu** (puść mysz/ekran), by wtopić się w mech!</p>
+        </div>
+
+        <div class="minigame-card" style="border-color: rgba(16, 185, 129, 0.35);">
+          <!-- Level Header & Progress Dots -->
+          <div class="minigame-level-header">
+            <div class="minigame-level-badge" id="viperGameLevelBadge" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); color: var(--emerald-light);">
+              <span>Misja 1/10:</span> Słoneczna Polana i Zaskrońce ☀️🐍
+            </div>
+            <div class="minigame-level-dots" id="viperGameLevelDots">
+              <span class="level-dot active"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+            </div>
+          </div>
+
+          <!-- HUD -->
+          <div class="minigame-hud">
+            <div class="hud-item">
+              <span>🦎 Złapane cele:</span>
+              <span class="hud-val" id="viperGamePrey" style="color: var(--emerald-light);">0 / 3</span>
+            </div>
+            <div class="hud-item">
+              <span>⏱️ Czas:</span>
+              <span class="hud-val" id="viperGameTimer" style="color: var(--amber-light);">40s</span>
+            </div>
+            <div class="hud-item">
+              <span>Status kamuflażu:</span>
+              <span class="hud-val" id="viperGameCalm" style="color: #10B981;">🛡️ Zastygnięcie (ukryta)</span>
+            </div>
+          </div>
+
+          <div class="minigame-viewport">
+            <canvas id="viperGameCanvas" class="minigame-canvas" style="background: #09130D;"></canvas>
+
+            <!-- Game Overlay -->
+            <div class="minigame-overlay" id="viperGameOverlay">
+              <div style="font-size: 3.5rem; margin-bottom: 12px;" id="viperGameOverIcon">🐍🌸🥾</div>
+              <h4 id="viperGameOverTitle">Ścieżka Drgań we Wrzosowisku</h4>
+              <p id="viperGameOverDesc">
+                Wciel się w żmiję zygzakowatą! Przesuwaj palcem lub kursorem po wrzosowisku, aby łapać pożywienie. Kiedy w pobliżu tupie turysta (czerwone fale), natychmiast zatrzymaj się w bezruchu!
+              </p>
+              <div class="overlay-actions">
+                <button class="btn btn-primary" id="startViperGameBtn">Rozpocznij wędrówkę 🐍</button>
+                <button class="btn btn-primary" id="nextViperLevelBtn" style="display: none;">Kolejna polana →</button>
+                <button class="btn btn-secondary" id="restartViperGameBtn" style="display: none;">Powtórz polanę ↺</button>
+                <button class="btn btn-secondary" id="resetViperCampaignBtn" style="display: none;">Zacznij od poziomu 1 ↺</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- ============================================================
+         SEKCJA 6: INTERAKTYWNY MINI QUIZ
+         ============================================================ -->
+    <section class="section" id="quiz" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--emerald-light); border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">Sprawdź swoją wiedzę</span>
+          <h2>Mini Quiz Mistrza Zmysłów Żmii</h2>
+          <p>5 pytań weryfikujących wiedzę o rozpoznawaniu gatunków, pierwszej pomocy i zmysłach sejsmicznych.</p>
+        </div>
+
+        <div class="quiz-wrapper" style="border-color: rgba(16, 185, 129, 0.3);">
+          <div class="quiz-meter-bar">
+            <div class="quiz-meter-progress" id="viperQuizMeterProgress" style="background: linear-gradient(90deg, #10B981 0%, #F59E0B 100%);"></div>
+          </div>
+          <div id="viperQuizDynamicBody">
+            <!-- Rendered dynamically by js/viper-simulators.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation between Animals -->
+    <section style="padding: 60px 0; text-align: center;">
+      <div class="container">
+        <h3 style="margin-bottom: 16px;">Poznaj inne zwierzęta</h3>
+        <p style="margin-bottom: 24px; color: var(--text-muted);">Przełącz się na percepcję niedźwiedzia brunatnego lub przejrzyj katalog wszystkich 10 gatunków.</p>
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a href="niedzwiedz.html" class="btn btn-primary" style="background: linear-gradient(135deg, #F59E0B 0%, #B45309 100%);">
+            <span>🐻 Zobacz zmysły niedźwiedzia</span>
+          </a>
+          <button class="btn btn-secondary animal-catalog-trigger">
+            <span>🐾 Otwórz katalog wszystkich zwierząt</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Author Profile Modal (Dorian Kalinowski) -->
+  <div class="modal-backdrop" id="authorModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeAuthorModal" aria-label="Zamknij okno">✕</button>
+      <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="author-avatar-big">
+      <h3 class="author-modal-name">Dorian Kalinowski</h3>
+      <div class="author-modal-role">Twórca projektu i miłośnik zwierząt</div>
+      <p class="author-bio">
+        Cześć! Mam na imię Dorian i po prostu bardzo lubię zwierzaki. Od zawsze najbardziej ciekawi mnie to, jak niesamowicie odbierają otaczający nas świat – zupełnie inaczej niż my, ludzie. Wierzę, że gdybyśmy naprawdę dobrze wiedzieli, jak myślą, widzą i czują, na świecie byłoby znacznie mniej nieporozumień i niepotrzebnych konfrontacji między nami a nimi.
+      </p>
+      <div style="text-align: center;">
+        <button class="btn btn-primary" id="confirmAuthorModal">Zamknij</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PWA Install Prompt Banner -->
+  <div class="pwa-install-banner" id="pwaBanner">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 1.6rem;">📱</span>
+      <div>
+        <div style="font-size: 0.92rem; font-weight: 700;">Zainstaluj jako aplikację PWA</div>
+        <div style="font-size: 0.78rem; color: var(--text-muted);">Szybki dostęp i działanie offline bez przeglądarki</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="pwaInstallBtn" style="padding: 8px 18px; font-size: 0.85rem;">Instaluj</button>
+    <button class="modal-close-btn" id="pwaDismissBtn" style="position: static; width: 28px; height: 28px; font-size: 0.8rem;">✕</button>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <div class="mobile-bottom-bar" role="navigation" aria-label="Nawigacja mobilna">
+    <a href="index.html" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🏠</span>
+      <span>Główna</span>
+    </a>
+    <button class="bottom-bar-item animal-catalog-trigger">
+      <span class="bottom-bar-icon">🐾</span>
+      <span>Katalog</span>
+    </button>
+    <a href="zmija.html" class="bottom-bar-item active">
+      <span class="bottom-bar-icon">🐍</span>
+      <span>Żmija</span>
+    </a>
+    <a href="#bezpieczenstwo" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🛡️</span>
+      <span>Zasady</span>
+    </a>
+    <button class="bottom-bar-item" id="mobileAuthorTrigger">
+      <span class="bottom-bar-icon">👤</span>
+      <span>Autor</span>
+    </button>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-author">
+        Zaprojektowane i stworzone przez: <strong>Dorian Kalinowski</strong>
+      </p>
+      <p class="footer-rights">
+        © 2026 Świat zmysłami zwierząt • Projekt edukacyjny non-profit • V1
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/viper-simulators.js"></script>
+</body>
+</html>

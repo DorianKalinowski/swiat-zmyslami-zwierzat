@@ -32,14 +32,30 @@
         <span></span><span></span><span></span>
       </button>
 
-      <div class="nav-links" id="navLinks">
+            <div class="nav-links" id="navLinks">
         <a href="index.html" class="nav-link active">Strona główna</a>
-        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog zwierząt</button>
-        <a href="pies.html" class="nav-link">🐕 Pies</a>
-        <a href="kot.html" class="nav-link">🐈 Kot</a>
-        <a href="dzik.html" class="nav-link">🐗 Dzik</a>
-        <a href="wilk.html" class="nav-link">🐺 Wilk</a>
-        
+        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog (10)</button>
+
+        <!-- Dropdown: Wybierz zwierzę (10) -->
+        <div class="nav-dropdown" id="navAnimalsDropdown">
+          <button class="nav-link nav-dropdown-btn" id="navDropdownBtn" aria-expanded="false" style="cursor: pointer;">
+            <span>🐾 Zwierzęta (10)</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu">
+            <a href="pies.html" class="nav-dropdown-item"><span class="item-emoji">🐕</span> Pies domowy</a>
+            <a href="kot.html" class="nav-dropdown-item"><span class="item-emoji">🐈</span> Kot domowy</a>
+            <a href="dzik.html" class="nav-dropdown-item"><span class="item-emoji">🐗</span> Dzik euroazjatycki</a>
+            <a href="wilk.html" class="nav-dropdown-item"><span class="item-emoji">🐺</span> Wilk szary</a>
+            <a href="nietoperz.html" class="nav-dropdown-item"><span class="item-emoji">🦇</span> Nietoperz</a>
+            <a href="zmija.html" class="nav-dropdown-item"><span class="item-emoji">🐍</span> Żmija zygzakowata</a>
+            <a href="sowa.html" class="nav-dropdown-item"><span class="item-emoji">🦉</span> Sowa (Płomykówka)</a>
+            <a href="niedzwiedz.html" class="nav-dropdown-item"><span class="item-emoji">🐻</span> Niedźwiedź brunatny</a>
+            <a href="pszczola.html" class="nav-dropdown-item"><span class="item-emoji">🐝</span> Pszczoła miodna</a>
+            <a href="lis.html" class="nav-dropdown-item"><span class="item-emoji">🦊</span> Lis rudy</a>
+          </div>
+        </div>
+
         <!-- Creator Chip (Dorian Kalinowski) -->
         <div class="creator-chip" id="authorChip" title="Dowiedz się więcej o autorze">
           <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="creator-avatar">
@@ -104,7 +120,7 @@
         <!-- Animals Grid -->
         <div class="animals-grid" id="animalsGrid">
 
-          <!-- 1. PIES (Featured & Active) -->
+          <!-- 1. PIES (Active) -->
           <a href="pies.html" class="animal-hub-card" data-cat="ssaki">
             <div>
               <div class="card-top">
@@ -114,7 +130,7 @@
               <div class="card-content">
                 <h3>Pies domowy</h3>
                 <p>
-                  300 milionów receptorów węchu, stereoskopowy nos, słuch do 65 kHz i widzenie dichromatyczne. Poznaj też mowę ciała i Zasadę Drzewa.
+                  300 milionów receptorów węchu, stereoskopowy nos, słuch do 65 kHz, widzenie dwubarwne i 10 poziomów gry tropiącej.
                 </p>
               </div>
             </div>
@@ -133,7 +149,7 @@
               <div class="card-content">
                 <h3>Kot domowy</h3>
                 <p>
-                  Pionowa źrenica noktowizyjna (1/6 światła), słuch do 85 kHz, wibrysy i Whisker Fatigue, mruczenie 32 Hz oraz mapa bezpiecznego dotyku.
+                  Pionowa źrenica noktowizyjna (1/6 światła), słuch do 85 kHz, wibrysy, mruczenie 32 Hz i 10 poziomów nocnego refleksu.
                 </p>
               </div>
             </div>
@@ -152,7 +168,7 @@
               <div class="card-content">
                 <h3>Dzik euroazjatycki</h3>
                 <p>
-                  Węch 5× czulszy niż u psa myśliwskiego, wzrok krótkowidza, pancerz chybowy, oręż ze szablami i protokół bezpiecznego odwrotu w lesie i mieście.
+                  Węch wykrywający żołędzie pod ziemią, pancerz chybowy, oręż (szable) i 10-poziomowa gra leśnego żerowania.
                 </p>
               </div>
             </div>
@@ -171,7 +187,7 @@
               <div class="card-content">
                 <h3>Wilk szary</h3>
                 <p>
-                  Wycie słyszalne z 15 km, maraton 70 km bez przerwy, obalenie mitu samca alfa i prawda o panicznym lęku przed człowiekiem.
+                  Wycie słyszalne z 15 km, lęk przed człowiekiem, obalenie mitu samca alfa i 10 poziomów leśnych misji watahy.
                 </p>
               </div>
             </div>
@@ -180,7 +196,121 @@
             </span>
           </a>
 
-          <!-- 5. ORZEŁ -->
+          <!-- 5. NIETOPERZ (Active) -->
+          <a href="nietoperz.html" class="animal-hub-card" data-cat="ssaki">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🦇</span>
+                <span class="card-badge available">Dostępny teraz</span>
+              </div>
+              <div class="card-content">
+                <h3>Nietoperz (Nocek)</h3>
+                <p>
+                  Ultradźwiękowa echolokacja ponad 100 kHz, widzenie uszami, obalenie mitów i 10-poziomowa gra sonaru jaskiniowego.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta">
+              Uruchom symulatory <span>→</span>
+            </span>
+          </a>
+
+          <!-- 6. ŻMIJA (Active) -->
+          <a href="zmija.html" class="animal-hub-card" data-cat="gady">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🐍</span>
+                <span class="card-badge available">Dostępny teraz</span>
+              </div>
+              <div class="card-content">
+                <h3>Żmija zygzakowata</h3>
+                <p>
+                  Odbiór drgań sejsmicznych żuchwą, narząd Jacobsona, odróżnianie od zaskrońca, protokół 112 i 10-poziomowa gra skradania.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta">
+              Uruchom symulatory <span>→</span>
+            </span>
+          </a>
+
+          <!-- 7. SOWA (Active) -->
+          <a href="sowa.html" class="animal-hub-card" data-cat="ptaki">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🦉</span>
+                <span class="card-badge available">Dostępny teraz</span>
+              </div>
+              <div class="card-content">
+                <h3>Sowa (Płomykówka)</h3>
+                <p>
+                  Asymetryczne uszy i szlara twarzowa do triangulacji 3D dźwięku, aksamitny bezszelestny lot i 10-poziomowa gra łowów.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta">
+              Uruchom symulatory <span>→</span>
+            </span>
+          </a>
+
+          <!-- 8. NIEDŹWIEDŹ (Active) -->
+          <a href="niedzwiedz.html" class="animal-hub-card" data-cat="ssaki">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🐻</span>
+                <span class="card-badge available">Dostępny teraz</span>
+              </div>
+              <div class="card-content">
+                <h3>Niedźwiedź brunatny</h3>
+                <p>
+                  Węch na 20 km (7× czulszy niż psa), sprint 50 km/h, garb mięśniowy, zasady TPN/GOPR i 10 poziomów szlaku bieszczadzkiego.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta">
+              Uruchom symulatory <span>→</span>
+            </span>
+          </a>
+
+          <!-- 9. PSZCZOŁA (Active) -->
+          <a href="pszczola.html" class="animal-hub-card" data-cat="owady">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🐝</span>
+                <span class="card-badge available">Dostępny teraz</span>
+              </div>
+              <div class="card-content">
+                <h3>Pszczoła miodna</h3>
+                <p>
+                  Widzenie w ultrafiolecie (UV), taniec wywijany von Frischa, ładunek elektrostatyczny +100V i 10 poziomów lotu po nektar.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta">
+              Uruchom symulatory <span>→</span>
+            </span>
+          </a>
+
+          <!-- 10. LIS (Active) -->
+          <a href="lis.html" class="animal-hub-card" data-cat="ssaki">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🦊</span>
+                <span class="card-badge available">Dostępny teraz</span>
+              </div>
+              <div class="card-content">
+                <h3>Lis rudy</h3>
+                <p>
+                  Zmysł geomagnetyczny (skok na NE z 73% sukcesu), słuch pod 1 m śniegu, pionowa źrenica i 10 poziomów zimowego myszkowania.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta">
+              Uruchom symulatory <span>→</span>
+            </span>
+          </a>
+
+          <!-- 11. ORZEŁ (Coming Soon) -->
           <div class="animal-hub-card coming-soon" data-cat="ptaki">
             <div>
               <div class="card-top">
@@ -190,7 +320,7 @@
               <div class="card-content">
                 <h3>Orzeł przedni</h3>
                 <p>
-                  Wzrok 8-krotnie ostrzejszy od ludzkiego oka, dwa dołki środkowe siatkówki i zdolność dostrzegania światła ultrafioletowego.
+                  Wzrok 8-krotnie ostrzejszy od ludzkiego oka, dwa dołki środkowe siatkówki i zdolność dostrzegania ultrafioletu.
                 </p>
               </div>
             </div>
@@ -199,7 +329,7 @@
             </span>
           </div>
 
-          <!-- 4. DELFIN -->
+          <!-- 12. DELFIN (Coming Soon) -->
           <div class="animal-hub-card coming-soon" data-cat="morskie">
             <div>
               <div class="card-top">
@@ -209,83 +339,7 @@
               <div class="card-content">
                 <h3>Delfin butlonosy</h3>
                 <p>
-                  Akustyczny sonar 3D (echolokacja), melon czołowy skupiający wiązki ultradźwięków i magnetorecepcja do nawigacji oceanicznej.
-                </p>
-              </div>
-            </div>
-            <span class="card-link-cta" style="color: var(--text-dim);">
-              Dostępne wkrótce
-            </span>
-          </div>
-
-          <!-- 5. WĄŻ -->
-          <div class="animal-hub-card coming-soon" data-cat="gady">
-            <div>
-              <div class="card-top">
-                <span class="card-emoji">🐍</span>
-                <span class="card-badge soon">W przygotowaniu</span>
-              </div>
-              <div class="card-content">
-                <h3>Grzechotnik</h3>
-                <p>
-                  Termowizja w podczerwieni dzięki jamkom policzkowym, smakowanie powietrza rozwidlonym językiem i odbiór drgań sejsmicznych żuchwą.
-                </p>
-              </div>
-            </div>
-            <span class="card-link-cta" style="color: var(--text-dim);">
-              Dostępne wkrótce
-            </span>
-          </div>
-
-          <!-- 6. NIETOPERZ -->
-          <div class="animal-hub-card coming-soon" data-cat="ssaki">
-            <div>
-              <div class="card-top">
-                <span class="card-emoji">🦇</span>
-                <span class="card-badge soon">W przygotowaniu</span>
-              </div>
-              <div class="card-content">
-                <h3>Mroczek posrebrzany</h3>
-                <p>
-                  Precyzyjna echolokacja o częstotliwościach ponad 100 kHz, pozwalająca omijać pojedyncze nitki pajęcze w absolutnym mroku jaskini.
-                </p>
-              </div>
-            </div>
-            <span class="card-link-cta" style="color: var(--text-dim);">
-              Dostępne wkrótce
-            </span>
-          </div>
-
-          <!-- 7. PSZCZOŁA -->
-          <div class="animal-hub-card coming-soon" data-cat="owady">
-            <div>
-              <div class="card-top">
-                <span class="card-emoji">🐝</span>
-                <span class="card-badge soon">W przygotowaniu</span>
-              </div>
-              <div class="card-content">
-                <h3>Pszczoła miodna</h3>
-                <p>
-                  Widzenie spolaryzowanego światła słonecznego, detekcja pól elektrostatycznych kwiatów i odczytywanie ultrafioletowych pasów nektarowych.
-                </p>
-              </div>
-            </div>
-            <span class="card-link-cta" style="color: var(--text-dim);">
-              Dostępne wkrótce
-            </span>
-          </div>
-
-          <!-- 8. REKIN -->
-          <div class="animal-hub-card coming-soon" data-cat="morskie">
-            <div>
-              <div class="card-top">
-                <span class="card-emoji">🦈</span>
-                <span class="card-badge soon">W przygotowaniu</span>
-              </div>
-              <div class="card-content">
-                <h3>Żarłacz błękitny</h3>
-                <p>
-                  Ampułki Lorenziniego wykrywające pole elektryczne uderzenia serca ryby zagrzebanej w piasku na dnie oceanu.
+                  Akustyczny sonar 3D (echolokacja), melon czołowy skupiający wiązki ultradźwięków i magnetorecepcja oceaniczna.
                 </p>
               </div>
             </div>
@@ -321,9 +375,9 @@
       <button class="modal-close-btn" id="closeAuthorModal" aria-label="Zamknij okno">✕</button>
       <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="author-avatar-big">
       <h3 class="author-modal-name">Dorian Kalinowski</h3>
-      <div class="author-modal-role">Twórca aplikacji „Świat zmysłami zwierząt”</div>
+      <div class="author-modal-role">Twórca projektu i miłośnik zwierząt</div>
       <p class="author-bio">
-        Aplikacja powstała z pasji do zoologii kognitywnej, neuronauki percepcji oraz nowoczesnego web developmentu. Celem projektu jest przeniesienie odbiorcy w intymny świat zmysłów natury — tak, abyśmy przestali oceniać zwierzęta wyłącznie przez pryzmat ludzkich zmysłów, a zaczęli rozumieć ich unikalną perspektywę i mowę ciała.
+        Cześć! Mam na imię Dorian i po prostu bardzo lubię zwierzaki. Od zawsze najbardziej ciekawi mnie to, jak niesamowicie odbierają otaczający nas świat – zupełnie inaczej niż my, ludzie. Wierzę, że gdybyśmy naprawdę dobrze wiedzieli, jak myślą, widzą i czują, na świecie byłoby znacznie mniej nieporozumień i niepotrzebnych konfrontacji między nami a nimi.
       </p>
       <div style="text-align: center;">
         <button class="btn btn-primary" id="confirmAuthorModal">Zamknij</button>
@@ -371,7 +425,7 @@
         Zaprojektowane i stworzone przez: <strong>Dorian Kalinowski</strong>
       </p>
       <p class="footer-rights">
-        © 2026 Świat zmysłami zwierząt. Autorska aplikacja edukacyjna PWA. Wszelkie prawa zastrzeżone.
+        © 2026 Świat zmysłami zwierząt • Projekt edukacyjny non-profit • V1
       </p>
     </div>
   </footer>

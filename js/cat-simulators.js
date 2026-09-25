@@ -601,7 +601,7 @@ function initCatReflexGame() {
     } catch (e) {}
   }
 
-  // Levels Configuration
+  // 10 Progressive Rounds Configuration
   const levels = [
     {
       name: 'Zmierzch w Salonie 🛋️',
@@ -615,6 +615,28 @@ function initCatReflexGame() {
       bg: 'radial-gradient(circle at center, #18182E 0%, #080816 100%)'
     },
     {
+      name: 'Puszysty Dywan i Karton 📦',
+      desc: 'Zabawa w kartonie! Polowanie na poruszające się piórka i uciekające myszy.',
+      rounds: 5,
+      required: 4,
+      escapeMin: 1150,
+      escapeMax: 1400,
+      targets: ['🧶', '🪶', '🐁'],
+      traps: [],
+      bg: 'radial-gradient(circle at center, #1E1A2E 0%, #090614 100%)'
+    },
+    {
+      name: 'Kuchenny Blat o Świcie 🍳🐾',
+      desc: 'Zwinność kota domowego: chwytanie much i smakołyków. Uważaj na cytrynę 🍋 — koty jej nie znoszą!',
+      rounds: 5,
+      required: 4,
+      escapeMin: 1050,
+      escapeMax: 1280,
+      targets: ['🪰', '🐭', '🍤'],
+      traps: ['🍋'],
+      bg: 'radial-gradient(circle at center, #1C222E 0%, #060A14 100%)'
+    },
+    {
       name: 'Nocne Zarośla i Ogród 🌿🌙',
       desc: 'Polowanie w ogrodzie! Zwinne myszy i ćmy. Uważaj na pułapki: pacnięcie żądlącej osy 🐝 daje karę czasową!',
       rounds: 5,
@@ -626,15 +648,70 @@ function initCatReflexGame() {
       bg: 'radial-gradient(circle at center, #0F2018 0%, #050C08 100%)'
     },
     {
-      name: 'Skupienie Drapieżnika: Czas Lasera 🔴⚡',
-      desc: 'Ekstremalna próba odruchowa: czerwony punkt lasera i jaskółki znikają w ułamku sekundy (< 800 ms)!',
+      name: 'Strych Pełen Cieni 🏚️🕸️',
+      desc: 'Półmrok na poddaszu. Wibrysy i tapetum lucidum w pełnej gotowości. Złap szybkie pająki i myszy.',
       rounds: 6,
       required: 4,
-      escapeMin: 650,
-      escapeMax: 850,
-      targets: ['🔴', '⚡', '🐦'],
+      escapeMin: 880,
+      escapeMax: 1050,
+      targets: ['🕷️', '🐁', '🪶'],
+      traps: ['🕯️'],
+      bg: 'radial-gradient(circle at center, #1F1918 0%, #0D0807 100%)'
+    },
+    {
+      name: 'Cichy Staw i Ważki 🌾🐸',
+      desc: 'Brzeg szuwarów: skaczące żabki i zwinne jaszczurki. Wymaga maksymalnego skupienia!',
+      rounds: 6,
+      required: 5,
+      escapeMin: 800,
+      escapeMax: 960,
+      targets: ['🐸', '🦗', '🦎'],
+      traps: ['🐝'],
+      bg: 'radial-gradient(circle at center, #0D2024 0%, #040E10 100%)'
+    },
+    {
+      name: 'Kocie Safari: Ptasie Piórka 🌳🐦',
+      desc: 'Wysokie gałęzie drzew. Złap spadające pióra i zwinne wróbelki, omijając cierniste krzaki 🌵!',
+      rounds: 6,
+      required: 5,
+      escapeMin: 720,
+      escapeMax: 880,
+      targets: ['🐦', '🦋', '🪶'],
+      traps: ['🌵', '🐝'],
+      bg: 'radial-gradient(circle at center, #1B2416 0%, #070F05 100%)'
+    },
+    {
+      name: 'Skupienie Drapieżnika: Czas Lasera 🔴⚡',
+      desc: 'Ekstremalna próba odruchowa: czerwony punkt lasera znika w mgnieniu oka (< 750 ms)!',
+      rounds: 7,
+      required: 5,
+      escapeMin: 620,
+      escapeMax: 780,
+      targets: ['🔴', '⚡', '🐁'],
       traps: ['🐝'],
       bg: 'radial-gradient(circle at center, #240E3E 0%, #080312 100%)'
+    },
+    {
+      name: 'Błyskawica w Ciemności: Noktowizja 👁️🌌',
+      desc: 'Ultradźwiękowy zmysł kota w akcji. Niewiarygodny czas reakcji (poniżej 650 ms).',
+      rounds: 7,
+      required: 6,
+      escapeMin: 520,
+      escapeMax: 680,
+      targets: ['⚡', '🐁', '🔴'],
+      traps: ['🐝'],
+      bg: 'radial-gradient(circle at center, #0B243E 0%, #020812 100%)'
+    },
+    {
+      name: 'Mistrz Kociego Refleksu — Król Nocy 👑🐾',
+      desc: 'Ostateczny test kociego instynktu łowieckiego! Maksymalna szybkość, złote puchary i tytuł Króla Puszczy.',
+      rounds: 8,
+      required: 6,
+      escapeMin: 450,
+      escapeMax: 600,
+      targets: ['👑', '⚡', '🔴', '🐾'],
+      traps: ['🐝', '🌵'],
+      bg: 'radial-gradient(circle at center, #3E1B0E 0%, #120502 100%)'
     }
   ];
 
@@ -655,9 +732,12 @@ function initCatReflexGame() {
   function updateHUD() {
     const lvl = levels[currentLevelIdx];
     if (levelBadge) {
-      levelBadge.innerHTML = `<span>Runda ${currentLevelIdx + 1}/3:</span> ${lvl.name}`;
+      levelBadge.innerHTML = `<span>Runda ${currentLevelIdx + 1}/${levels.length}:</span> ${lvl.name}`;
     }
     if (levelDotsContainer) {
+      if (levelDotsContainer.children.length !== levels.length) {
+        levelDotsContainer.innerHTML = levels.map((_, i) => `<span class="level-dot" title="Runda ${i + 1}"></span>`).join('');
+      }
       const dots = levelDotsContainer.querySelectorAll('.level-dot');
       dots.forEach((dot, idx) => {
         dot.className = 'level-dot';

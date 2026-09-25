@@ -6,6 +6,12 @@
     { "source": "/pies", "destination": "/pies.html" },
     { "source": "/dzik", "destination": "/dzik.html" },
     { "source": "/wilk", "destination": "/wilk.html" },
+    { "source": "/nietoperz", "destination": "/nietoperz.html" },
+    { "source": "/zmija", "destination": "/zmija.html" },
+    { "source": "/sowa", "destination": "/sowa.html" },
+    { "source": "/niedzwiedz", "destination": "/niedzwiedz.html" },
+    { "source": "/pszczola", "destination": "/pszczola.html" },
+    { "source": "/lis", "destination": "/lis.html" },
     { "source": "/", "destination": "/index.html" }
   ]
 }

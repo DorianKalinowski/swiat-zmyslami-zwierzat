@@ -855,7 +855,7 @@ function initDogScentGame() {
     beep(130, 0.18, 'sawtooth');
   }
 
-  // Levels Configuration
+  // 10-Level Progressive Campaign Config
   const levels = [
     {
       name: 'Młody Szczeniak w Ogrodzie 🏡',
@@ -871,6 +871,38 @@ function initDogScentGame() {
         { name: '🥩 Soczysta kiełbasa', emoji: '🥩', x: 0, y: 0, found: false }
       ],
       distractors: []
+    },
+    {
+      name: 'Domowy Labirynt Pokoi 🛋️',
+      desc: 'Wytrop przedmioty domowników pośród dywanów i mebli. Zapach właściciela prowadzi do celu.',
+      time: 42,
+      bg: '#181A22',
+      accent: 'rgba(148, 163, 184, 0.15)',
+      rangeFactor: 0.50,
+      hasWind: false,
+      targets: [
+        { name: '🥿 Pantofel pana', emoji: '🥿', x: 0, y: 0, found: false },
+        { name: '🧸 Ulubiony pluszak', emoji: '🧸', x: 0, y: 0, found: false },
+        { name: '🍖 Chrupki wołowe', emoji: '🍖', x: 0, y: 0, found: false }
+      ],
+      distractors: []
+    },
+    {
+      name: 'Wiejski Sad Jabłoniowy 🍎🌳',
+      desc: 'Pierwsze próby ignorowania zwodniczych zapachów ziół i owoców na wiejskim podwórku.',
+      time: 40,
+      bg: '#1E1D13',
+      accent: 'rgba(234, 179, 8, 0.15)',
+      rangeFactor: 0.46,
+      hasWind: false,
+      targets: [
+        { name: '🍏 Dojrzałe jabłko', emoji: '🍏', x: 0, y: 0, found: false },
+        { name: '🪵 Drewniany patyk', emoji: '🪵', x: 0, y: 0, found: false },
+        { name: '🎾 Piłeczka aportowa', emoji: '🎾', x: 0, y: 0, found: false }
+      ],
+      distractors: [
+        { name: 'Kwiatki rumianku', emoji: '🌼', x: 0, y: 0 }
+      ]
     },
     {
       name: 'Miejski Park Zapachów 🌳🏙️',
@@ -892,23 +924,120 @@ function initDogScentGame() {
       ]
     },
     {
+      name: 'Deszczowy Bulwar Nad Rzeką 🌧️🦆',
+      desc: 'Krople deszczu przybijają cząsteczki zapachowe do podłoża. Wytrop zguby w wilgotnym piasku.',
+      time: 38,
+      bg: '#0E171E',
+      accent: 'rgba(14, 165, 233, 0.15)',
+      rangeFactor: 0.40,
+      hasWind: false,
+      targets: [
+        { name: '🥏 Gumowe frisbee', emoji: '🥏', x: 0, y: 0, found: false },
+        { name: '🧣 Wełniany szalik', emoji: '🧣', x: 0, y: 0, found: false },
+        { name: '🦴 Chrupiący gryzak', emoji: '🦴', x: 0, y: 0, found: false },
+        { name: '🧢 Daszek biegacza', emoji: '🧢', x: 0, y: 0, found: false }
+      ],
+      distractors: [
+        { name: 'Ślad kaczki', emoji: '🦆', x: 0, y: 0 },
+        { name: 'Kałuża z benzyną', emoji: '⛽', x: 0, y: 0 }
+      ]
+    },
+    {
+      name: 'Dąbrowa i Tropienie Trzech Ścieżek 🍄🐾',
+      desc: 'Bogata leśna ściółka. Rozpoznaj woń człowieka wśród setek leśnych bodźców natury.',
+      time: 38,
+      bg: '#17140F',
+      accent: 'rgba(217, 119, 6, 0.15)',
+      rangeFactor: 0.38,
+      hasWind: false,
+      targets: [
+        { name: '🦌 Zrzut poroża', emoji: '🦌', x: 0, y: 0, found: false },
+        { name: '📜 Mapa leśna', emoji: '📜', x: 0, y: 0, found: false },
+        { name: '🎒 Mały plecak', emoji: '🎒', x: 0, y: 0, found: false },
+        { name: '🍶 Metalowy bidon', emoji: '🍶', x: 0, y: 0, found: false }
+      ],
+      distractors: [
+        { name: 'Świeża buchtowisko dzika', emoji: '🐗', x: 0, y: 0 },
+        { name: 'Borowik leśny', emoji: '🍄', x: 0, y: 0 }
+      ]
+    },
+    {
+      name: 'Leśny Szlak O Zmierzchu 🌲🦉',
+      desc: 'Zapada zmrok — wzrok traci znaczenie, działa wyłącznie nos (300 mln komórek węchowych)!',
+      time: 36,
+      bg: '#10101C',
+      accent: 'rgba(168, 85, 247, 0.15)',
+      rangeFactor: 0.36,
+      hasWind: false,
+      targets: [
+        { name: '🔦 Latarka czołowa', emoji: '🔦', x: 0, y: 0, found: false },
+        { name: '☕ Termos z herbatą', emoji: '☕', x: 0, y: 0, found: false },
+        { name: '🧭 Turystyczny kompas', emoji: '🧭', x: 0, y: 0, found: false },
+        { name: '🧤 Skórzana rękawica', emoji: '🧤', x: 0, y: 0, found: false }
+      ],
+      distractors: [
+        { name: 'Nora lisa', emoji: '🦊', x: 0, y: 0 },
+        { name: 'Ptak nocny', emoji: '🦉', x: 0, y: 0 }
+      ]
+    },
+    {
       name: 'Pies Ratownik w Puszczy ❄️🌲',
-      desc: 'Ekstremalna misja ratunkowa w mroźnym wietrze! Wiatr boczny znosi zapach — musisz węszyć zygzakiem.',
-      time: 45,
+      desc: 'Ekstremalna misja ratunkowa w mroźnym wietrze! Wiatr boczny znosi zapach — węszymy zygzakiem pod wiatr.',
+      time: 42,
       bg: '#0E1A1E',
       accent: 'rgba(56, 189, 248, 0.15)',
-      rangeFactor: 0.35,
+      rangeFactor: 0.34,
       hasWind: true,
       targets: [
         { name: '🧭 Kompas turysty', emoji: '🧭', x: 0, y: 0, found: false },
         { name: '🎒 Plecak zaginionego', emoji: '🎒', x: 0, y: 0, found: false },
-        { name: '🔦 Latarka', emoji: '🔦', x: 0, y: 0, found: false },
+        { name: '🔦 Zguba nocna', emoji: '🔦', x: 0, y: 0, found: false },
         { name: '🧥 Ciepła kurtka', emoji: '🧥', x: 0, y: 0, found: false },
         { name: '📱 Telefon turysty', emoji: '📱', x: 0, y: 0, found: false }
       ],
       distractors: [
         { name: 'Leśny jeż', emoji: '🦔', x: 0, y: 0 },
-        { name: 'Trujący muchomor', emoji: '🍄', x: 0, y: 0 }
+        { name: 'Muchomor czerwony', emoji: '🍄', x: 0, y: 0 }
+      ]
+    },
+    {
+      name: 'Lawina w Tatrach — Poszukiwanie Zasypanych 🏔️⚠️',
+      desc: 'Pies lawinowy TOPR. Cząsteczki oddechu przenikają przez śnieg. Znajdź 5 śladów ekwipunku!',
+      time: 40,
+      bg: '#131826',
+      accent: 'rgba(129, 140, 248, 0.18)',
+      rangeFactor: 0.32,
+      hasWind: true,
+      targets: [
+        { name: '🎿 Narta turysty', emoji: '🎿', x: 0, y: 0, found: false },
+        { name: '🧤 Rękawica narciarska', emoji: '🧤', x: 0, y: 0, found: false },
+        { name: '🧢 Ciepła czapka', emoji: '🧢', x: 0, y: 0, found: false },
+        { name: '⛏️ Czekan wspinaczkowy', emoji: '⛏️', x: 0, y: 0, found: false },
+        { name: '🫖 Termos górski', emoji: '🫖', x: 0, y: 0, found: false }
+      ],
+      distractors: [
+        { name: 'Zmrożona skała', emoji: '🪨', x: 0, y: 0 },
+        { name: 'Ptasie pióro', emoji: '🪶', x: 0, y: 0 }
+      ]
+    },
+    {
+      name: 'Mistrz Węchu: Operacja GOPR 🚁🎖️',
+      desc: 'Finałowa próba! Ekstremalny wicher, zapach osoby poszkodowanej. Prawdziwy psi bohater narodowy!',
+      time: 45,
+      bg: '#181226',
+      accent: 'rgba(236, 72, 153, 0.18)',
+      rangeFactor: 0.30,
+      hasWind: true,
+      targets: [
+        { name: '🩹 Apteczka pierwszej pomocy', emoji: '🩹', x: 0, y: 0, found: false },
+        { name: '📻 Radiotelefon GOPR', emoji: '📻', x: 0, y: 0, found: false },
+        { name: '🪢 Lina asekuracyjna', emoji: '🪢', x: 0, y: 0, found: false },
+        { name: '🧨 Flara ratunkowa', emoji: '🧨', x: 0, y: 0, found: false },
+        { name: '👤 Poszkodowany turysta', emoji: '👤', x: 0, y: 0, found: false }
+      ],
+      distractors: [
+        { name: 'Górski wicher', emoji: '🌪️', x: 0, y: 0 },
+        { name: 'Rozbita gałąź kosówki', emoji: '🌲', x: 0, y: 0 }
       ]
     }
   ];
@@ -933,9 +1062,12 @@ function initDogScentGame() {
   function updateHUD() {
     const lvl = levels[currentLevelIdx];
     if (levelBadge) {
-      levelBadge.innerHTML = `<span>Misja ${currentLevelIdx + 1}/3:</span> ${lvl.name}`;
+      levelBadge.innerHTML = `<span>Misja ${currentLevelIdx + 1}/${levels.length}:</span> ${lvl.name}`;
     }
     if (levelDotsContainer) {
+      if (levelDotsContainer.children.length !== levels.length) {
+        levelDotsContainer.innerHTML = levels.map((_, i) => `<span class="level-dot" title="Poziom ${i + 1}"></span>`).join('');
+      }
       const dots = levelDotsContainer.querySelectorAll('.level-dot');
       dots.forEach((dot, idx) => {
         dot.className = 'level-dot';

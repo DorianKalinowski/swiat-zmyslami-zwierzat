@@ -14,7 +14,7 @@ const ANIMAL_REGISTRY = [
     category: 'ssaki',
     url: 'pies.html',
     available: true,
-    desc: '300 mln receptorów węchu, słuch do 65 kHz, widzenie dichromatyczne i Zasada Drzewa.'
+    desc: '300 mln receptorów węchu, słuch do 65 kHz, widzenie dwubarwne i 10 poziomów gry tropiącej.'
   },
   {
     id: 'kot',
@@ -24,7 +24,7 @@ const ANIMAL_REGISTRY = [
     category: 'ssaki',
     url: 'kot.html',
     available: true,
-    desc: 'Pionowa źrenica noktowizyjna (1/6 światła), ultradźwięki 85 kHz, wibrysy i mruczenie lecznicze.'
+    desc: 'Pionowa źrenica noktowizyjna, ultradźwięki 85 kHz, wibrysy i 10 poziomów nocnego refleksu.'
   },
   {
     id: 'dzik',
@@ -34,7 +34,7 @@ const ANIMAL_REGISTRY = [
     category: 'ssaki',
     url: 'dzik.html',
     available: true,
-    desc: 'Węch wykrywający żołędzie metr pod ziemią, słaby wzrok, oręż (szable) i protokół spokojnego odwrotu.'
+    desc: 'Węch podziemny (tabakierka), oręż (szable i fajki) oraz 10-poziomowa gra żerowania leśnego.'
   },
   {
     id: 'wilk',
@@ -44,7 +44,67 @@ const ANIMAL_REGISTRY = [
     category: 'ssaki',
     url: 'wilk.html',
     available: true,
-    desc: 'Akustyczny podpis wycia na 15 km, obalenie mitu samca alfa, paniczny lęk przed człowiekiem i kłus maratończyka.'
+    desc: 'Akustyczne wycie niosące się na 15 km, lęk przed człowiekiem i 10 poziomów misji watahy.'
+  },
+  {
+    id: 'nietoperz',
+    name: 'Nietoperz (Nocek duży)',
+    latin: 'Myotis myotis / Chiroptera',
+    emoji: '🦇',
+    category: 'ssaki',
+    url: 'nietoperz.html',
+    available: true,
+    desc: 'Ultradźwiękowa echolokacja do 120 kHz, widzenie uszami i 10 poziomów sonaru jaskiniowego.'
+  },
+  {
+    id: 'zmija',
+    name: 'Żmija zygzakowata',
+    latin: 'Vipera berus',
+    emoji: '🐍',
+    category: 'gady',
+    url: 'zmija.html',
+    available: true,
+    desc: 'Sejsmiczne wykrywanie drgań gleby, narząd Jacobsona, jad i 10-poziomowa gra skradania.'
+  },
+  {
+    id: 'sowa',
+    name: 'Sowa (Płomykówka)',
+    latin: 'Tyto alba',
+    emoji: '🦉',
+    category: 'ptaki',
+    url: 'sowa.html',
+    available: true,
+    desc: 'Asymetryczne uszy do triangulacji 3D, szlara twarzowa, bezszelestny lot i 10-poziomowe łowy nocne.'
+  },
+  {
+    id: 'niedzwiedz',
+    name: 'Niedźwiedź brunatny',
+    latin: 'Ursus arctos',
+    emoji: '🐻',
+    category: 'ssaki',
+    url: 'niedzwiedz.html',
+    available: true,
+    desc: 'Węch z 20 km (7x czulszy niż psa), sprint 50 km/h, zasady TPN i 10 poziomów szlaku bieszczadzkiego.'
+  },
+  {
+    id: 'pszczola',
+    name: 'Pszczoła miodna',
+    latin: 'Apis mellifera',
+    emoji: '🐝',
+    category: 'owady',
+    url: 'pszczola.html',
+    available: true,
+    desc: 'Widzenie w ultrafiolecie (UV), taniec wywijany von Frischa, ładunek +100V i 10-poziomowy zbiór nektaru.'
+  },
+  {
+    id: 'lis',
+    name: 'Lis rudy',
+    latin: 'Vulpes vulpes',
+    emoji: '🦊',
+    category: 'ssaki',
+    url: 'lis.html',
+    available: true,
+    desc: 'Zmysł geomagnetyczny (skok na NE z 73% sukcesu), słuch pod 1 m śniegu i 10-poziomowa gra myszkowania.'
   },
   {
     id: 'orzel',
@@ -67,36 +127,6 @@ const ANIMAL_REGISTRY = [
     desc: 'Akustyczny sonar 3D (echolokacja), soczewka tłuszczowa melona i magnetorecepcja oceaniczna.'
   },
   {
-    id: 'waz',
-    name: 'Grzechotnik preriowy',
-    latin: 'Crotalus viridis',
-    emoji: '🐍',
-    category: 'gady',
-    url: 'waz.html',
-    available: false,
-    desc: 'Termowizja w podczerwieni jamek policzkowych, smakowanie powietrza językiem i drgania sejsmiczne.'
-  },
-  {
-    id: 'nietoperz',
-    name: 'Mroczek posrebrzany',
-    latin: 'Vespertilio murinus',
-    emoji: '🦇',
-    category: 'ssaki',
-    url: 'nietoperz.html',
-    available: false,
-    desc: 'Wojskowa precyzja echolokacji powyżej 100 kHz pozwalająca omijać pojedyncze nitki pajęcze w mroku.'
-  },
-  {
-    id: 'pszczola',
-    name: 'Pszczoła miodna',
-    latin: 'Apis mellifera',
-    emoji: '🐝',
-    category: 'owady',
-    url: 'pszczola.html',
-    available: false,
-    desc: 'Percepcja pól elektrostatycznych kwiatów, spolaryzowane światło słoneczne i ultrafioletowe nektarniki.'
-  },
-  {
     id: 'rekin',
     name: 'Żarłacz błękitny',
     latin: 'Prionace glauca',
@@ -107,16 +137,6 @@ const ANIMAL_REGISTRY = [
     desc: 'Elektrorecepcja ampułek Lorenziniego wykrywająca nanowolty uderzenia serca ryby pod piaskiem.'
   },
   {
-    id: 'sowa',
-    name: 'Płomykówka zwyczajna',
-    latin: 'Tyto alba',
-    emoji: '🦉',
-    category: 'ptaki',
-    url: 'sowa.html',
-    available: false,
-    desc: 'Szlara twarzowa jako antena paraboliczna, asymetryczne uszy i bezszelestny lot w absolutnej ciszy.'
-  },
-  {
     id: 'osmiornica',
     name: 'Ośmiornica zwyczajna',
     latin: 'Octopus vulgaris',
@@ -125,26 +145,6 @@ const ANIMAL_REGISTRY = [
     url: 'osmiornica.html',
     available: false,
     desc: '500 milionów neuronów rozproszonych w mackach, komórki barwnikowe chromatofory i skóra widząca światło.'
-  },
-  {
-    id: 'kameleon',
-    name: 'Kameleon lamparci',
-    latin: 'Furcifer pardalis',
-    emoji: '🦎',
-    category: 'gady',
-    url: 'kameleon.html',
-    available: false,
-    desc: 'Oczy obracające się niezależnie o 360°, nanokryształy fotoniczne w skórze i precyzyjny balistyczny język.'
-  },
-  {
-    id: 'motyl',
-    name: 'Rusałka pawik',
-    latin: 'Aglais io',
-    emoji: '🦋',
-    category: 'owady',
-    url: 'motyl.html',
-    available: false,
-    desc: 'Receptory smaku w odnóżach, 15 rodzajów czopków w oku i odbiór promieniowania UV.'
   }
 ];
 
@@ -199,6 +199,23 @@ function initMobileNavigation() {
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMenu);
   });
+
+  // Nav Animals Dropdown
+  const dropdownBtn = document.getElementById('navDropdownBtn');
+  const dropdown = document.getElementById('navAnimalsDropdown');
+  if (dropdownBtn && dropdown) {
+    dropdownBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle('open');
+      dropdownBtn.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+    });
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+        dropdownBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 }
 
 /* ============================================================
@@ -208,6 +225,8 @@ function initAuthorModal() {
   const modal = document.getElementById('authorModal');
   const triggerChip = document.getElementById('authorChip');
   const mobileTrigger = document.getElementById('mobileAuthorTrigger');
+  const mobileAuthorBtn = document.getElementById('mobileAuthorBtn');
+  const footerAuthorTrigger = document.getElementById('triggerAuthorModalFromFooter');
   const closeBtn = document.getElementById('closeAuthorModal');
   const confirmBtn = document.getElementById('confirmAuthorModal');
 
@@ -225,6 +244,8 @@ function initAuthorModal() {
 
   triggerChip?.addEventListener('click', showModal);
   mobileTrigger?.addEventListener('click', showModal);
+  mobileAuthorBtn?.addEventListener('click', showModal);
+  footerAuthorTrigger?.addEventListener('click', (e) => { e.preventDefault(); showModal(); });
   closeBtn?.addEventListener('click', hideModal);
   confirmBtn?.addEventListener('click', hideModal);
 
