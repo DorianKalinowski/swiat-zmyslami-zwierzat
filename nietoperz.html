@@ -357,27 +357,21 @@
                   <path d="M 243 230 L 243 245 M 257 230 L 257 245" stroke="#D8B4FE" stroke-width="2.5" stroke-linecap="round"/>
                 </svg>
 
-                <!-- Interactive Hotspots -->
-                <button class="anatomy-hotspot active" data-bat-anatomy="ears" style="left: 47%; top: 22%;" aria-label="Uszy i tragus">
-                  <span class="hotspot-pulse"></span>
-                  <span class="hotspot-dot"></span>
-                </button>
-                <button class="anatomy-hotspot" data-bat-anatomy="wings" style="left: 18%; top: 32%;" aria-label="Skrzydła">
-                  <span class="hotspot-pulse"></span>
-                  <span class="hotspot-dot"></span>
-                </button>
-                <button class="anatomy-hotspot" data-bat-anatomy="nose" style="left: 50%; top: 40%;" aria-label="Pyszczek i nos sonaru">
-                  <span class="hotspot-pulse"></span>
-                  <span class="hotspot-dot"></span>
-                </button>
-                <button class="anatomy-hotspot" data-bat-anatomy="claws" style="left: 50%; top: 76%;" aria-label="Pazury tylne">
-                  <span class="hotspot-pulse"></span>
-                  <span class="hotspot-dot"></span>
-                </button>
-                <button class="anatomy-hotspot" data-bat-anatomy="tail" style="left: 50%; top: 66%;" aria-label="Błona ogonowa">
-                  <span class="hotspot-pulse"></span>
-                  <span class="hotspot-dot"></span>
-                </button>
+                <!-- Hotspots with generous clearance and distinct numeric markers -->
+                <button class="bat-hotspot active" data-bat-anatomy="ears" style="left: 44%; top: 16%;" aria-label="1. Uszy i tragus" title="1. Uszy i tragus">1</button>
+                <button class="bat-hotspot" data-bat-anatomy="wings" style="left: 18%; top: 35%;" aria-label="2. Skrzydła z palcami" title="2. Skrzydła z palcami">2</button>
+                <button class="bat-hotspot" data-bat-anatomy="nose" style="left: 50%; top: 40%;" aria-label="3. Nos sonaru" title="3. Nos sonaru">3</button>
+                <button class="bat-hotspot" data-bat-anatomy="tail" style="left: 40%; top: 68%;" aria-label="4. Błona ogonowa" title="4. Błona ogonowa">4</button>
+                <button class="bat-hotspot" data-bat-anatomy="claws" style="left: 60%; top: 78%;" aria-label="5. Pazury chwytne" title="5. Pazury chwytne">5</button>
+              </div>
+
+              <!-- Interactive selector chips for full mobile and touch accessibility -->
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1.25rem;">
+                <button class="anatomy-btn active" data-bat-anatomy="ears">1. Uszy i Tragus</button>
+                <button class="anatomy-btn" data-bat-anatomy="wings">2. Skrzydła z Palcami</button>
+                <button class="anatomy-btn" data-bat-anatomy="nose">3. Nos Sonaru</button>
+                <button class="anatomy-btn" data-bat-anatomy="tail">4. Błona Ogonowa</button>
+                <button class="anatomy-btn" data-bat-anatomy="claws">5. Pazury Chwytne</button>
               </div>
             </div>
 
@@ -646,7 +640,7 @@
       <h3 class="author-modal-name">Dorian Kalinowski</h3>
       <div class="author-modal-role">Twórca projektu i miłośnik zwierząt</div>
       <p class="author-bio">
-        Cześć! Mam na imię Dorian i po prostu bardzo lubię zwierzaki. Od zawsze najbardziej ciekawi mnie to, jak niesamowicie odbierają otaczający nas świat – zupełnie inaczej niż my, ludzie. Wierzę, że gdybyśmy naprawdę dobrze wiedzieli, jak myślą, widzą i czują, na świecie byłoby znacznie mniej nieporozumień i niepotrzebnych konfrontacji między nami a nimi.
+        Cześć! Mam na imię Dorian. Od zawsze fascynowało mnie to, jak zwierzęta odbierają otaczający nas świat – zupełnie inaczej niż my, ludzie. Na mojej stronie możesz na własne oczy i uszy sprawdzić ich perspektywę oraz dowiedzieć się, kiedy i dlaczego dochodzi do niebezpiecznych spięć. Wierzę, że gdybyśmy naprawdę rozumieli, jak zwierzęta myślą, widzą i czują, byłoby między nami znacznie mniej strachu i niepotrzebnych konfrontacji.
       </p>
       <div style="text-align: center;">
         <button class="btn btn-primary" id="confirmAuthorModal">Zamknij</button>

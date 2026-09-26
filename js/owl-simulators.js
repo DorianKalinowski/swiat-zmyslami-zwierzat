@@ -211,17 +211,26 @@ function initOwlAnatomyInspector() {
     }
   };
 
+  function selectOwlPart(key) {
+    buttons.forEach(b => {
+      if (b.getAttribute('data-owl-anatomy') === key) {
+        b.classList.add('active');
+      } else {
+        b.classList.remove('active');
+      }
+    });
+    const item = data[key];
+    if (!item) return;
+
+    titleEl.textContent = item.title;
+    descEl.textContent = item.desc;
+    if (statEl) statEl.textContent = item.stat;
+  }
+
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
       const key = btn.getAttribute('data-owl-anatomy');
-      const item = data[key];
-      if (!item) return;
-
-      titleEl.textContent = item.title;
-      descEl.textContent = item.desc;
-      if (statEl) statEl.textContent = item.stat;
+      selectOwlPart(key);
     });
   });
 }

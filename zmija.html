@@ -343,27 +343,21 @@
                   <line x1="388" y1="78" x2="380" y2="88" stroke="#FFFBEB" stroke-width="2" stroke-linecap="round"/>
                 </svg>
 
-                <!-- Hotspots -->
-                <button class="anatomy-hotspot active" data-viper-anatomy="head" style="left: 74%; top: 24%;" aria-label="Trójkątna głowa">
-                  <span class="hotspot-pulse"></span>
-                  <span class="hotspot-dot"></span>
-                </button>
-                <button class="anatomy-hotspot" data-viper-anatomy="eye" style="left: 73%; top: 22%;" aria-label="Pionowa źrenica">
-                  <span class="hotspot-pulse"></span>
-                  <span class="hotspot-dot"></span>
-                </button>
-                <button class="anatomy-hotspot" data-viper-anatomy="fangs" style="left: 78%; top: 28%;" aria-label="Kły jadowe">
-                  <span class="hotspot-pulse"></span>
-                  <span class="hotspot-dot"></span>
-                </button>
-                <button class="anatomy-hotspot" data-viper-anatomy="zigzag" style="left: 55%; top: 60%;" aria-label="Zygzak">
-                  <span class="hotspot-pulse"></span>
-                  <span class="hotspot-dot"></span>
-                </button>
-                <button class="anatomy-hotspot" data-viper-anatomy="tongue" style="left: 86%; top: 24%;" aria-label="Rozwidlony język">
-                  <span class="hotspot-pulse"></span>
-                  <span class="hotspot-dot"></span>
-                </button>
+                <!-- Hotspots with generous clearance and distinct numeric markers -->
+                <button class="viper-hotspot active" data-viper-anatomy="head" style="left: 65%; top: 14%;" aria-label="1. Trójkątna głowa" title="1. Trójkątna głowa">1</button>
+                <button class="viper-hotspot" data-viper-anatomy="eye" style="left: 73%; top: 22%;" aria-label="2. Pionowa źrenica" title="2. Pionowa źrenica">2</button>
+                <button class="viper-hotspot" data-viper-anatomy="fangs" style="left: 77%; top: 38%;" aria-label="3. Składane kły jadowe" title="3. Składane kły jadowe">3</button>
+                <button class="viper-hotspot" data-viper-anatomy="zigzag" style="left: 48%; top: 58%;" aria-label="4. Zygzak na grzbiecie" title="4. Zygzak na grzbiecie">4</button>
+                <button class="viper-hotspot" data-viper-anatomy="tongue" style="left: 88%; top: 24%;" aria-label="5. Rozwidlony język" title="5. Rozwidlony język">5</button>
+              </div>
+
+              <!-- Interactive selector chips for full mobile and touch accessibility -->
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1.25rem;">
+                <button class="anatomy-btn active" data-viper-anatomy="head">1. Trójkątna Głowa</button>
+                <button class="anatomy-btn" data-viper-anatomy="eye">2. Pionowa Źrenica</button>
+                <button class="anatomy-btn" data-viper-anatomy="fangs">3. Składane Kły</button>
+                <button class="anatomy-btn" data-viper-anatomy="zigzag">4. Zygzak na Grzbiecie</button>
+                <button class="anatomy-btn" data-viper-anatomy="tongue">5. Rozwidlony Język</button>
               </div>
             </div>
 
@@ -628,7 +622,7 @@
       <h3 class="author-modal-name">Dorian Kalinowski</h3>
       <div class="author-modal-role">Twórca projektu i miłośnik zwierząt</div>
       <p class="author-bio">
-        Cześć! Mam na imię Dorian i po prostu bardzo lubię zwierzaki. Od zawsze najbardziej ciekawi mnie to, jak niesamowicie odbierają otaczający nas świat – zupełnie inaczej niż my, ludzie. Wierzę, że gdybyśmy naprawdę dobrze wiedzieli, jak myślą, widzą i czują, na świecie byłoby znacznie mniej nieporozumień i niepotrzebnych konfrontacji między nami a nimi.
+        Cześć! Mam na imię Dorian. Od zawsze fascynowało mnie to, jak zwierzęta odbierają otaczający nas świat – zupełnie inaczej niż my, ludzie. Na mojej stronie możesz na własne oczy i uszy sprawdzić ich perspektywę oraz dowiedzieć się, kiedy i dlaczego dochodzi do niebezpiecznych spięć. Wierzę, że gdybyśmy naprawdę rozumieli, jak zwierzęta myślą, widzą i czują, byłoby między nami znacznie mniej strachu i niepotrzebnych konfrontacji.
       </p>
       <div style="text-align: center;">
         <button class="btn btn-primary" id="confirmAuthorModal">Zamknij</button>

@@ -1563,6 +1563,9 @@ button {
 .anatomy-hotspot,
 .boar-hotspot,
 .wolf-hotspot,
+.viper-hotspot,
+.owl-hotspot,
+.bat-hotspot,
 .pet-zone-btn {
   pointer-events: auto;
   position: absolute;
@@ -1577,10 +1580,13 @@ button {
   z-index: 15;
 }
 
-/* Dog, Boar & Wolf Circular Pulse Hotspots */
+/* Dog, Boar, Wolf, Viper, Owl & Bat Circular Pulse Hotspots */
 .anatomy-hotspot,
 .boar-hotspot,
-.wolf-hotspot {
+.wolf-hotspot,
+.viper-hotspot,
+.owl-hotspot,
+.bat-hotspot {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -1635,10 +1641,58 @@ button {
   box-shadow: 0 0 25px #38BDF8;
 }
 
+.viper-hotspot {
+  background: rgba(16, 185, 129, 0.35);
+  border: 2px solid #10B981;
+  color: #FFF;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.5);
+}
+
+.viper-hotspot:hover,
+.viper-hotspot.active {
+  transform: translate(-50%, -50%) scale(1.22);
+  background: #10B981;
+  color: #060C08;
+  box-shadow: 0 0 25px #10B981;
+}
+
+.owl-hotspot {
+  background: rgba(245, 158, 11, 0.35);
+  border: 2px solid #F59E0B;
+  color: #FFF;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.5);
+}
+
+.owl-hotspot:hover,
+.owl-hotspot.active {
+  transform: translate(-50%, -50%) scale(1.22);
+  background: #F59E0B;
+  color: #090D14;
+  box-shadow: 0 0 25px #F59E0B;
+}
+
+.bat-hotspot {
+  background: rgba(168, 85, 247, 0.35);
+  border: 2px solid #A855F7;
+  color: #FFF;
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.5);
+}
+
+.bat-hotspot:hover,
+.bat-hotspot.active {
+  transform: translate(-50%, -50%) scale(1.22);
+  background: #A855F7;
+  color: #FFF;
+  box-shadow: 0 0 25px #A855F7;
+}
+
 /* Pulsing radar ring */
 .anatomy-hotspot::after,
 .boar-hotspot::after,
-.wolf-hotspot::after {
+.wolf-hotspot::after,
+.viper-hotspot::after,
+.owl-hotspot::after,
+.bat-hotspot::after {
   content: '';
   position: absolute;
   inset: -6px;

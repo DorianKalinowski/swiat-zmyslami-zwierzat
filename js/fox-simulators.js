@@ -331,17 +331,26 @@ function initFoxAnatomyInspector() {
     }
   };
 
+  function selectFoxPart(key) {
+    buttons.forEach(b => {
+      if (b.getAttribute('data-fox-anatomy') === key) {
+        b.classList.add('active');
+      } else {
+        b.classList.remove('active');
+      }
+    });
+    const item = data[key];
+    if (!item) return;
+
+    titleEl.textContent = item.title;
+    descEl.textContent = item.desc;
+    if (statEl) statEl.textContent = item.stat;
+  }
+
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
       const key = btn.getAttribute('data-fox-anatomy');
-      const item = data[key];
-      if (!item) return;
-
-      titleEl.textContent = item.title;
-      descEl.textContent = item.desc;
-      if (statEl) statEl.textContent = item.stat;
+      selectFoxPart(key);
     });
   });
 }
