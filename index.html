@@ -13,7 +13,7 @@
   <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icons/icon-192.svg">
   
-  <title>Świat zmysłami zwierząt — Interaktywna podróż przez percepcję natury</title>
+  <title>Świat zmysłami zwierząt — Interaktywna podróż przez percepcję natury V1.1</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,21 +25,21 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-brand">
         <div class="brand-icon-wrapper">🐾</div>
-        <span>Świat zmysłami zwierząt</span>
+        <span>Świat zmysłami zwierząt <span class="nav-version-tag">V1.1</span></span>
       </a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
-            <div class="nav-links" id="navLinks">
+                                    <div class="nav-links" id="navLinks">
         <a href="index.html" class="nav-link active">Strona główna</a>
-        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog (10)</button>
+        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog (15)</button>
 
-        <!-- Dropdown: Wybierz zwierzę (10) -->
+        <!-- Dropdown: Wybierz zwierzę (15) -->
         <div class="nav-dropdown" id="navAnimalsDropdown">
           <button class="nav-link nav-dropdown-btn" id="navDropdownBtn" aria-expanded="false" style="cursor: pointer;">
-            <span>🐾 Zwierzęta (10)</span>
+            <span>🐾 Zwierzęta (15)</span>
             <span class="dropdown-chevron">▾</span>
           </button>
           <div class="nav-dropdown-menu" id="navDropdownMenu">
@@ -53,6 +53,11 @@
             <a href="niedzwiedz.html" class="nav-dropdown-item"><span class="item-emoji">🐻</span> Niedźwiedź brunatny</a>
             <a href="pszczola.html" class="nav-dropdown-item"><span class="item-emoji">🐝</span> Pszczoła miodna</a>
             <a href="lis.html" class="nav-dropdown-item"><span class="item-emoji">🦊</span> Lis rudy</a>
+            <a href="jez.html" class="nav-dropdown-item"><span class="item-emoji">🦔</span> Jeż zachodni</a>
+            <a href="orzel.html" class="nav-dropdown-item"><span class="item-emoji">🦅</span> Orzeł przedni</a>
+            <a href="delfin.html" class="nav-dropdown-item"><span class="item-emoji">🐬</span> Delfin butlonosy</a>
+            <a href="rekin.html" class="nav-dropdown-item"><span class="item-emoji">🦈</span> Żarłacz błękitny</a>
+            <a href="osmiornica.html" class="nav-dropdown-item"><span class="item-emoji">🐙</span> Ośmiornica zwyczajna</a>
           </div>
         </div>
 
@@ -64,6 +69,18 @@
             <span class="creator-role">Twórca aplikacji</span>
           </div>
         </div>
+
+        <!-- Language Switcher (PL / USA) -->
+        <div class="lang-switch" id="langSwitch" role="group" aria-label="Wybór języka / Language selection">
+          <button type="button" class="lang-btn active" data-lang="pl" title="Polski" aria-label="Język polski">
+            <span class="lang-flag">🇵🇱</span>
+            <span class="lang-code">PL</span>
+          </button>
+          <button type="button" class="lang-btn" data-lang="en" title="American English" aria-label="American English">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-code">USA</span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -72,8 +89,7 @@
   <header class="hero-hub" id="top">
     <div class="container" style="display: flex; flex-direction: column; align-items: center;">
       <div class="hero-badge">
-        <span>🌿</span> Nowoczesne laboratorium percepcji zwierząt
-      </div>
+        <span>🌿</span> Nowoczesne laboratorium percepcji zwierząt • Wersja V1.1</div>
 
       <h1>
         Świat widziany, słyszany i czuty <em>zmysłami zwierząt</em>
@@ -86,13 +102,13 @@
       </p>
 
       <div class="hero-cta-group">
-        <a href="pies.html" class="btn btn-primary">
-          <span>Odkryj zmysły psa</span>
-          <span>→</span>
+        <a href="#zwierzeta" class="btn btn-primary">
+          <span>Przeglądaj 15 gatunków</span>
+          <span>↓</span>
         </a>
-        <a href="#zwierzeta" class="btn btn-secondary">
-          <span>Wszystkie zwierzęta</span>
-        </a>
+        <button class="btn btn-secondary animal-catalog-trigger">
+          <span>🐾 Pełny katalog</span>
+        </button>
       </div>
     </div>
   </header>
@@ -310,43 +326,100 @@
             </span>
           </a>
 
-          <!-- 11. ORZEŁ (Coming Soon) -->
-          <div class="animal-hub-card coming-soon" data-cat="ptaki">
+          <!-- 11. JEŻ (Active) -->
+          <a href="jez.html" class="animal-hub-card" data-cat="ssaki">
             <div>
               <div class="card-top">
-                <span class="card-emoji">🦅</span>
-                <span class="card-badge soon">W przygotowaniu</span>
+                <span class="card-emoji">🦔</span>
+                <span class="card-badge available">Dostępny teraz</span>
               </div>
               <div class="card-content">
-                <h3>Orzeł przedni</h3>
+                <h3>Jeż zachodni</h3>
                 <p>
-                  Wzrok 8-krotnie ostrzejszy od ludzkiego oka, dwa dołki środkowe siatkówki i zdolność dostrzegania ultrafioletu.
+                  Odporność na jad żmii, narząd Jacobsona (samosmarowanie pianą), słuch do 45 kHz, pancerz 7000 kolców i 10 poziomów żerowania.
                 </p>
               </div>
             </div>
-            <span class="card-link-cta" style="color: var(--text-dim);">
-              Dostępne wkrótce
+            <span class="card-link-cta">
+              Uruchom symulatory <span>→</span>
             </span>
-          </div>
+          </a>
 
-          <!-- 12. DELFIN (Coming Soon) -->
-          <div class="animal-hub-card coming-soon" data-cat="morskie">
+          <!-- 12. ORZEŁ (Active) -->
+          <a href="orzel.html" class="animal-hub-card" data-cat="ptaki">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🦅</span>
+                <span class="card-badge available">Dostępny teraz</span>
+              </div>
+              <div class="card-content">
+                <h3>Orzeł przedni (i Bielik)</h3>
+                <p>
+                  Wzrok 8-krotnie ostrzejszy od człowieka, dwa dołki środkowe siatkówki, widzenie UV, uścisk 400 PSI i 10 poziomów lotu z chmur.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta">
+              Uruchom symulatory <span>→</span>
+            </span>
+          </a>
+
+          <!-- 13. DELFIN (Active) -->
+          <a href="delfin.html" class="animal-hub-card" data-cat="morskie">
             <div>
               <div class="card-top">
                 <span class="card-emoji">🐬</span>
-                <span class="card-badge soon">W przygotowaniu</span>
+                <span class="card-badge available">Dostępny teraz</span>
               </div>
               <div class="card-content">
                 <h3>Delfin butlonosy</h3>
                 <p>
-                  Akustyczny sonar 3D (echolokacja), melon czołowy skupiający wiązki ultradźwięków i magnetorecepcja oceaniczna.
+                  Akustyczny sonar 3D (echolokacja), soczewka tłuszczowa melona, ultradźwiękowy rentgen tkanek i 10 poziomów łowów głębinowych.
                 </p>
               </div>
             </div>
-            <span class="card-link-cta" style="color: var(--text-dim);">
-              Dostępne wkrótce
+            <span class="card-link-cta">
+              Uruchom symulatory <span>→</span>
             </span>
-          </div>
+          </a>
+
+          <!-- 14. REKIN (Active) -->
+          <a href="rekin.html" class="animal-hub-card" data-cat="morskie">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🦈</span>
+                <span class="card-badge available">Dostępny teraz</span>
+              </div>
+              <div class="card-content">
+                <h3>Żarłacz błękitny (Rekin)</h3>
+                <p>
+                  Elektrorecepcja ampułek Lorenziniego wykrywająca nanowolty, linia boczna, ząbki skórne i 10 poziomów patrolu rafy.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta">
+              Uruchom symulatory <span>→</span>
+            </span>
+          </a>
+
+          <!-- 15. OŚMIORNICA (Active) -->
+          <a href="osmiornica.html" class="animal-hub-card" data-cat="morskie">
+            <div>
+              <div class="card-top">
+                <span class="card-emoji">🐙</span>
+                <span class="card-badge available">Dostępny teraz</span>
+              </div>
+              <div class="card-content">
+                <h3>Ośmiornica zwyczajna</h3>
+                <p>
+                  500 mln neuronów, smakujące przyssawki, kamuflaż chromatoforów w 200 ms, 3 serca i 10 poziomów szczelin skalnych.
+                </p>
+              </div>
+            </div>
+            <span class="card-link-cta">
+              Uruchom symulatory <span>→</span>
+            </span>
+          </a>
 
         </div>
       </div>
@@ -404,12 +477,12 @@
       <span class="bottom-bar-icon">🏠</span>
       <span>Główna</span>
     </a>
-    <a href="pies.html" class="bottom-bar-item">
-      <span class="bottom-bar-icon">🐕</span>
-      <span>Pies</span>
-    </a>
-    <a href="#zwierzeta" class="bottom-bar-item">
+    <button class="bottom-bar-item animal-catalog-trigger">
       <span class="bottom-bar-icon">🐾</span>
+      <span>Katalog</span>
+    </button>
+    <a href="#zwierzeta" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🧭</span>
       <span>Gatunki</span>
     </a>
     <button class="bottom-bar-item" id="mobileAuthorTrigger">
@@ -425,12 +498,14 @@
         Zaprojektowane i stworzone przez: <strong>Dorian Kalinowski</strong>
       </p>
       <p class="footer-rights">
-        © 2026 Świat zmysłami zwierząt • Projekt edukacyjny non-profit • V1
+        © 2026 Świat zmysłami zwierząt V1.1 • Projekt edukacyjny non-profit • Wersja V1.1
       </p>
     </div>
   </footer>
 
   <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

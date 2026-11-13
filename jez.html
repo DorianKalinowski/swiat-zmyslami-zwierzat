@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#06090E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Zmysły Zwierząt">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <title>Jeż — Świat zmysłami zwierząt V1.1</title>
+  <meta name="description" content="Poznaj zmysły i biologię jeża (Erinaceus europaeus). Odporność na jad żmii, narząd Jacobsona, samosmarowanie pianą, obalenie mitu mleka i 10-poziomowa gra żerowania.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="nav" role="navigation" aria-label="Nawigacja główna">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon-wrapper">🐾</div>
+        <span>Świat zmysłami zwierząt <span class="nav-version-tag">V1.1</span></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+                              <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Strona główna</a>
+        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog (15)</button>
+
+        <!-- Dropdown: Wybierz zwierzę (15) -->
+        <div class="nav-dropdown" id="navAnimalsDropdown">
+          <button class="nav-link nav-dropdown-btn" id="navDropdownBtn" aria-expanded="false" style="cursor: pointer;">
+            <span>🦔 Jeż</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu">
+            <a href="pies.html" class="nav-dropdown-item"><span class="item-emoji">🐕</span> Pies domowy</a>
+            <a href="kot.html" class="nav-dropdown-item"><span class="item-emoji">🐈</span> Kot domowy</a>
+            <a href="dzik.html" class="nav-dropdown-item"><span class="item-emoji">🐗</span> Dzik euroazjatycki</a>
+            <a href="wilk.html" class="nav-dropdown-item"><span class="item-emoji">🐺</span> Wilk szary</a>
+            <a href="nietoperz.html" class="nav-dropdown-item"><span class="item-emoji">🦇</span> Nietoperz</a>
+            <a href="zmija.html" class="nav-dropdown-item"><span class="item-emoji">🐍</span> Żmija zygzakowata</a>
+            <a href="sowa.html" class="nav-dropdown-item"><span class="item-emoji">🦉</span> Sowa (Płomykówka)</a>
+            <a href="niedzwiedz.html" class="nav-dropdown-item"><span class="item-emoji">🐻</span> Niedźwiedź brunatny</a>
+            <a href="pszczola.html" class="nav-dropdown-item"><span class="item-emoji">🐝</span> Pszczoła miodna</a>
+            <a href="lis.html" class="nav-dropdown-item"><span class="item-emoji">🦊</span> Lis rudy</a>
+            <a href="jez.html" class="nav-dropdown-item active"><span class="item-emoji">🦔</span> Jeż zachodni</a>
+            <a href="orzel.html" class="nav-dropdown-item"><span class="item-emoji">🦅</span> Orzeł przedni</a>
+            <a href="delfin.html" class="nav-dropdown-item"><span class="item-emoji">🐬</span> Delfin butlonosy</a>
+            <a href="rekin.html" class="nav-dropdown-item"><span class="item-emoji">🦈</span> Żarłacz błękitny</a>
+            <a href="osmiornica.html" class="nav-dropdown-item"><span class="item-emoji">🐙</span> Ośmiornica zwyczajna</a>
+          </div>
+        </div>
+
+        <!-- Creator Chip (Dorian Kalinowski) -->
+        <div class="creator-chip" id="authorChip" title="Dowiedz się więcej o autorze">
+          <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="creator-avatar">
+          <div class="creator-text">
+            <span class="creator-name">Dorian Kalinowski</span>
+            <span class="creator-role">Twórca aplikacji</span>
+          </div>
+        </div>
+
+        <!-- Language Switcher (PL / USA) -->
+        <div class="lang-switch" id="langSwitch" role="group" aria-label="Wybór języka / Language selection">
+          <button type="button" class="lang-btn active" data-lang="pl" title="Polski" aria-label="Język polski">
+            <span class="lang-flag">🇵🇱</span>
+            <span class="lang-code">PL</span>
+          </button>
+          <button type="button" class="lang-btn" data-lang="en" title="American English" aria-label="American English">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-code">USA</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Animal Page Hero -->
+  <header class="animal-hero" id="top" style="background: linear-gradient(180deg, rgba(217, 119, 6, 0.18) 0%, rgba(9, 13, 19, 0) 100%);">
+    <div class="container">
+      <div class="animal-hero-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="index.html">Główna</a>
+            <span>›</span>
+            <span>Ssaki owadożerne</span>
+            <span>›</span>
+            <span style="color: var(--amber-light);">Jeż</span>
+          </div>
+          <h1>Jeż: <span style="color: var(--amber-light);">Pancerz Zmysłów i Tajemnica Piany</span></h1>
+          <p class="hero-latin">Erinaceus europaeus • Jeż zachodni / wschodni</p>
+          <p class="hero-desc">
+            Nocny wędrownik ogrodów i lasów, który przetrwał 15 milionów lat niemal bez zmian. Posiada <strong>odporność na śmiercionośny jad żmii</strong>, narząd Jacobsona wywołujący niezwykłe <strong>samosmarowanie spienioną śliną</strong> oraz do <strong>7000 amortyzowanych kolców</strong> z komorami powietrznymi.
+          </p>
+          <div class="hero-stats-grid">
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--amber-light);">~7000</span>
+              <span class="stat-label">Kolców z amortyzacją powietrzną</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--cyan-light);">45 kHz</span>
+              <span class="stat-label">Górna granica słuchu (ultradźwięki)</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--emerald-light);">40x</span>
+              <span class="stat-label">Większa odporność na jad żmii niż u człowieka</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="animal-portrait-card" style="border-color: rgba(217, 119, 6, 0.35); background: radial-gradient(circle at center, rgba(217, 119, 6, 0.18) 0%, rgba(19, 27, 39, 0.8) 70%);">
+          <div class="animal-portrait-glow" style="background: radial-gradient(circle, rgba(217, 119, 6, 0.3) 0%, transparent 70%);"></div>
+          <div class="animal-portrait-emoji" role="img" aria-label="Jeż">🦔</div>
+          <div class="portrait-tags">
+            <span class="portrait-tag">Rząd: Eulipotyphla (owadożerne)</span>
+            <span class="portrait-tag">Obrona: Zwijanie w kulkę (panniculus carnosus)</span>
+            <span class="portrait-tag">Rytuał: Samosmarowanie pianą</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Subnavigation -->
+  <div class="sticky-subnav">
+    <div class="sticky-subnav-inner">
+      <a href="#historia" class="subnav-pill active">📜 Ewolucja</a>
+      <a href="#zmysly" class="subnav-pill">👃 Piana & Węch</a>
+      <a href="#anatomia" class="subnav-pill">🧬 Anatomia</a>
+      <a href="#bezpieczenstwo" class="subnav-pill">🛡️ Pomoc Jeżom</a>
+      <a href="#ciekawostki" class="subnav-pill">💡 Ciekawostki</a>
+      <a href="#gra" class="subnav-pill">🎮 Mini Gra</a>
+      <a href="#quiz" class="subnav-pill">🎯 Mini Quiz</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================
+         SEKCJA 1: EWOLUCJA I BIOLOGIA W PIGUŁCE
+         ============================================================ -->
+    <section class="section" id="historia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light); border-color: rgba(217, 119, 6, 0.3); background: rgba(217, 119, 6, 0.1);">Historia i Ewolucja</span>
+          <h2>Wędrowcy Ściółki: 15 Milionów Lat Niezmiennej Strategii</h2>
+          <p>Podczas gdy inne ssaki stawiały na ucieczkę i zawrotne prędkości, jeże stworzyły doskonałą biomechaniczną twierdzę z keratyny i mięśnia okrężnego.</p>
+        </div>
+
+        <div class="timeline-stepper">
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--amber-light); box-shadow: 0 0 12px var(--amber);"></div>
+            <div class="step-header">
+              <span class="step-title">Eoceńskie ssaki owadożerne</span>
+              <span class="step-period">~55 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              Przodkowie jeży (reprezentowani przez formy spokrewnione z dzisiejszymi gołymi jeżami azjatyckimi) biegali po poszyciu pierwotnych lasów tropikalnych. Posiadali gęste szczeciniaste futro, które stopniowo ulegało keratynizacji.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--amber-light); box-shadow: 0 0 12px var(--amber);"></div>
+            <div class="step-header">
+              <span class="step-title">Powstanie pierwszych kolców i mięśnia okrężnego</span>
+              <span class="step-period">~15 mln lat temu (Miocen)</span>
+            </div>
+            <p class="step-body">
+              W miocenie pojawił się rodzaj <em>Erinaceus</em>. Zwykłe włosy przekształciły się w puste, żebrowane rurki z keratyny z komorami powietrznymi, a podskórny mięsień <em>panniculus carnosus</em> zaczął działać jak sznurek ściągający worek, pozwalając na zwinięcie w najeżoną kulę.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--amber-light); box-shadow: 0 0 12px var(--amber);"></div>
+            <div class="step-header">
+              <span class="step-title">Wykształcenie odporności na toksyny</span>
+              <span class="step-period">Plejstocen</span>
+            </div>
+            <p class="step-body">
+              Jeże polując na jadowite bezkręgowce i gady (w tym żmije zygzakowate) wykształciły we krwi białko <strong>erinaceinę</strong> — inhibitor krwotocznych metaloproteinaz jadu węży, czyniący je niemal całkowicie niewrażliwymi na ukąszenia.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--amber-light); box-shadow: 0 0 12px var(--amber);"></div>
+            <div class="step-header">
+              <span class="step-title">Nowe wyzwania cywilizacyjne dzisiaj</span>
+              <span class="step-period">Współczesność</span>
+            </div>
+            <p class="step-body">
+              Strategia zwijania w kulkę, która działała przez miliony lat przeciwko wilkom i rysiom, okazuje się bezradna wobec kół samochodów i nocnych kosiarek automatycznych. Dziś jeże potrzebują mądrej opieki i bezpiecznych ogrodów.
+            </p>
+          </div>
+        </div>
+
+        <div class="evolution-insight-box" style="border-color: rgba(217, 119, 6, 0.3); background: linear-gradient(135deg, rgba(217, 119, 6, 0.08) 0%, rgba(19, 27, 39, 0.6) 100%);">
+          <div class="insight-col">
+            <h4 style="color: var(--amber-light);">🦔 Dlaczego jeż zwija się w idealną kulkę?</h4>
+            <ul class="insight-list">
+              <li>Pod skórą jeża znajduje się potężny mięsień okrężny (<em>panniculus carnosus</em>). Gdy jeż wyczuje zagrożenie, zaciska go jak sznurki plecaka, chowając głowę, łapy i miękki brzuch wewnątrz szczelnego pancerza.</li>
+              <li>Każdy kolec ma u nasady własny mikroskopijny mięsień stroszący. Przy zwinięciu kolce krzyżują się pod różnymi kątami, tworząc elastyczną strefę zgniotu amortyzującą nawet upadek z kilku metrów!</li>
+            </ul>
+          </div>
+          <div class="insight-col">
+            <h4 style="color: var(--emerald-light);">🧬 Odporność na jad żmii i toksyny:</h4>
+            <ul class="insight-list">
+              <li>Jeż jest w stanie przeżyć dawkę jadu żmii zygzakowatej, która zabiłaby 40 dorosłych myszy lub wywołała ciężki wstrząs u psa. Krew jeża neutralizuje enzymy rozpuszczające naczynia krwionośne, a kolce uniemożliwiają żmii dosięgnięcie skóry.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 2: LABORATORIUM ZMYSŁÓW
+         ============================================================ -->
+    <section class="section" id="zmysly">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light);">Chemorecepcja i Ultradźwięki</span>
+          <h2>Zagadka Samosmarowania i Słuch Ściółkowy</h2>
+          <p>Odkryj jedno z najbardziej niezwykłych zachowań w świecie zwierząt: samosmarowanie spienioną śliną (*self-anointing*) oraz posłuchaj dźwięków buszowania w poszyciu.</p>
+        </div>
+
+        <div class="senses-container">
+          <!-- Self-Anointing Simulator Card -->
+          <div class="sensory-card">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(217, 119, 6, 0.2); border: 1px solid #F59E0B; color: var(--amber-light);">🫧</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: var(--amber-light);">Narząd Jacobsona • Etologia</span>
+                <h3>Rytuał Samosmarowania Puszystą Pianą (Self-Anointing)</h3>
+                <p>Gdy jeż napotka intensywny, nieznany lub toksyczny zapach, zaczyna go żuć, wytwarza hektolitry białej, spienionej śliny i językiem nanosi ją na kolce na grzbiecie! Wybierz zapach i zobacz reakcję.</p>
+              </div>
+            </div>
+
+            <div style="background: #090D14; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px;">
+              <label style="font-weight: 700; font-size: 0.92rem; display: block; margin-bottom: 12px;">
+                Wybierz bodziec zapachowy dla jeża:
+              </label>
+
+              <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
+                <button class="sound-toggle-btn active" data-hedgehog-scent="mint">
+                  🌿 Liść mięty pieprzowej
+                </button>
+                <button class="sound-toggle-btn" data-hedgehog-scent="bark">
+                  🌲 Żywiczna kora sosny
+                </button>
+                <button class="sound-toggle-btn" data-hedgehog-scent="toad">
+                  🐸 Skóra ropuchy (bufotalina)
+                </button>
+                <button class="sound-toggle-btn" data-hedgehog-scent="tobacco">
+                  🍂 Tytoń / dym cygara
+                </button>
+              </div>
+
+              <div id="hedgehogAnointVisual" style="background: rgba(217, 119, 6, 0.08); border: 1px solid rgba(217, 119, 6, 0.3); border-radius: var(--radius-md); padding: 18px; margin-bottom: 16px;">
+                <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 8px;">
+                  <span style="font-size: 2.2rem;" id="hedgehogAnointIcon">🌿🦔🫧</span>
+                  <div>
+                    <h4 id="hedgehogAnointTitle" style="color: var(--amber-light); margin: 0 0 4px 0;">Analiza chemiczna: Liść mięty pieprzowej</h4>
+                    <span style="font-size: 0.82rem; color: var(--text-muted);">Reakcja narządu lemieszowo-nosowego Jacobsona</span>
+                  </div>
+                </div>
+                <p id="hedgehogAnointDesc" style="font-size: 0.92rem; line-height: 1.6; color: var(--text-muted); margin: 0;">
+                  Jeż liże liść mięty, żuje go intensywnie przez kilkadziesiąt sekund, po czym pieni ślinę do konsystencji bitej śmietany. Wygina ciało w łuk i długim językiem smaruje pianą kolce na bokach i grzbiecie! To kamuflaż zapachowy maskujący własny pot i repelent na pasożyty.
+                </p>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+                <button class="btn btn-primary" id="triggerAnointReactionBtn" style="padding: 10px 22px; font-size: 0.9rem;">
+                  🫧 Uruchom animację nanoszenia piany
+                </button>
+                <div id="hedgehogAnointStatus" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--amber-light);">
+                  Status: Gotowy do chemorecepcji
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ultrasonic Senses & Rustle Audio Simulator -->
+          <div class="sensory-card">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(56, 189, 248, 0.2); border: 1px solid #38BDF8; color: var(--cyan-light);">🍂</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: var(--cyan-light);">Web Audio API • Ultradźwięki i Fukanie</span>
+                <h3>Symulator Słuchu Ściółkowego i Dźwięków Jeża</h3>
+                <p>Wzrok jeża jest bardzo słaby — widzi świat w odcieniach szarości i zamazany powyżej 1 metra. Jednak jego uszy odbierają dźwięki do 45 kHz, słysząc chrupanie pancerzyka żuka pod liśćmi.</p>
+              </div>
+            </div>
+
+            <div style="background: #090D14; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px;">
+              <div style="margin-bottom: 20px;">
+                <label style="font-weight: 700; font-size: 0.92rem; display: block; margin-bottom: 8px;">
+                  Głębokość i suchość ściółki leśnej (częstotliwość akustyczna):
+                </label>
+                <input type="range" id="hedgehogLitterSlider" min="10" max="100" value="50" style="width: 100%; accent-color: var(--amber);">
+                <div style="display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">
+                  <span>Mokra trawa (tłumione szelesty)</span>
+                  <span id="hedgehogFrequencyDisplay" style="color: var(--amber-light); font-weight: 700;">Ściółka liściasta: 4.5 kHz</span>
+                  <span>Suche dębowe liście (głośne ultradźwięki do 45 kHz)</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <button class="btn btn-primary" id="playHedgehogRustleBtn" style="flex: 1; min-width: 220px; font-size: 0.9rem;">
+                  🪲 Odsłuchaj szelest chrząszcza pod liśćmi
+                </button>
+                <button class="sound-toggle-btn" id="playHedgehogSnortBtn" style="flex: 1; min-width: 220px; border-color: rgba(245, 158, 11, 0.4); color: var(--amber-light);">
+                  🦔 Odtwórz fukanie i sapanie jeża (ostrzeżenie)
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 3: ANATOMIA I BIOMECHANIKA
+         ============================================================ -->
+    <section class="section" id="anatomia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light);">Biomechanika i Pancerz</span>
+          <h2>Anatomia Jeża: Najeżona Twierdza</h2>
+          <p>Klikaj w ponumerowane punkty lub użyj wygodnych przycisków, aby poznać budowę kolców, zmysł węchu i narząd Jacobsona.</p>
+        </div>
+
+        <div class="sensory-card">
+          <div class="body-language-inspector">
+            <div class="anatomy-diagram-stage" style="border-color: rgba(217, 119, 6, 0.35);">
+              <div class="anatomy-diagram-wrapper">
+                <svg class="anatomy-silhouette-svg" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                  <defs>
+                    <radialGradient id="jezGlowGrad" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.25"/>
+                      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="jezSpinesGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#78350F"/>
+                      <stop offset="50%" stop-color="#451A03"/>
+                      <stop offset="100%" stop-color="#1E1205"/>
+                    </linearGradient>
+                    <filter id="jezNeon" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#F59E0B" flood-opacity="0.45"/>
+                    </filter>
+                  </defs>
+
+                  <!-- Background Aura & Ground -->
+                  <ellipse cx="240" cy="190" rx="210" ry="90" fill="url(#jezGlowGrad)"/>
+                  <path d="M 60 270 Q 250 280 440 270" stroke="#78350F" stroke-width="6" stroke-linecap="round"/>
+
+                  <!-- Spiny Back Dome (7000 Spines) -->
+                  <path d="M 100 230 C 90 120, 200 80, 310 110 C 350 125, 380 160, 390 200 C 390 235, 340 250, 250 250 C 170 250, 110 245, 100 230 Z" 
+                        fill="url(#jezSpinesGrad)" stroke="#F59E0B" stroke-width="2.5" filter="url(#jezNeon)"/>
+
+                  <!-- Spine Texture Needles -->
+                  <path d="M 130 180 L 115 160 M 150 150 L 140 125 M 180 130 L 175 105 M 220 115 L 220 90 M 260 115 L 265 92 M 300 125 L 315 105 M 340 145 L 360 130 M 365 175 L 390 165 M 120 205 L 100 195 M 160 190 L 150 170 M 200 170 L 195 145 M 240 160 L 245 135 M 280 160 L 290 138 M 320 175 L 335 155 M 350 205 L 375 195" 
+                        stroke="#FCD34D" stroke-width="2.2" stroke-linecap="round"/>
+
+                  <!-- Soft Furry Underbelly & Head Area -->
+                  <path d="M 330 165 C 360 175, 410 190, 435 205 C 420 225, 385 240, 350 240 Z" fill="#92400E" stroke="#D97706" stroke-width="2"/>
+
+                  <!-- Head, Snout and Whiskers -->
+                  <path d="M 360 170 C 390 180, 430 195, 445 205 C 430 215, 400 225, 370 220 Z" fill="#B45309" stroke="#F59E0B" stroke-width="2"/>
+                  <!-- Wet Black Truffle Nose -->
+                  <circle cx="446" cy="204" r="7" fill="#0A0704" stroke="#F59E0B" stroke-width="1.5"/>
+                  <circle cx="444" cy="202" r="2" fill="#FFF"/>
+
+                  <!-- Eye -->
+                  <circle cx="395" cy="188" r="5" fill="#0A0704" stroke="#F59E0B" stroke-width="1.5"/>
+                  <circle cx="394" cy="186" r="1.5" fill="#FFF"/>
+
+                  <!-- Small Rounded Ear -->
+                  <ellipse cx="348" cy="165" rx="8" ry="12" fill="#78350F" stroke="#F59E0B" stroke-width="2"/>
+
+                  <!-- Whiskers (Vibrissae) -->
+                  <path d="M 430 205 L 455 195 M 432 208 L 460 208 M 430 212 L 455 220" stroke="#FDE68A" stroke-width="1.5"/>
+
+                  <!-- Short Legs with Digging Claws -->
+                  <path d="M 170 245 L 165 272 M 175 245 L 175 272 M 180 245 L 185 272" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M 320 245 L 315 272 M 325 245 L 325 272 M 330 245 L 335 272" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+
+                <!-- 5 Well-Spaced Hotspot Buttons (>17% apart, zero collisions) -->
+                <button class="hedgehog-hotspot active" data-hedgehog-anatomy="spines" style="left: 35%; top: 32%;" aria-label="1. Kolce i mięsień okrężny" title="1. Kolce i mięsień okrężny">1</button>
+                <button class="hedgehog-hotspot" data-hedgehog-anatomy="ears" style="left: 62%; top: 22%;" aria-label="2. Uszy i ultradźwięki" title="2. Uszy i ultradźwięki">2</button>
+                <button class="hedgehog-hotspot" data-hedgehog-anatomy="jacobson" style="left: 74%; top: 44%;" aria-label="3. Narząd Jacobsona" title="3. Narząd Jacobsona">3</button>
+                <button class="hedgehog-hotspot" data-hedgehog-anatomy="snout" style="left: 86%; top: 56%;" aria-label="4. Wibrysy i trufla węchowa" title="4. Wibrysy i trufla węchowa">4</button>
+                <button class="hedgehog-hotspot" data-hedgehog-anatomy="paws" style="left: 45%; top: 82%;" aria-label="5. Łapy z pazurami grzebnymi" title="5. Łapy z pazurami grzebnymi">5</button>
+              </div>
+
+              <!-- Quick Selector Chips for Touch & Accessibility -->
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1.25rem;">
+                <button class="anatomy-btn active" data-hedgehog-anatomy="spines">1. Kolce i Mięsień Okrężny</button>
+                <button class="anatomy-btn" data-hedgehog-anatomy="ears">2. Uszy i Ultradźwięki</button>
+                <button class="anatomy-btn" data-hedgehog-anatomy="jacobson">3. Narząd Jacobsona</button>
+                <button class="anatomy-btn" data-hedgehog-anatomy="snout">4. Wibrysy i Trufla Węchowa</button>
+                <button class="anatomy-btn" data-hedgehog-anatomy="paws">5. Łapy Grzebne</button>
+              </div>
+            </div>
+
+            <!-- Detail Panel -->
+            <div class="anatomy-info-panel" style="border-color: rgba(217, 119, 6, 0.3);">
+              <span class="overline" style="color: var(--amber-light);">Aktywny Punkt Anatomiczny</span>
+              <h3 id="hedgehogAnatomyTitle" style="color: var(--amber-light); margin-bottom: 10px;">Kolce Keratynowe i Mięsień Okrężny (Panniculus Carnosus)</h3>
+              <p id="hedgehogAnatomyDesc" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 20px;">
+                Dorosły jeż nosi na grzbiecie od 5000 do 7000 kolców. Każdy kolec to zmodyfikowany, pusty w środku włos wzmocniony podłużnymi komorami powietrznymi. Pod kolcami kryje się mięsień okrężny, który zaciska pancerz dookoła bezbronnego brzucha jak ściągacz worka.
+              </p>
+              <div style="background: rgba(217, 119, 6, 0.1); border: 1px solid rgba(217, 119, 6, 0.3); border-radius: var(--radius-md); padding: 14px 18px;">
+                <span style="font-size: 0.8rem; color: var(--amber-light); font-weight: 700;">PARAMETR BIOMECHANICZNY:</span>
+                <div id="hedgehogAnatomyStat" style="font-size: 1.1rem; font-weight: 800; color: #fff; margin-top: 4px;">Liczba kolców: 5000 – 7000 sztuk (amortyzacja upadku)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 4: BEZPIECZEŃSTWO I PIERWSZA POMOC
+         ============================================================ -->
+    <section class="section" id="bezpieczenstwo">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--emerald-light);">Edukacja i Pierwsza Pomoc</span>
+          <h2>Jak Mądrze Pomóc Jeżowi w Ogrodzie?</h2>
+          <p>Obalamy groźne mity z bajek. Dowiedz się, dlaczego miska z krowim mlekiem to dla jeża śmiertelna pułapka i jak zabezpieczyć trawnik.</p>
+        </div>
+
+        <div class="safety-grid">
+          <div class="toxic-food-card" style="border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05);">
+            <div class="toxic-food-header">
+              <span>🥛</span>
+              <h5 style="color: #F87171;">1. NIGDY nie podawaj krowiego mleka!</h5>
+            </div>
+            <p>Najgroźniejszy mit! Jeże nie trawią laktozy. Podanie mleka powoduje potworną, śmiertelną biegawkę, odwodnienie i martwicę jelit. <strong>Dla jeża wystawiaj wyłącznie płytką miseczkę ze świeżą wodą!</strong></p>
+          </div>
+
+          <div class="toxic-food-card" style="border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.05);">
+            <div class="toxic-food-header">
+              <span>🤖</span>
+              <h5 style="color: var(--amber-light);">2. Roboty koszące tylko w dzień</h5>
+            </div>
+            <p>Automatyczne kosiarki pracujące w nocy to masakra dla jeży. Jeż nie ucieka przed maszyną, lecz zwija się w kulkę — kosiarka obcina mu pyszczek i łapki. Ustawiaj kosiarki wyłącznie w godzinach 10:00 – 17:00!</p>
+          </div>
+
+          <div class="toxic-food-card" style="border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.05);">
+            <div class="toxic-food-header">
+              <span>🍂</span>
+              <h5 style="color: var(--cyan-light);">3. Sprawdź stertę liści przed spaleniem</h5>
+            </div>
+            <p>Zanim podpalisz jesienną stertę liści lub gałęzi, delikatnie przeszukaj ją widłami lub rękami! To ulubione miejsce zimowej hibernacji jeży. Najlepiej zostawić jeden dziki zakątek ogrodu na zimę.</p>
+          </div>
+
+          <div class="toxic-food-card" style="border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.05);">
+            <div class="toxic-food-header">
+              <span>⚖️</span>
+              <h5 style="color: var(--emerald-light);">4. Waga krytyczna: minimum 600g jesienią</h5>
+            </div>
+            <p>Przed zapadnięciem w sen zimowy (listopad) młody jeż musi ważyć co najmniej <strong>600–700 gramów</strong>, by nie umrzeć z głodu podczas hibernacji. Jeż ważący poniżej 400g w listopadzie potrzebuje pomocy ośrodka.</p>
+          </div>
+        </div>
+
+        <!-- Crisis Simulator -->
+        <div style="margin-top: 36px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px;">
+          <h4 style="margin-bottom: 8px;">🎮 Symulator Decyzji: Znalazłeś małego jeża (ok. 250g) błąkającego się w południe po trawniku w październiku! Co robisz?</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+            Wybierz właściwy protokół ratunkowy:
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 20px;">
+            <div class="crisis-option-card hedgehog-crisis-card" data-action="give_milk">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">🥛</span>
+              <strong>Nalewam miseczkę ciepłego mleka krowiego i daję bułkę</strong>
+            </div>
+            <div class="crisis-option-card hedgehog-crisis-card" data-action="ignore">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">🍃</span>
+              <strong>Zostawiam go w spokoju, na pewno znajdzie jabłka na zimę</strong>
+            </div>
+            <div class="crisis-option-card hedgehog-crisis-card" data-action="secure_box">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">📦</span>
+              <strong>Zabezpieczam w ciepłym kartonie z butelką ciepłej wody i dzwonię do ośrodka</strong>
+            </div>
+            <div class="crisis-option-card hedgehog-crisis-card" data-action="spray_tick">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">🧴</span>
+              <strong>Pryskam go preparatem na pchły i kleszcze dla psa</strong>
+            </div>
+          </div>
+
+          <div id="hedgehogCrisisResult" class="crisis-feedback-box"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 5: FASCYNUJĄCE CIEKAWOSTKI
+         ============================================================ -->
+    <section class="section" id="ciekawostki" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light); border-color: rgba(217, 119, 6, 0.3); background: rgba(217, 119, 6, 0.1);">Sekrety Natury</span>
+          <h2>Niezwykłe Fakty o Jeżach</h2>
+          <p>Oto zjawiska fizjologiczne i mity, które rzucają nowe światło na tego kolczastego ssaka.</p>
+        </div>
+
+        <div class="curiosity-grid">
+          <div class="curiosity-card" style="border-color: rgba(217, 119, 6, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🍎</span>
+              <h4 style="color: var(--amber-light);">Jeż NIE je jabłek ani nie nosi ich na kolcach!</h4>
+            </div>
+            <p>
+              Słynny obrazek jeża z czerwonym jabłkiem na grzbiecie to mit zapoczątkowany przez rzymskiego pisarza Pliniusza Starszego 2000 lat temu. Jeż jest <strong>owadożercą</strong>! Żywi się dżdżownicami, chrząszczami, ślimakami i gąsienicami. Jabłko zjadłby tylko w skrajnym głodzie, a jego układ pokarmowy nie radzi sobie z owocami.
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(16, 185, 129, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🐍</span>
+              <h4 style="color: var(--emerald-light);">Pogromca jadowitych żmij</h4>
+            </div>
+            <p>
+              Gdy jeż spotka żmiję zygzakowatą, atakuje jej ogon i grzbiet, prowokując gada do uderzenia w najeżone kolce. Po zranieniu żmii jeż przegryza jej kręgosłup. Dzięki białku <strong>erinaceinie</strong> ukąszenie żmii nie robi na nim większego wrażenia!
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(56, 189, 248, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">❄️</span>
+              <h4 style="color: var(--cyan-light);">Mistrzowska hibernacja: serce bije 20 razy/min</h4>
+            </div>
+            <p>
+              Podczas zimowego snu temperatura ciała jeża spada z 35°C do zaledwie <strong>4°C</strong> (jest zimny jak lód!). Tętno zwalnia ze 190 do <strong>20 uderzeń na minutę</strong>, a oddech bierze raz na kilka minut. W ten sposób oszczędza energię przez 4–5 miesięcy zimy.
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(168, 85, 247, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🏃</span>
+              <h4 style="color: var(--purple-light);">Nocny maratończyk: 3 km na krótkich łapkach</h4>
+            </div>
+            <p>
+              Choć jeż wygląda na ociężałego, w ciągu jednej nocy potrafi przejść od <strong>2 do 3 kilometrów</strong>, patrolując swój rewir w poszukiwaniu owadów. Potrafi też sprawnie pływać i wspinać się po siatkach ogrodzeniowych!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 6: 10-POZIOMOWA MINI GRA
+         ============================================================ -->
+    <section class="section" id="gra">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light); border-color: rgba(217, 119, 6, 0.3); background: rgba(217, 119, 6, 0.1);">🎮 Zagraj i Poznaj Życie Jeża</span>
+          <h2>Mini Gra: Nocna Wyprawa Jeża w Ogrodzie</h2>
+          <p>Steruj jeżem za pomocą kursora, klawiatury lub palca na ekranie dotykowym. Zbieraj pożywne ślimaki i chrząszcze, omijaj niebezpieczne kosiarki automatyczne i siatki, a w razie zagrożenia zwijaj się w kulkę!</p>
+        </div>
+
+        <div class="minigame-card" style="border-color: rgba(217, 119, 6, 0.35);">
+          <!-- Level Header & Progress Dots -->
+          <div class="minigame-level-header">
+            <div class="minigame-level-badge" id="hedgehogGameLevelBadge" style="background: rgba(217, 119, 6, 0.15); border-color: rgba(217, 119, 6, 0.4); color: var(--amber-light);">
+              <span>Misja 1/10:</span> Cichy Sad Jabłoniowy 🍎🦔
+            </div>
+            <div class="minigame-level-dots" id="hedgehogGameLevelDots">
+              <span class="level-dot active"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+            </div>
+          </div>
+
+          <!-- HUD -->
+          <div class="minigame-hud">
+            <div class="hud-item">
+              <span>🪲 Zjedzony pokarm:</span>
+              <span class="hud-val" id="hedgehogGameFood" style="color: var(--amber-light);">0 / 4</span>
+            </div>
+            <div class="hud-item">
+              <span>⏱️ Czas do świtu:</span>
+              <span class="hud-val" id="hedgehogGameTimer" style="color: var(--cyan-light);">40s</span>
+            </div>
+            <div class="hud-item">
+              <span>Stan obronny:</span>
+              <span class="hud-val" id="hedgehogGameMode" style="color: var(--emerald-light);">Eksploracja 🦔</span>
+            </div>
+          </div>
+
+          <div class="minigame-viewport">
+            <canvas id="hedgehogGameCanvas" class="minigame-canvas" style="background: #080D14;"></canvas>
+
+            <!-- Game Overlay -->
+            <div class="minigame-overlay" id="hedgehogGameOverlay">
+              <div style="font-size: 3.5rem; margin-bottom: 12px;" id="hedgehogGameOverIcon">🦔🌙🍂</div>
+              <h4 id="hedgehogGameOverTitle">Nocna Wyprawa Jeża</h4>
+              <p id="hedgehogGameOverDesc">
+                Ruszaj w nocną trasę! Kieruj jeżem, zbieraj pożywne owady i ślimaki. Unikaj kosiarek i przeszkód. Przytrzymaj Spację lub dotknij przycisku obrony, by zwinąć się w kulkę pancerza!
+              </p>
+              <div class="overlay-actions">
+                <button class="btn btn-primary" id="startHedgehogGameBtn">Rozpocznij żerowanie 🦔</button>
+                <button class="btn btn-primary" id="nextHedgehogLevelBtn" style="display: none;">Kolejna noc →</button>
+                <button class="btn btn-secondary" id="restartHedgehogGameBtn" style="display: none;">Powtórz noc ↺</button>
+                <button class="btn btn-secondary" id="resetHedgehogCampaignBtn" style="display: none;">Zacznij od poziomu 1 ↺</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Touch curl-up button for mobile -->
+          <div style="display: flex; justify-content: center; margin-top: 14px;">
+            <button class="btn btn-secondary" id="curlUpToggleBtn" style="padding: 10px 24px; font-size: 0.92rem; border-color: rgba(217, 119, 6, 0.4);">
+              🛡️ Zwiń w kulkę (Spacja / Przytrzymaj)
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 7: INTERAKTYWNY MINI QUIZ
+         ============================================================ -->
+    <section class="section" id="quiz" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light); border-color: rgba(217, 119, 6, 0.3); background: rgba(217, 119, 6, 0.1);">Sprawdź swoją wiedzę</span>
+          <h2>Mini Quiz Opiekuna i Znawcy Jeży</h2>
+          <p>5 pytań weryfikujących wiedzę o diecie, kolcach, samosmarowaniu i pomocy jeżom.</p>
+        </div>
+
+        <div class="quiz-wrapper" style="border-color: rgba(217, 119, 6, 0.3);">
+          <div class="quiz-meter-bar">
+            <div class="quiz-meter-progress" id="hedgehogQuizMeterProgress" style="background: linear-gradient(90deg, #F59E0B 0%, #10B981 100%);"></div>
+          </div>
+          <div id="hedgehogQuizDynamicBody">
+            <!-- Rendered dynamically by js/hedgehog-simulators.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- ============================================================
+         SEKCJA: NAWIGACJA PO GATUNKACH I PRZEJŚCIE DO KATALOGU
+         ============================================================ -->
+    <section class="section animal-navigation-hub">
+      <div class="container">
+        <div class="animal-navigation-card">
+          <span class="overline" style="color: var(--amber);">Nawigacja po świecie zmysłów</span>
+          <h3 style="font-size: 1.75rem; margin: 8px 0 12px;">Poznaj zmysły innych zwierząt</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.6; max-width: 620px; margin-left: auto; margin-right: auto;">
+            Odkryj percepcję kolejnego gatunku lub otwórz pełny, interaktywny katalog wszystkich 15 zwierząt:
+          </p>
+
+          <!-- Stepper: Poprzednie / Główny katalog / Następne -->
+          <div class="animal-nav-stepper">
+            <a href="lis.html" class="animal-nav-btn animal-nav-btn-prev" title="Poprzednie zwierzę: Lis rudy">
+              <span>←</span>
+              <span>🦊 Lis</span>
+            </a>
+
+            <button class="animal-nav-btn animal-nav-btn-catalog animal-catalog-trigger" title="Otwórz pełny katalog ze wszystkimi 15 zwierzętami">
+              <span>🐾 Pełny katalog (15 zwierząt)</span>
+            </button>
+
+            <a href="orzel.html" class="animal-nav-btn animal-nav-btn-next" title="Następne zwierzę: Orzeł przedni">
+              <span>🦅 Orzeł</span>
+              <span>→</span>
+            </a>
+          </div>
+
+          <!-- Szybki skok do każdego zwierzęcia -->
+          <div class="animal-quick-jump-wrap">
+            <div class="animal-quick-jump-title">
+              Szybki skok do dowolnego gatunku (15):
+            </div>
+            <div class="animal-quick-jump-bar">
+                <a href="pies.html" class="animal-quick-chip"><span>🐕</span> <span>Pies</span></a>
+                <a href="kot.html" class="animal-quick-chip"><span>🐈</span> <span>Kot</span></a>
+                <a href="dzik.html" class="animal-quick-chip"><span>🐗</span> <span>Dzik</span></a>
+                <a href="wilk.html" class="animal-quick-chip"><span>🐺</span> <span>Wilk</span></a>
+                <a href="nietoperz.html" class="animal-quick-chip"><span>🦇</span> <span>Nietoperz</span></a>
+                <a href="zmija.html" class="animal-quick-chip"><span>🐍</span> <span>Żmija</span></a>
+                <a href="sowa.html" class="animal-quick-chip"><span>🦉</span> <span>Sowa</span></a>
+                <a href="niedzwiedz.html" class="animal-quick-chip"><span>🐻</span> <span>Niedźwiedź</span></a>
+                <a href="pszczola.html" class="animal-quick-chip"><span>🐝</span> <span>Pszczoła</span></a>
+                <a href="lis.html" class="animal-quick-chip"><span>🦊</span> <span>Lis</span></a>
+                <a href="jez.html" class="animal-quick-chip active"><span>🦔</span> <span>Jeż</span></a>
+                <a href="orzel.html" class="animal-quick-chip"><span>🦅</span> <span>Orzeł</span></a>
+                <a href="delfin.html" class="animal-quick-chip"><span>🐬</span> <span>Delfin</span></a>
+                <a href="rekin.html" class="animal-quick-chip"><span>🦈</span> <span>Rekin</span></a>
+                <a href="osmiornica.html" class="animal-quick-chip"><span>🐙</span> <span>Ośmiornica</span></a>
+            </div>
+          </div>
+
+          <!-- Powrót na stronę główną -->
+          <div class="animal-home-return">
+            <a href="index.html#zwierzeta">
+              <span>🏠 Wróć do spisu na stronie głównej</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Author Profile Modal (Dorian Kalinowski) -->
+  <div class="modal-backdrop" id="authorModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeAuthorModal" aria-label="Zamknij okno">✕</button>
+      <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="author-avatar-big">
+      <h3 class="author-modal-name">Dorian Kalinowski</h3>
+      <div class="author-modal-role">Twórca projektu i miłośnik zwierząt</div>
+      <p class="author-bio">
+        Cześć! Mam na imię Dorian. Od zawsze fascynowało mnie to, jak zwierzęta odbierają otaczający nas świat – zupełnie inaczej niż my, ludzie. Na mojej stronie możesz na własne oczy i uszy sprawdzić ich perspektywę oraz dowiedzieć się, kiedy i dlaczego dochodzi do niebezpiecznych spięć. Wierzę, że gdybyśmy naprawdę rozumieli, jak zwierzęta myślą, widzą i czują, byłoby między nami znacznie mniej strachu i niepotrzebnych konfrontacji.
+      </p>
+      <div style="text-align: center;">
+        <button class="btn btn-primary" id="confirmAuthorModal">Zamknij</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PWA Install Prompt Banner -->
+  <div class="pwa-install-banner" id="pwaBanner">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 1.6rem;">📱</span>
+      <div>
+        <div style="font-size: 0.92rem; font-weight: 700;">Zainstaluj jako aplikację PWA</div>
+        <div style="font-size: 0.78rem; color: var(--text-muted);">Szybki dostęp i działanie offline bez przeglądarki</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="pwaInstallBtn" style="padding: 8px 18px; font-size: 0.85rem;">Instaluj</button>
+    <button class="modal-close-btn" id="pwaDismissBtn" style="position: static; width: 28px; height: 28px; font-size: 0.8rem;">✕</button>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <div class="mobile-bottom-bar" role="navigation" aria-label="Nawigacja mobilna">
+    <a href="index.html" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🏠</span>
+      <span>Główna</span>
+    </a>
+    <button class="bottom-bar-item animal-catalog-trigger">
+      <span class="bottom-bar-icon">🐾</span>
+      <span>Katalog</span>
+    </button>
+    <a href="jez.html" class="bottom-bar-item active">
+      <span class="bottom-bar-icon">🦔</span>
+      <span>Jeż</span>
+    </a>
+    <a href="#bezpieczenstwo" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🛡️</span>
+      <span>Zasady</span>
+    </a>
+    <button class="bottom-bar-item" id="mobileAuthorTrigger">
+      <span class="bottom-bar-icon">👤</span>
+      <span>Autor</span>
+    </button>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-author">
+        Zaprojektowane i stworzone przez: <strong>Dorian Kalinowski</strong>
+      </p>
+      <p class="footer-rights">
+        © 2026 Świat zmysłami zwierząt V1.1 • Projekt edukacyjny non-profit • Wersja V1.1
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/hedgehog-simulators.js"></script>
+</body>
+</html>

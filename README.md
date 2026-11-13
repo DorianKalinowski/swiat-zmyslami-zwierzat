@@ -1,4 +1,4 @@
-# Świat zmysłami zwierząt 🐾 (V1)
+# Świat zmysłami zwierząt 🐾 V1.1
 
 > **Nowoczesna, interaktywna aplikacja edukacyjna PWA (Progressive Web App)** odkrywająca tajemnice percepcji, kognitywistyki oraz zmysłów zwierząt z perspektywy ich własnego świata (*Umwelt*).
 
@@ -6,7 +6,7 @@ Projekt stworzony z dbałością o najwyższe standardy UX/UI, estetykę typu *C
 
 **Autor i Twórca:** Dorian Kalinowski  
 **Licencja:** Wszelkie prawa zastrzeżone © 2026  
-**Wersja:** V1 (10 aktywnych zwierząt, 10-poziomowe unikalne mini-gry dla każdego gatunku — łącznie 100 poziomów!)
+**Wersja:** V1.1 (15 aktywnych zwierząt, 10-poziomowe unikalne mini-gry dla każdego gatunku — łącznie 150 poziomów!)
 
 ---
 
@@ -14,16 +14,16 @@ Projekt stworzony z dbałością o najwyższe standardy UX/UI, estetykę typu *C
 
 Niemiecki biolog Jakob von Uexküll wprowadził pojęcie **Umwelt** — unikalnego świata zmysłowego, w jakim żyje dany gatunek. Ludzie często oceniają zachowanie zwierząt przez pryzmat ludzkich zmysłów, co prowadzi do nieporozumień, mitów, a w skrajnych przypadkach — pogryzień, ataków lub niepotrzebnej paniki.
 
-Aplikacja **„Świat zmysłami zwierząt”** pozwala użytkownikowi dosłownie „wejść w skórę” zwierzęcia:
-* Zobaczyć świat w dichromatycznej palecie psa, ultrafiolecie pszczoły (UV) czy noktowizji kota.
-* Usłyszeć ultradźwięki echolokacji nietoperza (120 kHz), basowy ryk niedźwiedzia, szelest myszy pod śniegiem czy asymetryczną triangulację sowy.
-* Wytropić zapachy w przestrzennym węchu stereo i w bieszczadzkich prądach powietrznych.
+Aplikacja **„Świat zmysłami zwierząt” (V1.1)** pozwala użytkownikowi dosłownie „wejść w skórę” zwierzęcia:
+* Zobaczyć świat w dichromatycznej palecie psa, ultrafiolecie pszczoły (UV), noktowizji kota czy dwudołkowym widzeniu orła.
+* Usłyszeć ultradźwięki echolokacji nietoperza i delfina (do 150 kHz), basowy ryk niedźwiedzia, szelest myszy pod śniegiem czy asymetryczną triangulację sowy.
+* Wytropić zapachy w przestrzennym węchu stereo, w bieszczadzkich prądach powietrznych i w ampułkach Lorenziniego rekina wykrywających nanowolty.
 * Poznać kluczowe procedury bezpieczeństwa i pierwszej pomocy (GOPR, TPN, 112, Sanepid).
-* Zagrać w 10-poziomowe kampanie zręcznościowo-edukacyjne z dynamicznym HUD dla każdego z 10 gatunków!
+* Zagrać w 10-poziomowe kampanie zręcznościowo-edukacyjne z dynamicznym HUD dla każdego z 15 gatunków (łącznie 150 misji)!
 
 ---
 
-## 🐾 Pełny Katalog 10 Gatunków
+## 🐾 Pełny Katalog 15 Gatunków (Wersja V1.1)
 
 ### 1. 🐕 Pies domowy (`pies.html`)
 * **Wzrok:** Symulator dichromatyzmu (brak czopków czerwieni), *tapetum lucidum* oraz wzmocniona detekcja ruchu (*Motion Glow*).
@@ -95,16 +95,51 @@ Aplikacja **„Świat zmysłami zwierząt”** pozwala użytkownikowi dosłownie
 * **Zdrowie & Bezpieczeństwo:** Tasiemiec bąblowcowy (*Echinococcus*) — absolutna konieczność mycia owoców leśnych; lisy w miastach.
 * **Mini Gra:** *„Magnetyczny Skok w Śnieg (Myszkowanie)”* — **10 poziomów zimowych łowów** z kompasem magnetycznym.
 
+### 11. 🦔 Jeż zachodni (`jez.html`)
+* **Pancerz i Kolce:** ~7000 kolców z komorami powietrznymi amortyzującymi upadki, mięsień okrężny *panniculus carnosus*.
+* **Samosmarowanie Puszystą Pianą (*Self-Anointing*):** Aktywacja narządu Jacobsona i nanoszenie spienionej śliny na kolce.
+* **Odporność Biochemiczna:** 40x większa odporność na jad żmii zygzakowatej (białko *erinaceina*).
+* **Słuch Ultradźwiękowy:** Wykrywanie owadów w ściółce do 45 kHz.
+* **Mini Gra:** *„Nocna Wyprawa Jeża w Ogrodzie”* — **10 poziomów żerowania** z mechaniką zwijania się w kulkę.
+
+### 12. 🦅 Orzeł przedni i Bielik (`orzel.html`)
+* **Widzenie Dwudołkowe (*Bifoveal Vision*):** 8-krotnie większa ostrość niż u człowieka, detekcja zająca z 3200 m.
+* **Filtr Ultrafioletu (UV):** Wykrywanie fluorescencyjnych śladów moczu gryzoni na łąkach z wysokości chmur.
+* **Biomechanika Szponów:** Ponad 400 PSI siły miażdżącej uścisku, prędkość nurkowania ponad 300 km/h.
+* **Ochrona Przyrody:** Strefy ochronne gniazd (200 m całoroczna, 500 m okresowa), zakaz płoszenia dronami.
+* **Mini Gra:** *„Podniebny Patrol Orła”* — **10 misji lotu szybowcowego** z przełączaniem widzenia UV.
+
+### 13. 🐬 Delfin butlonosy (`delfin.html`)
+* **Sonar 3D i Echolokacja (USG):** Ultradźwiękowe kliki do 150 kHz prześwietlające wnętrze ofiary (szkielet, pęcherz pławny, rytm serca).
+* **Melon Czołowy & Żuchwa:** Soczewka akustyczna z estrów woskowych oraz żuchwa wypełniona tłuszczem przewodzącym echo do ucha wewnętrznego.
+* **Gwizdy Podpisowe (*Signature Whistles*):** Indywidualne imiona akustyczne delfinów modelowane syntezą FM.
+* **Fizjologia Snu:** Sen jedno-półkulowy (*USWS*) — połowa mózgu śpi, druga czuwa i kontroluje oddychanie.
+* **Mini Gra:** *„Oceaniczny Sonar 3D — Łowy w Głębinach”* — **10 poziomów głębinowych** z pulsami fal sonaru.
+
+### 14. 🦈 Żarłacz błękitny / Rekin (`rekin.html`)
+* **Ampułki Lorenziniego (Elektrorecepcja):** Detekcja biopól elektrycznych rzędu 5 nanowoltów/cm (bicie serca flądry zakopanej w piasku).
+* **Linia Boczna:** Odbiór drgań i fal ciśnienia szamoczącej się rannej ryby (10–50 Hz) z ponad 250 metrów.
+* **Ząbki Skórne (*Denticles*):** Łuski plakoidalne ze szkliwa redukujące mikrowiry wody — bezszelestny pływ z zerowym oporem.
+* **Fakty vs Mity:** Zasada stałego kontaktu wzrokowego, zakaz panicznego chlapania, 30 000 zębów wymienianych na ruchomej taśmie.
+* **Mini Gra:** *„Patrol Rafy Koralowej — Zmysł Elektryczny”* — **10 poziomów podwodnych** z przełączaniem zmysłu elektrorecepcji.
+
+### 15. 🐙 Ośmiornica zwyczajna (`osmiornica.html`)
+* **Zdecentralizowany Umysł:** 500 milionów neuronów, z czego aż 350 milionów w 8 autonomicznych ramionach (mini-mózgach).
+* **Dynamiczny Kamuflaż (200 ms):** Błyskawiczna zmiana barwy i trójwymiarowej tekstury skóry sterowana bezpośrednio nerwami.
+* **Smakujące Przyssawki:** 1600 przyssawek z 10 000 chemoreceptorów na każdej (zmysł smaku i dotyku w każdym punkcie ciała).
+* **Błękitna Krew & 3 Serca:** Krew oparta na miedzi (hemocyjanina) zamiast żelaza, płynne ciało przeciskające się przez szczelinę wielkości monety.
+* **Mini Gra:** *„Głębinowy Kamuflaż i Łowy na Kraby”* — **10 poziomów szczelin skalnych** z dopasowywaniem barwy skóry do stref dna.
+
 ---
 
 ## 🚀 Technologie i Architektura
 
 * **Czysty Web Stack (Zero zależności NPM):** Czysty HTML5, CSS3 Custom Properties i nowoczesny Vanilla JS (ES6+).
-* **Web Audio API Engine:** Syntetyczne generowanie dźwięków (sonary ultradźwiękowe, basowe ryki, kłapanie zębami, wibracje tańca pszczół, chrobot śniegu). Zero zewnętrznych plików audio.
+* **Web Audio API Engine:** Syntetyczne generowanie dźwięków (sonary ultradźwiękowe, basowe ryki, kłapanie zębami, wibracje tańca pszczół, chrobot śniegu, impulsy elektrorecepcji). Zero zewnętrznych plików audio.
 * **HTML5 Canvas 60 FPS:** Płynne silniki gier z pełną obsługą dotyku (`touchstart`, `touchmove`) oraz myszy na desktopie.
-* **PWA & Offline v11:** Service Worker z automatyczną aktualizacją pamięci podręcznej i buforowaniem wszystkich 10 modułów.
+* **PWA & Offline v15:** Service Worker z automatyczną aktualizacją pamięci podręcznej i buforowaniem wszystkich 15 modułów.
 * **Responsywność:** System `viewport-fit=cover`, dolny pasek nawigacyjny w stylu aplikacji natywnej na iOS i Android.
-* **Hosting Vercel:** Plik [`vercel.json`](vercel.json) z obsługą czystych adresów URL (`/pies`, `/kot`, `/dzik`, `/wilk`, `/nietoperz`, `/zmija`, `/sowa`, `/niedzwiedz`, `/pszczola`, `/lis`).
+* **Hosting Vercel:** Plik [`vercel.json`](vercel.json) z obsługą czystych adresów URL (`/pies`, `/kot`, `/dzik`, `/wilk`, `/nietoperz`, `/zmija`, `/sowa`, `/niedzwiedz`, `/pszczola`, `/lis`, `/jez`, `/orzel`, `/delfin`, `/rekin`, `/osmiornica`).
 
 ---
 

@@ -1,0 +1,12 @@
+import sys, json
+sys.stdout.reconfigure(encoding='utf-8')
+
+with open('quiz_batchC.json', 'r', encoding='utf-8') as f:
+    batchC = json.load(f)
+
+for q in batchC:
+    print(f"[{q['animal'].upper()}] Q: {repr(q['q'])}")
+    for opt in q['options']:
+        print("  -", repr(opt))
+    print("  Exp:", repr(q['explain'][:80]))
+    print()

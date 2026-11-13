@@ -17,6 +17,11 @@ animals = [
     ('niedzwiedz.html', '🐻', 'Niedźwiedź brunatny'),
     ('pszczola.html', '🐝', 'Pszczoła miodna'),
     ('lis.html', '🦊', 'Lis rudy'),
+    ('jez.html', '🦔', 'Jeż zachodni'),
+    ('orzel.html', '🦅', 'Orzeł przedni'),
+    ('delfin.html', '🐬', 'Delfin butlonosy'),
+    ('rekin.html', '🦈', 'Żarłacz błękitny'),
+    ('osmiornica.html', '🐙', 'Ośmiornica zwyczajna'),
 ]
 
 for hp in sorted(glob.glob(os.path.join(root, '*.html'))):
@@ -29,7 +34,7 @@ for hp in sorted(glob.glob(os.path.join(root, '*.html'))):
 
     # Generate dropdown items
     dropdown_items = []
-    current_animal_label = "🐾 Zwierzęta (10)"
+    current_animal_label = "🐾 Zwierzęta (15)"
     for a_file, emoji, name in animals:
         is_cur = (fname == a_file)
         active_cls = ' active' if is_cur else ''
@@ -41,9 +46,9 @@ for hp in sorted(glob.glob(os.path.join(root, '*.html'))):
 
     nav_replacement = f'''      <div class="nav-links" id="navLinks">
         <a href="index.html" class="nav-link{home_active}">Strona główna</a>
-        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog (10)</button>
+        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog (15)</button>
 
-        <!-- Dropdown: Wybierz zwierzę (10) -->
+        <!-- Dropdown: Wybierz zwierzę (15) -->
         <div class="nav-dropdown" id="navAnimalsDropdown">
           <button class="nav-link nav-dropdown-btn" id="navDropdownBtn" aria-expanded="false" style="cursor: pointer;">
             <span>{current_animal_label}</span>

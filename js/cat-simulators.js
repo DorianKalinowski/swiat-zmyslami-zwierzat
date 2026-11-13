@@ -730,13 +730,15 @@ function initCatReflexGame() {
   let spawnTimestamp = 0;
 
   function updateHUD() {
+    const isEn = window.swiat_zmyslow_lang === 'en' || (typeof localStorage !== 'undefined' && localStorage.getItem('swiat_zmyslow_lang') === 'en');
     const lvl = levels[currentLevelIdx];
+    const lvlName = window.t ? window.t(lvl.name) : lvl.name;
     if (levelBadge) {
-      levelBadge.innerHTML = `<span>Runda ${currentLevelIdx + 1}/${levels.length}:</span> ${lvl.name}`;
+      levelBadge.innerHTML = `<span>${isEn ? 'Round' : 'Runda'} ${currentLevelIdx + 1}/${levels.length}:</span> ${lvlName}`;
     }
     if (levelDotsContainer) {
       if (levelDotsContainer.children.length !== levels.length) {
-        levelDotsContainer.innerHTML = levels.map((_, i) => `<span class="level-dot" title="Runda ${i + 1}"></span>`).join('');
+        levelDotsContainer.innerHTML = levels.map((_, i) => `<span class="level-dot" title="${isEn ? 'Round' : 'Runda'} ${i + 1}"></span>`).join('');
       }
       const dots = levelDotsContainer.querySelectorAll('.level-dot');
       dots.forEach((dot, idx) => {
@@ -848,10 +850,10 @@ function initCatReflexGame() {
       if (currentTargetEl === targetEl && isPlaying) {
         if (!isTrap) {
           playEscape();
-          reactionVal.textContent = 'Uciekła! 💨';
+          reactionVal.textContent = (window.swiat_zmyslow_lang === 'en' || (typeof localStorage !== 'undefined' && localStorage.getItem('swiat_zmyslow_lang') === 'en')) ? 'Escaped! 💨' : 'Uciekła! 💨';
         } else {
           // Trap avoided!
-          reactionVal.textContent = 'Unik! 🛡️';
+          reactionVal.textContent = (window.swiat_zmyslow_lang === 'en' || (typeof localStorage !== 'undefined' && localStorage.getItem('swiat_zmyslow_lang') === 'en')) ? 'Dodged! 🛡️' : 'Unik! 🛡️';
         }
 
         targetEl.style.transition = 'all 0.25s ease-in';
@@ -878,7 +880,7 @@ function initCatReflexGame() {
         playSting();
         showTrapPenalty(e.clientX, e.clientY);
         reactionTimes.push(950); // Penalty
-        reactionVal.textContent = '+250ms (Użądlenie! 🐝)';
+        reactionVal.textContent = (window.swiat_zmyslow_lang === 'en' || (typeof localStorage !== 'undefined' && localStorage.getItem('swiat_zmyslow_lang') === 'en')) ? '+250ms (Stung! 🐝)' : '+250ms (Użądlenie! 🐝)';
         clearActiveTarget();
         scheduleNextSpawn(1200);
         return;
@@ -956,6 +958,7 @@ function initCatReflexGame() {
     restartBtn.style.display = 'none';
     resetBtn.style.display = 'none';
 
+    const isEn = window.swiat_zmyslow_lang === 'en' || (typeof localStorage !== 'undefined' && localStorage.getItem('swiat_zmyslow_lang') === 'en');
     const lvl = levels[currentLevelIdx];
     const passed = caughtCount >= lvl.required;
     const avg = reactionTimes.length > 0 
@@ -966,8 +969,12 @@ function initCatReflexGame() {
       if (currentLevelIdx < levels.length - 1) {
         // Advanced to next level
         overlayIcon.textContent = '🎉🐾⚡';
-        overlayTitle.textContent = `Poziom ${currentLevelIdx + 1} Zwyciężony!`;
-        overlayDesc.innerHTML = `
+        overlayTitle.textContent = isEn ? `Level ${currentLevelIdx + 1} Victorious!` : `Poziom ${currentLevelIdx + 1} Zwyciężony!`;
+        overlayDesc.innerHTML = isEn ? `
+          You hunted <strong>${caughtCount} of ${lvl.rounds}</strong> targets!<br>
+          Your average reaction time was: <strong style="color: var(--purple-light); font-size: 1.2rem;">${avg} ms</strong>.<br>
+          In the next stage, targets move even faster. Are your senses ready?
+        ` : `
           Upolowałeś <strong>${caughtCount} z ${lvl.rounds}</strong> celów!<br>
           Twój średni czas reakcji wyniósł: <strong style="color: var(--purple-light); font-size: 1.2rem;">${avg} ms</strong>.<br>
           W kolejnym etapie cele poruszają się jeszcze szybciej. Czy Twoje zmysły są gotowe?
@@ -977,8 +984,12 @@ function initCatReflexGame() {
       } else {
         // Final Level 3 Mastered
         overlayIcon.textContent = '👑🐯⚡';
-        overlayTitle.textContent = 'Nocny Władca Odruchów!';
-        overlayDesc.innerHTML = `
+        overlayTitle.textContent = isEn ? 'Night Master of Reflexes!' : 'Nocny Władca Odruchów!';
+        overlayDesc.innerHTML = isEn ? `
+          <strong>You completed the entire hunting campaign!</strong><br>
+          You caught the hyper-fast laser with an average reflex of: <strong style="color: #10B981; font-size: 1.3rem;">${avg} ms</strong>!<br>
+          Your nervous system reacts with the speed of an apex feline predator.
+        ` : `
           <strong>Ukończyłeś całą kampanię łowcy!</strong><br>
           Złapałeś hiperszybki laser ze średnim refleksem: <strong style="color: #10B981; font-size: 1.3rem;">${avg} ms</strong>!<br>
           Twój układ nerwowy reaguje z prędkością rasowego drapieżnika.
@@ -988,8 +999,11 @@ function initCatReflexGame() {
     } else {
       // Failed requirement
       overlayIcon.textContent = '🛋️💤';
-      overlayTitle.textContent = 'Za mało upolowanych zdobyczy!';
-      overlayDesc.innerHTML = `
+      overlayTitle.textContent = isEn ? 'Not enough prey caught!' : 'Za mało upolowanych zdobyczy!';
+      overlayDesc.innerHTML = isEn ? `
+        You caught <strong>${caughtCount} of ${lvl.rounds}</strong> (required minimum: <strong>${lvl.required}</strong>).<br>
+        The mice fled into their burrow. Cats never give up — focus your eyes in the center and strike instantly!
+      ` : `
         Złapałeś <strong>${caughtCount} z ${lvl.rounds}</strong> (wymagane minimum: <strong>${lvl.required}</strong>).<br>
         Myszki uciekły do nory. Koty nigdy się nie poddają — skup wzrok na środku i uderzaj natychmiast!
       `;
@@ -1005,6 +1019,10 @@ function initCatReflexGame() {
   resetBtn.addEventListener('click', () => startLevel(0));
 
   updateHUD();
+
+  window.addEventListener('languageChanged', () => {
+    updateHUD();
+  });
 }
 
 

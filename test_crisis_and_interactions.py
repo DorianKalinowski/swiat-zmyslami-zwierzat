@@ -9,7 +9,12 @@ animals = [
     ('zmija.html', 'js/viper-simulators.js', 'viperCrisisResult', '.viper-crisis-card'),
     ('niedzwiedz.html', 'js/bear-simulators.js', 'bearCrisisResult', '.bear-crisis-card'),
     ('pszczola.html', 'js/bee-simulators.js', 'beeAidResult', '.bee-aid-card'),
-    ('lis.html', 'js/fox-simulators.js', 'foxAidResult', '.fox-aid-card')
+    ('lis.html', 'js/fox-simulators.js', 'foxAidResult', '.fox-aid-card'),
+    ('jez.html', 'js/hedgehog-simulators.js', 'hedgehogCrisisResult', '.hedgehog-crisis-card'),
+    ('orzel.html', 'js/eagle-simulators.js', 'eagleCrisisResult', '.eagle-crisis-card'),
+    ('delfin.html', 'js/dolphin-simulators.js', 'dolphinCrisisResult', '.dolphin-crisis-card'),
+    ('rekin.html', 'js/shark-simulators.js', 'sharkCrisisResult', '.shark-crisis-card'),
+    ('osmiornica.html', 'js/octopus-simulators.js', 'octopusCrisisResult', '.octopus-crisis-card')
 ]
 
 print("=== DEEP VERIFICATION OF CRISIS PROTOCOLS & INTERACTIVE MODULES ===")

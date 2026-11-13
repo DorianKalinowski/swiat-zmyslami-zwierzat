@@ -21,6 +21,11 @@ animal_map = {
     'niedzwiedz.html': 'bear-simulators.js',
     'pszczola.html': 'bee-simulators.js',
     'lis.html': 'fox-simulators.js',
+    'jez.html': 'hedgehog-simulators.js',
+    'orzel.html': 'eagle-simulators.js',
+    'delfin.html': 'dolphin-simulators.js',
+    'rekin.html': 'shark-simulators.js',
+    'osmiornica.html': 'octopus-simulators.js',
 }
 
 all_passed = True
@@ -70,7 +75,7 @@ for html_name, js_name in animal_map.items():
     else:
         print(f"✅ {html_name} <-> {js_name}: All {len(referenced_ids)} JS DOM IDs matched in HTML or dynamic JS!")
 
-print("\n--- 3. 10 LEVELS CHECK FOR ALL 10 ANIMALS ---")
+print("\n--- 3. 10 LEVELS CHECK FOR ALL ANIMALS ---")
 for html_name, js_name in animal_map.items():
     jp = os.path.join(root, 'js', js_name)
     if not os.path.isfile(jp):
@@ -86,15 +91,19 @@ for html_name, js_name in animal_map.items():
         print(f"❌ {js_name}: Only has {len(levels_match)} levels! Expected at least 10.")
         all_passed = False
 
-print("\n--- 4. MINIGAME OVERLAY SHOW/HIDE LOGIC (ALL 6 NEW ANIMALS) ---")
-new_simulators = ['bat-simulators.js', 'owl-simulators.js', 'viper-simulators.js', 'bear-simulators.js', 'bee-simulators.js', 'fox-simulators.js']
+print("\n--- 4. MINIGAME OVERLAY SHOW/HIDE LOGIC (ALL EXTENDED ANIMALS) ---")
+new_simulators = [
+    'bat-simulators.js', 'owl-simulators.js', 'viper-simulators.js', 'bear-simulators.js',
+    'bee-simulators.js', 'fox-simulators.js', 'hedgehog-simulators.js', 'eagle-simulators.js',
+    'dolphin-simulators.js', 'shark-simulators.js', 'octopus-simulators.js'
+]
 for sim in new_simulators:
     jp = os.path.join(root, 'js', sim)
     with open(jp, 'r', encoding='utf-8') as f:
         js = f.read()
 
-    hide_ok = "overlay.classList.add('hidden')" in js and "overlay.style.display = 'none'" in js
-    show_ok = "overlay.classList.remove('hidden')" in js and "overlay.style.display = 'flex'" in js
+    hide_ok = ("overlay.classList.add('hidden')" in js or "overlay.classList.remove('active')" in js) and "overlay.style.display = 'none'" in js
+    show_ok = ("overlay.classList.remove('hidden')" in js or "overlay.classList.add('active')" in js) and "overlay.style.display = 'flex'" in js
 
     if hide_ok and show_ok:
         print(f"✅ {sim}: Overlay hide and show logic is correct.")
@@ -102,7 +111,7 @@ for sim in new_simulators:
         print(f"❌ {sim}: Overlay logic issue! hide_ok={hide_ok}, show_ok={show_ok}")
         all_passed = False
 
-print("\n--- 5. 5-QUESTION QUIZ VERIFICATION (ALL 6 NEW ANIMALS) ---")
+print("\n--- 5. 5-QUESTION QUIZ VERIFICATION (ALL EXTENDED ANIMALS) ---")
 for sim in new_simulators:
     jp = os.path.join(root, 'js', sim)
     with open(jp, 'r', encoding='utf-8') as f:
@@ -118,8 +127,11 @@ for sim in new_simulators:
         print(f"❌ {sim}: Quiz verification failed! q_count={q_count}, has_meter={has_meter}, has_body={has_body}")
         all_passed = False
 
-print("\n--- 6. HTML SECTIONS & SUBNAV INTEGRITY (ALL 6 NEW ANIMALS) ---")
-new_htmls = ['nietoperz.html', 'sowa.html', 'zmija.html', 'niedzwiedz.html', 'pszczola.html', 'lis.html']
+print("\n--- 6. HTML SECTIONS & SUBNAV INTEGRITY (ALL EXTENDED ANIMALS) ---")
+new_htmls = [
+    'nietoperz.html', 'sowa.html', 'zmija.html', 'niedzwiedz.html', 'pszczola.html', 'lis.html',
+    'jez.html', 'orzel.html', 'delfin.html', 'rekin.html', 'osmiornica.html'
+]
 required_sections = ['historia', 'zmysly', 'anatomia', 'bezpieczenstwo', 'ciekawostki', 'gra', 'quiz']
 
 for h in new_htmls:
@@ -153,12 +165,24 @@ for hpath in all_html_files:
     with open(hpath, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    has_v1 = "V1" in content
+    has_v1_1 = "V1.1" in content
+    has_nav_badge = "nav-version-tag" in content and "V1.1" in content
     has_dorian = "Dorian Kalinowski" in content or "Dorian" in content
-    if has_v1 and has_dorian:
-        print(f"✅ {fname}: Correctly displays V1 and Dorian Kalinowski attribution.")
+    if has_v1_1 and has_nav_badge and has_dorian:
+        print(f"✅ {fname}: Correctly displays V1.1 and Dorian Kalinowski attribution.")
     else:
-        print(f"⚠️ {fname}: Check V1 ({has_v1}) or Dorian ({has_dorian})")
+        print(f"❌ {fname}: Check V1.1 ({has_v1_1}), nav-version-tag ({has_nav_badge}), Dorian ({has_dorian})")
+        all_passed = False
+
+readme_path = os.path.join(root, 'README.md')
+if os.path.exists(readme_path):
+    with open(readme_path, 'r', encoding='utf-8') as f:
+        readme_content = f.read()
+    if "V1.1" in readme_content and "Dorian Kalinowski" in readme_content:
+        print(f"✅ README.md: Correctly displays V1.1 and Dorian Kalinowski attribution.")
+    else:
+        print(f"❌ README.md: Missing V1.1 or Dorian Kalinowski")
+        all_passed = False
 
 print("\n--- 8. LOCAL RESOURCE & LINK RESOLUTION CHECK ---")
 broken = []
@@ -193,7 +217,12 @@ new_sims = {
     'viper-simulators.js': ('startViperGameBtn', 'nextViperLevelBtn', 'restartViperGameBtn', 'resetViperCampaignBtn', 'initViperQuiz'),
     'bear-simulators.js': ('startBearGameBtn', 'nextBearLevelBtn', 'restartBearGameBtn', 'resetBearCampaignBtn', 'initBearQuiz'),
     'bee-simulators.js': ('startBeeGameBtn', 'nextBeeLevelBtn', 'restartBeeGameBtn', 'resetBeeCampaignBtn', 'initBeeQuiz'),
-    'fox-simulators.js': ('startFoxGameBtn', 'nextFoxLevelBtn', 'restartFoxGameBtn', 'resetFoxCampaignBtn', 'initFoxQuiz')
+    'fox-simulators.js': ('startFoxGameBtn', 'nextFoxLevelBtn', 'restartFoxGameBtn', 'resetFoxCampaignBtn', 'initFoxQuiz'),
+    'hedgehog-simulators.js': ('startHedgehogGameBtn', 'nextHedgehogLevelBtn', 'restartHedgehogGameBtn', 'resetHedgehogCampaignBtn', 'initHedgehogQuiz'),
+    'eagle-simulators.js': ('startEagleGameBtn', 'nextEagleLevelBtn', 'restartEagleGameBtn', 'resetEagleCampaignBtn', 'initEagleQuiz'),
+    'dolphin-simulators.js': ('startDolphinGameBtn', 'nextDolphinLevelBtn', 'restartDolphinGameBtn', 'resetDolphinCampaignBtn', 'initDolphinQuiz'),
+    'shark-simulators.js': ('startSharkGameBtn', 'nextSharkLevelBtn', 'restartSharkGameBtn', 'resetSharkCampaignBtn', 'initSharkQuiz'),
+    'octopus-simulators.js': ('startOctopusGameBtn', 'nextOctopusLevelBtn', 'restartOctopusGameBtn', 'resetOctopusCampaignBtn', 'initOctopusQuiz')
 }
 
 for sim_file, expected_els in new_sims.items():
@@ -251,6 +280,7 @@ server_thread.start()
 test_urls = [
     'index.html', 'pies.html', 'kot.html', 'dzik.html', 'wilk.html',
     'nietoperz.html', 'sowa.html', 'zmija.html', 'niedzwiedz.html', 'pszczola.html', 'lis.html',
+    'jez.html', 'orzel.html', 'delfin.html', 'rekin.html', 'osmiornica.html',
     'css/style.css', 'js/app.js', 'manifest.json'
 ]
 

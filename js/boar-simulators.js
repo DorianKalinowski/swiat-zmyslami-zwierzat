@@ -854,13 +854,15 @@ function initBoarRootingGame() {
   let dugCountInWave = 0;
 
   function updateHUD() {
+    const isEn = window.swiat_zmyslow_lang === 'en' || (typeof localStorage !== 'undefined' && localStorage.getItem('swiat_zmyslow_lang') === 'en');
     const s = seasons[currentSeasonIdx];
+    const sName = window.t ? window.t(s.name) : s.name;
     if (levelBadge) {
-      levelBadge.innerHTML = `<span>Sezon ${currentSeasonIdx + 1}/${seasons.length}:</span> ${s.name}`;
+      levelBadge.innerHTML = `<span>${isEn ? 'Season' : 'Sezon'} ${currentSeasonIdx + 1}/${seasons.length}:</span> ${sName}`;
     }
     if (levelDotsContainer) {
       if (levelDotsContainer.children.length !== seasons.length) {
-        levelDotsContainer.innerHTML = seasons.map((_, i) => `<span class="level-dot" title="Sezon ${i + 1}"></span>`).join('');
+        levelDotsContainer.innerHTML = seasons.map((_, i) => `<span class="level-dot" title="${isEn ? 'Season' : 'Sezon'} ${i + 1}"></span>`).join('');
       }
       const dots = levelDotsContainer.querySelectorAll('.level-dot');
       dots.forEach((dot, idx) => {
@@ -986,6 +988,7 @@ function initBoarRootingGame() {
     restartBtn.style.display = 'none';
     resetBtn.style.display = 'none';
 
+    const isEn = window.swiat_zmyslow_lang === 'en' || (typeof localStorage !== 'undefined' && localStorage.getItem('swiat_zmyslow_lang') === 'en');
     const s = seasons[currentSeasonIdx];
 
     if (isWin) {
@@ -994,8 +997,12 @@ function initBoarRootingGame() {
       if (currentSeasonIdx < seasons.length - 1) {
         // Season complete, next season ready
         overlayIcon.textContent = '🎉🐗🍂';
-        overlayTitle.textContent = `Sezon ${currentSeasonIdx + 1} Zakończony Sukcesem!`;
-        overlayDesc.innerHTML = `
+        overlayTitle.textContent = isEn ? `Season ${currentSeasonIdx + 1} Completed Successfully!` : `Sezon ${currentSeasonIdx + 1} Zakończony Sukcesem!`;
+        overlayDesc.innerHTML = isEn ? `
+          The wild boar reached the required weight <strong style="color: #4ADE80; font-size: 1.25rem;">${currentWeight} kg</strong>!<br>
+          You found <strong>${trufflesFound} truffles</strong> 🍄 in <strong>${s.time - timeLeft}s</strong>.<br>
+          Ahead lies the next stage of the primeval forest cycle!
+        ` : `
           Odyniec osiągnął wymaganą wagę <strong style="color: #4ADE80; font-size: 1.25rem;">${currentWeight} kg</strong>!<br>
           Znalazłeś <strong>${trufflesFound} trufli</strong> 🍄 w czasie <strong>${s.time - timeLeft}s</strong>.<br>
           Przed Tobą kolejny etap puszczańskiego cyklu!
@@ -1005,8 +1012,12 @@ function initBoarRootingGame() {
       } else {
         // Campaign Complete: 200 kg King of Forest
         overlayIcon.textContent = '👑🐗🌲';
-        overlayTitle.textContent = 'Potężny Odyniec — Król Puszczy!';
-        overlayDesc.innerHTML = `
+        overlayTitle.textContent = isEn ? 'Mighty Boar — King of the Forest!' : 'Potężny Odyniec — Król Puszczy!';
+        overlayDesc.innerHTML = isEn ? `
+          <strong>You completed all 3 rooting seasons!</strong><br>
+          You reached a monumental weight of <strong style="color: #4ADE80; font-size: 1.3rem;">${currentWeight} kg</strong>!<br>
+          Your rooting aerated the entire forest soil, dispersed mycorrhizal spores, and prepared the woodland for spring. A true engineer of the forest ecosystem!
+        ` : `
           <strong>Ukończyłeś wszystkie 3 sezony buchtowania!</strong><br>
           Osiągnąłeś monumentalną wagę <strong style="color: #4ADE80; font-size: 1.3rem;">${currentWeight} kg</strong>!<br>
           Twoje buchtowanie napowietrzyło glebę całego lasu, rozsiało zarodniki mikoryzowe i przygotowało puszczę na nadejście wiosny. Prawdziwy inżynier leśnego ekosystemu!
@@ -1017,8 +1028,11 @@ function initBoarRootingGame() {
       // Season Failed
       playRockClunk();
       overlayIcon.textContent = '⏰❄️🐗';
-      overlayTitle.textContent = 'Za mało kalorii przed końcem sezonu!';
-      overlayDesc.innerHTML = `
+      overlayTitle.textContent = isEn ? 'Not enough calories before the season ended!' : 'Za mało kalorii przed końcem sezonu!';
+      overlayDesc.innerHTML = isEn ? `
+        You accumulated a mass of <strong>${currentWeight} kg</strong> (required goal: <strong>${s.targetWeight} kg</strong>).<br>
+        Winter in the primeval forest is harsh — avoid stones and trash, choose fat-rich grubs and truffles. Try again!
+      ` : `
         Zgromadziłeś masę <strong>${currentWeight} kg</strong> (wymagany cel: <strong>${s.targetWeight} kg</strong>).<br>
         Zima w puszczy bywa sroga — unikaj kamieni i śmieci, wybieraj bogate w tłuszcz pędraki i trufle. Spróbuj ponownie!
       `;
@@ -1035,6 +1049,10 @@ function initBoarRootingGame() {
 
   updateHUD();
   renderGrid();
+
+  window.addEventListener('languageChanged', () => {
+    updateHUD();
+  });
 }
 
 

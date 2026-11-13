@@ -1,7 +1,7 @@
 {
-  "name": "Świat zmysłami zwierząt",
-  "short_name": "Zmysły zwierząt",
-  "description": "Odkryj świat oczami, uszami i nosem zwierząt. Interaktywna podróż przez percepcję natury.",
+  "name": "Świat zmysłami zwierząt V1.1",
+  "short_name": "Zmysły zwierząt V1.1",
+  "description": "Odkryj świat oczami, uszami i nosem zwierząt. Interaktywna podróż przez percepcję natury (Wersja V1.1).",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

@@ -1,0 +1,809 @@
+{
+  "bat": {
+    "questions_count": 0,
+    "levels_count": 10,
+    "questions": [],
+    "levels": [
+      {
+        "name": "Płytka Grota Wapienna 🪨",
+        "desc": "Pierwsze loty młodego nocka. Spokojne ćmy odpoczywające na ścianach. Wysyłaj impulsy sonaru i łap zdobycz!"
+      },
+      {
+        "name": "Korytarz Jaskini Nietoperzowej 🦇",
+        "desc": "Korytarz staje się węższy. Pojawiają się zwisające stalaktyty. Omijaj przeszkody!"
+      },
+      {
+        "name": "Stary Strych Kościoła ⛪🕸️",
+        "desc": "Gęste belki dachowe i pajęczyny. Zwinne ćmy przelatują między krokwiami."
+      },
+      {
+        "name": "Podziemna Komora ze Źródłem 💧",
+        "desc": "Krople wody zakłócają fale sonaru. Wytrop 5 ciem odbijając fale od powierzchni wody!"
+      },
+      {
+        "name": "Gęsty Las Bukowy o Północy 🌲🌙",
+        "desc": "Polowanie w plenerze! Gałęzie sosen i powiewy wiatru. Ćmy wykonują uniki w locie."
+      },
+      {
+        "name": "Skalny Wąwóz w Ojcowie 🏞️",
+        "desc": "Strome wapienne ściany. Echo odbija się wielokrotnie — precyzyjnie kalkuluj odległości."
+      },
+      {
+        "name": "Opuszczona Sztolnia Górnicza ⛏️⚠️",
+        "desc": "Ciasne drewniane stemple i wiszące przewody. Wymaga chirurgicznej precyzji manewrowania skrzydłami."
+      },
+      {
+        "name": "Jaskinia Lodowa w Tatrach ❄️🧊",
+        "desc": "Lodowe sople odbijają dźwięk ze zdwojoną siłą. Chłód zmusza do szybkiego zebrania kalorii!"
+      },
+      {
+        "name": "Letnia Noc nad Jeziorem Śniardwy 🌊🦟",
+        "desc": "Tysiące zwinnych komarów i ciem nad taflą wody. Złap 7 owadów w ułamku sekundy!"
+      },
+      {
+        "name": "Mistrz Nocnego Nieba — Król Echolokacji 👑🦇",
+        "desc": "Finałowe wyzwanie! Labirynt przeszkód, błyskawiczne ćmy z uszami akustycznymi. Zdobądź tytuł Władcy Nocy!"
+      }
+    ]
+  },
+  "bear": {
+    "questions_count": 0,
+    "levels_count": 10,
+    "questions": [],
+    "levels": [
+      {
+        "name": "Wiosenne Polany nad Potokiem 🌿🐻",
+        "desc": "Wiosenne przebudzenie z gawry. Zgłodniały niedźwiedź szuka świeżych traw, ziół i korzonków."
+      },
+      {
+        "name": "Buczyna Karpacka i Korzenie 🌳",
+        "desc": "Stara buczyna. Pnie pełne owadów i zeszłoroczne orzeszki bukwi pod liśćmi."
+      },
+      {
+        "name": "Dzika Pasieka w Dziupli 🍯",
+        "desc": "Słodki zapach miodu z odległości 3 km! Uważaj na żądlące pszczoły i wędrowców."
+      },
+      {
+        "name": "Jagodowisko na Połoninie Caryńskiej 🫐",
+        "desc": "Setki krzaczków borówek! Niedźwiedź zjada do 40 kg jagód dziennie przed zimą."
+      },
+      {
+        "name": "Padlina w Wąwozie pod Otrytem 🥩",
+        "desc": "Wąwóz bieszczadzki kryje resztki upolowanego jelenia. Bogate źródło białka i tłuszczu."
+      },
+      {
+        "name": "Zmierzch nad Solinką: Pstrągi 🌊🐟",
+        "desc": "Ciche polowanie w górskim nurcie. Złap zwinne ryby i unikaj obozowiczów."
+      },
+      {
+        "name": "Zbieracze Poroża w Głębokiej Puszczy 🫎⚠️",
+        "desc": "Ludzie z psami przeczesują las. Pamiętaj: omijaj zapach człowieka wielkim łukiem!"
+      },
+      {
+        "name": "Deszczowa Noc w Bieszczadzkim Parku 🌧️",
+        "desc": "Wiatr i deszcz znoszą zapachy. Użyj super-węchu, by odnaleźć kalorie w błocie."
+      },
+      {
+        "name": "Przygotowanie do Gawry — Ostatnie Kalorie 🍂",
+        "desc": "Pierwsze przymrozki. Ostatnie dni żerowania przed zapadnięciem w 5-miesięczny letarg."
+      },
+      {
+        "name": "Władca Karpackiej Puszczy — Sen Zimowy 👑🐻❄️",
+        "desc": "Finałowe wyzwanie! Zgromadź 2000 kcal tłuszczu i wejdź bezpiecznie do ciepłej gawry."
+      }
+    ]
+  },
+  "bee": {
+    "questions_count": 0,
+    "levels_count": 10,
+    "questions": [],
+    "levels": [
+      {
+        "name": "Mniszek na Słonecznym Trawniku 🌼",
+        "desc": "Pierwsze wiosenne obloty. Zbieraj słodki nektar z mniszków lekarskich."
+      },
+      {
+        "name": "Kwitnący Sad Jabłoniowy 🍎🌸",
+        "desc": "Drzewa owocowe potrzebują zapylenia! Szukaj kwiatów z jasnym środkiem UV."
+      },
+      {
+        "name": "Złote Morze Rzepaku 🌾",
+        "desc": "Rzepak dostarcza ogromnych ilości nektaru, lecz boczny wiatr znosi lot pszczoły."
+      },
+      {
+        "name": "Łąka Koniczynowa i Trzmiele ☘️🐝",
+        "desc": "Uważaj na trzmiele i gwałtowne podmuchy wiatru. Celuj prosto w kwiaty."
+      },
+      {
+        "name": "W Koronie Letniej Lipy 🌳✨",
+        "desc": "Kwitnąca lipa pachnie na setki metrów! Nektar jest gęsty i bardzo pożywny."
+      },
+      {
+        "name": "Wrzosowisko w Borze Sosnowym 🪻🌲",
+        "desc": "Późne lato na wrzosowisku. Cenne krople miodu wrzosowego wymagają zręczności."
+      },
+      {
+        "name": "Zbliżająca się Burza Letnia ⛈️⚡",
+        "desc": "Ciężkie krople deszczu spadają z nieba! Jedna kropla może strącić pszczołę."
+      },
+      {
+        "name": "Ogród Botaniczny: Polowanie Szerszenia 🐝⚠️",
+        "desc": "Szerszeń azjatycki patroluje przestrzeń! Omijaj drapieżnika za wszelką cenę."
+      },
+      {
+        "name": "Złota Nawłoć Późną Jesienią 🌾🍯",
+        "desc": "Ostatni pożytek sezonu przed nadejściem mrozów. Każda kropla nektaru to życie ula."
+      },
+      {
+        "name": "Triumfalny Powrót do Ula — Królowa Czeka 👑🍯✨",
+        "desc": "Finałowa misja! Zgromadź 460 mg nektaru i wykonaj w ulu taniec wywijany (waggle dance)!"
+      }
+    ]
+  },
+  "boar": {
+    "questions_count": 0,
+    "levels_count": 10,
+    "questions": [],
+    "levels": [
+      {
+        "name": "Wiosenne Przebudzenie i Młode Pędy 🌱🐗",
+        "desc": "Młody przelatkek szuka pierwszych pędów traw i miękkich korzonków po zejściu śniegu."
+      },
+      {
+        "name": "Brzegi Rzeczne i Kłącza Tataraku 💧🌾",
+        "desc": "Błotniste brzegi rzeki kryją soczyste kłącza tataraku i mięczaki. Nabieraj siły!"
+      },
+      {
+        "name": "Letnie Jagodowisko i Chrząszcze 🫐🪲",
+        "desc": "Letnia obfitość w borze sosnowym. Chrząszcze, larwy i jagody budują sylwetkę wycinka."
+      },
+      {
+        "name": "Złota Jesień — Sezon Żołędzi 🍂🌰",
+        "desc": "Ściółka w dąbrowie jest miękka i bogata w opadłe żołędzie. Zgromadź pierwsze zapasy tłuszczu na zimę!"
+      },
+      {
+        "name": "Bukowy Las — Orzeszki Bukwi 🌳🌰",
+        "desc": "Stara buczyna karpacka obrodziła bukwiami (wysokotłuszczowe orzeszki). Wyczuj je nosem pod liśćmi!"
+      },
+      {
+        "name": "Puszcza Trufli i Próchnicy 🍄🌧️",
+        "desc": "Wilgotna puszcza kryje bezcenne czarne trufle podziemne (+20 kg)! Uważaj na twarde głazy w podszycie."
+      },
+      {
+        "name": "Skraj Pola Kukurydzy — Nocne Żerowanie 🌽🌙",
+        "desc": "Kuszące pole kukurydzy przy ścianie lasu. Słodkie kolby (+12 kg), ale uważaj na ogrodzenia i druty!"
+      },
+      {
+        "name": "Podmokłe Olchy i Tłuściutkie Pędraki 🪵🐛",
+        "desc": "Bagnisty ols. Odyniec wbija potężny gwizd w gęste błoto — tu zimują największe larwy!"
+      },
+      {
+        "name": "Przedzimie — Zmarzlina i Śmieci ❄️🐗",
+        "desc": "Pierwsze silne mrozy. Gleba stwardniała, zmarzlina utrudnia buchtowanie. Pokonaj chłód!"
+      },
+      {
+        "name": "Głęboka Zima — Król Puszczy 265 kg 👑🐗❄️",
+        "desc": "Potężny Odyniec w zimowej sukni chybowej. Ostateczna próba przetrwania w puszczańskiej zmarzlinie!"
+      }
+    ]
+  },
+  "cat": {
+    "questions_count": 0,
+    "levels_count": 10,
+    "questions": [],
+    "levels": [
+      {
+        "name": "Zmierzch w Salonie 🛋️",
+        "desc": "Młody kot uczy się polować na ospałe myszki i kłębki wełny. Wolne tempo, idealne na rozgrzewkę."
+      },
+      {
+        "name": "Puszysty Dywan i Karton 📦",
+        "desc": "Zabawa w kartonie! Polowanie na poruszające się piórka i uciekające myszy."
+      },
+      {
+        "name": "Kuchenny Blat o Świcie 🍳🐾",
+        "desc": "Zwinność kota domowego: chwytanie much i smakołyków. Uważaj na cytrynę 🍋 — koty jej nie znoszą!"
+      },
+      {
+        "name": "Nocne Zarośla i Ogród 🌿🌙",
+        "desc": "Polowanie w ogrodzie! Zwinne myszy i ćmy. Uważaj na pułapki: pacnięcie żądlącej osy 🐝 daje karę czasową!"
+      },
+      {
+        "name": "Strych Pełen Cieni 🏚️🕸️",
+        "desc": "Półmrok na poddaszu. Wibrysy i tapetum lucidum w pełnej gotowości. Złap szybkie pająki i myszy."
+      },
+      {
+        "name": "Cichy Staw i Ważki 🌾🐸",
+        "desc": "Brzeg szuwarów: skaczące żabki i zwinne jaszczurki. Wymaga maksymalnego skupienia!"
+      },
+      {
+        "name": "Kocie Safari: Ptasie Piórka 🌳🐦",
+        "desc": "Wysokie gałęzie drzew. Złap spadające pióra i zwinne wróbelki, omijając cierniste krzaki 🌵!"
+      },
+      {
+        "name": "Skupienie Drapieżnika: Czas Lasera 🔴⚡",
+        "desc": "Ekstremalna próba odruchowa: czerwony punkt lasera znika w mgnieniu oka (< 750 ms)!"
+      },
+      {
+        "name": "Błyskawica w Ciemności: Noktowizja 👁️🌌",
+        "desc": "Ultradźwiękowy zmysł kota w akcji. Niewiarygodny czas reakcji (poniżej 650 ms)."
+      },
+      {
+        "name": "Mistrz Kociego Refleksu — Król Nocy 👑🐾",
+        "desc": "Ostateczny test kociego instynktu łowieckiego! Maksymalna szybkość, złote puchary i tytuł Króla Puszczy."
+      }
+    ]
+  },
+  "dog": {
+    "questions_count": 0,
+    "levels_count": 10,
+    "questions": [],
+    "levels": [
+      {
+        "name": "Młody Szczeniak w Ogrodzie 🏡",
+        "desc": "Nauka tropienia zapachów w przydomowym ogrodzie. Czyste powietrze, brak rozpraszaczy."
+      },
+      {
+        "name": "Domowy Labirynt Pokoi 🛋️",
+        "desc": "Wytrop przedmioty domowników pośród dywanów i mebli. Zapach właściciela prowadzi do celu."
+      },
+      {
+        "name": "Wiejski Sad Jabłoniowy 🍎🌳",
+        "desc": "Pierwsze próby ignorowania zwodniczych zapachów ziół i owoców na wiejskim podwórku."
+      },
+      {
+        "name": "Miejski Park Zapachów 🌳🏙️",
+        "desc": "Dyskryminacja węchowa: odnajdź 4 przedmioty, ignorując fałszywe tropy i miejskie rozpraszacze!"
+      },
+      {
+        "name": "Deszczowy Bulwar Nad Rzeką 🌧️🦆",
+        "desc": "Krople deszczu przybijają cząsteczki zapachowe do podłoża. Wytrop zguby w wilgotnym piasku."
+      },
+      {
+        "name": "Dąbrowa i Tropienie Trzech Ścieżek 🍄🐾",
+        "desc": "Bogata leśna ściółka. Rozpoznaj woń człowieka wśród setek leśnych bodźców natury."
+      },
+      {
+        "name": "Leśny Szlak O Zmierzchu 🌲🦉",
+        "desc": "Zapada zmrok — wzrok traci znaczenie, działa wyłącznie nos (300 mln komórek węchowych)!"
+      },
+      {
+        "name": "Pies Ratownik w Puszczy ❄️🌲",
+        "desc": "Ekstremalna misja ratunkowa w mroźnym wietrze! Wiatr boczny znosi zapach — węszymy zygzakiem pod wiatr."
+      },
+      {
+        "name": "Lawina w Tatrach — Poszukiwanie Zasypanych 🏔️⚠️",
+        "desc": "Pies lawinowy TOPR. Cząsteczki oddechu przenikają przez śnieg. Znajdź 5 śladów ekwipunku!"
+      },
+      {
+        "name": "Mistrz Węchu: Operacja GOPR 🚁🎖️",
+        "desc": "Finałowa próba! Ekstremalny wicher, zapach osoby poszkodowanej. Prawdziwy psi bohater narodowy!"
+      }
+    ]
+  },
+  "dolphin": {
+    "questions_count": 0,
+    "levels_count": 10,
+    "questions": [],
+    "levels": [
+      {
+        "name": "Słoneczna Laguna i Ławice Sardynek 🐟🐬",
+        "desc": "Spokojna rafa koralowa. Wyślij impuls sonaru, by zlokalizować 3 ryby w płytkiej wodzie."
+      },
+      {
+        "name": "Mętne Ujście Rzeki Amazonki 🌊",
+        "desc": "Woda jest pełna osadów — wzrok nie działa! Polegaj wyłącznie na echu sonaru."
+      },
+      {
+        "name": "Koralowy Kanion i Ukryte Kałamarnice 🦑",
+        "desc": "Zwinne kałamarnice kryją się w szczelinach. Wymagają szybkiego namierzenia wiązką akustyczną."
+      },
+      {
+        "name": "Oceaniczna Noc i Płynące Makrele 🌙",
+        "desc": "Ciemna toń oceanu. Ryby poruszają się w zwartych grupach pod osłoną nocy."
+      },
+      {
+        "name": "Prąd Zatokowy i Pływające Kotwice ⚓",
+        "desc": "Silny prąd morski. Zbieraj ryby i uważaj na zardzewiałe łańcuchy kotwic."
+      },
+      {
+        "name": "Podmorska Jaskinia Echa 🦇🔊",
+        "desc": "Ściany skalne odbijają echo sonaru. Precyzyjnie kalkuluj odległość od ofiary."
+      },
+      {
+        "name": "Zanieczyszczona Zatoka — Uwaga na Śruby 🚤",
+        "desc": "Hałas silników zakłóca sonar! Wysyłaj częstsze impulsy, by nie zgubić celu."
+      },
+      {
+        "name": "Polowanie Zespołowe na Ławice Śledzi 🐟🐟",
+        "desc": "Ławica rozprasza się błyskawicznie. Ścigaj ryby hydrodynamicznym sprintem."
+      },
+      {
+        "name": "Głębia Równikowa i Skrajne Echolokacje 🌊🔊",
+        "desc": "Głęboka woda o wysokim ciśnieniu. Ostatni zapas tlenu ucieka bardzo szybko."
+      },
+      {
+        "name": "Władca Oceanicznych Fal — Mistrz Sonaru 👑🐬",
+        "desc": "Finałowy test zmysłów! Złów 8 ryb w rekordowym czasie za pomocą ultradźwięków."
+      }
+    ]
+  },
+  "eagle": {
+    "questions_count": 0,
+    "levels_count": 10,
+    "questions": [],
+    "levels": [
+      {
+        "name": "Poranny Patrol nad Jeziorem Śniardwy 🐟🦅",
+        "desc": "Bielik szybuje nad mazurskim jeziorem. Namierz pływające przy powierzchni leszcze i szczupaki. Kliknij/dotknij, by zanurkować!"
+      },
+      {
+        "name": "Tatrzańskie Turnie i Świstaki 🏔️",
+        "desc": "Orzeł przedni w Dolinie Pięciu Stawów. Wypatruj czujnych świstaków na głazach przed ich schowaniem w norze."
+      },
+      {
+        "name": "Ścierniska Mazowsza i Trop UV Nornic 🌾🟣",
+        "desc": "Nornice chowają się w ściernisku! Przełącz filtr UV (klawisz U lub przycisk), by zobaczyć świecące ślady moczu gryzoni."
+      },
+      {
+        "name": "Bieszczadzkie Połoniny w Prądach Termicznych 💨",
+        "desc": "Porywisty wiatr na grzbiecie Wetliny. Szybuj na termice i wypatruj zwinnych gryzoni w wysokich trawach."
+      },
+      {
+        "name": "Skalisty Wąwóz Pienin i Zając Szarak 🐇",
+        "desc": "Szybkie zające polne kluczą między skałami. Wymaga maksymalnego zoomu i błyskawicznego ataku nurkowego."
+      },
+      {
+        "name": "Rozlewiska Biebrzy i Nurkujący Szczupak 🌊",
+        "desc": "Bagna i meandry Biebrzy. Zmienna tafla wody — poluj na ryby w oknach czystej wody."
+      },
+      {
+        "name": "Mgliste Szczyty Karkonoszy 🌫️🟣",
+        "desc": "Poranna mgła ogranicza zwykły wzrok. Filtr ultrafioletowy ujawnia ukryte ścieżki fauny w borówkach!"
+      },
+      {
+        "name": "Wielki Step i Dwa Dołki Siatkówki ☀️",
+        "desc": "Otwarta przestrzeń pod palącym słońcem. Przełączaj między widzeniem szerokim a teleobiektywem centralnym."
+      },
+      {
+        "name": "Zimowy Zalew Szczeciński i Łowy na Lodzie ❄️",
+        "desc": "Kra lodowa i niska temperatura. Wypatruj ryb w szczelinach lodu i ptaków wodnych."
+      },
+      {
+        "name": "Władca Polskiego Nieba — Mistrz Polowania 👑🦅",
+        "desc": "Finałowy lot! 8 celów na zróżnicowanym terenie. Połącz filtr UV, zoom 8x i uderz ze szponami!"
+      }
+    ]
+  },
+  "fox": {
+    "questions_count": 0,
+    "levels_count": 10,
+    "questions": [],
+    "levels": [
+      {
+        "name": "Zaśnieżone Ściernisko pod Białymstokiem 🌾❄️",
+        "desc": "Pierwszy śnieg. Cienki puch pozwala łatwo namierzyć szelest nornicy."
+      },
+      {
+        "name": "Miedza Śródpolna na Mazowszu 🐭❄️",
+        "desc": "Gryzonie kryją się pod zaspami przy rowie melioracyjnym."
+      },
+      {
+        "name": "Skraj Puszczy Kampinoskiej 🌲🦊",
+        "desc": "Głębszy śnieg tłumi dźwięki. Skacz pod kątem północno-wschodnim!"
+      },
+      {
+        "name": "Zamarznięte Bagna Biebrzańskie 🌾🌫️",
+        "desc": "Poranna mgła i zmarznięty lód. Uważaj na kruchy lód na rowach."
+      },
+      {
+        "name": "Głębokie Zaspy Roztoczańskie 🪵❄️",
+        "desc": "Zaspy do 40 cm. Skok myszkujący wymaga potężnego wybicia w górę."
+      },
+      {
+        "name": "Zimowe Pogórze Przemyskie 🏔️",
+        "desc": "Stromy stok i wiatr z połonin. Precyzyjna triangulacja słuchowa."
+      },
+      {
+        "name": "Nocna Zamieć na Suwalszczyźnie 🌨️🥶",
+        "desc": "Biegun zimna! Temperatura -20°C. Słuchaj chrupania ziaren pod śniegiem."
+      },
+      {
+        "name": "Skraj Wsi — Omiń Psa Podwórzowego 🐕⚠️",
+        "desc": "Gryzonie przy stogach siana. Omijaj szczekające psy łańcuchowe!"
+      },
+      {
+        "name": "Odwilż w Puszczy Białowieskiej 🌲💧",
+        "desc": "Kapiący z gałęzi śnieg myli słuch. Skup się wyłącznie na wibracjach."
+      },
+      {
+        "name": "Arcymistrz Magnetycznego Skoku 🦊👑❄️",
+        "desc": "Finałowe wyzwanie! Złów 11 gryzoni w perfekcyjnym wektorze Północ-Wschód!"
+      }
+    ]
+  },
+  "hedgehog": {
+    "questions_count": 0,
+    "levels_count": 10,
+    "questions": [],
+    "levels": [
+      {
+        "name": "Cichy Sad Jabłoniowy 🍎🦔",
+        "desc": "Pierwsza wyprawa w sadzie. Zbieraj ślimaki i chrząszcze na trawniku. Poruszaj kursorem lub dotknij ekranu."
+      },
+      {
+        "name": "Przydomowy Warzywnik 🥕",
+        "desc": "Wśród grządek marchwi i sałaty czają się tłuste pędraki. Zdobądź zapas energii."
+      },
+      {
+        "name": "Sterta Suchych Liści 🍂",
+        "desc": "Szeleszczące poszycie! Trop chrząszcze i dżdżownice pod warstwą dębowych liści."
+      },
+      {
+        "name": "Nocny Deszcz i Dżdżownice 🌧️",
+        "desc": "Mokra trawa i chłód. Dżdżownice wychodzą na powierzchnię — poruszają się szybciej!"
+      },
+      {
+        "name": "Ogród z Robotem Koszącym 🤖⚠️",
+        "desc": "Uwaga! Na trawniku jeździ kosiarka automatyczna. Gdy się zbliża, przytrzymaj Spację lub przycisk, by zwinąć się w kulkę!"
+      },
+      {
+        "name": "Kompostownik Pełen Pędraków 🪱",
+        "desc": "Prawdziwa uczta! Duże pędraki w pobliżu kompostu, ale czas ucieka szybko przed świtem."
+      },
+      {
+        "name": "Mglista Polana Leśna 🌫️",
+        "desc": "Wzrok jest zamglony — polegaj na węchu! Dwa roboty patrolują teren."
+      },
+      {
+        "name": "Ogródki Działkowe i Wąskie Płoty 🏡",
+        "desc": "Labirynt siatek ogrodzeniowych. Wymaga zwinnego lawirowania i obrony przed przeszkodami."
+      },
+      {
+        "name": "Listopadowy Przymrozek ❄️",
+        "desc": "Ziemia zamarza! Zdobądź ostatnie kalorie, by osiągnąć wymaganą wagę 700g przed hibernacją."
+      },
+      {
+        "name": "Wielki Finał: Bezpieczne Zimowisko 👑🦔",
+        "desc": "Finałowa noc jesieni! Zbierz 9 owadów, unikaj zagrożeń i bezpiecznie zapadnij w zimowy sen!"
+      }
+    ]
+  },
+  "octopus": {
+    "questions_count": 5,
+    "levels_count": 10,
+    "questions": [
+      {
+        "q": "Gdzie znajduje się większość (ok. 2/3) neuronów ośmiornicy?",
+        "options": [
+          "W potężnym mózgu umieszczonym wewnątrz chitynowego dzioba",
+          "W ośmiu ramionach, z których każde posiada autonomiczny zwój nerwowy",
+          "W worku czernidłowym odpowiedzialnym za obronę",
+          "W trzech sercach pompujących błękitną krew"
+        ],
+        "explain": "Aż 350 milionów z 500 milionów neuronów ośmiornicy zlokalizowanych jest w ramionach. Pozwala to każdemu ramieniu na samodzielne badanie otoczenia, poruszanie się i smakowanie pokarmu."
+      },
+      {
+        "q": "Dlaczego krew ośmiornicy jest intensywnie błękitna, a nie czerwona?",
+        "options": [
+          "Ponieważ zawiera barwnik melaninowy pobrany z worka czernidłowego",
+          "Ośmiornica absorbuje sole kobaltu z wody morskiej",
+          "Zamiast żelaza opiera się na miedzi (hemocyjanina), która w zimnej wodzie wydajniej wiąże tlen",
+          "Jej krew nie zawiera żadnych cząsteczek transportujących tlen"
+        ],
+        "explain": "Krew głowonogów wykorzystuje cząsteczki hemocyjaniny oparte na atomach miedzi. Po natlenieniu hemocyjanina przybiera piękny błękitny kolor i świetnie sprawdza się w zimnych, słabo natlenionych głębinach."
+      },
+      {
+        "q": "Jakie zagrożenie niesie ze sobą dotknięcie małej ośmiornicy niebieskopierścieniowej (Hapalochlaena)?",
+        "options": [
+          "Może jedynie ubrudzić skórę trwałym atramentem",
+          "Wydziela śmiertelną tetrodotoksynę (TTX), która paraliżuje mięśnie oddechowe człowieka w kilkanaście minut",
+          "Powoduje lekkie swędzenie dłoni przypominające poparzenie pokrzywą",
+          "Nie niesie żadnego zagrożenia, te ośmiornice nie mają jadu"
+        ],
+        "explain": "Ośmiornica niebieskopierścieniowa przenosi w ślinie tetrodotoksynę (TTX) produkowaną przez bakterie symbiotyczne. Trucizna jest ponad 1000 razy silniejsza od cyjanku i nie ma na nią antidotum!"
+      },
+      {
+        "q": "Jaka jest jedyna twarda część ciała ośmiornicy decydująca o tym, przez jaką szczelinę zdoła się przecisnąć?",
+        "options": [
+          "Szkielet wewnętrzny głowotułowia",
+          "Chitynowy dziób w centrum ramion (przypominający dziób papugi)",
+          "Pierścienie chrzęstne syfonu odrzutowego",
+          "Wapienne tarczki na przyssawkach"
+        ],
+        "explain": "Ośmiornica nie posiada ani jednej kości. Jedynym sztywnym elementem jest twardy dziób. Jeśli dziób przejdzie przez otwór, całe ciało bez trudu przeciśnie się za nim."
+      },
+      {
+        "q": "Jak szybko ośmiornica potrafi zmienić kolor i strukturę 3D swojej skóry dzięki chromatoforom?",
+        "options": [
+          "Potrzebuje około 2–3 godzin na powolną syntezę barwników",
+          "Około 15 minut (podobnie jak kameleon)",
+          "W zaledwie 200 milisekund (ułamek sekundy) dzięki bezpośredniej kontroli nerwowej mięśni chromatoforów",
+          "Zmienia kolor tylko raz w roku podczas linienia"
+        ],
+        "explain": "W przeciwieństwie do kameleona, który polega na hormonach, chromatofory ośmiornicy są połączone bezpośrednio z układem nerwowym. Zmiana barwy i faktury następuje w zawrotnym tempie ok. 200 ms!"
+      }
+    ],
+    "levels": [
+      {
+        "name": "Płytka Rafa i Złote Kraby 🦀🐙",
+        "desc": "Dopasuj barwę ośmiornicy do podłoża (klawisz C lub przycisk), by murena Cię nie zauważyła. Złów 3 kraby!"
+      },
+      {
+        "name": "Koralowy Labirynt i Purpurowe Ukwiały 🪸",
+        "desc": "Podłoże dzieli się na piasek i koralowiec. Przełączaj barwę w biegu i schwytaj 4 kraby."
+      },
+      {
+        "name": "Skalisty Wrak Okrętu i Ciemny Bazalt 🪨",
+        "desc": "Wrak porasta 3 strefy dna: skała, piasek i koralowce. Złów 4 kraby, unikając drapieżnika."
+      },
+      {
+        "name": "Gęsta Łąka Traw Morskich i Mureny 🌿",
+        "desc": "Mureny patrolują łąkę glonów. Zielony kamuflaż da Ci niewidzialność! Złów 5 krabów."
+      },
+      {
+        "name": "Podmorska Rozpadlina Szelfowa 🌊",
+        "desc": "Zmienne prądy przesuwają kraby po dnie. Zachowaj czujność sensoryczną na 5 celach."
+      },
+      {
+        "name": "Nocna Rafa i Świecący Plankton ✨",
+        "desc": "W ciemnościach tylko idealny kamuflaż chroni przed czujnym okiem węgorza morskiego."
+      },
+      {
+        "name": "Labirynt Wąskich Szczelin Skalnych 🧗",
+        "desc": "Przeciskaj się miękkim ciałem przez wąskie przesmyki i schwytaj 6 krabów."
+      },
+      {
+        "name": "Koralowce Ogniste i Szybkie Mureny 🐍",
+        "desc": "Bardzo szybkie mureny krążą nad dnem. Błyskawicznie zmieniaj barwę chromatoforów!"
+      },
+      {
+        "name": "Głębia Rowu Oceanicznego — Test Zmysłów 🌌",
+        "desc": "Skrajne ciśnienie i głód. Złów 7 krabów pod czujnym okiem 3 drapieżników."
+      },
+      {
+        "name": "Władca Chromatoforów — Król Kamuflażu 👑🐙",
+        "desc": "Finałowy sprawdzian mistrza maskowania! Złów 8 krabów w rekordowym czasie!"
+      }
+    ]
+  },
+  "owl": {
+    "questions_count": 0,
+    "levels_count": 10,
+    "questions": [],
+    "levels": [
+      {
+        "name": "Cicha Stodoła i Zboże 🌾🦉",
+        "desc": "Młoda sowa płomykówka w zaciszu stodoły. Suche deski i szeleszczące myszy. Namierz cel i zaatakuj!"
+      },
+      {
+        "name": "Przydomowy Ogród o Północy 🏡",
+        "desc": "Zarośla agrestu i porzeczek. Zwinne myszy zaroślowe biegają po trawie."
+      },
+      {
+        "name": "Brzeg Lasu i Suche Liście 🍂",
+        "desc": "Dąbrowa o zmierzchu. Opadłe liście głośno szeleszczą pod łapkami nornic."
+      },
+      {
+        "name": "Śnieżna Łąka w Puszczy ❄️",
+        "desc": "Puch śnieżny tłumi dźwięk. Użyj szlary twarzowej, by wychwycić szmer gryzonia pod śniegiem."
+      },
+      {
+        "name": "Wierzby nad Strumieniem 💧",
+        "desc": "Szum wody utrudnia nasłuch. Skup uwagę na wyższych częstotliwościach pisku nornika."
+      },
+      {
+        "name": "Młode Świerki i Zwinne Nornice 🌲",
+        "desc": "Gęsty podszyt świerkowy. Wymaga szybkiej korekty obrotu głowy i ataku bez wahania."
+      },
+      {
+        "name": "Wietrzny Grzbiet Pogórza 💨",
+        "desc": "Podmuchy nocnego wiatru. Gryzonie poruszają się falami. Poluj w chwilach ciszy."
+      },
+      {
+        "name": "Nocna Mgła w Dolinie 🌫️",
+        "desc": "Gęsta mgła — wzrok jest bezużyteczny! Działa wyłącznie trójwymiarowy słuch asymetryczny."
+      },
+      {
+        "name": "Zmrożona Zmarzlina i Szybkie Gryzonie ❄️🐭",
+        "desc": "Zmrożona skorupa śniegu. Gryzonie wyczuwają cień drapieżnika — liczy się bezszelestny lot!"
+      },
+      {
+        "name": "Władczyni Nocnego Nieba — Mistrzyni Szlary 👑🦉",
+        "desc": "Finałowe polowanie! Zdobądź 7 gryzoni w rekordowym czasie i opanuj słuch absolutny."
+      }
+    ]
+  },
+  "shark": {
+    "questions_count": 5,
+    "levels_count": 10,
+    "questions": [
+      {
+        "q": "Do czego służą ampułki Lorenziniego zlokalizowane na pysku rekina?",
+        "options": [
+          "Do filtrowania planktonu i soli z wody morskiej",
+          "Do detekcji mikro-pól elektrycznych generowanych przez skurcze mięśni i bicie serca",
+          "Do świecenia w ciemnościach głębinowych (bioluminescencja)",
+          "Do regulowania ciśnienia w pęcherzu pławnym"
+        ],
+        "explain": "Ampułki Lorenziniego to pory wypełnione żelem o najwyższym znanym biologicznym przewodnictwie. Wykrywają one napięcia rzędu nanowoltów emitowane przez żywe organizmy."
+      },
+      {
+        "q": "Z czego składa się szkielet rekina?",
+        "options": [
+          "Z twardych kości pneumatycznych wypełnionych powietrzem",
+          "Z chitynowych płytek pancerza zewnętrznego",
+          "W 100% ze sprężystej chrząstki (brak tradycyjnych kości)",
+          "Ze zmineralizowanych łusek rogowych"
+        ],
+        "explain": "Rekiny należą do ryb chrzęstnoszkieletowych. Ich szkielet jest o połowę lżejszy od kości, nie ulega złamaniom i zapewnia niespotykaną zwrotność."
+      },
+      {
+        "q": "Co powinieneś zrobić, gdy podczas pływania na rafie zauważysz zbliżającego się rekina?",
+        "options": [
+          "Panicznie chlapać rękami i nogami oraz płynąć sprintem do brzegu",
+          "Utrzymywać stały kontakt wzrokowy, przyjąć pozycję pionową i spokojnie się wycofywać",
+          "Wypuścić powietrze z płuc i natychmiast uderzyć rekina w pysk",
+          "Udać martwego unosząc się bezwładnie na powierzchni"
+        ],
+        "explain": "Rekin to drapieżnik z zasadzki. Gdy widzi, że stale na niego patrzysz, wie, że stracił element zaskoczenia i zazwyczaj odpływa. Chlapanie prowokuje atak!"
+      },
+      {
+        "q": "W jaki sposób ząbki skórne (łuski plakoidalne) pomagają rekinowi w polowaniu?",
+        "options": [
+          "Świecą w ciemności, przywabiając małe krewetki",
+          "Wytwarzają rowki redukujące mikrowiry wody, umożliwiając cichy i szybki pływ bez oporu",
+          "Wydzielają silną truciznę paraliżującą przeciwnika",
+          "Zmieniają kolor w zależności od temperatury wody"
+        ],
+        "explain": "Ząbki skórne rekina przypominają miniaturowe zęby ze szkliwa. Wyciszają szum opływającej wody i drastycznie zmniejszają opór hydrodynamiczny."
+      },
+      {
+        "q": "Ile zębów rekin może wytworzyć i wymienić w ciągu swojego życia?",
+        "options": [
+          "Tylko 32 zęby, podobnie jak dorosły człowiek",
+          "Około 150 zębów (wymieniane raz na 10 lat)",
+          "Nawet do 30 000 zębów na przesuwającej się „taśmie transmisyjnej” dziąseł",
+          "Rekiny rodzą się z jednym zestawem zębów, który nie odrasta"
+        ],
+        "explain": "Zęby rekina ułożone są w wielu rzędach. Gdy jeden ząb wypadnie, w ciągu 24–48 godzin na jego miejsce przesuwa się kolejny z tylnego rzędu."
+      }
+    ],
+    "levels": [
+      {
+        "name": "Piaszczysta Mielizna i Ukryte Flądry 🐟🦈",
+        "desc": "Włącz ampułki Lorenziniego (klawisz E lub przycisk), by zobaczyć bicie serca 3 fląder ukrytych pod piaskiem."
+      },
+      {
+        "name": "Płytka Rafa Koralowa i Płaszczki ⚡",
+        "desc": "Płaszczki zakopują się w piasku wokół koralowców. Wytrop 4 ofiary za pomocą elektrorecepcji."
+      },
+      {
+        "name": "Podmorski Kanion i Prądy Znoszące 🌊",
+        "desc": "Silny prąd unosi muł. Wzrok nic nie daje — polegaj tylko na wykrywaniu nanowoltów!"
+      },
+      {
+        "name": "Wrak Statku Pirackiego i Zagubione Haki ⚓",
+        "desc": "Omijaj zardzewiałe kotwice i liny rybackie. Namierz 5 ryb ukrytych w ładowni."
+      },
+      {
+        "name": "Mroczny Szelf Kontynentalny 🌙",
+        "desc": "Głęboka woda pochłania światło słoneczne. Złap 5 ofiar w mroku oceanu."
+      },
+      {
+        "name": "Pole Podwodnych Wulkanów i Termoklina 🌋",
+        "desc": "Gorące źródła zaburzają pole magnetyczne. Wytrop 6 szybkich ryb dennych."
+      },
+      {
+        "name": "Sieci Widma Kłusowników — Śmiertelna Pułapka 🕸️",
+        "desc": "Dryfujące sieci zabijają miliony rekinów! Omijaj sieci i schwytaj 6 ofiar."
+      },
+      {
+        "name": "Nocne Łowy na Płaszczki Elektryczne ⚡⚡",
+        "desc": "Cel emituje potężne biopola! Złap 7 płaszczek unikając barier skalnych."
+      },
+      {
+        "name": "Głębia Abisalna — Wykrywanie Ostatnich Biopól 🌊",
+        "desc": "Skrajne ciśnienie i ciemność. Złap 7 celów w rekordowym tempie."
+      },
+      {
+        "name": "Władca Szóstego Zmysłu — Król Oceanów 👑🦈",
+        "desc": "Finałowy test drapieżnika szczytowego! Wytrop 8 ofiar szóstym zmysłem elektrorecepcji."
+      }
+    ]
+  },
+  "viper": {
+    "questions_count": 0,
+    "levels_count": 10,
+    "questions": [],
+    "levels": [
+      {
+        "name": "Słoneczna Polana i Zaskrońce ☀️🐍",
+        "desc": "Wygrzewanie na ciepłym kamieniu. Złap 3 chrząszcze. Brak ludzi w pobliżu — idealna rozgrzewka."
+      },
+      {
+        "name": "Wrzosowisko w Pełni Dnia 🌸",
+        "desc": "Pierwsze drgania kroków w oddali. Gdy poczujesz czerwone fale wibracji — zastygnij w bezruchu!"
+      },
+      {
+        "name": "Leśna Ścieżka Spacerowiczów 🥾⚠️",
+        "desc": "Turyści w ciężkich butach trekingowych. Ich kroki wywołują sejsmiczne fale. Ukryj się pod kępą mchu!"
+      },
+      {
+        "name": "Kamieniołom w Pieninach 🪨",
+        "desc": "Wapienne skały i szczeliny. Złap 5 zwinnych jaszczurek zwinek pośród głazów."
+      },
+      {
+        "name": "Brzeg Młaki i Żaby Trawne 🌾🐸",
+        "desc": "Wilgotna łąka podgórsa. Skaczące żabki to pożywny posiłek. Uważaj na wędkarzy."
+      },
+      {
+        "name": "Młody Zrąb Sosnowy 🌲",
+        "desc": "Pniaki i gałęzie. Szybcy zbieracze grzybów przeczesują zarośla. Wymaga dyskrecji!"
+      },
+      {
+        "name": "Zbieracze Jagód w Borówkach 🫐🥾",
+        "desc": "Gęste krzaczki borówek. Zbieracze z wiadrami tupią w ściółkę. Zastygnij w bezruchu, gdy nadchodzą."
+      },
+      {
+        "name": "Deszczowy Zmierzch na Grani 🌧️",
+        "desc": "Mokre wrzosy tłumią drgania — musisz polegać na rozwidlonym języku i węszeniu ofiar."
+      },
+      {
+        "name": "Kępy Mchu i Skalne Pęknięcia 🪨⚡",
+        "desc": "Zwinne gryzonie uciekają błyskawicznie. Atakuj w ułamku sekundy, unikając tupotu butów."
+      },
+      {
+        "name": "Mistrzyni Kamuflażu — Władczyni Wrzosowiska 👑🐍",
+        "desc": "Finałowe wyzwanie! Tłum turystów na szlaku i ostrożne nornice. Przetrwaj, poluj i zniknij w mchu!"
+      }
+    ]
+  },
+  "wolf": {
+    "questions_count": 0,
+    "levels_count": 10,
+    "questions": [],
+    "levels": [
+      {
+        "name": "Młody Wilk w Śnieżnej Puszczy ❄️🌲",
+        "desc": "Nauka tropienia zwierzyny pod wiatr w głębokim śniegu. Czyste leśne powietrze, brak ludzi."
+      },
+      {
+        "name": "Brzeg Rzeki San i Przeprawa Przez Bród 🌊🐾",
+        "desc": "Przejście doliną rzeki w Bieszczadach. Wytrop bezpieczną płyciznę i ślady zwierzyny."
+      },
+      {
+        "name": "Dojrzewanie Watahy: Węszenie Jeleni 🦌🌲",
+        "desc": "Wytropienie stada jeleni w gęstej buczynie. Ciche poruszanie się po zeszłorocznych liściach."
+      },
+      {
+        "name": "Skraj Ludzkich Osad — Paniczny Strach 🏘️⚠️",
+        "desc": "Przejście skrajem lasu. Unikaj stref ludzkich (latarki, hałas samochodów). Wilk boi się ludzi ponad wszystko!"
+      },
+      {
+        "name": "Nocny Przemarsz Przez Grzbiet Otrytu 🏔️🌙",
+        "desc": "Długi nocny kłus granią. Wiatr przynosi zapachy z odległości 3 kilometrów."
+      },
+      {
+        "name": "Granica Terytorium: Obca Wataha na Horyzoncie 🐺🚩",
+        "desc": "Granica sąsiedniego terytorium. Zlokalizuj punkty znakowania zapachem (gruczoł fiołkowy) i unikaj konfrontacji."
+      },
+      {
+        "name": "Bieg Maratoński: 50 km Bez Zmęczenia ❄️🏃",
+        "desc": "Anatomia maratończyka: wąska klatka piersiowa i elastyczne ścięgna. Wytrop 5 punktów w zamieci!"
+      },
+      {
+        "name": "Zimowa Zamieć i Zew Watahy 🌪️🐺",
+        "desc": "Gwałtowna śnieżyca i silny wiatr boczny! Podążaj za falami wycia watahy i bezpiecznie połącz się z rodziną."
+      },
+      {
+        "name": "Korytarz Ekologiczny: Zielony Most 🌉🦌",
+        "desc": "Przejście ponad ruchliwą drogą ekspresową po specjalnym moście dla zwierzyny. Omiń bariery akustyczne!"
+      },
+      {
+        "name": "Noc Pełni: Zjednoczona Wataha Bieszczadzka 🌕🐺👑",
+        "desc": "Wielki finał! Pełnia księżyca nad Połoniną Wetlińską. Cała rodzina śpiewa w polifonicznym chórze wolności."
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+import sys, json
+sys.stdout.reconfigure(encoding='utf-8')
+
+d = {}
+
+# BEE
+d["Widok ludzki: jednolity żółty kwiat bez widocznych ścieżek nektarowych"] = "Human vision: uniform yellow flower without visible nectar guides"
+d["Widok pszczoły: ciemny celownik UV (Bullseye) + fluorescencyjne linie wabiące prosto do nektaru!"] = "Bee vision: dark UV bullseye + fluorescent guide lines leading straight to nectar!"
+d["☀️ Pion = Słońce"] = "☀️ Vertical = Sun"
+d["👁️ Widok człowieka (żółty)"] = "👁️ Human Vision (Yellow)"
+d["✨ Widok pszczoły (UV + tarcza nektarowa)"] = "✨ Bee Vision (UV + Nectar Bullseye)"
+d["Taniec wywijany (Waggle Dance)"] = "Waggle Dance"
+d["Kwitnąca lipa pachnie na setki metrów! Nektar jest gęsty i bardzo pożywny."] = "Blooming linden smells for hundreds of yards! Nectar is rich and nutritious."
+d["Drzewa owocowe potrzebują zapylenia! Szukaj kwiatów z jasnym środkiem UV."] = "Fruit trees need pollination! Look for flowers with bright UV centers."
+d["Późne lato na wrzosowisku. Cenne krople miodu wrzosowego wymagają zręczności."] = "Late summer heathland. Precious drops of heather honey require agility."
+d["Pierwsze wiosenne obloty. Zbieraj słodki nektar z mniszków lekarskich."] = "First spring flights. Gather sweet nectar from dandelions."
+d["Pszczoła napełniła wole miodowe (${currentNectar} mg). Pasieka rośnie w siłę!"] = "The bee filled its honey stomach (${currentNectar} mg). The apiary grows strong!"
+d["Pszczoła wpadła na kroplę deszczu lub drapieżnika! Wracaj na bezpieczny tor lotu."] = "The bee hit a raindrop or predator! Return to a safe flight path."
+d["Słońce zaszło i pszczoły tracą zdolność nawigacji na spolaryzowane światło!"] = "The sun set and bees lose polarized-light navigation capability!"
+d["⏱️ Zmierzch nad pasieką!"] = "⏱️ Twilight over the apiary!"
+d["⚠️ Zderzenie z zagrożeniem!"] = "⚠️ Collision with a hazard!"
+d["🎉 Misja ${currentLevelIdx + 1} Zrealizowana!"] = "🎉 Mission ${currentLevelIdx + 1} Accomplished!"
+d["1. **NATYCHMIAST ZESKROB ŻĄDŁO:** Użyj twardej krawędzi (karty płatniczej, dowodu osobistego, paznokcia lub tępej strony noża) i zeskrob żądło płaskim ruchem w bok, tuż przy samej skórze.<br>2. Dzięki temu oderwiesz je bez uciśnięcia woreczka jadowego!<br>3. Przyłóż zimny okład (lód, kompres żelowy) w celu obkurczenia naczyń i zmniejszenia obrzęku.<br>4. W przypadku duszności, obrzęku krtani lub zawrotów głowy (wstrząs anafilaktyczny) — **natychmiast dzwoń pod 112** i podaj ampułkostrzykawkę z adrenaliną (jeśli osoba jest uczulona)."] = "1. **SCRAPE THE STINGER IMMEDIATELY:** Use a stiff edge (credit card, ID card, fingernail, or dull knife edge) and scrape sideways flush against the skin.<br>2. This removes it without squeezing venom sacs into the skin!<br>3. Apply a cold compress (ice, gel pack) to constrict vessels and reduce swelling.<br>4. In case of shortness of breath, throat swelling, or dizziness (anaphylactic shock) — **call 911 immediately** and administer an epinephrine auto-injector."
+
+# OWL
+d["Sowa zlokalizowała i schwytała wszystkie ${lvl.targetMice} gryzonie za pomocą słuchu!"] = "The owl localized and captured all ${lvl.targetMice} rodents using hearing!"
+d["Noc dobiegła końca. Nasłuchuj dźwięków uważniej i atakuj, gdy fala dźwiękowa jest symetryczna!"] = "The night ended. Listen more carefully and strike when acoustic waves align symmetrically!"
+d["⏱️ Czas minął!"] = "⏱️ Time's up!"
+d["1. Jeśli młoda sowa siedzi na ziemi w parku, na chodniku lub przy drodze: delikatnie przenieś ją na bezpieczną gałąź pobliskiego drzewa lub w gęste krzaki (poza zasięg psów i kotów).<br>2. To **podlot** (młody ptak uczący się latać) — jego rodzice czuwają w koronach drzew i karmią go nocą!<br>3. NIE zabieraj podlota do domu, nie wkładaj do klatki!<br>4. Pomoc weterynaryjna jest potrzebna WYŁĄCZNIE, gdy ptak krwawi, ciągnie za sobą skrzydło lub ma widoczne złamania."] = "1. If a young owl is on the ground in a park, sidewalk, or road: gently place it on a safe branch of a nearby tree or in dense bushes (away from dogs and cats).<br>2. This is a **fledgling** learning to fly — its parents watch from tree canopies and feed it at night!<br>3. DO NOT take fledglings home or cage them!<br>4. Veterinary rescue is needed ONLY if the bird is visibly bleeding, dragging a wing, or broken."
+
+# EAGLE
+d["🏆 WŁADCA POLSKIEGO NIEBA!"] = "🏆 RULER OF POLISH SKIES!"
+d["Opanowałeś wszystkie 10 podniebnych patroli! Poznałeś potęgę dwóch dołków siatkówki i widzenie w ultrafiolecie."] = "You mastered all 10 aerial patrols! You experienced the power of twin retinal foveae and ultraviolet vision."
+d["Orzeł namierzył i pochwycił wszystkie ${lvl.targetPrey} cele za pomocą wzroku teleskopowego!"] = "The eagle spotted and seized all ${lvl.targetPrey} targets using telescopic vision!"
+d["Prąd wznoszący osłabł i orzeł musiał wrócić na skałę. Spróbuj ponownie i szybciej wypatruj zdobyczy!"] = "Thermal updraft weakened and the eagle had to return to the crag. Try again and spot prey faster!"
+d["⏱️ Czas patrolu minął!"] = "⏱️ Patrol time ended!"
+d["🎉 Sukces! Ukończono Misję ${currentLevelIdx + 1}!"] = "🎉 Success! Mission ${currentLevelIdx + 1} Completed!"
+d["1. Jeśli przypadkowo natkniesz się na gniazdo orła lub bielika: zachowaj absolutną ciszę i natychmiast wycofaj się tą samą drogą.<br>2. Wokół gniazd bielika i orła przedniego obowiązują w Polsce **strefy ochrony całorocznej (do 200 m)** oraz **strefy ochrony okresowej (do 500 m w okresie lęgowym od 1 stycznia do 31 lipca)**.<br>3. Płoszenie ptaków na gnieździe może doprowadzić do wychłodzenia jaj lub śmierci piskląt."] = "1. If you accidentally stumble upon an eagle or sea eagle nest: remain completely silent and retreat immediately.<br>2. Strict protection zones apply around eagle nests (year-round up to 200m, breeding season up to 500m).<br>3. Disturbance can lead to egg chilling or chick starvation."
+
+# VIPER
+d["WYKRYTO DRGANIA ŻUCHWĄ!"] = "JAW SEISMIC VIBRATIONS DETECTED!"
+d["Trójkątna, Płaska Głowa z Drobnymi Łuskami"] = "Triangular Flat Head with Fine Scales"
+d["Brzeg Młaki i Żaby Trawne 🌾🐸"] = "Fen Shore & Grass Frogs 🌾🐸"
+d["Żmija schwytała wszystkie cele, bezszelestnie kamuflując się wśród wrzosów."] = "The viper caught all prey, silently camouflaging in heather."
+d["Zabrakło czasu na zebranie energii. Bądź cichszy i poluj sprawniej."] = "Ran out of time to gather energy. Be quieter and hunt more efficiently."
+d["Wykryto Cię! Kiedy fale drgań kroków (czerwone kręgi) przechodzą przez żmiję, MUSISZ ZASTYGNĄĆ W BEZRUCHU (puścić mysz/palec)!"] = "You were detected! When footstep seismic vibration waves (red rings) pass through the viper, you MUST FREEZE MOTIONLESS!"
+d["⏱️ Czas minął!"] = "⏱️ Time's up!"
+d["⚠️ Spłoszona przez turystę!"] = "⚠️ Startled by a hiker!"
+d["1. Usiądź, zachowaj spokój — ponad 40% ukąszeń w obronie to tzw. <em>ukąszenia suche</em> (bez wstrzyknięcia jadu)! Panika i bieg przyspieszają tętno i krążenie jadu.<br>2. **ZDEJMIJ BIŻUTERIĘ, ZEGARKI I BUTY:** Ukąszona kończyna zacznie gwałtownie puchnąć.<br>3. **NIGDY NIE NACINAJ, NIE WYYSYSAJ JADU I NIE STAWIAJ OPASKI UCISKOWEJ!** Te archaiczne mity powodują martwicę tkanek i zakażenia.<br>4. Unieruchom kończynę (jak przy złamaniu) i wezwij pomoc pod numerem 112 / 985 (GOPR/TOPR)."] = "1. Sit down and stay calm — over 40% of defensive strikes are *dry bites* (no venom injected)! Panic and running accelerate venom spread.<br>2. **REMOVE JEWELRY, WATCHES, AND SHOES:** The struck limb will swell rapidly.<br>3. **NEVER CUT, SUCK VENOM, OR APPLY A TOURNIQUET!** These archaic myths cause severe tissue necrosis and infection.<br>4. Immobilize the limb (as with a fracture) and call emergency services."
+
+with open('dict_simulators_set3.json', 'w', encoding='utf-8') as f:
+    json.dump(d, f, indent=2, ensure_ascii=False)
+
+print(f"Set 3 dictionary created successfully with {len(d)} translations!")

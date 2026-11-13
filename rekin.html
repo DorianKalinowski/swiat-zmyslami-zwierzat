@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#06090E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Zmysły Zwierząt">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <title>Rekin — Świat zmysłami zwierząt V1.1</title>
+  <meta name="description" content="Poznaj zmysły rekina (Żarłacz błękitny / Selachimorpha). Ampułki Lorenziniego wykrywające nanowolty, linia boczna, obalenie mitów o atakach na ludzi i 10-poziomowa gra łowów.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="nav" role="navigation" aria-label="Nawigacja główna">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon-wrapper">🐾</div>
+        <span>Świat zmysłami zwierząt <span class="nav-version-tag">V1.1</span></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+                        <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Strona główna</a>
+        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog (15)</button>
+
+        <!-- Dropdown: Wybierz zwierzę (15) -->
+        <div class="nav-dropdown" id="navAnimalsDropdown">
+          <button class="nav-link nav-dropdown-btn" id="navDropdownBtn" aria-expanded="false" style="cursor: pointer;">
+            <span>🦈 Żarłacz</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu">
+            <a href="pies.html" class="nav-dropdown-item"><span class="item-emoji">🐕</span> Pies domowy</a>
+            <a href="kot.html" class="nav-dropdown-item"><span class="item-emoji">🐈</span> Kot domowy</a>
+            <a href="dzik.html" class="nav-dropdown-item"><span class="item-emoji">🐗</span> Dzik euroazjatycki</a>
+            <a href="wilk.html" class="nav-dropdown-item"><span class="item-emoji">🐺</span> Wilk szary</a>
+            <a href="nietoperz.html" class="nav-dropdown-item"><span class="item-emoji">🦇</span> Nietoperz</a>
+            <a href="zmija.html" class="nav-dropdown-item"><span class="item-emoji">🐍</span> Żmija zygzakowata</a>
+            <a href="sowa.html" class="nav-dropdown-item"><span class="item-emoji">🦉</span> Sowa (Płomykówka)</a>
+            <a href="niedzwiedz.html" class="nav-dropdown-item"><span class="item-emoji">🐻</span> Niedźwiedź brunatny</a>
+            <a href="pszczola.html" class="nav-dropdown-item"><span class="item-emoji">🐝</span> Pszczoła miodna</a>
+            <a href="lis.html" class="nav-dropdown-item"><span class="item-emoji">🦊</span> Lis rudy</a>
+            <a href="jez.html" class="nav-dropdown-item"><span class="item-emoji">🦔</span> Jeż zachodni</a>
+            <a href="orzel.html" class="nav-dropdown-item"><span class="item-emoji">🦅</span> Orzeł przedni</a>
+            <a href="delfin.html" class="nav-dropdown-item"><span class="item-emoji">🐬</span> Delfin butlonosy</a>
+            <a href="rekin.html" class="nav-dropdown-item active"><span class="item-emoji">🦈</span> Żarłacz błękitny</a>
+            <a href="osmiornica.html" class="nav-dropdown-item"><span class="item-emoji">🐙</span> Ośmiornica zwyczajna</a>
+          </div>
+        </div>
+
+        <!-- Creator Chip (Dorian Kalinowski) -->
+        <div class="creator-chip" id="authorChip" title="Dowiedz się więcej o autorze">
+          <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="creator-avatar">
+          <div class="creator-text">
+            <span class="creator-name">Dorian Kalinowski</span>
+            <span class="creator-role">Twórca aplikacji</span>
+          </div>
+        </div>
+
+        <!-- Language Switcher (PL / USA) -->
+        <div class="lang-switch" id="langSwitch" role="group" aria-label="Wybór języka / Language selection">
+          <button type="button" class="lang-btn active" data-lang="pl" title="Polski" aria-label="Język polski">
+            <span class="lang-flag">🇵🇱</span>
+            <span class="lang-code">PL</span>
+          </button>
+          <button type="button" class="lang-btn" data-lang="en" title="American English" aria-label="American English">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-code">USA</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Animal Page Hero -->
+  <header class="animal-hero" id="top" style="background: linear-gradient(180deg, rgba(6, 182, 212, 0.18) 0%, rgba(9, 13, 19, 0) 100%);">
+    <div class="container">
+      <div class="animal-hero-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="index.html">Główna</a>
+            <span>›</span>
+            <span>Ryby chrzęstnoszkieletowe</span>
+            <span>›</span>
+            <span style="color: var(--cyan-light);">Rekin</span>
+          </div>
+          <h1>Rekin: <span style="color: var(--cyan-light);">Szósty Zmysł i Nanowolty</span></h1>
+          <p class="hero-latin">Prionace glauca / Selachimorpha • Żarłacz błękitny</p>
+          <p class="hero-desc">
+            Przetrwał 400 milionów lat — dłużej niż dinozaury i drzewa. Posiada szósty zmysł: <strong>ampułki Lorenziniego</strong>, które wyczuwają <strong>pole elektryczne rzędu 5 nanowoltów</strong> generowane przez bicie serca ryby pod piaskiem, oraz stereoskopowy węch wyczuwający kroplę krwi w basenie olimpijskim.
+          </p>
+          <div class="hero-stats-grid">
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--cyan-light);">5 nV/cm</span>
+              <span class="stat-label">Czułość na pole elektryczne ofiary</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--emerald-light);">1 : 100 mln</span>
+              <span class="stat-label">Czułość węchu na aminokwasy krwi</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--purple-light);">30 000</span>
+              <span class="stat-label">Zębów wymienianych w ciągu życia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="animal-portrait-card" style="border-color: rgba(6, 182, 212, 0.35); background: radial-gradient(circle at center, rgba(6, 182, 212, 0.18) 0%, rgba(19, 27, 39, 0.8) 70%);">
+          <div class="animal-portrait-glow" style="background: radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, transparent 70%);"></div>
+          <div class="animal-portrait-emoji" role="img" aria-label="Rekin">🦈</div>
+          <div class="portrait-tags">
+            <span class="portrait-tag">Gromada: Chondrichthyes (chrzęstnoszkieletowe)</span>
+            <span class="portrait-tag">Zmysł: Ampułki Lorenziniego (elektrorecepcja)</span>
+            <span class="portrait-tag">Mechanorecepcja: Linia boczna</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Subnavigation -->
+  <div class="sticky-subnav">
+    <div class="sticky-subnav-inner">
+      <a href="#historia" class="subnav-pill active">📜 Ewolucja</a>
+      <a href="#zmysly" class="subnav-pill">⚡ Nanowolty</a>
+      <a href="#anatomia" class="subnav-pill">🧬 Anatomia</a>
+      <a href="#bezpieczenstwo" class="subnav-pill">🛡️ Fakty vs Mity</a>
+      <a href="#ciekawostki" class="subnav-pill">💡 Ciekawostki</a>
+      <a href="#gra" class="subnav-pill">🎮 Mini Gra</a>
+      <a href="#quiz" class="subnav-pill">🎯 Mini Quiz</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================
+         SEKCJA 1: EWOLUCJA I BIOLOGIA W PIGUŁCE
+         ============================================================ -->
+    <section class="section" id="historia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--cyan-light); border-color: rgba(6, 182, 212, 0.3); background: rgba(6, 182, 212, 0.1);">Historia i Ewolucja</span>
+          <h2>400 Milionów Lat Doskonałości: Starsi niż Dinozaury</h2>
+          <p>Rekiny pływały w oceanach na długo przed pojawieniem się pierwszych drzew i przetrwały cztery wielkie wymierania planetarne bez konieczności drastycznych zmian anatomicznych.</p>
+        </div>
+
+        <div class="timeline-stepper">
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--cyan-light); box-shadow: 0 0 12px var(--cyan);"></div>
+            <div class="step-header">
+              <span class="step-title">Pierwsze rekiny w sylurze i dewonie</span>
+              <span class="step-period">~420 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              Przodkowie rekinów (np. <em>Cladoselache</em>) wykształcili chrzęstny szkielet, który jest o połowę lżejszy od kości i zapewnia niezrównaną elastyczność i zwrotność w toni wodnej.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--cyan-light); box-shadow: 0 0 12px var(--cyan);"></div>
+            <div class="step-header">
+              <span class="step-title">Powstanie ampułek Lorenziniego (elektrorecepcja)</span>
+              <span class="step-period">Karbon (~320 mln lat temu)</span>
+            </div>
+            <p class="step-body">
+              Pory na pysku połączyły się z kanałami wypełnionymi galaretowatą substancją o najwyższym przewodnictwie elektrycznym w świecie biologicznym. Rekin zyskał zdolność „widzenia” pola elektrycznego otaczających go istot.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--cyan-light); box-shadow: 0 0 12px var(--cyan);"></div>
+            <div class="step-header">
+              <span class="step-title">Era Megalodona (Otodus megalodon)</span>
+              <span class="step-period">~20 – 3,6 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              Największy morski drapieżnik w dziejach Ziemi osiągał do 18 metrów długości i masę 60 ton. Jego zęby mierzyły ponad 18 cm, a siła ugryzienia przekraczała 180 000 niutonów.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--cyan-light); box-shadow: 0 0 12px var(--cyan difficulties);"></div>
+            <div class="step-header">
+              <span class="step-title">Współczesne żarłacze i zagrożenie przełowieniem</span>
+              <span class="step-period">Współczesność</span>
+            </div>
+            <p class="step-body">
+              Przez 400 milionów lat rekiny nie miały naturalnego wroga. Dziś ludzie zabijają ponad 100 milionów rekinów rocznie (głównie dla zupy z płetw), co grozi załamaniem ekosystemów raf koralowych i pelagicznych.
+            </p>
+          </div>
+        </div>
+
+        <div class="evolution-insight-box" style="border-color: rgba(6, 182, 212, 0.3); background: linear-gradient(135deg, rgba(6, 182, 212, 0.08) 0%, rgba(19, 27, 39, 0.6) 100%);">
+          <div class="insight-col">
+            <h4 style="color: var(--cyan-light);">🦈 Czym są ząbki skórne (łuski plakoidalne)?</h4>
+            <ul class="insight-list">
+              <li>Skóra rekina nie ma zwykłych łusek rybich — składa się z milionów mikroskopijnych ząbków ze szkliwa i zębiny (<em>denticles</em>). W dotyku przypomina papier ścierny.</li>
+              <li>Ząbki tworzą miniaturowe rowki, które tłumią mikrowiry wody, sprawiając, że rekin płynie z zerowym oporem i w absolutnej ciszy (inspiracja dla kombinezonów pływackich Speedo i poszycia samolotów).</li>
+            </ul>
+          </div>
+          <div class="insight-col">
+            <h4 style="color: var(--emerald-light);">🧬 Wentylacja taranowa: Płynąć albo umrzeć:</h4>
+            <ul class="insight-list">
+              <li>Większość rekinów pelagicznych (np. żarłacz błękitny, mako, żarłacz biały) nie potrafi pompować wody przez skrzela na postoju. Muszą stale płynąć z otwartym pyskiem, aby woda obmywała blaszki skrzelowe. Jeśli rekin utknie w sieci, dusi się w ciągu kilkunastu minut.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 2: LABORATORIUM ZMYSŁÓW
+         ============================================================ -->
+    <section class="section" id="zmysly">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--cyan-light);">Elektrorecepcja i Linia Boczna</span>
+          <h2>Szósty Zmysł: Detekcja Nanowoltów</h2>
+          <p>Odkryj zmysł, którego ludzie nie posiadają — widzenie pól elektrycznych generowanych przez żywe tkanki pod dnem oceanu.</p>
+        </div>
+
+        <div class="senses-container">
+          <!-- Lorenzini Ampullae Simulator Card -->
+          <div class="sensory-card">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(6, 182, 212, 0.2); border: 1px solid #22D3EE; color: var(--cyan-light);">⚡</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: var(--cyan-light);">Elektrorecepcja • Ampułki Lorenziniego</span>
+                <h3>Symulator Pola Elektrycznego Ampułek Lorenziniego</h3>
+                <p>Każdy skurcz mięśnia i bicie serca emituje w słonej wodzie mikro-napięcie elektryczne. Przełącz tryb zmysłu rekina, by zobaczyć, jak ampułki wykrywają flądrę zakopaną pod piaskiem.</p>
+              </div>
+            </div>
+
+            <div style="background: #090D14; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px;">
+              <div style="margin-bottom: 20px;">
+                <label style="font-weight: 700; font-size: 0.92rem; display: block; margin-bottom: 8px;">
+                  Czułość elektrorecepcyjna ampułek (od 1 nV do 50 nV):
+                </label>
+                <input type="range" id="sharkVoltageSlider" min="1" max="50" value="5" style="width: 100%; accent-color: var(--cyan);">
+                <div style="display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">
+                  <span>1 nV/cm (Ekstremalna czułość)</span>
+                  <span id="sharkVoltageDisplay" style="color: var(--cyan-light); font-weight: 700;">Napięcie: 5 nV/cm • Zasięg wykrywania serca: 1.5 m</span>
+                  <span>50 nV/cm (Silne pole baterii)</span>
+                </div>
+              </div>
+
+              <!-- Interactive Electric Vision Canvas Preview -->
+              <div id="sharkElectricScreen" style="height: 180px; border-radius: var(--radius-md); background: #04121F; border: 1px solid rgba(6, 182, 212, 0.35); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                <!-- Sandy seabed -->
+                <div style="position: absolute; inset: 0; background: linear-gradient(180deg, #031D30 0%, #1A1A10 80%);"></div>
+                <!-- Buried Flounder Target -->
+                <div id="sharkPreyBox" style="position: relative; z-index: 5; text-align: center; transition: all 0.3s ease;">
+                  <span id="sharkPreyIcon" style="font-size: 2.2rem; display: block; opacity: 0.2; transition: opacity 0.3s ease;">🐟</span>
+                  <span id="sharkPreyLabel" style="font-size: 0.78rem; background: rgba(0,0,0,0.8); padding: 3px 10px; border-radius: 4px; color: #94A3B8;">
+                    Wzrok: Niewidoczna flądra pod 20 cm piasku
+                  </span>
+                </div>
+                <!-- Electric Field Aura Glow Layer -->
+                <div id="sharkElectricAura" style="position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.4s ease; background: radial-gradient(circle at center, rgba(34, 211, 238, 0.45) 0%, transparent 65%);">
+                  <div style="position: absolute; width: 120px; height: 120px; border: 2px dashed #22D3EE; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: spin 8s linear infinite;"></div>
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+                <button class="sound-toggle-btn" id="toggleSharkElectricBtn" style="border-color: rgba(34, 211, 238, 0.4); color: var(--cyan-light);">
+                  ⚡ Włącz szósty zmysł: Ampułki Lorenziniego (Pole elektryczne)
+                </button>
+                <div id="sharkSensorStatusText" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--cyan-light);">
+                  Zmysł: Zwykły wzrok podwodny
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lateral Line & Low-Frequency Pulsing (Web Audio API) -->
+          <div class="sensory-card">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10B981; color: var(--emerald-light);">🌊</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: var(--emerald-light);">Mechanorecepcja • Linia Boczna</span>
+                <h3>Linia Boczna: Rejestracja Drgań Rannej Ryby (10–50 Hz)</h3>
+                <p>Linia boczna ciągnąca się wzdłuż ciała rekina to system kanalików z komórkami rzęsatymi wyczuwającymi ruch wody i fale ciśnienia. Posłuchaj niskich tonów rannej ryby.</p>
+              </div>
+            </div>
+
+            <div style="background: #090D14; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px;">
+              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <button class="sound-toggle-btn" id="playInjuredFishPulseBtn" style="flex: 1; min-width: 220px; border-color: rgba(16, 185, 129, 0.4); color: var(--emerald-light);">
+                  🐟 Wibracje rannej ryby (Impuls infradźwiękowy 25 Hz)
+                </button>
+                <button class="sound-toggle-btn" id="playHydrodynamicWhooshBtn" style="flex: 1; min-width: 220px; border-color: rgba(6, 182, 212, 0.4); color: var(--cyan-light);">
+                  🦈 Bezszelestny przepływ (Łuski wyciszające ząbków skórnych)
+                </button>
+              </div>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 14px;">
+                Ranna ryba szamocze się chaotycznie, wysyłając fale ciśnienia, które rekin odbiera linią boczną z odległości 200–300 metrów, na długo zanim zbliży się na zasięg wzroku czy ampułek.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 3: ANATOMIA I BIOMECHANIKA
+         ============================================================ -->
+    <section class="section" id="anatomia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--cyan-light);">Biomechanika i Chrzęstny Pancerz</span>
+          <h2>Anatomia Rekina: Hydrodynamiczna Maszyna Zmysłów</h2>
+          <p>Klikaj w ponumerowane punkty lub wybierz kafelki pod spodem, by poznać budowę ampułek Lorenziniego, stereowęchu i wielorzędowych zębów.</p>
+        </div>
+
+        <div class="sensory-card">
+          <div class="body-language-inspector">
+            <div class="anatomy-diagram-stage" style="border-color: rgba(6, 182, 212, 0.35);">
+              <div class="anatomy-diagram-wrapper">
+                <svg class="anatomy-silhouette-svg" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                  <defs>
+                    <radialGradient id="sharkGlowGrad" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.25"/>
+                      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="sharkBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#0E7490"/>
+                      <stop offset="50%" stop-color="#155E75"/>
+                      <stop offset="100%" stop-color="#083344"/>
+                    </linearGradient>
+                    <filter id="sharkNeon" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#22D3EE" flood-opacity="0.45"/>
+                    </filter>
+                  </defs>
+
+                  <!-- Ocean Aura Background -->
+                  <circle cx="250" cy="160" r="140" fill="url(#sharkGlowGrad)"/>
+
+                  <!-- Torpedo Hydrodynamic Body -->
+                  <path d="M 90 160 C 130 160, 200 115, 310 115 C 380 115, 435 130, 460 145 C 440 170, 400 195, 350 200 C 260 210, 160 190, 90 160 Z" 
+                        fill="url(#sharkBodyGrad)" stroke="#22D3EE" stroke-width="2.5" filter="url(#sharkNeon)"/>
+
+                  <!-- White Countershading Underbelly -->
+                  <path d="M 140 165 C 220 185, 320 195, 410 170 C 370 195, 300 205, 200 195 Z" fill="#E0F2FE" opacity="0.35"/>
+
+                  <!-- Snout / Rostrum with Ampullae Pore Texture -->
+                  <path d="M 430 138 C 455 142, 465 145, 450 155 C 430 165, 415 165, 405 160 Z" fill="#0891B2" stroke="#22D3EE" stroke-width="1.5"/>
+                  <!-- Black pore dots of Ampullae -->
+                  <circle cx="438" cy="144" r="1.5" fill="#020617"/>
+                  <circle cx="444" cy="146" r="1.5" fill="#020617"/>
+                  <circle cx="435" cy="148" r="1.5" fill="#020617"/>
+                  <circle cx="442" cy="151" r="1.5" fill="#020617"/>
+
+                  <!-- Nostril (Olfactory Bulb) -->
+                  <ellipse cx="420" cy="158" rx="4" ry="2" fill="#020617" stroke="#22D3EE" stroke-width="1.5"/>
+
+                  <!-- Eye with Nictitating Membrane (Przesłona migawkowa) -->
+                  <circle cx="395" cy="142" r="6" fill="#0F172A" stroke="#22D3EE" stroke-width="1.5"/>
+                  <circle cx="394" cy="140" r="1.8" fill="#FFF"/>
+
+                  <!-- 5 Gill Slits (Szczeliny skrzelowe) -->
+                  <path d="M 345 145 L 342 165 M 350 145 L 347 165 M 355 145 L 352 165 M 360 145 L 357 165 M 365 145 L 362 165" 
+                        stroke="#0E7490" stroke-width="2.2" stroke-linecap="round"/>
+
+                  <!-- Mouth with Serrated Teeth Underneath -->
+                  <path d="M 380 185 Q 405 180 415 165" stroke="#FFF" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M 385 183 L 388 188 M 392 181 L 395 186 M 399 178 L 402 183 M 406 175 L 409 180" stroke="#FFF" stroke-width="2"/>
+
+                  <!-- Lateral Line dashed line along flank -->
+                  <path d="M 120 160 C 220 150, 310 145, 380 145" stroke="#A5F3FC" stroke-width="1.8" stroke-dasharray="4 4"/>
+
+                  <!-- Iconic Triangular Dorsal Fin -->
+                  <path d="M 260 120 C 255 70, 235 55, 215 60 C 225 80, 235 110, 240 120 Z" fill="#0E7490" stroke="#22D3EE" stroke-width="2.5"/>
+
+                  <!-- Pectoral Fin (Hydrodynamiczne skrzydło nośne) -->
+                  <path d="M 330 180 C 310 240, 270 265, 255 255 C 270 230, 295 195, 315 180 Z" fill="#155E75" stroke="#22D3EE" stroke-width="2.5"/>
+
+                  <!-- Heterocercal Tail Fin (Górny płat dłuższy) -->
+                  <path d="M 90 160 C 65 115, 35 90, 25 100 C 45 130, 70 155, 80 160 C 65 170, 45 185, 40 200 C 45 205, 70 190, 90 160 Z" 
+                        fill="#0E7490" stroke="#22D3EE" stroke-width="2.5"/>
+                </svg>
+
+                <!-- 5 Well-Spaced Hotspot Buttons (>16% apart, zero collisions) -->
+                <button class="shark-hotspot active" data-shark-anatomy="ampullae" style="left: 86%; top: 36%;" aria-label="1. Ampułki Lorenziniego" title="1. Ampułki Lorenziniego">1</button>
+                <button class="shark-hotspot" data-shark-anatomy="nostrils" style="left: 78%; top: 50%;" aria-label="2. Podwójne nozdrza" title="2. Podwójne nozdrza">2</button>
+                <button class="shark-hotspot" data-shark-anatomy="teeth" style="left: 68%; top: 68%;" aria-label="3. Wielorzędowe zęby" title="3. Wielorzędowe zęby">3</button>
+                <button class="shark-hotspot" data-shark-anatomy="lateral_line" style="left: 45%; top: 35%;" aria-label="4. Linia boczna" title="4. Linia boczna">4</button>
+                <button class="shark-hotspot" data-shark-anatomy="skin" style="left: 16%; top: 50%;" aria-label="5. Ząbki skórne i płetwa ogonowa" title="5. Ząbki skórne i płetwa ogonowa">5</button>
+              </div>
+
+              <!-- Quick Selector Chips for Touch & Accessibility -->
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1.25rem;">
+                <button class="anatomy-btn active" data-shark-anatomy="ampullae">1. Ampułki Lorenziniego</button>
+                <button class="anatomy-btn" data-shark-anatomy="nostrils">2. Podwójne Nozdrza (Stereowęch)</button>
+                <button class="anatomy-btn" data-shark-anatomy="teeth">3. Wielorzędowe Zęby</button>
+                <button class="anatomy-btn" data-shark-anatomy="lateral_line">4. Linia Boczna</button>
+                <button class="anatomy-btn" data-shark-anatomy="skin">5. Ząbki Skórne (Łuski)</button>
+              </div>
+            </div>
+
+            <!-- Detail Panel -->
+            <div class="anatomy-info-panel" style="border-color: rgba(6, 182, 212, 0.3);">
+              <span class="overline" style="color: var(--cyan-light);">Aktywny Punkt Anatomiczny</span>
+              <h3 id="sharkAnatomyTitle" style="color: var(--cyan-light); margin-bottom: 10px;">Ampułki Lorenziniego — Elektrorecepcja Nanowoltów</h3>
+              <p id="sharkAnatomyDesc" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 20px;">
+                Tysiące mikroskopijnych porów na pysku rekina prowadzi do kanalików wypełnionych żelowym przewodnikiem. Wykrywają one pole elektryczne rzędu 5 nanowoltów na centymetr — pozwala to rekinowi zlokalizować bicie serca ryby całkowicie zagrzebanej w morskim mule!
+              </p>
+              <div style="background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: var(--radius-md); padding: 14px 18px;">
+                <span style="font-size: 0.8rem; color: var(--cyan-light); font-weight: 700;">PARAMETR BIOELEKTRYCZNY:</span>
+                <div id="sharkAnatomyStat" style="font-size: 1.1rem; font-weight: 800; color: #fff; margin-top: 4px;">Czułość: 5 nV/cm (wykrywa baterię AA z odległości 1600 km w teorii)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 4: BEZPIECZEŃSTWO I OBALANIE MITÓW
+         ============================================================ -->
+    <section class="section" id="bezpieczenstwo">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--emerald-light);">Fakty vs Hollywoodzkie Mity</span>
+          <h2>Spotkanie z Rekinem: Jak Zachować Bezpieczeństwo?</h2>
+          <p>Ludzie nie znajdują się w menu rekinów. Większość wypadków to pomyłki identyfikacyjne drapieżnika polującego na foki. Poznaj zasady zachowania w oceanie.</p>
+        </div>
+
+        <div class="safety-grid">
+          <div class="toxic-food-card" style="border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.05);">
+            <div class="toxic-food-header">
+              <span>👁️</span>
+              <h5 style="color: var(--emerald-light);">1. Utrzymuj stały kontakt wzrokowy</h5>
+            </div>
+            <p>Rekin to drapieżnik atakujący z zasadzki od tyłu. Jeśli widzisz rekina w wodzie: <strong>nie spuszczaj z niego wzroku i obracaj się razem z nim</strong>. Gdy rekin widzi, że na niego patrzysz, traci przewagę zaskoczenia i najczęściej odpływa.</p>
+          </div>
+
+          <div class="toxic-food-card" style="border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05);">
+            <div class="toxic-food-header">
+              <span>🚫</span>
+              <h5 style="color: #F87171;">2. NIE chlap i NIE uciekaj w panice!</h5>
+            </div>
+            <p>Paniczne machanie rękami i nogami na powierzchni wysyła wibracje identyczne z miotającą się, ranną rybą. Dla rekina to sygnał: „łatwy posiłek”. Płyń spokojnymi, pewnymi pociągnięciami w stronę łodzi lub brzegu.</p>
+          </div>
+
+          <div class="toxic-food-card" style="border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.05);">
+            <div class="toxic-food-header">
+              <span>🏄</span>
+              <h5 style="color: var(--amber-light);">3. Unikaj kąpieli o świcie i po sztormie</h5>
+            </div>
+            <p>Rekiny polują najintensywniej o świcie i o zmierzchu, gdy widoczność jest niska. Wzburzona, mętna woda po burzy zwiększa ryzyko pomyłki — rekin atakuje kontur surfera, myląc go z foką.</p>
+          </div>
+
+          <div class="toxic-food-card" style="border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.05);">
+            <div class="toxic-food-header">
+              <span>✨</span>
+              <h5 style="color: var(--cyan-light);">4. Zdejmij błyszczącą biżuterię</h5>
+            </div>
+            <p>Błysk srebrnego łańcuszka czy zegarka w słońcu pod wodą przypomina błysk srebrzystych łusek ryb. Zdejmij metalowe ozdoby przed wejściem do głębokiej wody oceanicznej.</p>
+          </div>
+        </div>
+
+        <!-- Crisis Simulator -->
+        <div style="margin-top: 36px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px;">
+          <h4 style="margin-bottom: 8px;">🎮 Symulator Decyzji: Podczas snorkelingu na rafie zauważasz 2-metrowego żarłacza zbliżającego się w Twoją stronę. Co robisz?</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+            Wybierz właściwy protokół zachowania:
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 20px;">
+            <div class="crisis-option-card shark-crisis-card" data-action="panic_splash">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">🏊</span>
+              <strong>Zaczynam panicznie chlapać rękami i płynąć sprintem na brzeg</strong>
+            </div>
+            <div class="crisis-option-card shark-crisis-card" data-action="maintain_eye">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">👁️</span>
+              <strong>Utrzymuję kontakt wzrokowy, przyjmuję pionową postawę i spokojnie się wycofuję</strong>
+            </div>
+            <div class="crisis-option-card shark-crisis-card" data-action="touch_nose">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">✋</span>
+              <strong>Podpływam i próbuję pogłaskać rekina po zębach</strong>
+            </div>
+            <div class="crisis-option-card shark-crisis-card" data-action="play_dead">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">💀</span>
+              <strong>Udaję martwego i wypuszczam całe powietrze z płuc opadając na dno</strong>
+            </div>
+          </div>
+
+          <div id="sharkCrisisResult" class="crisis-feedback-box"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 5: FASCYNUJĄCE CIEKAWOSTKI
+         ============================================================ -->
+    <section class="section" id="ciekawostki" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--cyan-light); border-color: rgba(6, 182, 212, 0.3); background: rgba(6, 182, 212, 0.1);">Sekrety Natury</span>
+          <h2>Niezwykłe Fakty o Rekinach</h2>
+          <p>Oto zjawiska fizjologiczne, które czynią z rekinów jedno z najbardziej niezrozumianych dzieł natury.</p>
+        </div>
+
+        <div class="curiosity-grid">
+          <div class="curiosity-card" style="border-color: rgba(6, 182, 212, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🦷</span>
+              <h4 style="color: var(--cyan-light);">Zęby na taśmie produkcyjnej: 30 000 w życiu</h4>
+            </div>
+            <p>
+              Rekiny nie mają korzeni zębowych wrośniętych w kość. Zęby ułożone są w 5–15 rzędach na ruchomej taśmie tkankowej. Gdy przedni ząb stępi się lub wyłamie podczas ataku, nowy ząb z tylnego rzędu przesuwa się na jego miejsce w zaledwie 24–48 godzin!
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(16, 185, 129, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🔨</span>
+              <h4 style="color: var(--emerald-light);">Rekin młot: Skaner 360°</h4>
+            </div>
+            <p>
+              Szeroka głowa rekina młota (tzw. cefalofol) działa jak wielki wykrywacz metali! Rozstawione szeroko ampułki Lorenziniego zapewniają stereoskopowe widzenie pola elektrycznego o szerokim kącie, pozwalając na szybkie skanowanie dna oceanu w poszukiwaniu płaszczek.
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(168, 85, 247, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🥥</span>
+              <h4 style="color: var(--purple-light);">Kokosy zabijają więcej ludzi niż rekiny!</h4>
+            </div>
+            <p>
+              Statystyki są bezlitosne dla hollywoodzkich mitów: rekiny zabijają średnio 5–6 osób rocznie na całym świecie. Spadające z palm kokosy zabijają ok. 150 osób rocznie, a uderzenia piorunem ponad 2000! Więcej osób ginie rocznie robiąc sobie selfie nad klifem niż od zębów rekinów.
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(245, 158, 11, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🩸</span>
+              <h4 style="color: var(--amber-light);">Brak kości: W 100% z elastycznej chrząstki</h4>
+            </div>
+            <p>
+              Rekiny należą do ryb chrzęstnoszkieletowych. Nie mają ani jednej twardej kości w całym ciele! Ich szkielet z chrząstki jest lekki, niezwykle elastyczny i goi się w ekspresowym tempie, a krew rekinów zawiera unikalne związki antybakteryjne badane przez medycynę.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 6: 10-POZIOMOWA MINI GRA
+         ============================================================ -->
+    <section class="section" id="gra">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--cyan-light); border-color: rgba(6, 182, 212, 0.3); background: rgba(6, 182, 212, 0.1);">🎮 Zagraj i Wytrop Ofiarę Szóstym Zmysłem</span>
+          <h2>Mini Gra: Patrol Rafy Koralowej — Zmysł Elektryczny</h2>
+          <p>Steruj rekinem nad dnem oceanu. Przełączaj zmysł elektryczny ampułek Lorenziniego (klawisz E lub przycisk), by wykrywać bicie serca ryb ukrytych pod piaskiem. Omijaj haki i liny!</p>
+        </div>
+
+        <div class="minigame-card" style="border-color: rgba(6, 182, 212, 0.35);">
+          <!-- Level Header & Progress Dots -->
+          <div class="minigame-level-header">
+            <div class="minigame-level-badge" id="sharkGameLevelBadge" style="background: rgba(6, 182, 212, 0.15); border-color: rgba(6, 182, 212, 0.4); color: var(--cyan-light);">
+              <span>Misja 1/10:</span> Piaszczysta Mielizna i Ukryte Flądry 🐟🦈
+            </div>
+            <div class="minigame-level-dots" id="sharkGameLevelDots">
+              <span class="level-dot active"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+            </div>
+          </div>
+
+          <!-- HUD -->
+          <div class="minigame-hud">
+            <div class="hud-item">
+              <span>🐟 Wytropione ofiary:</span>
+              <span class="hud-val" id="sharkGamePrey" style="color: var(--cyan-light);">0 / 3</span>
+            </div>
+            <div class="hud-item">
+              <span>⏱️ Czas patrolu:</span>
+              <span class="hud-val" id="sharkGameTimer" style="color: var(--emerald-light);">40s</span>
+            </div>
+            <div class="hud-item">
+              <span>Tryb sensoryczny:</span>
+              <span class="hud-val" id="sharkGameSensorStatus" style="color: var(--purple-light);">Wzrok podwodny</span>
+            </div>
+          </div>
+
+          <div class="minigame-viewport">
+            <canvas id="sharkGameCanvas" class="minigame-canvas" style="background: #03121F;"></canvas>
+
+            <!-- Game Overlay -->
+            <div class="minigame-overlay" id="sharkGameOverlay">
+              <div style="font-size: 3.5rem; margin-bottom: 12px;" id="sharkGameOverIcon">🦈⚡🌊</div>
+              <h4 id="sharkGameOverTitle">Patrol Rafy Koralowej</h4>
+              <p id="sharkGameOverDesc">
+                Płyń rekinem nad dnem morza! Ukryte ryby emitują mikro-napięcie elektryczne. Włącz ampułki Lorenziniego, by zobaczyć ich biopole, po czym zanurkuj i pochwyć cel!
+              </p>
+              <div class="overlay-actions">
+                <button class="btn btn-primary" id="startSharkGameBtn">Rozpocznij patrol elektrorecepcji 🦈</button>
+                <button class="btn btn-primary" id="nextSharkLevelBtn" style="display: none;">Kolejna rafa →</button>
+                <button class="btn btn-secondary" id="restartSharkGameBtn" style="display: none;">Powtórz patrol ↺</button>
+                <button class="btn btn-secondary" id="resetSharkCampaignBtn" style="display: none;">Zacznij od poziomu 1 ↺</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Touch sensor toggle button for mobile -->
+          <div style="display: flex; justify-content: center; margin-top: 14px;">
+            <button class="btn btn-secondary" id="sharkSensorToggleInGameBtn" style="padding: 10px 24px; font-size: 0.92rem; border-color: rgba(34, 211, 238, 0.4); color: var(--cyan-light);">
+              ⚡ Przełącz Ampułki Lorenziniego (Klawisz E / Dotknij)
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 7: INTERAKTYWNY MINI QUIZ
+         ============================================================ -->
+    <section class="section" id="quiz" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--cyan-light); border-color: rgba(6, 182, 212, 0.3); background: rgba(6, 182, 212, 0.1);">Sprawdź swoją wiedzę</span>
+          <h2>Mini Quiz Mistrza Zmysłów Rekina</h2>
+          <p>5 pytań weryfikujących wiedzę o elektrorecepcji, ząbkach skórnych, mitach o atakach i biologii rekinów.</p>
+        </div>
+
+        <div class="quiz-wrapper" style="border-color: rgba(6, 182, 212, 0.3);">
+          <div class="quiz-meter-bar">
+            <div class="quiz-meter-progress" id="sharkQuizMeterProgress" style="background: linear-gradient(90deg, #22D3EE 0%, #10B981 100%);"></div>
+          </div>
+          <div id="sharkQuizDynamicBody">
+            <!-- Rendered dynamically by js/shark-simulators.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- ============================================================
+         SEKCJA: NAWIGACJA PO GATUNKACH I PRZEJŚCIE DO KATALOGU
+         ============================================================ -->
+    <section class="section animal-navigation-hub">
+      <div class="container">
+        <div class="animal-navigation-card">
+          <span class="overline" style="color: var(--amber);">Nawigacja po świecie zmysłów</span>
+          <h3 style="font-size: 1.75rem; margin: 8px 0 12px;">Poznaj zmysły innych zwierząt</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.6; max-width: 620px; margin-left: auto; margin-right: auto;">
+            Odkryj percepcję kolejnego gatunku lub otwórz pełny, interaktywny katalog wszystkich 15 zwierząt:
+          </p>
+
+          <!-- Stepper: Poprzednie / Główny katalog / Następne -->
+          <div class="animal-nav-stepper">
+            <a href="delfin.html" class="animal-nav-btn animal-nav-btn-prev" title="Poprzednie zwierzę: Delfin butlonosy">
+              <span>←</span>
+              <span>🐬 Delfin</span>
+            </a>
+
+            <button class="animal-nav-btn animal-nav-btn-catalog animal-catalog-trigger" title="Otwórz pełny katalog ze wszystkimi 15 zwierzętami">
+              <span>🐾 Pełny katalog (15 zwierząt)</span>
+            </button>
+
+            <a href="osmiornica.html" class="animal-nav-btn animal-nav-btn-next" title="Następne zwierzę: Ośmiornica zwyczajna">
+              <span>🐙 Ośmiornica</span>
+              <span>→</span>
+            </a>
+          </div>
+
+          <!-- Szybki skok do każdego zwierzęcia -->
+          <div class="animal-quick-jump-wrap">
+            <div class="animal-quick-jump-title">
+              Szybki skok do dowolnego gatunku (15):
+            </div>
+            <div class="animal-quick-jump-bar">
+                <a href="pies.html" class="animal-quick-chip"><span>🐕</span> <span>Pies</span></a>
+                <a href="kot.html" class="animal-quick-chip"><span>🐈</span> <span>Kot</span></a>
+                <a href="dzik.html" class="animal-quick-chip"><span>🐗</span> <span>Dzik</span></a>
+                <a href="wilk.html" class="animal-quick-chip"><span>🐺</span> <span>Wilk</span></a>
+                <a href="nietoperz.html" class="animal-quick-chip"><span>🦇</span> <span>Nietoperz</span></a>
+                <a href="zmija.html" class="animal-quick-chip"><span>🐍</span> <span>Żmija</span></a>
+                <a href="sowa.html" class="animal-quick-chip"><span>🦉</span> <span>Sowa</span></a>
+                <a href="niedzwiedz.html" class="animal-quick-chip"><span>🐻</span> <span>Niedźwiedź</span></a>
+                <a href="pszczola.html" class="animal-quick-chip"><span>🐝</span> <span>Pszczoła</span></a>
+                <a href="lis.html" class="animal-quick-chip"><span>🦊</span> <span>Lis</span></a>
+                <a href="jez.html" class="animal-quick-chip"><span>🦔</span> <span>Jeż</span></a>
+                <a href="orzel.html" class="animal-quick-chip"><span>🦅</span> <span>Orzeł</span></a>
+                <a href="delfin.html" class="animal-quick-chip"><span>🐬</span> <span>Delfin</span></a>
+                <a href="rekin.html" class="animal-quick-chip active"><span>🦈</span> <span>Rekin</span></a>
+                <a href="osmiornica.html" class="animal-quick-chip"><span>🐙</span> <span>Ośmiornica</span></a>
+            </div>
+          </div>
+
+          <!-- Powrót na stronę główną -->
+          <div class="animal-home-return">
+            <a href="index.html#zwierzeta">
+              <span>🏠 Wróć do spisu na stronie głównej</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Author Profile Modal (Dorian Kalinowski) -->
+  <div class="modal-backdrop" id="authorModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeAuthorModal" aria-label="Zamknij okno">✕</button>
+      <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="author-avatar-big">
+      <h3 class="author-modal-name">Dorian Kalinowski</h3>
+      <div class="author-modal-role">Twórca projektu i miłośnik zwierząt</div>
+      <p class="author-bio">
+        Cześć! Mam na imię Dorian. Od zawsze fascynowało mnie to, jak zwierzęta odbierają otaczający nas świat – zupełnie inaczej niż my, ludzie. Na mojej stronie możesz na własne oczy i uszy sprawdzić ich perspektywę oraz dowiedzieć się, kiedy i dlaczego dochodzi do niebezpiecznych spięć. Wierzę, że gdybyśmy naprawdę rozumieli, jak zwierzęta myślą, widzą i czują, byłoby między nami znacznie mniej strachu i niepotrzebnych konfrontacji.
+      </p>
+      <div style="text-align: center;">
+        <button class="btn btn-primary" id="confirmAuthorModal">Zamknij</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PWA Install Prompt Banner -->
+  <div class="pwa-install-banner" id="pwaBanner">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 1.6rem;">📱</span>
+      <div>
+        <div style="font-size: 0.92rem; font-weight: 700;">Zainstaluj jako aplikację PWA</div>
+        <div style="font-size: 0.78rem; color: var(--text-muted);">Szybki dostęp i działanie offline bez przeglądarki</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="pwaInstallBtn" style="padding: 8px 18px; font-size: 0.85rem;">Instaluj</button>
+    <button class="modal-close-btn" id="pwaDismissBtn" style="position: static; width: 28px; height: 28px; font-size: 0.8rem;">✕</button>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <div class="mobile-bottom-bar" role="navigation" aria-label="Nawigacja mobilna">
+    <a href="index.html" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🏠</span>
+      <span>Główna</span>
+    </a>
+    <button class="bottom-bar-item animal-catalog-trigger">
+      <span class="bottom-bar-icon">🐾</span>
+      <span>Katalog</span>
+    </button>
+    <a href="rekin.html" class="bottom-bar-item active">
+      <span class="bottom-bar-icon">🦈</span>
+      <span>Rekin</span>
+    </a>
+    <a href="#bezpieczenstwo" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🛡️</span>
+      <span>Zasady</span>
+    </a>
+    <button class="bottom-bar-item" id="mobileAuthorTrigger">
+      <span class="bottom-bar-icon">👤</span>
+      <span>Autor</span>
+    </button>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-author">
+        Zaprojektowane i stworzone przez: <strong>Dorian Kalinowski</strong>
+      </p>
+      <p class="footer-rights">
+        © 2026 Świat zmysłami zwierząt V1.1 • Projekt edukacyjny non-profit • Wersja V1.1
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/shark-simulators.js"></script>
+</body>
+</html>

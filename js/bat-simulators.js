@@ -231,7 +231,7 @@ function initBatSonarCanvas() {
         ctx.fillStyle = `rgba(255, 255, 255, ${obj.glow})`;
         ctx.font = '12px "Plus Jakarta Sans", sans-serif';
         ctx.textAlign = 'center';
-        ctx.fillText(obj.label, ox, oy - obj.r - 8);
+        ctx.fillText(window.t ? window.t(obj.label) : obj.label, ox, oy - obj.r - 8);
         ctx.restore();
       } else {
         // In the dark — faint mysterious dots
@@ -597,13 +597,15 @@ function initBatEcholocationGame() {
   }
 
   function updateHUD() {
+    const isEn = window.swiat_zmyslow_lang === 'en' || (typeof localStorage !== 'undefined' && localStorage.getItem('swiat_zmyslow_lang') === 'en');
     const lvl = levels[currentLevelIdx];
+    const lvlName = window.t ? window.t(lvl.name) : lvl.name;
     if (levelBadge) {
-      levelBadge.innerHTML = `<span>Misja ${currentLevelIdx + 1}/${levels.length}:</span> ${lvl.name}`;
+      levelBadge.innerHTML = `<span>${isEn ? 'Mission' : 'Misja'} ${currentLevelIdx + 1}/${levels.length}:</span> ${lvlName}`;
     }
     if (levelDotsContainer) {
       if (levelDotsContainer.children.length !== levels.length) {
-        levelDotsContainer.innerHTML = levels.map((_, i) => `<span class="level-dot" title="Poziom ${i + 1}"></span>`).join('');
+        levelDotsContainer.innerHTML = levels.map((_, i) => `<span class="level-dot" title="${isEn ? 'Level' : 'Poziom'} ${i + 1}"></span>`).join('');
       }
       const dots = levelDotsContainer.querySelectorAll('.level-dot');
       dots.forEach((dot, idx) => {
@@ -675,8 +677,8 @@ function initBatEcholocationGame() {
     overlay.classList.remove('hidden');
     overlay.classList.add('show');
     overlay.style.display = 'flex';
-    overlayTitle.textContent = title;
-    overlayDesc.innerHTML = desc;
+    overlayTitle.textContent = window.t ? window.t(title) : title;
+    overlayDesc.innerHTML = window.t ? window.t(desc) : desc;
 
     if (victory) {
       playCatchChime();
@@ -833,6 +835,10 @@ function initBatEcholocationGame() {
   restartBtn?.addEventListener('click', () => startGame(currentLevelIdx));
   nextBtn?.addEventListener('click', () => startGame(currentLevelIdx + 1));
   resetBtn?.addEventListener('click', () => startGame(0));
+
+  window.addEventListener('languageChanged', () => {
+    updateHUD();
+  });
 }
 
 /* ============================================================
@@ -929,7 +935,7 @@ function initBatQuiz() {
       <div id="batQuizFeedback"></div>
       <div class="quiz-action-bar" id="batQuizNextBar" style="display: none; margin-top: 20px;">
         <button class="btn btn-primary" id="batQuizNextBtn" style="background: linear-gradient(135deg, #A855F7 0%, #7E22CE 100%);">
-          ${currentIdx < questions.length - 1 ? 'Następne pytanie →' : 'Zobacz certyfikat wiedzy →'}
+          ${currentIdx < questions.length - 1 ? (window.t ? window.t('Następne pytanie →') : 'Następne pytanie →') : (window.t ? window.t('Zobacz certyfikat wiedzy →') : 'Zobacz certyfikat wiedzy →')}
         </button>
       </div>
     `;
@@ -951,14 +957,16 @@ function initBatQuiz() {
 
     optButtons[qData.correct].classList.add('correct');
 
+    const expl = window.t ? window.t(qData.explanation) : qData.explanation;
+    const isEn = window.swiat_zmyslow_lang === 'en' || (typeof localStorage !== 'undefined' && localStorage.getItem('swiat_zmyslow_lang') === 'en');
     if (selected === qData.correct) {
       score++;
       feedbackEl.className = 'quiz-feedback-banner success';
-      feedbackEl.innerHTML = `<strong>Świetnie!</strong> ${qData.explanation}`;
+      feedbackEl.innerHTML = isEn ? `<strong>Great job!</strong> ${expl}` : `<strong>Świetnie!</strong> ${expl}`;
     } else {
       optButtons[selected].classList.add('wrong');
       feedbackEl.className = 'quiz-feedback-banner failure';
-      feedbackEl.innerHTML = `<strong>Nie do końca.</strong> ${qData.explanation}`;
+      feedbackEl.innerHTML = isEn ? `<strong>Not quite.</strong> ${expl}` : `<strong>Nie do końca.</strong> ${expl}`;
     }
 
     nextBar.style.display = 'flex';
@@ -990,8 +998,8 @@ function initBatQuiz() {
       <div class="quiz-certificate">
         <div class="certificate-badge-emoji">${badgeEmoji}</div>
         <div class="certificate-score">${score} / ${questions.length}</div>
-        <h3 class="certificate-title">${rankTitle}</h3>
-        <p class="certificate-desc">${rankDesc}</p>
+        <h3 class="certificate-title">${window.t ? window.t(rankTitle) : rankTitle}</h3>
+        <p class="certificate-desc">${window.t ? window.t(rankDesc) : rankDesc}</p>
         <button class="btn btn-primary" id="batQuizRestartBtn" style="background: linear-gradient(135deg, #A855F7 0%, #7E22CE 100%);">Rozwiąż quiz ponownie ↺</button>
       </div>
     `;

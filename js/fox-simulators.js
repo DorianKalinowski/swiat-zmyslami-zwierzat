@@ -771,6 +771,10 @@ function initFoxPounceGame() {
   restartBtn?.addEventListener('click', () => startGame(currentLevelIdx));
   nextBtn?.addEventListener('click', () => startGame(currentLevelIdx + 1));
   resetBtn?.addEventListener('click', () => startGame(0));
+
+  window.addEventListener('languageChanged', () => {
+    updateHUD();
+  });
 }
 
 /* ============================================================
@@ -937,12 +941,12 @@ function initFoxQuiz() {
     quizBody.innerHTML = `
       <div class="quiz-summary-card" style="text-align: center; padding: 2rem 1rem;">
         <div style="font-size: 3.5rem; margin-bottom: 0.75rem;">${emoji}</div>
-        <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 0.5rem;">${title}</h3>
+        <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 0.5rem;">${window.t ? window.t(title) : title}</h3>
         <p style="font-size: 1.15rem; color: #fb923c; font-weight: 700; margin-bottom: 1rem;">
-          Twój wynik: ${score} z ${questions.length} punktów (${pct}%)
+          ${window.t ? window.t(`Twój wynik: ${score} z ${questions.length} punktów (${pct}%)`) : `Twój wynik: ${score} z ${questions.length} punktów (${pct}%)`}
         </p>
         <p style="font-size: 0.95rem; color: var(--text-muted); max-width: 480px; margin: 0 auto 1.5rem auto; line-height: 1.6;">
-          ${desc}
+          ${window.t ? window.t(desc) : desc}
         </p>
         <button id="foxQuizRestartBtn" class="primary-btn" style="background: #ea580c; border-color: #ea580c;">
           🔄 Rozwiąż quiz ponownie

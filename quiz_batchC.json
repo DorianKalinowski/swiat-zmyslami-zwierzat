@@ -1,0 +1,222 @@
+[
+  {
+    "animal": "octopus",
+    "q": "Gdzie znajduje się większość (ok. 2/3) neuronów ośmiornicy?",
+    "options": [
+      "W potężnym mózgu umieszczonym wewnątrz chitynowego dzioba",
+      "W ośmiu ramionach, z których każde posiada autonomiczny zwój nerwowy",
+      "W worku czernidłowym odpowiedzialnym za obronę",
+      "W trzech sercach pompujących błękitną krew"
+    ],
+    "explain": "Aż 350 milionów z 500 milionów neuronów ośmiornicy zlokalizowanych jest w ramionach. Pozwala to każdemu ramieniu na samodzielne badanie otoczenia, poruszanie się i smakowanie pokarmu."
+  },
+  {
+    "animal": "octopus",
+    "q": "Dlaczego krew ośmiornicy jest intensywnie błękitna, a nie czerwona?",
+    "options": [
+      "Ponieważ zawiera barwnik melaninowy pobrany z worka czernidłowego",
+      "Ośmiornica absorbuje sole kobaltu z wody morskiej",
+      "Zamiast żelaza opiera się na miedzi (hemocyjanina), która w zimnej wodzie wydajniej wiąże tlen",
+      "Jej krew nie zawiera żadnych cząsteczek transportujących tlen"
+    ],
+    "explain": "Krew głowonogów wykorzystuje cząsteczki hemocyjaniny oparte na atomach miedzi. Po natlenieniu hemocyjanina przybiera piękny błękitny kolor i świetnie sprawdza się w zimnych, słabo natlenionych głębinach."
+  },
+  {
+    "animal": "octopus",
+    "q": "Jakie zagrożenie niesie ze sobą dotknięcie małej ośmiornicy niebieskopierścieniowej (Hapalochlaena)?",
+    "options": [
+      "Może jedynie ubrudzić skórę trwałym atramentem",
+      "Wydziela śmiertelną tetrodotoksynę (TTX), która paraliżuje mięśnie oddechowe człowieka w kilkanaście minut",
+      "Powoduje lekkie swędzenie dłoni przypominające poparzenie pokrzywą",
+      "Nie niesie żadnego zagrożenia, te ośmiornice nie mają jadu"
+    ],
+    "explain": "Ośmiornica niebieskopierścieniowa przenosi w ślinie tetrodotoksynę (TTX) produkowaną przez bakterie symbiotyczne. Trucizna jest ponad 1000 razy silniejsza od cyjanku i nie ma na nią antidotum!"
+  },
+  {
+    "animal": "octopus",
+    "q": "Jaka jest jedyna twarda część ciała ośmiornicy decydująca o tym, przez jaką szczelinę zdoła się przecisnąć?",
+    "options": [
+      "Szkielet wewnętrzny głowotułowia",
+      "Chitynowy dziób w centrum ramion (przypominający dziób papugi)",
+      "Pierścienie chrzęstne syfonu odrzutowego",
+      "Wapienne tarczki na przyssawkach"
+    ],
+    "explain": "Ośmiornica nie posiada ani jednej kości. Jedynym sztywnym elementem jest twardy dziób. Jeśli dziób przejdzie przez otwór, całe ciało bez trudu przeciśnie się za nim."
+  },
+  {
+    "animal": "octopus",
+    "q": "Jak szybko ośmiornica potrafi zmienić kolor i strukturę 3D swojej skóry dzięki chromatoforom?",
+    "options": [
+      "Potrzebuje około 2–3 godzin na powolną syntezę barwników",
+      "Około 15 minut (podobnie jak kameleon)",
+      "W zaledwie 200 milisekund (ułamek sekundy) dzięki bezpośredniej kontroli nerwowej mięśni chromatoforów",
+      "Zmienia kolor tylko raz w roku podczas linienia"
+    ],
+    "explain": "W przeciwieństwie do kameleona, który polega na hormonach, chromatofory ośmiornicy są połączone bezpośrednio z układem nerwowym. Zmiana barwy i faktury następuje w zawrotnym tempie ok. 200 ms!"
+  },
+  {
+    "animal": "owl",
+    "q": "Dlaczego sowa potrafi obrócić głowę aż o 270 stopni w obu kierunkach?",
+    "options": [
+      "Jej szyja nie ma kręgów i jest zbudowana z czystej chrząstki",
+      "Jej oczy są cylindryczne i nieruchome w czaszce, a szyja ma aż 14 kręgów (2x więcej niż u człowieka)",
+      "Sowa obraca całe ciało na gałęzi, a nie tylko głowę",
+      "To złudzenie optyczne spowodowane puszystymi piórami"
+    ],
+    "explain": "Oczy sowy to nie ruchome kule, lecz wydłużone tuby zablokowane w czaszce pierścieniami kostnymi. Aby spojrzeć w bok, sowa musi obrócić całą głowę — umożliwia to 14 kręgów szyjnych i specjalne unaczynienie zapobiegające odcięciu krwi do mózgu!"
+  },
+  {
+    "animal": "owl",
+    "q": "W jaki sposób sowa bezbłędnie określa, czy dźwięk dobiega z góry, czy z dołu?",
+    "options": [
+      "Dzięki asymetrii uszu: prawe ucho jest wyżej i skierowane w dół, a lewe niżej i skierowane w górę",
+      "Wysyła ultradźwiękowy pisk sonaru jak nietoperz",
+      "Używa dzioba jako wskaźnika poziomu dźwięku",
+      "Odbiera fale wyłącznie przez wibrujące pióra ogona"
+    ],
+    "explain": "Asymetria puszki słuchowej sprawia, że dźwięk dobiegający z góry jest głośniejszy w lewym uchu, a dźwięk z dołu — w prawym uchu. Mózg porównuje różnicę głośności i czasu (z dokładnością do 30 mikrosekund!), uzyskując pełną mapę 3D!"
+  },
+  {
+    "animal": "owl",
+    "q": "Czym jest szlara twarzowa sowy i jaką pełni funkcję?",
+    "options": [
+      "To ozdobny kołnierz służący do odstraszania drapieżników",
+      "To wieniec sztywnych, ułożonych promieniście piór działający jak talerz satelitarny skupiający fale dźwiękowe",
+      "To warstwa tłuszczu chroniąca twarz sowy przed mrozem",
+      "To narząd węchu chemicznego do tropienia myszy"
+    ],
+    "explain": "Szlara twarzowa ma paraboliczny profil. Zbiera fale akustyczne z otoczenia i kanalizuje je wprost do otworów usznych ukrytych pod piórami, wzmacniając ciche piski gryzoni nawet o 10 dB!"
+  },
+  {
+    "animal": "owl",
+    "q": "Co sprawia, że lot sowy jest niemal w 100% bezgłośny dla ucha gryzonia?",
+    "options": [
+      "Sowa nie macha skrzydłami i tylko spada na ofiarę",
+      "Aksamitny meszek pochłaniający dźwięk oraz grzebykowate ząbki (serracje) na krawędzi lotek rozbijające wiry powietrza",
+      "Sowa porusza się tak wolno, że powietrze nie stawia oporu",
+      "Pióra sowy są pokryte śluzem zmniejszającym tarcie"
+    ],
+    "explain": "Na przedniej krawędzi skrzydeł sowy znajdują się mikroskopijne ząbki, które rozbijają duże wiry powietrza na mikro-strumienie. Miękkie frędzle na krawędzi spływu i welurowa powłoka tłumią resztę szumu, redukując dźwięk do niesłyszalnych 18 dB."
+  },
+  {
+    "animal": "owl",
+    "q": "Znalazłeś w lesie młodego, opierzonego podlota sowy siedzącego na trawie pod drzewem. Co robisz?",
+    "options": [
+      "Zabierasz go natychmiast do domu i karmisz surowym mięsem z kurczaka",
+      "Zostawiasz go w spokoju (ewentualnie sadzasz na bezpiecznej, wyższej gałęzi) — rodzice są w pobliżu i karmią go w nocy",
+      "Wzywasz straż pożarną do transportu na czubek drzewa",
+      "Polewasz go wodą, by go ochłodzić"
+    ],
+    "explain": "Podlot sowy celowo opuszcza ciasną dziuplę, zanim nauczy się w pełni latać. Ukrywa się w trawie lub gałęziach, a rodzice czuwają i przynoszą mu pokarm nocą. Zabranie go z lasu to błąd, który odbiera mu szansę na naturalne dorastanie!"
+  },
+  {
+    "animal": "shark",
+    "q": "Do czego służą ampułki Lorenziniego zlokalizowane na pysku rekina?",
+    "options": [
+      "Do filtrowania planktonu i soli z wody morskiej",
+      "Do detekcji mikro-pól elektrycznych generowanych przez skurcze mięśni i bicie serca",
+      "Do świecenia w ciemnościach głębinowych (bioluminescencja)",
+      "Do regulowania ciśnienia w pęcherzu pławnym"
+    ],
+    "explain": "Ampułki Lorenziniego to pory wypełnione żelem o najwyższym znanym biologicznym przewodnictwie. Wykrywają one napięcia rzędu nanowoltów emitowane przez żywe organizmy."
+  },
+  {
+    "animal": "shark",
+    "q": "Z czego składa się szkielet rekina?",
+    "options": [
+      "Z twardych kości pneumatycznych wypełnionych powietrzem",
+      "Z chitynowych płytek pancerza zewnętrznego",
+      "W 100% ze sprężystej chrząstki (brak tradycyjnych kości)",
+      "Ze zmineralizowanych łusek rogowych"
+    ],
+    "explain": "Rekiny należą do ryb chrzęstnoszkieletowych. Ich szkielet jest o połowę lżejszy od kości, nie ulega złamaniom i zapewnia niespotykaną zwrotność."
+  },
+  {
+    "animal": "shark",
+    "q": "Co powinieneś zrobić, gdy podczas pływania na rafie zauważysz zbliżającego się rekina?",
+    "options": [
+      "Panicznie chlapać rękami i nogami oraz płynąć sprintem do brzegu",
+      "Utrzymywać stały kontakt wzrokowy, przyjąć pozycję pionową i spokojnie się wycofywać",
+      "Wypuścić powietrze z płuc i natychmiast uderzyć rekina w pysk",
+      "Udać martwego unosząc się bezwładnie na powierzchni"
+    ],
+    "explain": "Rekin to drapieżnik z zasadzki. Gdy widzi, że stale na niego patrzysz, wie, że stracił element zaskoczenia i zazwyczaj odpływa. Chlapanie prowokuje atak!"
+  },
+  {
+    "animal": "shark",
+    "q": "W jaki sposób ząbki skórne (łuski plakoidalne) pomagają rekinowi w polowaniu?",
+    "options": [
+      "Świecą w ciemności, przywabiając małe krewetki",
+      "Wytwarzają rowki redukujące mikrowiry wody, umożliwiając cichy i szybki pływ bez oporu",
+      "Wydzielają silną truciznę paraliżującą przeciwnika",
+      "Zmieniają kolor w zależności od temperatury wody"
+    ],
+    "explain": "Ząbki skórne rekina przypominają miniaturowe zęby ze szkliwa. Wyciszają szum opływającej wody i drastycznie zmniejszają opór hydrodynamiczny."
+  },
+  {
+    "animal": "shark",
+    "q": "Ile zębów rekin może wytworzyć i wymienić w ciągu swojego życia?",
+    "options": [
+      "Tylko 32 zęby, podobnie jak dorosły człowiek",
+      "Około 150 zębów (wymieniane raz na 10 lat)",
+      "Nawet do 30 000 zębów na przesuwającej się „taśmie transmisyjnej” dziąseł",
+      "Rekiny rodzą się z jednym zestawem zębów, który nie odrasta"
+    ],
+    "explain": "Zęby rekina ułożone są w wielu rzędach. Gdy jeden ząb wypadnie, w ciągu 24–48 godzin na jego miejsce przesuwa się kolejny z tylnego rzędu."
+  },
+  {
+    "animal": "viper",
+    "q": "Po jakich dwóch cechach najpewniej odróżnisz jadowitą żmiję zygzakowatą od niejadowitego zaskrońca?",
+    "options": [
+      "Żmija ma pionową źrenicę oka i wstęgę kainową (zygzak), a zaskroniec okrągłą źrenicę i żółte plamy za skroniami",
+      "Żmija zawsze głośno grzechocze ogonem, a zaskroniec szczeka",
+      "Żmija jest zielona, a zaskroniec zawsze czarny",
+      "Żmija ma nogi, a zaskroniec nie ma"
+    ],
+    "explain": "Żmija zygzakowata ma pionowe, kocie źrenice, sercowatą głowę i wyraźny zygzak na grzbiecie. Niejadowity zaskroniec zwyczajny ma okrągłe źrenice oraz dwie jaskrawożółte plamy z tyłu głowy („za skroniami”)."
+  },
+  {
+    "animal": "viper",
+    "q": "W jaki sposób żmija „słyszy” zbliżającego się człowieka, skoro nie posiada uszu zewnętrznych ani błony bębenkowej?",
+    "options": [
+      "Wyłącznie za pomocą oczu",
+      "Odbiera drgania sejsmiczne podłoża dolną szczęką i kością kwadratową połączoną z uchem wewnętrznym",
+      "Czuje zapach perfum z odległości 2 kilometrów",
+      "W ogóle nie słyszy ani nie czuje obecności człowieka"
+    ],
+    "explain": "Żmija dosłownie „słyszy brzuchem”. Drgania kroków człowieka niosą się przez grunt, są wychwytywane przez kość kwadratową czaszki i przekazywane do ucha wewnętrznego. Dlatego tupanie na leśnej ścieżce skutecznie ją płoszy!"
+  },
+  {
+    "animal": "viper",
+    "q": "Co należy zrobić w pierwszej kolejności, jeśli dojdzie do ukąszenia przez żmiję?",
+    "options": [
+      "Naciąć nożem ranę i wysysać jad ustami",
+      "Założyć ciasną opaskę uciskową powyżej rany",
+      "Unieruchomić ukąszoną kończynę poniżej poziomu serca, zachować spokój i wezwać pogotowie (112)",
+      "Biec jak najszybciej do najbliższego szpitala"
+    ],
+    "explain": "Spokój to klucz: każdy wysiłek i stres przyspieszają krążenie krwi i rozprzestrzenianie toksyn. Unieruchomienie ręki/nogi (np. na temblaku) i telefon pod 112 to jedyne właściwe postępowanie."
+  },
+  {
+    "animal": "viper",
+    "q": "Czym jest tzw. „suche ukąszenie” (dry bite)?",
+    "options": [
+      "Ukąszeniem przez martwego węża",
+      "Ukąszeniem obronnym, w którym żmija wbija zęby, ale nie wstrzykuje ani kropli jadu",
+      "Ukąszeniem w trakcie upalnego, suchego lata",
+      "Ukąszeniem przez młodego węża, który nie ma jeszcze zębów"
+    ],
+    "explain": "Nawet 30–50% ukąszeń żmii to tzw. ukąszenia suche! Produkcja jadu kosztuje węża mnóstwo energii i tygodnie regeneracji, dlatego żmija oszczędza go na polowanie na gryzonie i nie chce marnować na człowieka."
+  },
+  {
+    "animal": "viper",
+    "q": "Do czego służy żmii rozwidlony język i narząd Jacobsona?",
+    "options": [
+      "Do wstrzykiwania jadu w ciało ofiary",
+      "Do termoregulacji i chłodzenia pyszczka",
+      "Do chemicznego stereo-węchu: język zbiera cząsteczki zapachu i przenosi je do receptorów na podniebieniu",
+      "Do wydawania ostrzegawczego syku"
+    ],
+    "explain": "Rozwidlony język bada stężenie cząsteczek zapachowych z lewej i prawej strony, po czym wkłada końcówki do dwóch kieszonek narządu Jacobsona na podniebieniu. Dzięki temu żmija bezbłędnie tropi ścieżkę nornicy!"
+  }
+]

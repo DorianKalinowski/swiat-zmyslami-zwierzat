@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#06090E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Zmysły Zwierząt">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <title>Orzeł — Świat zmysłami zwierząt V1.1</title>
+  <meta name="description" content="Poznaj wzrok i zmysły orła przedniego oraz bielika (Aquila chrysaetos). Dwa dołki siatkówki, widzenie w ultrafiolecie (UV), uścisk szponów 400 PSI i 10-poziomowa gra lotnicza.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="nav" role="navigation" aria-label="Nawigacja główna">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon-wrapper">🐾</div>
+        <span>Świat zmysłami zwierząt <span class="nav-version-tag">V1.1</span></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+                              <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Strona główna</a>
+        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog (15)</button>
+
+        <!-- Dropdown: Wybierz zwierzę (15) -->
+        <div class="nav-dropdown" id="navAnimalsDropdown">
+          <button class="nav-link nav-dropdown-btn" id="navDropdownBtn" aria-expanded="false" style="cursor: pointer;">
+            <span>🦅 Orzeł</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu">
+            <a href="pies.html" class="nav-dropdown-item"><span class="item-emoji">🐕</span> Pies domowy</a>
+            <a href="kot.html" class="nav-dropdown-item"><span class="item-emoji">🐈</span> Kot domowy</a>
+            <a href="dzik.html" class="nav-dropdown-item"><span class="item-emoji">🐗</span> Dzik euroazjatycki</a>
+            <a href="wilk.html" class="nav-dropdown-item"><span class="item-emoji">🐺</span> Wilk szary</a>
+            <a href="nietoperz.html" class="nav-dropdown-item"><span class="item-emoji">🦇</span> Nietoperz</a>
+            <a href="zmija.html" class="nav-dropdown-item"><span class="item-emoji">🐍</span> Żmija zygzakowata</a>
+            <a href="sowa.html" class="nav-dropdown-item"><span class="item-emoji">🦉</span> Sowa (Płomykówka)</a>
+            <a href="niedzwiedz.html" class="nav-dropdown-item"><span class="item-emoji">🐻</span> Niedźwiedź brunatny</a>
+            <a href="pszczola.html" class="nav-dropdown-item"><span class="item-emoji">🐝</span> Pszczoła miodna</a>
+            <a href="lis.html" class="nav-dropdown-item"><span class="item-emoji">🦊</span> Lis rudy</a>
+            <a href="jez.html" class="nav-dropdown-item"><span class="item-emoji">🦔</span> Jeż zachodni</a>
+            <a href="orzel.html" class="nav-dropdown-item active"><span class="item-emoji">🦅</span> Orzeł przedni</a>
+            <a href="delfin.html" class="nav-dropdown-item"><span class="item-emoji">🐬</span> Delfin butlonosy</a>
+            <a href="rekin.html" class="nav-dropdown-item"><span class="item-emoji">🦈</span> Żarłacz błękitny</a>
+            <a href="osmiornica.html" class="nav-dropdown-item"><span class="item-emoji">🐙</span> Ośmiornica zwyczajna</a>
+          </div>
+        </div>
+
+        <!-- Creator Chip (Dorian Kalinowski) -->
+        <div class="creator-chip" id="authorChip" title="Dowiedz się więcej o autorze">
+          <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="creator-avatar">
+          <div class="creator-text">
+            <span class="creator-name">Dorian Kalinowski</span>
+            <span class="creator-role">Twórca aplikacji</span>
+          </div>
+        </div>
+
+        <!-- Language Switcher (PL / USA) -->
+        <div class="lang-switch" id="langSwitch" role="group" aria-label="Wybór języka / Language selection">
+          <button type="button" class="lang-btn active" data-lang="pl" title="Polski" aria-label="Język polski">
+            <span class="lang-flag">🇵🇱</span>
+            <span class="lang-code">PL</span>
+          </button>
+          <button type="button" class="lang-btn" data-lang="en" title="American English" aria-label="American English">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-code">USA</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Animal Page Hero -->
+  <header class="animal-hero" id="top" style="background: linear-gradient(180deg, rgba(245, 158, 11, 0.18) 0%, rgba(9, 13, 19, 0) 100%);">
+    <div class="container">
+      <div class="animal-hero-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="index.html">Główna</a>
+            <span>›</span>
+            <span>Ptaki drapieżne</span>
+            <span>›</span>
+            <span style="color: var(--amber-light);">Orzeł</span>
+          </div>
+          <h1>Orzeł: <span style="color: var(--amber-light);">Wzrok z Chmur i Luneta Siatkówki</span></h1>
+          <p class="hero-latin">Aquila chrysaetos / Haliaeetus albicilla • Orzeł przedni i Bielik</p>
+          <p class="hero-desc">
+            Niekwestionowany król przestworzy. Posiada wzrok <strong>8-krotnie ostrzejszy od ludzkiego</strong> dzięki <strong>dwóm dołkom środkowym w każdym oku</strong>, widzi <strong>ścieżki moczu gryzoni w ultrafiolecie (UV)</strong> i nurkuje ku ofierze z prędkością przekraczającą <strong>300 km/h</strong>.
+          </p>
+          <div class="hero-stats-grid">
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--amber-light);">8x</span>
+              <span class="stat-label">Większa ostrość wzroku niż u człowieka</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--cyan-light);">3200 m</span>
+              <span class="stat-label">Dystans detekcji biegnącego zająca</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--purple-light);">&gt;400 PSI</span>
+              <span class="stat-label">Siła miażdżąca uścisku szponów</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="animal-portrait-card" style="border-color: rgba(245, 158, 11, 0.35); background: radial-gradient(circle at center, rgba(245, 158, 11, 0.18) 0%, rgba(19, 27, 39, 0.8) 70%);">
+          <div class="animal-portrait-glow" style="background: radial-gradient(circle, rgba(245, 158, 11, 0.3) 0%, transparent 70%);"></div>
+          <div class="animal-portrait-emoji" role="img" aria-label="Orzeł">🦅</div>
+          <div class="portrait-tags">
+            <span class="portrait-tag">Rząd: Accipitriformes (jastrzębiowe)</span>
+            <span class="portrait-tag">Wzrok: Dwa dołki siatkówki + Filtr UV</span>
+            <span class="portrait-tag">Lot: Szybowanie w kominach termicznych</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Subnavigation -->
+  <div class="sticky-subnav">
+    <div class="sticky-subnav-inner">
+      <a href="#historia" class="subnav-pill active">📜 Ewolucja</a>
+      <a href="#zmysly" class="subnav-pill">👁️ Zoom & UV</a>
+      <a href="#anatomia" class="subnav-pill">🧬 Anatomia</a>
+      <a href="#bezpieczenstwo" class="subnav-pill">🛡️ Strefy 500m</a>
+      <a href="#ciekawostki" class="subnav-pill">💡 Ciekawostki</a>
+      <a href="#gra" class="subnav-pill">🎮 Mini Gra</a>
+      <a href="#quiz" class="subnav-pill">🎯 Mini Quiz</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================
+         SEKCJA 1: EWOLUCJA I BIOLOGIA W PIGUŁCE
+         ============================================================ -->
+    <section class="section" id="historia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light); border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.1);">Ewolucja i Aerodynamika</span>
+          <h2>Aparatura Optyczna Doskonalona przez 30 Milionów Lat</h2>
+          <p>Orzeł to żywy cud inżynierii optycznej i biomechaniki. Poznaj etapy ewolucji, które uczyniły z ptaków drapieżnych władców przestworzy.</p>
+        </div>
+
+        <div class="timeline-stepper">
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--amber-light); box-shadow: 0 0 12px var(--amber);"></div>
+            <div class="step-header">
+              <span class="step-title">Pierwsze jastrzębiowe z oligocenu</span>
+              <span class="step-period">~34 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              Przodkowie orłów wyłonili się w oligocenie. Rozwój otwartych trawiastych sawann i stepów wymusił ewolucję widzenia na ogromne dystanse, by namierzać ofiary z pułapu chmur.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--amber-light); box-shadow: 0 0 12px var(--amber);"></div>
+            <div class="step-header">
+              <span class="step-title">Ewolucja dwóch dołków środkowych (Bifoveal Vision)</span>
+              <span class="step-period">~18 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              W oku orła wykształciły się dwa odrębne dołki środkowe (<em>fovea centralis</em>): dołek boczny o szerokim kącie widzenia do skanowania horyzontu oraz głęboki dołek centralny działający jak teleobiektyw powiększający cel 8-krotnie.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--amber-light); box-shadow: 0 0 12px var(--amber);"></div>
+            <div class="step-header">
+              <span class="step-title">Widzenie ultrafioletu (UV) i śladów moczu</span>
+              <span class="step-period">Pliocen</span>
+            </div>
+            <p class="step-body">
+              Czwarty typ czopków w siatkówce zyskał czułość na bliski ultrafiolet (300–400 nm). Nornice i myszy zaznaczają swoje ścieżki moczem, który silnie pochłania i odbija światło UV — dla orła trawa rozbłyska wyraźnymi fluorescencyjnymi autostradami!
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--amber-light); box-shadow: 0 0 12px var(--amber);"></div>
+            <div class="step-header">
+              <span class="step-title">Szczeliny aerodynamiczne i uścisk 400 PSI dzisiaj</span>
+              <span class="step-period">Współczesność</span>
+            </div>
+            <p class="step-body">
+              Współczesny orzeł przedni i bielik posiadają rozszczepione lotki na końcach skrzydeł, które eliminują wiry brzegowe i pozwalają godzinami szybować w kominach termicznych bez ani jednego uderzenia skrzydłami.
+            </p>
+          </div>
+        </div>
+
+        <div class="evolution-insight-box" style="border-color: rgba(245, 158, 11, 0.3); background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(19, 27, 39, 0.6) 100%);">
+          <div class="insight-col">
+            <h4 style="color: var(--amber-light);">🦅 Dlaczego oko orła jest większe od jego mózgu?</h4>
+            <ul class="insight-list">
+              <li>Oczy orła zajmują ponad <strong>50% objętości całej jego czaszki</strong>. Siatkówka orła zawiera aż <strong>1 000 000 fotoreceptorów na milimetr kwadratowy</strong> (u człowieka to ok. 200 000).</li>
+              <li>Wzrok orła działa z prędkością <strong>100 klatek na sekundę</strong> (ludzkie oko widzi ok. 24–30 kl./s jako płynny obraz), co pozwala na perfekcyjne celowanie przy prędkości nurkowania 320 km/h!</li>
+            </ul>
+          </div>
+          <div class="insight-col">
+            <h4 style="color: var(--cyan-light);">🧬 Fenomen grzebienia naczyniowego (Pecten):</h4>
+            <ul class="insight-list">
+              <li>Wewnątrz oka orła znajduje się bogato unaczyniony czarny grzebień (<em>pecten oculi</em>). Zapewnia on natychmiastowe odżywianie siatkówki bez konieczności obecności naczyń krwionośnych zasłaniających pole widzenia, gwarantując krystalicznie czysty obraz bez cieni.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 2: LABORATORIUM ZMYSŁÓW
+         ============================================================ -->
+    <section class="section" id="zmysly">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light);">Optyka Kwantowa i Aerodynamika</span>
+          <h2>Wzrok Teleskopowy i Widzenie w Ultrafiolecie (UV)</h2>
+          <p>Przekonaj się, jak orzeł powiększa cel za pomocą dołka siatkówki i jak wykrywa fluorescencyjne ścieżki gryzoni w ultrafiolecie.</p>
+        </div>
+
+        <div class="senses-container">
+          <!-- Eagle Zoom & UV Vision Simulator -->
+          <div class="sensory-card">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(245, 158, 11, 0.2); border: 1px solid #F59E0B; color: var(--amber-light);">🔭</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: var(--amber-light);">Optyka Dwudołkowa • Spektrum UV</span>
+                <h3>Symulator Wzroku Orła: Zoom 8x i Filtr Ultrafioletowy</h3>
+                <p>Przesuwaj suwak zoomu, aby doświadczyć powiększenia centralnego dołka siatkówki, oraz włącz filtr ultrafioletowy, by zobaczyć świecące ślady moczu gryzoni w trawie.</p>
+              </div>
+            </div>
+
+            <div style="background: #090D14; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px;">
+              <div style="margin-bottom: 20px;">
+                <label style="font-weight: 700; font-size: 0.92rem; display: block; margin-bottom: 8px;">
+                  Powiększenie optyczne (Wzrok człowieka 1x ↔ Wzrok orła 8x):
+                </label>
+                <input type="range" id="eagleZoomSlider" min="1" max="8" value="3" style="width: 100%; accent-color: var(--amber);">
+                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">
+                  <span>1x (Człowiek: zamazany punkt w dali)</span>
+                  <span id="eagleVisionDisplay" style="color: var(--amber-light); font-weight: 700;">Dołek środkowy: Zoom 3.0x (ostrość wysoka)</span>
+                  <span>8x (Orzeł: widzi wąsy gryzonia z 2 km)</span>
+                </div>
+              </div>
+
+              <!-- Interactive Visual Canvas Preview -->
+              <div id="eagleVisionPreview" style="height: 180px; border-radius: var(--radius-md); background: #0A131F; border: 1px solid rgba(245, 158, 11, 0.3); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                <div id="eagleLandscape" style="position: absolute; inset: 0; background: linear-gradient(180deg, #1E3A5F 0%, #064E3B 70%); transition: transform 0.3s ease;"></div>
+                <!-- Prey dot/target in center -->
+                <div id="eaglePreyTarget" style="position: relative; z-index: 5; text-align: center; transition: all 0.3s ease; transform: scale(1.5);">
+                  <span style="font-size: 2rem; display: block;">🐇</span>
+                  <span id="eaglePreyLabel" style="font-size: 0.75rem; background: rgba(0,0,0,0.7); padding: 2px 8px; border-radius: 4px; color: #FFF;">Zając polny (odległość: 1500m)</span>
+                </div>
+                <!-- UV Trails Glowing Layer -->
+                <div id="eagleUvGlowLayer" style="position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.4s ease; background: radial-gradient(circle at 50% 60%, rgba(168, 85, 247, 0.45) 0%, transparent 60%);">
+                  <div style="position: absolute; bottom: 25px; left: 20%; right: 20%; height: 6px; background: #C084FC; filter: blur(4px); border-radius: 3px; box-shadow: 0 0 16px #A855F7;"></div>
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+                <button class="sound-toggle-btn" id="toggleEagleUvBtn" style="border-color: rgba(168, 85, 247, 0.4); color: var(--purple-light);">
+                  🟣 Włącz filtr Ultrafioletu (UV) — Ślady moczu gryzoni
+                </button>
+                <div id="eagleUvStatusText" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--amber-light);">
+                  Tryb: Światło widzialne (RGB)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Thermal Soaring & Eagle Screech Simulator -->
+          <div class="sensory-card">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(56, 189, 248, 0.2); border: 1px solid #38BDF8; color: var(--cyan-light);">💨</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: var(--cyan-light);">Web Audio API • Aerodynamika Kominów</span>
+                <h3>Lot Szybowcowy w Kominach Termicznych i Krzyk Orła</h3>
+                <p>Orły wykorzystują nagrzane słupy wznoszącego się powietrza (termikę). Szybują na wysokość 2000–3000 metrów bez machania skrzydłami.</p>
+              </div>
+            </div>
+
+            <div style="background: #090D14; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px;">
+              <div style="margin-bottom: 20px;">
+                <label style="font-weight: 700; font-size: 0.92rem; display: block; margin-bottom: 8px;">
+                  Wysokość szybowania w prądzie termicznym:
+                </label>
+                <input type="range" id="eagleThermalSlider" min="200" max="3000" value="1200" step="100" style="width: 100%; accent-color: var(--amber);">
+                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">
+                  <span>200 m (Niski pułap)</span>
+                  <span id="eagleThermalDisplay" style="color: var(--cyan-light); font-weight: 700;">Pułap: 1200 m • Prąd wznoszący +4.2 m/s</span>
+                  <span>3000 m (Pułap chmur)</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <button class="btn btn-primary" id="playEagleGlideSoundBtn" style="flex: 1; min-width: 220px; font-size: 0.9rem;">
+                  💨 Odsłuchaj szum wiatru w lotkach szybowcowych
+                </button>
+                <button class="sound-toggle-btn" id="playEagleCryBtn" style="flex: 1; min-width: 220px; border-color: rgba(245, 158, 11, 0.4); color: var(--amber-light);">
+                  🦅 Odtwórz donośny krzyk godowy orła / bielika
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 3: ANATOMIA I BIOMECHANIKA
+         ============================================================ -->
+    <section class="section" id="anatomia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light);">Biomechanika i Szpony</span>
+          <h2>Anatomia Orła: Aerodynamiczny Drapieżnik</h2>
+          <p>Klikaj w ponumerowane punkty sylwetki orła lub wybierz przyciski poniżej, by poznać budowę skrzydeł, hakowatego dzioba i zabójczych szponów.</p>
+        </div>
+
+        <div class="sensory-card">
+          <div class="body-language-inspector">
+            <div class="anatomy-diagram-stage" style="border-color: rgba(245, 158, 11, 0.35);">
+              <div class="anatomy-diagram-wrapper">
+                <svg class="anatomy-silhouette-svg" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                  <defs>
+                    <radialGradient id="eagleGlowGrad" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.25"/>
+                      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="eagleBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#78350F"/>
+                      <stop offset="50%" stop-color="#3B1702"/>
+                      <stop offset="100%" stop-color="#0F0803"/>
+                    </linearGradient>
+                    <filter id="eagleNeon" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#F59E0B" flood-opacity="0.45"/>
+                    </filter>
+                  </defs>
+
+                  <!-- Atmosphere Aura -->
+                  <circle cx="260" cy="160" r="140" fill="url(#eagleGlowGrad)"/>
+
+                  <!-- Perch Rock/Cliff -->
+                  <polygon points="180,310 320,310 280,260 210,260" fill="#1E293B" stroke="#475569" stroke-width="2"/>
+
+                  <!-- Broad Tail Feathers (Hamulec aerodynamiczny) -->
+                  <polygon points="120,220 70,250 140,260" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+                  <polygon points="130,215 90,260 160,265" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+
+                  <!-- Powerful Body & Torso -->
+                  <ellipse cx="270" cy="170" rx="65" ry="90" fill="url(#eagleBodyGrad)" stroke="#F59E0B" stroke-width="2.5" filter="url(#eagleNeon)"/>
+
+                  <!-- Massive Wings with Slotted Primaries -->
+                  <path d="M 230 110 C 140 100, 70 140, 90 220 C 130 220, 200 190, 230 170 Z" fill="#451A03" stroke="#F59E0B" stroke-width="2"/>
+                  <!-- Slotted wing tips (Lotki rozszczepione) -->
+                  <path d="M 80 160 L 50 150 M 75 180 L 45 175 M 80 200 L 55 205 M 90 220 L 70 230" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/>
+
+                  <!-- Golden Mantle Neck Feathers -->
+                  <path d="M 270 100 C 290 85, 330 80, 360 95 C 340 125, 290 135, 270 100 Z" fill="#D97706" stroke="#F59E0B" stroke-width="2"/>
+
+                  <!-- Head & Sharp Brow Ridge -->
+                  <circle cx="355" cy="88" r="28" fill="#78350F" stroke="#F59E0B" stroke-width="2"/>
+                  <!-- Fierce Yellow/Gold Eye with Deep Fovea -->
+                  <circle cx="350" cy="80" r="8" fill="#F59E0B" stroke="#000" stroke-width="2"/>
+                  <circle cx="350" cy="80" r="4" fill="#000"/>
+                  <circle cx="348" cy="78" r="1.5" fill="#FFF"/>
+
+                  <!-- Formidable Hooked Yellow Beak -->
+                  <path d="M 378 78 Q 425 85 415 118 Q 395 102 375 98 Z" fill="#FBBF24" stroke="#D97706" stroke-width="2.5"/>
+
+                  <!-- Muscular Yellow Legs and Crushing Talons (400 PSI) -->
+                  <path d="M 245 240 L 235 270 M 275 240 L 270 270" stroke="#FBBF24" stroke-width="7" stroke-linecap="round"/>
+                  <!-- Curved Black Talons gripping rock -->
+                  <path d="M 225 272 Q 220 285 210 285 M 235 272 Q 235 288 230 288 M 245 272 Q 250 285 255 285" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M 260 272 Q 255 285 245 285 M 270 272 Q 270 288 265 288 M 280 272 Q 285 285 290 285" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+
+                <!-- 5 Well-Spaced Hotspot Buttons (>22% apart, zero collisions) -->
+                <button class="eagle-hotspot active" data-eagle-anatomy="eyes" style="left: 68%; top: 20%;" aria-label="1. Dwa dołki siatkówki i filtr UV" title="1. Dwa dołki siatkówki i filtr UV">1</button>
+                <button class="eagle-hotspot" data-eagle-anatomy="beak" style="left: 85%; top: 34%;" aria-label="2. Hakowaty dziób" title="2. Hakowaty dziób">2</button>
+                <button class="eagle-hotspot" data-eagle-anatomy="wings" style="left: 22%; top: 36%;" aria-label="3. Skrzydła szczelinowe" title="3. Skrzydła szczelinowe">3</button>
+                <button class="eagle-hotspot" data-eagle-anatomy="talons" style="left: 52%; top: 78%;" aria-label="4. Szpony o uścisku 400 PSI" title="4. Szpony o uścisku 400 PSI">4</button>
+                <button class="eagle-hotspot" data-eagle-anatomy="tail" style="left: 16%; top: 72%;" aria-label="5. Ogon sterowy" title="5. Ogon sterowy">5</button>
+              </div>
+
+              <!-- Quick Selector Chips for Touch & Accessibility -->
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1.25rem;">
+                <button class="anatomy-btn active" data-eagle-anatomy="eyes">1. Dwa Dołki Siatkówki (Zoom & UV)</button>
+                <button class="anatomy-btn" data-eagle-anatomy="beak">2. Hakowaty Dziób</button>
+                <button class="anatomy-btn" data-eagle-anatomy="wings">3. Skrzydła Szczelinowe</button>
+                <button class="anatomy-btn" data-eagle-anatomy="talons">4. Miażdżące Szpony (400 PSI)</button>
+                <button class="anatomy-btn" data-eagle-anatomy="tail">5. Ogon Sterowy</button>
+              </div>
+            </div>
+
+            <!-- Detail Panel -->
+            <div class="anatomy-info-panel" style="border-color: rgba(245, 158, 11, 0.3);">
+              <span class="overline" style="color: var(--amber-light);">Aktywny Punkt Anatomiczny</span>
+              <h3 id="eagleAnatomyTitle" style="color: var(--amber-light); margin-bottom: 10px;">Dwa Dołki Siatkówki i Widzenie w Ultrafiolecie (UV)</h3>
+              <p id="eagleAnatomyDesc" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 20px;">
+                W każdym oku orła znajdują się dwa dołki środkowe: boczny (szerokokątny) oraz centralny (teleobiektyw powiększający cel 8-krotnie). Dodatkowo orzeł posiada czwarty czopek reagujący na światło UV, dzięki czemu widzi fosforyzujące ścieżki moczu nornic w trawie.
+              </p>
+              <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: var(--radius-md); padding: 14px 18px;">
+                <span style="font-size: 0.8rem; color: var(--amber-light); font-weight: 700;">PARAMETR OPTYCZNY:</span>
+                <div id="eagleAnatomyStat" style="font-size: 1.1rem; font-weight: 800; color: #fff; margin-top: 4px;">Gęstość fotoreceptorów: 1 000 000 / mm² (5x więcej niż u człowieka)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 4: BEZPIECZEŃSTWO I OCHRONA GATUNKOWA
+         ============================================================ -->
+    <section class="section" id="bezpieczenstwo">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--emerald-light);">Prawo Przyrody i Ochrona</span>
+          <h2>Strefy Ochronne 500m i Ratowanie Drapieżników</h2>
+          <p>Orzeł przedni i bielik podlegają w Polsce ścisłej ochronie strefowej. Poznaj zasady zachowania w pobliżu rewirów gniazdowych.</p>
+        </div>
+
+        <div class="safety-grid">
+          <div class="toxic-food-card" style="border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05);">
+            <div class="toxic-food-header">
+              <span>🌲</span>
+              <h5 style="color: #F87171;">1. Strefa 500m wokół gniazda (Prawo Karne)</h5>
+            </div>
+            <p>W promieniu <strong>200 m (całorocznie)</strong> oraz <strong>500 m (od 1 stycznia do 31 lipca)</strong> wokół gniazda bielika i orła przedniego obowiązuje bezwzględny zakaz wstępu, hałasowania i prac leśnych. Spłoszenie ptaków oznacza śmierć piskląt z wychłodzenia!</p>
+          </div>
+
+          <div class="toxic-food-card" style="border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.05);">
+            <div class="toxic-food-header">
+              <span>🚁</span>
+              <h5 style="color: var(--amber-light);">2. Zakaz latania dronami w pobliżu</h5>
+            </div>
+            <p>Dron jest dla orła agresorem naruszającym terytorium. Orzeł zaatakuje maszynę ze szponami — grozi to śmiertelnym pokaleczeniem nóg ptaka przez wirujące śmigła oraz rozbiciem drona.</p>
+          </div>
+
+          <div class="toxic-food-card" style="border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.05);">
+            <div class="toxic-food-header">
+              <span>🔴</span>
+              <h5 style="color: var(--purple-light);">3. Śmiertelna ołowica (Amunicja ołowiana)</h5>
+            </div>
+            <p>Jedno z największych zagrożeń! Bieliki żywiące się padliną połykają fragmenty ołowianego śrutu i kul myśliwskich z postrzelonych zwierząt. Ołów wywołuje paraliż przewodu pokarmowego i bolesną śmierć w ciągu kilku dni.</p>
+          </div>
+
+          <div class="toxic-food-card" style="border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.05);">
+            <div class="toxic-food-header">
+              <span>💨</span>
+              <h5 style="color: var(--cyan-light);">4. Wiatraki i napowietrzne linie energetyczne</h5>
+            </div>
+            <p>Podczas polowania orzeł skupia wzrok wyłącznie na ziemi i nie widzi wirujących z prędkością 250 km/h końcówek łopat turbin wiatrowych. Nowoczesne farmy instalują radary wstrzymujące turbiny, gdy orzeł zbliża się do masztu.</p>
+          </div>
+        </div>
+
+        <!-- Crisis Simulator -->
+        <div style="margin-top: 36px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px;">
+          <h4 style="margin-bottom: 8px;">🎮 Symulator Decyzji: Podczas marcowego spaceru w borze sosnowym zauważasz olbrzymie gniazdo bielika na koronie drzewa! Co robisz?</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+            Wybierz właściwe postępowanie:
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 20px;">
+            <div class="crisis-option-card eagle-crisis-card" data-action="approach_drone">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">🚁</span>
+              <strong>Wypuszczam drona, by sfilmować wysiadywanie jaj w gnieździe</strong>
+            </div>
+            <div class="crisis-option-card eagle-crisis-card" data-action="climb_tree">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">🧗</span>
+              <strong>Wspinam się na drzewo, aby sprawdzić ile jaj zniosła samica</strong>
+            </div>
+            <div class="crisis-option-card eagle-crisis-card" data-action="quietly_withdraw">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">🌲</span>
+              <strong>Natychmiast cicho zawracam i opuszczam strefę 500 m</strong>
+            </div>
+            <div class="crisis-option-card eagle-crisis-card" data-action="camp_under">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">⛺</span>
+              <strong>Rozbijam namiot pod drzewem, by obserwować ptaki przez lornetkę</strong>
+            </div>
+          </div>
+
+          <div id="eagleCrisisResult" class="crisis-feedback-box"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 5: FASCYNUJĄCE CIEKAWOSTKI
+         ============================================================ -->
+    <section class="section" id="ciekawostki" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light); border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.1);">Sekrety Natury</span>
+          <h2>Niezwykłe Fakty o Orłach i Bielikach</h2>
+          <p>Oto fakty historyczne, ornitologiczne i fizjologiczne, które czynią z tych ptaków symbol potęgi.</p>
+        </div>
+
+        <div class="curiosity-grid">
+          <div class="curiosity-card" style="border-color: rgba(245, 158, 11, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🇵🇱</span>
+              <h4 style="color: var(--amber-light);">Bielik w polskim godle nie jest orłem!</h4>
+            </div>
+            <p>
+              Z biologicznego punktu widzenia bielik (<em>Haliaeetus albicilla</em>) nie należy do rodzaju orłów (<em>Aquila</em>), lecz do <strong>orłanów</strong> — ptaków ściśle związanych ze środowiskiem wodnym i rybożernych. Ma nieopierzone skoki nóg, podczas gdy prawdziwe orły mają łapy opierzone aż do samych palców. Mimo to, to właśnie majestatyczny bielik widnieje w herbie Polski!
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(56, 189, 248, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🏰</span>
+              <h4 style="color: var(--cyan-light);">Gniazda ważące ponad 1 tonę!</h4>
+            </div>
+            <p>
+              Bieliki i orły przednie wracają do tych samych gniazd przez dziesięciolecia. Co roku dokładają świeże konary i gałęzie. Rekordowe gniazda osiągają <strong>3 metry wysokości, 2,5 metra średnicy i wagę ponad 1000 kg</strong>! Czasami całe stuletnie drzewo łamie się pod ciężarem orlego zamku.
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(168, 85, 247, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">⚡</span>
+              <h4 style="color: var(--purple-light);">Nurkowanie z prędkością 320 km/h</h4>
+            </div>
+            <p>
+              Orzeł przedni polując na kozice, świstaki lub zające w górach składa skrzydła w profil pocisku i nurkuje z wysokości 1000 metrów z prędkością przekraczającą <strong>300 km/h</strong>. Siła uderzenia szponów przy takiej prędkości jest w stanie natychmiast złamać kręgosłup ofiary.
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(16, 185, 129, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">💍</span>
+              <h4 style="color: var(--emerald-light);">Wierność na całe życie i podniebny taniec godowy</h4>
+            </div>
+            <p>
+              Orły łączą się w pary na całe życie (monogamia). Ich zaloty to spektakularny podniebny taniec: na wysokości setek metrów chwytają się nawzajem szponami i spadają w stronę ziemi wirując jak wiatrak, rozłączając uścisk zaledwie kilkanaście metrów nad koronami drzew!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 6: 10-POZIOMOWA MINI GRA
+         ============================================================ -->
+    <section class="section" id="gra">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light); border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.1);">🎮 Zagraj i Zmierz Się ze Wzrokiem z Chmur</span>
+          <h2>Mini Gra: Podniebny Patrol Orła — Wzrok z Chmur</h2>
+          <p>Szybuj wysoko w prądach termicznych. Poruszaj celownikiem teleskopowym, przełączaj widzenie UV klawiszem U lub przyciskiem, namierzaj cele na ziemi i nurkuj, by pochwycić zdobycz!</p>
+        </div>
+
+        <div class="minigame-card" style="border-color: rgba(245, 158, 11, 0.35);">
+          <!-- Level Header & Progress Dots -->
+          <div class="minigame-level-header">
+            <div class="minigame-level-badge" id="eagleGameLevelBadge" style="background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.4); color: var(--amber-light);">
+              <span>Misja 1/10:</span> Poranny Patrol nad Jeziorem Śniardwy 🐟🦅
+            </div>
+            <div class="minigame-level-dots" id="eagleGameLevelDots">
+              <span class="level-dot active"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+            </div>
+          </div>
+
+          <!-- HUD -->
+          <div class="minigame-hud">
+            <div class="hud-item">
+              <span>🎯 Schwycona zdobycz:</span>
+              <span class="hud-val" id="eagleGamePrey" style="color: var(--amber-light);">0 / 3</span>
+            </div>
+            <div class="hud-item">
+              <span>⏱️ Czas lotu:</span>
+              <span class="hud-val" id="eagleGameTimer" style="color: var(--cyan-light);">40s</span>
+            </div>
+            <div class="hud-item">
+              <span>Spektrum wzroku:</span>
+              <span class="hud-val" id="eagleGameUvStatus" style="color: var(--purple-light);">RGB (Widzialne)</span>
+            </div>
+          </div>
+
+          <div class="minigame-viewport">
+            <canvas id="eagleGameCanvas" class="minigame-canvas" style="background: #06111D;"></canvas>
+
+            <!-- Game Overlay -->
+            <div class="minigame-overlay" id="eagleGameOverlay">
+              <div style="font-size: 3.5rem; margin-bottom: 12px;" id="eagleGameOverIcon">🦅☁️🎯</div>
+              <h4 id="eagleGameOverTitle">Podniebny Patrol Orła</h4>
+              <p id="eagleGameOverDesc">
+                Szybuj z orłem na pułapie 1000 metrów! Nakieruj teleobiektyw oka na zwierzynę. Kliknij lub dotknij, by wykonać nurkowanie szponami. Używaj filtra UV, by odkrywać ukryte nornice!
+              </p>
+              <div class="overlay-actions">
+                <button class="btn btn-primary" id="startEagleGameBtn">Rozpocznij lot patrolowy 🦅</button>
+                <button class="btn btn-primary" id="nextEagleLevelBtn" style="display: none;">Kolejny patrol →</button>
+                <button class="btn btn-secondary" id="restartEagleGameBtn" style="display: none;">Powtórz patrol ↺</button>
+                <button class="btn btn-secondary" id="resetEagleCampaignBtn" style="display: none;">Zacznij od poziomu 1 ↺</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Touch UV toggle button for mobile in-game -->
+          <div style="display: flex; justify-content: center; margin-top: 14px;">
+            <button class="btn btn-secondary" id="eagleUvToggleInGameBtn" style="padding: 10px 24px; font-size: 0.92rem; border-color: rgba(168, 85, 247, 0.4); color: var(--purple-light);">
+              🟣 Przełącz Filtr UV (Klawisz U / Dotknij)
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 7: INTERAKTYWNY MINI QUIZ
+         ============================================================ -->
+    <section class="section" id="quiz" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--amber-light); border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.1);">Sprawdź swoją wiedzę</span>
+          <h2>Mini Quiz Mistrza Przestworzy i Zmysłów Orła</h2>
+          <p>5 pytań weryfikujących wiedzę o optyce dołków siatkówki, widzeniu UV, strefach ochronnych i biologii bielika.</p>
+        </div>
+
+        <div class="quiz-wrapper" style="border-color: rgba(245, 158, 11, 0.3);">
+          <div class="quiz-meter-bar">
+            <div class="quiz-meter-progress" id="eagleQuizMeterProgress" style="background: linear-gradient(90deg, #F59E0B 0%, #10B981 100%);"></div>
+          </div>
+          <div id="eagleQuizDynamicBody">
+            <!-- Rendered dynamically by js/eagle-simulators.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- ============================================================
+         SEKCJA: NAWIGACJA PO GATUNKACH I PRZEJŚCIE DO KATALOGU
+         ============================================================ -->
+    <section class="section animal-navigation-hub">
+      <div class="container">
+        <div class="animal-navigation-card">
+          <span class="overline" style="color: var(--amber);">Nawigacja po świecie zmysłów</span>
+          <h3 style="font-size: 1.75rem; margin: 8px 0 12px;">Poznaj zmysły innych zwierząt</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.6; max-width: 620px; margin-left: auto; margin-right: auto;">
+            Odkryj percepcję kolejnego gatunku lub otwórz pełny, interaktywny katalog wszystkich 15 zwierząt:
+          </p>
+
+          <!-- Stepper: Poprzednie / Główny katalog / Następne -->
+          <div class="animal-nav-stepper">
+            <a href="jez.html" class="animal-nav-btn animal-nav-btn-prev" title="Poprzednie zwierzę: Jeż zachodni">
+              <span>←</span>
+              <span>🦔 Jeż</span>
+            </a>
+
+            <button class="animal-nav-btn animal-nav-btn-catalog animal-catalog-trigger" title="Otwórz pełny katalog ze wszystkimi 15 zwierzętami">
+              <span>🐾 Pełny katalog (15 zwierząt)</span>
+            </button>
+
+            <a href="delfin.html" class="animal-nav-btn animal-nav-btn-next" title="Następne zwierzę: Delfin butlonosy">
+              <span>🐬 Delfin</span>
+              <span>→</span>
+            </a>
+          </div>
+
+          <!-- Szybki skok do każdego zwierzęcia -->
+          <div class="animal-quick-jump-wrap">
+            <div class="animal-quick-jump-title">
+              Szybki skok do dowolnego gatunku (15):
+            </div>
+            <div class="animal-quick-jump-bar">
+                <a href="pies.html" class="animal-quick-chip"><span>🐕</span> <span>Pies</span></a>
+                <a href="kot.html" class="animal-quick-chip"><span>🐈</span> <span>Kot</span></a>
+                <a href="dzik.html" class="animal-quick-chip"><span>🐗</span> <span>Dzik</span></a>
+                <a href="wilk.html" class="animal-quick-chip"><span>🐺</span> <span>Wilk</span></a>
+                <a href="nietoperz.html" class="animal-quick-chip"><span>🦇</span> <span>Nietoperz</span></a>
+                <a href="zmija.html" class="animal-quick-chip"><span>🐍</span> <span>Żmija</span></a>
+                <a href="sowa.html" class="animal-quick-chip"><span>🦉</span> <span>Sowa</span></a>
+                <a href="niedzwiedz.html" class="animal-quick-chip"><span>🐻</span> <span>Niedźwiedź</span></a>
+                <a href="pszczola.html" class="animal-quick-chip"><span>🐝</span> <span>Pszczoła</span></a>
+                <a href="lis.html" class="animal-quick-chip"><span>🦊</span> <span>Lis</span></a>
+                <a href="jez.html" class="animal-quick-chip"><span>🦔</span> <span>Jeż</span></a>
+                <a href="orzel.html" class="animal-quick-chip active"><span>🦅</span> <span>Orzeł</span></a>
+                <a href="delfin.html" class="animal-quick-chip"><span>🐬</span> <span>Delfin</span></a>
+                <a href="rekin.html" class="animal-quick-chip"><span>🦈</span> <span>Rekin</span></a>
+                <a href="osmiornica.html" class="animal-quick-chip"><span>🐙</span> <span>Ośmiornica</span></a>
+            </div>
+          </div>
+
+          <!-- Powrót na stronę główną -->
+          <div class="animal-home-return">
+            <a href="index.html#zwierzeta">
+              <span>🏠 Wróć do spisu na stronie głównej</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Author Profile Modal (Dorian Kalinowski) -->
+  <div class="modal-backdrop" id="authorModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeAuthorModal" aria-label="Zamknij okno">✕</button>
+      <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="author-avatar-big">
+      <h3 class="author-modal-name">Dorian Kalinowski</h3>
+      <div class="author-modal-role">Twórca projektu i miłośnik zwierząt</div>
+      <p class="author-bio">
+        Cześć! Mam na imię Dorian. Od zawsze fascynowało mnie to, jak zwierzęta odbierają otaczający nas świat – zupełnie inaczej niż my, ludzie. Na mojej stronie możesz na własne oczy i uszy sprawdzić ich perspektywę oraz dowiedzieć się, kiedy i dlaczego dochodzi do niebezpiecznych spięć. Wierzę, że gdybyśmy naprawdę rozumieli, jak zwierzęta myślą, widzą i czują, byłoby między nami znacznie mniej strachu i niepotrzebnych konfrontacji.
+      </p>
+      <div style="text-align: center;">
+        <button class="btn btn-primary" id="confirmAuthorModal">Zamknij</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PWA Install Prompt Banner -->
+  <div class="pwa-install-banner" id="pwaBanner">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 1.6rem;">📱</span>
+      <div>
+        <div style="font-size: 0.92rem; font-weight: 700;">Zainstaluj jako aplikację PWA</div>
+        <div style="font-size: 0.78rem; color: var(--text-muted);">Szybki dostęp i działanie offline bez przeglądarki</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="pwaInstallBtn" style="padding: 8px 18px; font-size: 0.85rem;">Instaluj</button>
+    <button class="modal-close-btn" id="pwaDismissBtn" style="position: static; width: 28px; height: 28px; font-size: 0.8rem;">✕</button>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <div class="mobile-bottom-bar" role="navigation" aria-label="Nawigacja mobilna">
+    <a href="index.html" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🏠</span>
+      <span>Główna</span>
+    </a>
+    <button class="bottom-bar-item animal-catalog-trigger">
+      <span class="bottom-bar-icon">🐾</span>
+      <span>Katalog</span>
+    </button>
+    <a href="orzel.html" class="bottom-bar-item active">
+      <span class="bottom-bar-icon">🦅</span>
+      <span>Orzeł</span>
+    </a>
+    <a href="#bezpieczenstwo" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🛡️</span>
+      <span>Zasady</span>
+    </a>
+    <button class="bottom-bar-item" id="mobileAuthorTrigger">
+      <span class="bottom-bar-icon">👤</span>
+      <span>Autor</span>
+    </button>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-author">
+        Zaprojektowane i stworzone przez: <strong>Dorian Kalinowski</strong>
+      </p>
+      <p class="footer-rights">
+        © 2026 Świat zmysłami zwierząt V1.1 • Projekt edukacyjny non-profit • Wersja V1.1
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/eagle-simulators.js"></script>
+</body>
+</html>

@@ -107,14 +107,24 @@ const ANIMAL_REGISTRY = [
     desc: 'Zmysł geomagnetyczny (skok na NE z 73% sukcesu), słuch pod 1 m śniegu i 10-poziomowa gra myszkowania.'
   },
   {
+    id: 'jez',
+    name: 'Jeż zachodni',
+    latin: 'Erinaceus europaeus',
+    emoji: '🦔',
+    category: 'ssaki',
+    url: 'jez.html',
+    available: true,
+    desc: 'Odporność na jad żmii, narząd Jacobsona (samosmarowanie puszystą pianą), słuch do 45 kHz i 10-poziomowe żerowanie.'
+  },
+  {
     id: 'orzel',
-    name: 'Orzeł przedni',
-    latin: 'Aquila chrysaetos',
+    name: 'Orzeł przedni (i Bielik)',
+    latin: 'Aquila chrysaetos / Haliaeetus albicilla',
     emoji: '🦅',
     category: 'ptaki',
     url: 'orzel.html',
-    available: false,
-    desc: 'Wzrok 8-krotnie ostrzejszy od ludzkiego, widzenie w ultrafiolecie i dwa dołki siatkówki.'
+    available: true,
+    desc: 'Wzrok 8-krotnie ostrzejszy, dwa dołki siatkówki, widzenie UV i 10-poziomowy lot szybowcowy z chmur.'
   },
   {
     id: 'delfin',
@@ -123,18 +133,18 @@ const ANIMAL_REGISTRY = [
     emoji: '🐬',
     category: 'morskie',
     url: 'delfin.html',
-    available: false,
-    desc: 'Akustyczny sonar 3D (echolokacja), soczewka tłuszczowa melona i magnetorecepcja oceaniczna.'
+    available: true,
+    desc: 'Akustyczny sonar 3D (echolokacja), soczewka tłuszczowa melona, gwizdy podpisowe i 10 poziomów łowów głębinowych.'
   },
   {
     id: 'rekin',
     name: 'Żarłacz błękitny',
-    latin: 'Prionace glauca',
+    latin: 'Prionace glauca / Sphyrna',
     emoji: '🦈',
     category: 'morskie',
     url: 'rekin.html',
-    available: false,
-    desc: 'Elektrorecepcja ampułek Lorenziniego wykrywająca nanowolty uderzenia serca ryby pod piaskiem.'
+    available: true,
+    desc: 'Elektrorecepcja ampułek Lorenziniego wykrywająca nanowolty, linia boczna i 10 poziomów patrolu rafy.'
   },
   {
     id: 'osmiornica',
@@ -143,8 +153,8 @@ const ANIMAL_REGISTRY = [
     emoji: '🐙',
     category: 'morskie',
     url: 'osmiornica.html',
-    available: false,
-    desc: '500 milionów neuronów rozproszonych w mackach, komórki barwnikowe chromatofory i skóra widząca światło.'
+    available: true,
+    desc: '500 mln neuronów w ramionach, kamuflaż chromatoforów w 200 ms, 3 serca i 10 poziomów szczelin skalnych.'
   }
 ];
 
@@ -303,49 +313,57 @@ function initGlobalAnimalCatalog() {
   const closeBtn = catalogModal.querySelector('#closeCatalogModal');
 
   function renderCatalog(filterText = '', filterCat = 'all') {
+    const isEn = window.i18n && window.i18n.currentLang === 'en';
     const query = filterText.toLowerCase().trim();
     const filtered = ANIMAL_REGISTRY.filter(a => {
       const matchCat = filterCat === 'all' || a.category === filterCat;
+      const transName = isEn && window.t ? window.t(a.name) : a.name;
+      const transDesc = isEn && window.t ? window.t(a.desc) : a.desc;
       const matchText = !query || 
         a.name.toLowerCase().includes(query) || 
+        transName.toLowerCase().includes(query) ||
         a.latin.toLowerCase().includes(query) || 
-        a.desc.toLowerCase().includes(query);
+        a.desc.toLowerCase().includes(query) ||
+        transDesc.toLowerCase().includes(query);
       return matchCat && matchText;
     });
 
     if (!filtered.length) {
       grid.innerHTML = `
         <div style="grid-column: 1 / -1; text-align: center; padding: 30px; color: var(--text-dim);">
-          Nie znaleziono zwierzęcia pasującego do „${filterText}” 🔍
+          ${isEn ? `No animals found matching "${filterText}" 🔍` : `Nie znaleziono zwierzęcia pasującego do „${filterText}” 🔍`}
         </div>
       `;
       return;
     }
 
-    grid.innerHTML = filtered.map(a => `
+    grid.innerHTML = filtered.map(a => {
+      const displayName = isEn && window.t ? window.t(a.name) : a.name;
+      const displayDesc = isEn && window.t ? window.t(a.desc) : a.desc;
+      const badgeText = a.available ? (isEn ? 'Available' : 'Dostępny') : (isEn ? 'Coming Soon' : 'Wkrótce');
+      const actionText = a.available 
+        ? (isEn ? 'Explore senses →' : 'Zobacz zmysły →')
+        : (isEn ? 'In development' : 'W opracowaniu');
+
+      return `
       <${a.available ? `a href="${a.url}"` : 'div'} class="catalog-item-card ${a.available ? '' : 'locked'}">
         <div>
           <div class="cic-top">
             <span class="cic-emoji">${a.emoji}</span>
             <span class="card-badge ${a.available ? 'available' : 'soon'}">
-              ${a.available ? 'Dostępny' : 'Wkrótce'}
+              ${badgeText}
             </span>
           </div>
-          <div class="cic-title">${a.name}</div>
+          <div class="cic-title">${displayName}</div>
           <div class="cic-latin">${a.latin}</div>
-          <div class="cic-desc">${a.desc}</div>
+          <div class="cic-desc">${displayDesc}</div>
         </div>
-        ${a.available ? `
-          <span style="font-size: 0.8rem; font-weight: 700; color: var(--amber); margin-top: auto;">
-            Zobacz zmysły →
-          </span>
-        ` : `
-          <span style="font-size: 0.75rem; color: var(--text-dim); margin-top: auto;">
-            W opracowaniu
-          </span>
-        `}
+        <span style="font-size: ${a.available ? '0.8rem' : '0.75rem'}; font-weight: ${a.available ? '700' : '400'}; color: ${a.available ? 'var(--amber)' : 'var(--text-dim)'}; margin-top: auto;">
+          ${actionText}
+        </span>
       </${a.available ? 'a' : 'div'}>
-    `).join('');
+    `;
+    }).join('');
   }
 
   function openCatalog() {
@@ -395,6 +413,12 @@ function initGlobalAnimalCatalog() {
       pill.classList.add('active');
       renderCatalog(searchInput?.value || '', pill.dataset.cat);
     });
+  });
+
+  // Re-render catalog whenever language switches (PL <-> USA)
+  document.addEventListener('languageChanged', () => {
+    const activeCat = catalogModal.querySelector('#catalogFilterPills .btn-pill.active')?.dataset.cat || 'all';
+    renderCatalog(searchInput?.value || '', activeCat);
   });
 }
 

@@ -13,7 +13,7 @@
   <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icons/icon-192.svg">
   
-  <title>Kot — Świat zmysłami zwierząt</title>
+  <title>Kot — Świat zmysłami zwierząt V1.1</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,18 +25,18 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-brand">
         <div class="brand-icon-wrapper">🐾</div>
-        <span>Świat zmysłami zwierząt</span>
+        <span>Świat zmysłami zwierząt <span class="nav-version-tag">V1.1</span></span>
       </a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
-            <div class="nav-links" id="navLinks">
+                                    <div class="nav-links" id="navLinks">
         <a href="index.html" class="nav-link">Strona główna</a>
-        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog (10)</button>
+        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog (15)</button>
 
-        <!-- Dropdown: Wybierz zwierzę (10) -->
+        <!-- Dropdown: Wybierz zwierzę (15) -->
         <div class="nav-dropdown" id="navAnimalsDropdown">
           <button class="nav-link nav-dropdown-btn" id="navDropdownBtn" aria-expanded="false" style="cursor: pointer;">
             <span>🐈 Kot</span>
@@ -53,6 +53,11 @@
             <a href="niedzwiedz.html" class="nav-dropdown-item"><span class="item-emoji">🐻</span> Niedźwiedź brunatny</a>
             <a href="pszczola.html" class="nav-dropdown-item"><span class="item-emoji">🐝</span> Pszczoła miodna</a>
             <a href="lis.html" class="nav-dropdown-item"><span class="item-emoji">🦊</span> Lis rudy</a>
+            <a href="jez.html" class="nav-dropdown-item"><span class="item-emoji">🦔</span> Jeż zachodni</a>
+            <a href="orzel.html" class="nav-dropdown-item"><span class="item-emoji">🦅</span> Orzeł przedni</a>
+            <a href="delfin.html" class="nav-dropdown-item"><span class="item-emoji">🐬</span> Delfin butlonosy</a>
+            <a href="rekin.html" class="nav-dropdown-item"><span class="item-emoji">🦈</span> Żarłacz błękitny</a>
+            <a href="osmiornica.html" class="nav-dropdown-item"><span class="item-emoji">🐙</span> Ośmiornica zwyczajna</a>
           </div>
         </div>
 
@@ -63,6 +68,18 @@
             <span class="creator-name">Dorian Kalinowski</span>
             <span class="creator-role">Twórca aplikacji</span>
           </div>
+        </div>
+
+        <!-- Language Switcher (PL / USA) -->
+        <div class="lang-switch" id="langSwitch" role="group" aria-label="Wybór języka / Language selection">
+          <button type="button" class="lang-btn active" data-lang="pl" title="Polski" aria-label="Język polski">
+            <span class="lang-flag">🇵🇱</span>
+            <span class="lang-code">PL</span>
+          </button>
+          <button type="button" class="lang-btn" data-lang="en" title="American English" aria-label="American English">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-code">USA</span>
+          </button>
         </div>
       </div>
     </div>
@@ -673,18 +690,65 @@
       </div>
     </section>
 
-    <!-- Navigation between Animals -->
-    <section style="padding: 60px 0; text-align: center;">
+        <!-- ============================================================
+         SEKCJA: NAWIGACJA PO GATUNKACH I PRZEJŚCIE DO KATALOGU
+         ============================================================ -->
+    <section class="section animal-navigation-hub">
       <div class="container">
-        <h3 style="margin-bottom: 16px;">Poznaj inne zwierzęta</h3>
-        <p style="margin-bottom: 24px;">Przełącz się na percepcję psa domowego lub przejrzyj pełny katalog gatunków.</p>
-        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
-          <a href="pies.html" class="btn btn-primary">
-            <span>🐕 Zobacz zmysły psa</span>
-          </a>
-          <button class="btn btn-secondary animal-catalog-trigger">
-            <span>🐾 Otwórz katalog wszystkich zwierząt</span>
-          </button>
+        <div class="animal-navigation-card">
+          <span class="overline" style="color: var(--amber);">Nawigacja po świecie zmysłów</span>
+          <h3 style="font-size: 1.75rem; margin: 8px 0 12px;">Poznaj zmysły innych zwierząt</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.6; max-width: 620px; margin-left: auto; margin-right: auto;">
+            Odkryj percepcję kolejnego gatunku lub otwórz pełny, interaktywny katalog wszystkich 15 zwierząt:
+          </p>
+
+          <!-- Stepper: Poprzednie / Główny katalog / Następne -->
+          <div class="animal-nav-stepper">
+            <a href="pies.html" class="animal-nav-btn animal-nav-btn-prev" title="Poprzednie zwierzę: Pies domowy">
+              <span>←</span>
+              <span>🐕 Pies</span>
+            </a>
+
+            <button class="animal-nav-btn animal-nav-btn-catalog animal-catalog-trigger" title="Otwórz pełny katalog ze wszystkimi 15 zwierzętami">
+              <span>🐾 Pełny katalog (15 zwierząt)</span>
+            </button>
+
+            <a href="dzik.html" class="animal-nav-btn animal-nav-btn-next" title="Następne zwierzę: Dzik euroazjatycki">
+              <span>🐗 Dzik</span>
+              <span>→</span>
+            </a>
+          </div>
+
+          <!-- Szybki skok do każdego zwierzęcia -->
+          <div class="animal-quick-jump-wrap">
+            <div class="animal-quick-jump-title">
+              Szybki skok do dowolnego gatunku (15):
+            </div>
+            <div class="animal-quick-jump-bar">
+                <a href="pies.html" class="animal-quick-chip"><span>🐕</span> <span>Pies</span></a>
+                <a href="kot.html" class="animal-quick-chip active"><span>🐈</span> <span>Kot</span></a>
+                <a href="dzik.html" class="animal-quick-chip"><span>🐗</span> <span>Dzik</span></a>
+                <a href="wilk.html" class="animal-quick-chip"><span>🐺</span> <span>Wilk</span></a>
+                <a href="nietoperz.html" class="animal-quick-chip"><span>🦇</span> <span>Nietoperz</span></a>
+                <a href="zmija.html" class="animal-quick-chip"><span>🐍</span> <span>Żmija</span></a>
+                <a href="sowa.html" class="animal-quick-chip"><span>🦉</span> <span>Sowa</span></a>
+                <a href="niedzwiedz.html" class="animal-quick-chip"><span>🐻</span> <span>Niedźwiedź</span></a>
+                <a href="pszczola.html" class="animal-quick-chip"><span>🐝</span> <span>Pszczoła</span></a>
+                <a href="lis.html" class="animal-quick-chip"><span>🦊</span> <span>Lis</span></a>
+                <a href="jez.html" class="animal-quick-chip"><span>🦔</span> <span>Jeż</span></a>
+                <a href="orzel.html" class="animal-quick-chip"><span>🦅</span> <span>Orzeł</span></a>
+                <a href="delfin.html" class="animal-quick-chip"><span>🐬</span> <span>Delfin</span></a>
+                <a href="rekin.html" class="animal-quick-chip"><span>🦈</span> <span>Rekin</span></a>
+                <a href="osmiornica.html" class="animal-quick-chip"><span>🐙</span> <span>Ośmiornica</span></a>
+            </div>
+          </div>
+
+          <!-- Powrót na stronę główną -->
+          <div class="animal-home-return">
+            <a href="index.html#zwierzeta">
+              <span>🏠 Wróć do spisu na stronie głównej</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -750,12 +814,14 @@
         Zaprojektowane i stworzone przez: <strong>Dorian Kalinowski</strong>
       </p>
       <p class="footer-rights">
-        © 2026 Świat zmysłami zwierząt • Projekt edukacyjny non-profit • V1
+        © 2026 Świat zmysłami zwierząt V1.1 • Projekt edukacyjny non-profit • Wersja V1.1
       </p>
     </div>
   </footer>
 
   <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/app.js"></script>
   <script src="js/cat-simulators.js"></script>
 </body>

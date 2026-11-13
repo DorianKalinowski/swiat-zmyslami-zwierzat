@@ -12,6 +12,11 @@
     { "source": "/niedzwiedz", "destination": "/niedzwiedz.html" },
     { "source": "/pszczola", "destination": "/pszczola.html" },
     { "source": "/lis", "destination": "/lis.html" },
+    { "source": "/jez", "destination": "/jez.html" },
+    { "source": "/orzel", "destination": "/orzel.html" },
+    { "source": "/delfin", "destination": "/delfin.html" },
+    { "source": "/rekin", "destination": "/rekin.html" },
+    { "source": "/osmiornica", "destination": "/osmiornica.html" },
     { "source": "/", "destination": "/index.html" }
   ]
 }

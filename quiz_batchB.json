@@ -1,0 +1,277 @@
+[
+  {
+    "animal": "dog",
+    "q": "Jak pies widzi czerwoną piłkę rzuconą na zieloną trawę?",
+    "options": [
+      "Widzi jaskrawą czerwień i zieleń jak człowiek",
+      "Widzi czarno-białe piksele",
+      "Widzi ją jako żółtawo-szarą na żółto-brązowej trawie (dichromatyzm)",
+      "Nie widzi jej wcale, bo jest całkowicie niewidoczna"
+    ],
+    "explain": "Psy są dichromatami — nie posiadają czopków wrażliwych na czerwień. Czerwona piłka zlewa się z trawnikiem, dopóki się nie poruszy!"
+  },
+  {
+    "animal": "dog",
+    "q": "Dlaczego u psa warczenie jest sygnałem, za który NIE wolno go karać?",
+    "options": [
+      "Bo pies warczy tylko wtedy, gdy się cieszy",
+      "Bo warczenie to bezpiecznik komunikacyjny — ukarany pies ugryzie bez ostrzeżenia",
+      "Bo warczenie oznacza, że pies prosi o jedzenie",
+      "Bo pies i tak nic z tego nie rozumie"
+    ],
+    "explain": "Warczenie to desperacka prośba o przestrzeń. Jeśli ukarzesz psa za warczenie, wygaszasz ostrzeżenie — pies natychmiast przejdzie do ataku zębami."
+  },
+  {
+    "animal": "dog",
+    "q": "Do jakiej częstotliwości sięga słuch psa domowego?",
+    "options": [
+      "Do 20 000 Hz (identycznie jak ucho ludzkie)",
+      "Do 30 000 Hz",
+      "Aż do ok. 65 000 Hz (ultradźwięki niesłyszalne dla człowieka)",
+      "Pies słyszy tylko dźwięki poniżej 100 Hz"
+    ],
+    "explain": "Pies odbiera dźwięki do 65 kHz — pozwala mu to słyszeć pisk polnych myszy pod śniegiem oraz komendy z bezgłośnego gwizdka ultradźwiękowego."
+  },
+  {
+    "animal": "dog",
+    "q": "Który z poniższych produktów jest dla psa ŚMIERTELNĄ trucizną nawet w małej dawce?",
+    "options": [
+      "Marchewka",
+      "Ksylitol (słodzik w gumach do żucia) i czekolada",
+      "Ugotowane mięso z indyka",
+      "Kawałek jabłka bez pestek"
+    ],
+    "explain": "Ksylitol wywołuje gwałtowny wyrzut insuliny i ostrą niewydolność wątroby, a teobromina w czekoladzie niszczy układ krążenia i serce psa."
+  },
+  {
+    "animal": "dog",
+    "q": "Co oznacza zjawisko „Whale Eye\" (wielorybie oko) u psa?",
+    "options": [
+      "Pies ma wadę wzroku i potrzebuje okularów",
+      "Widoczne białka oczu — sygnał skrajnego stresu, strachu i ryzyka obrony",
+      "Pies mruga z sympatii do właściciela",
+      "Pies widzi obiekty pod wodą"
+    ],
+    "explain": "Gdy pies zastyga i pokazuje białka oczu, czuje się skrajnie zagrożony. To najwyższy poziom alarmu przed kłapnięciem zębami."
+  },
+  {
+    "animal": "dolphin",
+    "q": "Jaką rolę pełni melon czołowy w aparacie zmysłowym delfina?",
+    "options": [
+      "Służy jako taran do rozbijania lodu na powierzchni",
+      "Działa jak soczewka akustyczna — ogniskuje i kieruje wiązkę ultradźwięków sonaru w wąski stożek",
+      "Jest narządem magazynującym tlen pod wodą",
+      "Wytwarza prąd elektryczny do paraliżowania ryb"
+    ],
+    "explain": "Melon czołowy to owalna poduszka ze specjalnych tłuszczów, która skupia fale dźwiękowe w skupioną wiązkę, pozwalając na precyzyjne skanowanie obiektów jak medycznym aparatem USG."
+  },
+  {
+    "animal": "dolphin",
+    "q": "W jaki sposób echo powracające z sonaru trafia do ucha wewnętrznego delfina?",
+    "options": [
+      "Przez widoczne małżowiny uszne na głowie",
+      "Przez cienką kość dolnej żuchwy wypełnioną tłuszczem przewodzącym dźwięk",
+      "Przez płetwy piersiowe rejestrujące wibracje",
+      "Przez odpowietrznik na czubku głowy"
+    ],
+    "explain": "Zewnętrzne otwory uszne delfina zanikły. Odbite fale dźwiękowe wnikają przez dolną żuchwę wypełnioną lipidami, które bez strat przewodzą fale prosto do puszki słuchowej."
+  },
+  {
+    "animal": "dolphin",
+    "q": "Czym jest tzw. sen unihemisferyczny u delfinów?",
+    "options": [
+      "Snem w pozycji pionowej na dnie oceanu",
+      "Odpoczynkiem jednej półkuli mózgu na raz — druga półkula czuwa i kontroluje wynurzanie po tlen",
+      "Całkowitym brakiem snu przez całe dorosłe życie",
+      "Snem zimowym trwającym 3 miesiące"
+    ],
+    "explain": "Delfin musi oddychać świadomie, więc nie może stracić przytomności. Jedna połowa mózgu śpi z zamkniętym okiem, a druga czuwa nad oddychaniem i drapieżnikami."
+  },
+  {
+    "animal": "dolphin",
+    "q": "Czym są tzw. „gwizdy podpisowe” (signature whistles) delfinów butlonosych?",
+    "options": [
+      "Odgłosem ostrzegającym przed nadejściem sztormu",
+      "Indywidualnymi imionami akustycznymi — każdy delfin tworzy swój własny unikalny gwizd",
+      "Dźwiękiem uderzania ogonem o wodę",
+      "Mechanicznym dźwiękiem tarcia płetw"
+    ],
+    "explain": "Każdy delfin w pierwszym roku życia tworzy własny wzorzec gwizdu, który pełni funkcję imienia. Inne delfiny wołają go tym gwizdem i pamiętają go nawet po 20 latach!"
+  },
+  {
+    "animal": "dolphin",
+    "q": "Dlaczego wojskowe sonary niskich częstotliwości są śmiertelnie groźne dla waleni?",
+    "options": [
+      "Zmieniają temperaturę wody w oceanie",
+      "Generują falę akustyczną o natężeniu do 230 dB, wywołującą krwotoki w uszach i paniczne wynurzanie z chorobą dekompresyjną",
+      "Niszczą plankton, którym żywią się delfiny",
+      "Odstraszają ryby na setki kilometrów"
+    ],
+    "explain": "Ekstremalnie głośne sonary wojskowe niszczą delikatny aparat słuchowy waleni i wywołują panikę, zmuszając je do gwałtownego wynurzania z głębokości, co prowadzi do choroby dekompresyjnej i śmierci na plaży."
+  },
+  {
+    "animal": "eagle",
+    "q": "Ile dołków środkowych (fovea centralis) posiada orzeł w każdym oku i jaką pełnią funkcję?",
+    "options": [
+      "Tylko jeden dołek, tak jak człowiek",
+      "Dwa dołki: boczny o szerokim kącie i centralny działający jak teleobiektyw powiększający cel 8-krotnie",
+      "Trzy dołki: do widzenia w nocy, w dzień i pod wodą",
+      "Nie ma dołków siatkówki"
+    ],
+    "explain": "Zjawisko widzenia dwudołkowego (bifoveal vision) pozwala orłowi jednocześnie kontrolować całe otoczenie i przyglądać się celowi z 8-krotnym powiększeniem bez obracania głowy."
+  },
+  {
+    "animal": "eagle",
+    "q": "W jaki sposób widzenie w ultrafiolecie (UV) ułatwia orłom polowanie na nornice?",
+    "options": [
+      "Mocz nornic świeci w ultrafiolecie, ujawniając ich podziemne autostrady w trawie",
+      "Ultrafiolet prześwietla ziemię jak promienie Rentgena",
+      "Ciała gryzoni w nocy emitują ciepło UV",
+      "Ultrafiolet pozwala widzieć przez korony drzew"
+    ],
+    "explain": "Mocz i kał małych gryzoni silnie pochłaniają i fluoryzują w paśmie bliskiego ultrafioletu (UV). Z wysokości setek metrów orzeł widzi na łące świecące fioletowe ścieżki prowadzące prosto do nory!"
+  },
+  {
+    "animal": "eagle",
+    "q": "Jaki promień strefy ochronnej wokół gniazda orła przedniego i bielika obowiązuje w okresie lęgowym w Polsce?",
+    "options": [
+      "50 metrów",
+      "500 metrów (od 1 stycznia do 31 lipca)",
+      "2 kilometry",
+      "Brak stref — ptaki chronione są tylko w parkach narodowych"
+    ],
+    "explain": "W Polsce obowiązuje ścisła ochrona strefowa: całoroczna strefa 200 m oraz strefa okresowa 500 m w czasie lęgów. Wstęp, hałasowanie czy wycinka w tej strefie to przestępstwo."
+  },
+  {
+    "animal": "eagle",
+    "q": "Dlaczego bielik w polskim herbie z biologicznego punktu widzenia nie jest prawdziwym orłem?",
+    "options": [
+      "Jest sokołem wędrownym",
+      "Należy do orłanów (rodzaj Haliaeetus) — ptaków związanych ze środowiskiem wodnym i rybożernych z nieopierzonymi skokami",
+      "Jest podgatunkiem jastrzębia gołębiarza",
+      "Bielik to sztuczny ptak legendarny, który nie występuje w naturze"
+    ],
+    "explain": "Bielik (Haliaeetus albicilla) to orłan rybożerny. Prawdziwe orły (rodzaj Aquila, np. orzeł przedni) mają skoki nóg opierzone aż po same palce i polują głównie na ssaki lądowe."
+  },
+  {
+    "animal": "eagle",
+    "q": "Co jest jedną z głównych przyczyn zatruć i śmierci dorosłych bielików w Polsce?",
+    "options": [
+      "Zatrucie solą drogową zimą",
+      "Ołowica wywołana zjadaniem resztek postrzelonych zwierząt z ołowianą amunicją myśliwską",
+      "Ukąszenia kleszczy",
+      "Alergia na rybie ości"
+    ],
+    "explain": "Bieliki chętnie żywią się padliną. Zjedzenie wnętrzności zwierzęcia postrzelonego ołowianym śrutem prowadzi do zatrucia ołowiem (ołowicy), paraliżu żołądka i śmierci ptaka w męczarniach."
+  },
+  {
+    "animal": "fox",
+    "q": "W jakim kierunku geograficznym skoki myszkujące lisa rudego przynoszą statystycznie aż 73% sukcesu (w porównaniu do zaledwie 18% w innych kierunkach)?",
+    "options": [
+      "Kierunek nie ma znaczenia — liczy się tylko prędkość biegu",
+      "Północny Wschód (około 20° azymutu, zgodnie z wektorem nachylenia ziemskiego pola magnetycznego)",
+      "Ściśle na Południe, by słońce świeciło w oczy ofiary",
+      "Zawsze dokładnie pod wiatr"
+    ],
+    "explain": "Badania zespołu prof. Hyneka Burdy i dr. Jaroslava Červený\\"
+  },
+  {
+    "animal": "fox",
+    "q": "Jaka unikalna cecha budowy oka odróżnia lisa rudego od WSZYSTKICH innych dzikich psowatych (Canidae), takich jak wilki czy szakale?",
+    "options": [
+      "Całkowity brak widzenia barwnego (achromatopsja)",
+      "Oczy umieszczone symetrycznie z tyłu głowy",
+      "Pionowe źrenice szczelinowe (identyczne jak u kotów)",
+      "Czwarta powieka chroniąca przed mrozem"
+    ],
+    "explain": "Lis jest jedynym dzikim przedstawicielem rodziny psowatych posiadającym pionowe źrenice szczelinowe. Pozwalają mu one błyskawicznie adaptować się do oślepiającego śniegu i precyzyjnie szacować odległość przy ziemi."
+  },
+  {
+    "animal": "fox",
+    "q": "Dlaczego epidemiolodzy i służby sanitarne bezwzględnie nakazują dokładne mycie leśnych jagód, poziomek i borówek przed spożyciem?",
+    "options": [
+      "Owoce leśne mogą zawierać mikroskopijne jaja tasiemca bąblowcowego (Echinococcus multilocularis) wydalane przez lisy",
+      "Aby zmyć naturalny kwas szczawiowy z leśnego runa",
+      "Leśne jagody bez umycia tracą witaminy w żołądku",
+      "Żeby usunąć pyłki iglaste utrudniające trawienie"
+    ],
+    "explain": "Bąblowica wielojamowa (echinokokoza) to śmiertelnie groźna parazytoza. Mikroskopijne jaja tasiemca wydalane z odchodami lisów są odporne na mróz i mogą przylegać do niskich krzaczków jagód. W wątrobie człowieka rozwijają się latami jak guz nowotworowy!"
+  },
+  {
+    "animal": "fox",
+    "q": "Co udowodnił słynny, trwający ponad 50 lat eksperyment prof. Dymitra Biełajewa nad udomowieniem lisów srebrzystych?",
+    "options": [
+      "Że lisy są genetycznie niezdolne do oswojenia przez człowieka",
+      "Że selekcja wyłącznie pod kątem braku agresji wywołała tzw. zespół udomowienia: merdanie ogonem, oklapnięte uszy i plamiste futro",
+      "Że udomowione lisy zaczęły znosić jaja",
+      "Że lisy tracą zdolność słyszenia ultradźwięków"
+    ],
+    "explain": "Eksperyment Biełajewa w Nowosybirsku to kamień milowy genetyki. Selekcja najłagodniejszych lisów doprowadziła do spadku hormonów stresu (kortyzolu), a to pociągnęło za sobą zmiany fenotypowe: merdanie ogonem, klapnięte uszka i łaty na sierści — dokładnie jak u domowych psów!"
+  },
+  {
+    "animal": "fox",
+    "q": "Dlaczego widok lisa spokojnie spacerującego w środku dnia po osiedlu mieszkaniowym w polskim mieście NIE oznacza zazwyczaj wścieklizny?",
+    "options": [
+      "Wszystkie lisy w Polsce rodzą się z wrodzoną odpornością na wirusa wścieklizny",
+      "Lisy miejskie są wypuszczane ze schronisk dla zwierząt",
+      "Wścieklizna u dzikich lisów w Polsce została praktycznie wyeliminowana dzięki zrzutom szczepionek, a lisy miejskie szukają łatwego pożywienia w śmietnikach",
+      "Wirus wścieklizny nie występuje na terenach zurbanizowanych"
+    ],
+    "explain": "Dzięki wieloletnim ogólnopolskim zrzutom szczepionek w przynętach z samolotów, wścieklizna u lisów w Polsce została niemal w 100% wytępiona. Lisy miejskie to oportunistyczni synantropi, którzy nie boją się ludzi ze względu na obfitość odpadków i dokarmianie kotów."
+  },
+  {
+    "animal": "hedgehog",
+    "q": "Dlaczego krowie mleko jest śmiertelnie niebezpieczne dla jeża?",
+    "options": [
+      "Ponieważ zawiera za dużo tłuszczu i jeż nie może się zwinąć w kulkę",
+      "Jeże nie wytwarzają laktazy — mleko wywołuje ciężką, odwadniającą biegawkę i martwicę jelit",
+      "Mleko przyciąga lisy, które polują na jeże",
+      "Mleko zmiękcza keratynę w kolcach jeża"
+    ],
+    "explain": "Dorosłe i małe jeże nie trawią cukru mlecznego (laktozy). Podanie miski z mlekiem to najczęstszy, tragiczny w skutkach błąd ludzi. Jeżom należy podawać wyłącznie czystą wodę!"
+  },
+  {
+    "animal": "hedgehog",
+    "q": "Co robi jeż podczas zjawiska tzw. samosmarowania (self-anointing)?",
+    "options": [
+      "Zanurza się w błocie, by schłodzić organizm w upalny dzień",
+      "Żuje intensywny zapach, spienia ślinę i językiem nanosi białą pianę na swoje kolce",
+      "Ociera się o sierść psa, by przejąć jego zapach",
+      "Czyści kolce za pomocą rosy z porannych traw"
+    ],
+    "explain": "Samosmarowanie (self-anointing) to fascynujący odruch wyzwalany przez narząd Jacobsona. Piana maskuje zapach zwierzęcia oraz nanosi na kolce substancje odstraszające kleszcze i drapieżniki."
+  },
+  {
+    "animal": "hedgehog",
+    "q": "Dzięki jakiemu białku jeż jest odporny na jad żmii zygzakowatej?",
+    "options": [
+      "Mioglobinie",
+      "Erinaceinie — inhibitorowi krwotocznych metaloproteinaz jadu",
+      "Hemoglobinie typu B",
+      "Keratynie we krwi"
+    ],
+    "explain": "Białko erinaceina obecne w osoczu krwi jeża neutralizuje enzymy jadu żmii niszczące tkanki i naczynia krwionośne, dzięki czemu jeż może bezpiecznie polować na żmije."
+  },
+  {
+    "animal": "hedgehog",
+    "q": "Ile minimalnie powinien ważyć młody jeż w listopadzie, aby bezpiecznie przetrwać hibernację?",
+    "options": [
+      "Około 150–200 gramów",
+      "Minimum 600–700 gramów",
+      "Co najmniej 2 kilogramy",
+      "Waga nie ma żadnego znaczenia"
+    ],
+    "explain": "Zimowy sen trwa do 5 miesięcy. Jeż ważący poniżej 600g (a zwłaszcza poniżej 400g) nie posiada wystarczającego zapasu tłuszczu brunatnego i bez pomocy człowieka zamarznie lub umrze z głodu."
+  },
+  {
+    "animal": "hedgehog",
+    "q": "Jaka jest prawdziwa natura diety jeża w naturze?",
+    "options": [
+      "Jest roślinożercą i żywi się głównie spadłymi jabłkami i gruszkami",
+      "Jest drapieżnym owadożercą — zjada ślimaki, chrząszcze, pędraki, dżdżownice i padlinę",
+      "Odżywia się wyłącznie korzonkami traw i grzybami",
+      "Żywi się nasionami zbóż i orzechami"
+    ],
+    "explain": "Jeż jest drapieżnym owadożercą (rząd Eulipotyphla). Opowieść o noszeniu jabłek na kolcach to starożytny mit — przewód pokarmowy jeża nie jest przystosowany do trawienia owoców."
+  }
+]

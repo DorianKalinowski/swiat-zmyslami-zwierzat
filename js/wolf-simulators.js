@@ -893,4 +893,8 @@ function initWolfTrackingGame() {
   resetBtn.addEventListener('click', () => startLevel(0));
 
   updateHUD();
+
+  window.addEventListener('languageChanged', () => {
+    updateHUD();
+  });
 }

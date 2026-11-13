@@ -1,0 +1,277 @@
+[
+  {
+    "animal": "bat",
+    "q": "Do jakiej częstotliwości sięgają ultradźwięki sonaru polskich nietoperzy?",
+    "options": [
+      "Do 20 000 Hz (jak granica ludzkiego słuchu)",
+      "Do ok. 40 000 Hz",
+      "Aż do 120 000 Hz (120 kHz!)",
+      "Nietoperze posługują się wyłącznie infradźwiękami poniżej 20 Hz"
+    ],
+    "explain": "Niektóre gatunki (np. podkowce czy nocki) emitują fale o częstotliwości przekraczającej 100-120 kHz, wielokrotnie przekraczając możliwości ludzkiego ucha (max 20 kHz)."
+  },
+  {
+    "animal": "bat",
+    "q": "W jaki sposób nietoperz nie ogłusza samego siebie, krzycząc z siłą ponad 130 dB?",
+    "options": [
+      "Zatyka uszy skrzydłami w trakcie lotu",
+      "Mięsień strzemiączkowy odłącza kosteczki słuchowe na ułamek sekundy podczas każdego krzyku",
+      "Nietoperze są w 100% głuche na własny głos",
+      "Wydaje dźwięk z taką prędkością, że fala dźwiękowa ucieka do przodu"
+    ],
+    "explain": "Przed każdym impulsem miniaturowy mięsień w uchu środkowym zaciska się, odłączając błonę bębenkową od ślimaka, po czym natychmiast rozluźnia się w ułamku milisekundy, by odebrać ciche echo odbite od owada!"
+  },
+  {
+    "animal": "bat",
+    "q": "Czy nietoperz wlatujący do pokoju próbuje wkręcić się człowiekowi we włosy?",
+    "options": [
+      "Tak, przyciąga go zapach ludzkiego szamponu i ciepło głowy",
+      "Nie, to absolutny zabobon — jego sonar wykrywa przeszkodę grubości włosa i omija człowieka z daleka",
+      "Tylko w okresie godowym jesienią",
+      "Robi to wyłącznie wtedy, gdy w pokoju pali się jasne światło"
+    ],
+    "explain": "Nietoperze nigdy celowo nie wkręcają się we włosy! Ich echolokacja omija nylonowe żyłki o grubości 0,05 mm. Nietoperz lata chaotycznie pod sufitem wyłącznie dlatego, że szuka echa otwartej przestrzeni."
+  },
+  {
+    "animal": "bat",
+    "q": "Co należy zrobić, gdy w letni wieczór nietoperz wpadnie przez okno do mieszkania?",
+    "options": [
+      "Próbować strącić go miotłą lub zrolowaną gazetą",
+      "Zgasić światło, otworzyć okno na oścież, zamknąć drzwi do pokoju i wyjść na 10 minut",
+      "Złapać go w locie gołymi rękami i wyrzucić przez balkon",
+      "Użyć odkurzacza lub sprayu na owady"
+    ],
+    "explain": "Najlepsza metoda to spokój: zgaś światło, otwórz szeroko okno i opuść pokój. Nietoperz dzięki sonarowi szybko zlokalizuje wylot i sam bezpiecznie odleci."
+  },
+  {
+    "animal": "bat",
+    "q": "Jaką rolę w ekosystemie Polski pełnią nietoperze?",
+    "options": [
+      "Są szkodnikami niszczącymi konstrukcje dachowe budynków",
+      "Żywią się krwią zwierząt hodowlanych (wampiryzm)",
+      "Są nieocenionymi sprzymierzeńcami — jeden nietoperz pożera nawet 1000 komarów i szkodników na godzinę",
+      "Nie mają wpływu na liczebność owadów"
+    ],
+    "explain": "W Polsce wszystkie 27 gatunków nietoperzy to owadożercy pod ścisłą ochroną prawną. Pojedynczy malutki karlik potrafi zjeść setki uciążliwych komarów i ciem w ciągu jednej nocy!"
+  },
+  {
+    "animal": "bear",
+    "q": "O ile razy węch niedźwiedzia brunatnego przewyższa węch psa domowego (np. bloodhounda)?",
+    "options": [
+      "Jest słabszy od węchu psa",
+      "Jest dokładnie taki sam",
+      "Jest około 7 razy czulszy od węchu psa (i ponad 2100 razy czulszy od człowieka!)",
+      "Niedźwiedzie w ogóle nie posługują się węchem"
+    ],
+    "explain": "Opuszka węchowa w mózgu niedźwiedzia jest 5 razy większa niż u człowieka, a nabłonek węchowy ma powierzchnię setek centymetrów kwadratowych. Niedźwiedź potrafi wyczuć padlinę lub zapach jedzenia z odległości ponad 20–30 km!"
+  },
+  {
+    "animal": "bear",
+    "q": "Dlaczego ucieczka sprintem lub wdrapywanie się na drzewo przed niedźwiedziem to fatalny błąd?",
+    "options": [
+      "Niedźwiedź biega z prędkością do 50 km/h, świetnie wspina się na drzewa, a bieg wyzwala u niego instynkt pogoni",
+      "Na drzewach w polskich lasach nie ma wystarczająco grubych gałęzi",
+      "Niedźwiedzie potrafią latać",
+      "Ucieczka jest akurat najlepszą i w 100% skuteczną metodą"
+    ],
+    "explain": "Nawet 300-kilogramowy niedźwiedź rozwija na krótkim dystansie prędkość 50 km/h (szybciej niż Usain Bolt!). Dodatkowo instynkt drapieżnika nakazuje mu ścigać uciekający obiekt. Młodsze niedźwiedzie wspinają się na drzewa z zawrotną zwinnością!"
+  },
+  {
+    "animal": "bear",
+    "q": "Jak należy się zachować, jeśli dojdzie do bezpośredniego ataku niedźwiedzia i kontaktu fizycznego?",
+    "options": [
+      "Krzyczeć głośno i zadawać ciosy pięściami w pysk",
+      "Przyjąć pozycję „żółwia”: położyć się płasko na brzuchu, spleść dłonie na karku i osłonić łokciami głowę i twarz",
+      "Próbować złapać niedźwiedzia za uszy",
+      "Zacząć gwałtownie turlać się w dół zbocza"
+    ],
+    "explain": "Pozycja żółwia chroni najważniejsze narządy: szyję, kark, twarz i brzuch. Nogi należy rozstawić szeroko, by niedźwiedziowi trudno było obrócić Cię na plecy. Leż bez ruchu i bez dźwięku — gdy niedźwiedź uzna, że nie stanowisz zagrożenia, odejdzie."
+  },
+  {
+    "animal": "bear",
+    "q": "Co w rzeczywistości oznacza, gdy niedźwiedź na szlaku staje na tylnych łapach?",
+    "options": [
+      "To bezpośrednia zapowiedź skoku i ataku bojowego",
+      "Niedźwiedź prosi o jedzenie jak pies w cyrku",
+      "Próbuje lepiej zwęszyć otoczenie i rozejrzeć się ponad krzakami — to gest zaciekawienia, a nie agresji",
+      "Świadczy o tym, że niedźwiedź jest chory na wściekliznę"
+    ],
+    "explain": "Wzrok niedźwiedzia jest przeciętny, więc stając na tylnych łapach unosi nos wysoko w powietrze, by złapać strugi wiatru i zidentyfikować obiekt. Dopóki nie szarżuje na czterech łapach z kłapaniem szczęk, po prostu bada sytuację!"
+  },
+  {
+    "animal": "bear",
+    "q": "Z czego składa się większość diety polskiego niedźwiedzia brunatnego w Bieszczadach i Tatrach?",
+    "options": [
+      "Jest bezwzględnym mięsożercą polującym wyłącznie na jelenie i sarny",
+      "Jest wszystkożerny — aż 70–80% jego pożywienia stanowią rośliny: jagody, pędy, orzeszki bukowe (bukiew), trawy i owady",
+      "Żywi się wyłącznie rybami łososiowatymi jak niedźwiedź na Alasce",
+      "Zjada wyłącznie miód z barci"
+    ],
+    "explain": "Mimo imponujących kłów i potężnych łap niedźwiedź brunatny w Polsce jest w przeważającej mierze roślinożercą i owadożercą! Na mięso (padlinę lub polowanie) przypada zaledwie ułamek jego rocznego zapotrzebowania kalorycznego."
+  },
+  {
+    "animal": "bee",
+    "q": "Jakiego koloru widzialnego dla człowieka pszczoła miodna NIE dostrzega i widzi go jako czerń?",
+    "options": [
+      "Koloru żółtego",
+      "Koloru niebieskiego",
+      "Koloru czerwonego (nie posiada receptorów czerwieni)",
+      "Pszczoły widzą dokładnie wszystkie kolory co człowiek"
+    ],
+    "explain": "Oczy złożone pszczoły mają receptory dla zieleni, błękitu i ultrafioletu (UV). Zakres widzenia pszczoły jest przesunięty ku falom krótszym — nie widzi barwy czerwonej, widząc ją jako ciemność lub czerń!"
+  },
+  {
+    "animal": "bee",
+    "q": "Czym są tzw. „ścieżki nektarowe” (nectar guides) na płatkach kwiatów?",
+    "options": [
+      "Sztucznymi ścieżkami wydeptanymi przez mrówki",
+      "Wzorami i pasami widocznymi wyłącznie w ultrafiolecie (UV), które wskazują pszczole drogę do nektaru niczym pas startowy",
+      "Kroplami rosy odbijającymi światło słoneczne",
+      "Śladami zapachowymi zostawianymi przez trutnie"
+    ],
+    "explain": "Wiele kwiatów (np. mniszek, fiołek, storczyk) wygląda dla nas jednolicie, lecz w ultrafiolecie ma jaskrawe tarcze i ciemne pasy zbiegające się wprost do nektarium — to ewolucyjny drogowskaz dla zapylaczy!"
+  },
+  {
+    "animal": "bee",
+    "q": "Jak należy prawidłowo usunąć żądło pszczoły ze skóry po użądleniu?",
+    "options": [
+      "Ścisnąć mocno pęsetą lub dwoma palcami i pociągnąć",
+      "Zeskrobać żądło płasko przy skórze kartą płatniczą, dowodem lub paznokciem, by nie ścisnąć woreczka jadowego",
+      "Naciąć skórę i wycisnąć jad",
+      "Polać żądło wrzątkiem lub spirytusem"
+    ],
+    "explain": "Ściskanie żądła pęsetą lub palcami działa jak tłok w strzykawce — wstrzykuje resztki jadu z pulsującego woreczka do krwiobiegu! Należy natychmiast zeskrobać żądło płaskim ruchem krawędzi karty lub paznokcia."
+  },
+  {
+    "animal": "bee",
+    "q": "W jaki sposób pszczoła zwiadowczyni informuje siostry w ulu o odległości i kierunku nowego pożytku kwiatowego?",
+    "options": [
+      "Wydaje ultradźwiękowe piski jak nietoperz",
+      "Wylatuje z ula i prowadzi cały rój za sobą",
+      "Wykonuje na pionowym plastrze w ulu tzw. taniec wywijany (waggle dance), wskazując kąt względem słońca",
+      "Wydziela feromon strachu"
+    ],
+    "explain": "Karl von Frisch otrzymał Nagrodę Nobla za odszyfrowanie tańca pszczół. Kąt osi tańca względem pionu odpowiada kątowi między słońcem a kwiatami, a czas trwania i tempo drżenia odwłoka precyzyjnie określają odległość!"
+  },
+  {
+    "animal": "bee",
+    "q": "Dlaczego pszczoła robotnica ginie po użądleniu człowieka, podczas gdy osa może żądlić wielokrotnie?",
+    "options": [
+      "Pszczoła umiera z żalu po użądleniu",
+      "Żądło pszczoły ma mikroskopijne zadziory, które zakotwiczają się w elastycznej skórze ssaków i odrywają się wraz z odwłokiem",
+      "Jad pszczeli jest trujący dla samej pszczoły",
+      "Pszczoła ma za mało energii, by przeżyć użądlenie"
+    ],
+    "explain": "Żądło osy jest gładkie jak igła do szycia — może je wbić i wyciągnąć bez trudu. Żądło pszczoły ma haczyki (jak harpun). W chitynowym pancerzu owada pszczoła może je wysunąć, ale w elastycznej skórze ssaka żądło zostaje wyrwane z wnętrznościami."
+  },
+  {
+    "animal": "boar",
+    "q": "Jaki zmysł dzika jest absolutną supermocą lasu?",
+    "options": [
+      "Wzrok — dzik widzi w podczerwieni",
+      "Węch — wyczuwa żołędzie 1 m pod ziemią i człowieka z ponad 500 m",
+      "Smak — potrafi odróżniać rodzaje kory",
+      "Echolokacja ultradźwiękowa"
+    ],
+    "explain": "Węch dzika (gwizd) jest 5-krotnie silniejszy niż u psa myśliwskiego. Pozwala mu wyczuwać pędraki pod metrową warstwą zmarzliny!"
+  },
+  {
+    "animal": "boar",
+    "q": "Co jest statystycznie NAJCZĘSTSZYM powodem ataku dzika na człowieka w Polsce?",
+    "options": [
+      "Głód dzika w środku zimy",
+      "Kolor ubrań spacerowicza",
+      "Pies biegający bez smyczy, który prowokuje dzika i ucieka pod nogi właściciela",
+      "Śpiewanie piosenek w lesie"
+    ],
+    "explain": "Ponad 80% konfrontacji z dzikami wywołuje luźno biegający pies. Dzik kontratakuje, a przerażony pies szuka ratunku u swego opiekuna."
+  },
+  {
+    "animal": "boar",
+    "q": "Dlaczego człowiek stojący w bezruchu pod wiatr jest dla dzika niemal niewidzialny?",
+    "options": [
+      "Bo dzik jest skrajnym krótkowidzem i reaguje niemal wyłącznie na ruch",
+      "Bo dziki zamykają oczy podczas buchtowania",
+      "Dzik widzi tylko obiekty w kolorze czerwonym",
+      "Dzik ignoruje obiekty wyższe niż 1 metr"
+    ],
+    "explain": "Ślepia dzika są małe i krótkowzroczne. Jeśli wiatr nie niesie zapachu, dzik minie nieruchomego człowieka o 2–3 metry, biorąc go za pień drzewa!"
+  },
+  {
+    "animal": "boar",
+    "q": "Co oznacza głośne zgrzytanie szablami (kłapanie zębami) u odyńca?",
+    "options": [
+      "Dzik czyści zęby po zjedzeniu żołędzi",
+      "Ostateczne ostrzeżenie przed atakiem — za ułamek sekundy może nastąpić szarża",
+      "Sygnał powitania dla watahy",
+      "Prośba o jedzenie"
+    ],
+    "explain": "Kłapanie orężem to demonstracja siły i sygnał alarmowy: „jesteś za blisko, atakuję!”. Należy natychmiast, bez paniki, wycofać się tyłem."
+  },
+  {
+    "animal": "boar",
+    "q": "Dlaczego dzików w miastach NIE WOLNO dokarmiać resztkami ze stołu?",
+    "options": [
+      "Bo dziki jedzą wyłącznie mięso",
+      "Bo tracą naturalny lęk przed ludźmi i stają się roszczeniowe, co kończy się ich odstrzałem",
+      "Bo od pieczywa wypadają im szable",
+      "Dziki w mieście i tak mają za dużo jedzenia"
+    ],
+    "explain": "Dokarmianie to wyrok śmierci na dzika. Dzik traci dystans, zaczyna wymuszać jedzenie i w końcu stwarza zagrożenie, przez co miasto zmuszone jest go uśmiercić."
+  },
+  {
+    "animal": "cat",
+    "q": "Dlaczego kot domowy nie jest w stanie poczuć smaku słodkiego?",
+    "options": [
+      "Bo koty nie lubią deserów",
+      "Z powodu trwałej mutacji genu Tas1r2 — kot jest bezwzględnym mięsożercą",
+      "Bo cukier natychmiast znieczula ich język",
+      "Koty czują słodycz lepiej niż ludzie"
+    ],
+    "explain": "U kotów gen Tas1r2 jest uszkodzonym pseudogenem. Koty jako jedyne spośród udomowionych ssaków nie mają receptorów smaku słodkiego!"
+  },
+  {
+    "animal": "cat",
+    "q": "Do jakiej częstotliwości sięga słuch kota domowego?",
+    "options": [
+      "Do 20 000 Hz (jak człowiek)",
+      "Do 40 000 Hz",
+      "Do 65 000 Hz (jak pies)",
+      "Aż do 85 000 Hz (znacznie przewyższa słuch psa i człowieka!)"
+    ],
+    "explain": "Kot słyszy ultradźwięki aż do 85 kHz. Pozwala mu to bezbłędnie namierzać pisk małych gryzoni i młodych kociąt w trawie."
+  },
+  {
+    "animal": "cat",
+    "q": "Co oznacza, gdy kot kładzie się na plecach i odsłania brzuch?",
+    "options": [
+      "Prosi o energiczne podrapanie po brzuszku",
+      "Pokazuje bezgraniczne zaufanie lub pozycję obronną — dotknięcie grozi atakiem!",
+      "Jest głodny i czeka na miskę",
+      "Ma gorączkę i chłodzi ciało"
+    ],
+    "explain": "Odsłonięcie brzucha to dowód zaufania („ufam, że mnie nie skrzywdzisz”) lub gotowość bojowa z użyciem 4 łap. Dotknięcie brzucha wyzwala natychmiastowy odruch obronny!"
+  },
+  {
+    "animal": "cat",
+    "q": "Która roślina jest dla kota ŚMIERTELNĄ trucizną nawet w ilości ziarenka pyłku?",
+    "options": [
+      "Zielistka (Spider plant)",
+      "Kocimiętka",
+      "Lilia (Liliaceae) — każda jej część wywołuje ostrą martwicę nerek",
+      "Owies dla kota"
+    ],
+    "explain": "Lilie są dla kotów skrajnie toksyczne. Zlizanie pyłku z futra lub wypicie wody z wazonu po liliach prowadzi do bezmoczowej martwicy nerek i zgonu w 24-48h."
+  },
+  {
+    "animal": "cat",
+    "q": "Dlaczego koty zostawiają chrupki na dnie głębokiej miski i miauczą o więcej?",
+    "options": [
+      "Bo jedzenie na dnie jest dla nich za stare",
+      "Cierpią na Whisker Fatigue (zmęczenie wibrysów) — uderzanie wąsami o ścianki wywołuje ból",
+      "Bo chcą zwrócić na siebie uwagę",
+      "Koty nie widzą nic na odległość mniejszą niż 1 metr"
+    ],
+    "explain": "Wibrysy kota są naszpikowane receptorami. Dotykanie ścianek głębokiej miski wywołuje bolesne przeciążenie nerwowe (Whisker Fatigue). Koty potrzebują płaskiego talerzyka!"
+  }
+]

@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ośmiornica zwyczajna — Świat Zmysłami Zwierząt V1.1</title>
+  <meta name="description" content="Odkryj zmysły ośmiornicy: 500 milionów neuronów w 8 autonomicznych ramionach, dynamiczny kamuflaż chromatoforów w 200 ms, smakujące przyssawki i trzy serca z błękitną krwią.">
+  <meta name="keywords" content="ośmiornica, zmysły ośmiornicy, chromatofory, kamuflaż zwierząt, głowonogi, chemorecepcja, biologia morza">
+  <meta name="author" content="Dorian Kalinowski">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://swiat-zmyslami-zwierzat.vercel.app/osmiornica.html">
+  <meta property="og:title" content="Ośmiornica zwyczajna — Świat Zmysłami Zwierząt">
+  <meta property="og:description" content="500 milionów neuronów, smakujące przyssawki i zmiana barwy w ułamku sekundy. Poznaj niezwykły świat ośmiornicy.">
+  <meta property="og:image" content="https://swiat-zmyslami-zwierzat.vercel.app/icons/icon-512.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://swiat-zmyslami-zwierzat.vercel.app/osmiornica.html">
+  <meta property="twitter:title" content="Ośmiornica zwyczajna — Świat Zmysłami Zwierząt">
+  <meta property="twitter:description" content="Zbadaj decentralizację układu nerwowego i chemorecepcję przyssawek w interaktywnym symulatorze zmysłów.">
+  <meta property="twitter:image" content="https://swiat-zmyslami-zwierzat.vercel.app/icons/icon-512.png">
+
+  <!-- PWA & Theme -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#030712">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐙</text></svg>">
+
+  <!-- Fonts & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="nav" role="navigation" aria-label="Nawigacja główna">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon-wrapper">🐾</div>
+        <span>Świat zmysłami zwierząt <span class="nav-version-tag">V1.1</span></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+            <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Strona główna</a>
+        <button class="nav-link animal-catalog-trigger" id="triggerAnimalModal">🐾 Katalog (15)</button>
+
+        <!-- Dropdown: Wybierz zwierzę (15) -->
+        <div class="nav-dropdown" id="navAnimalsDropdown">
+          <button class="nav-link nav-dropdown-btn" id="navDropdownBtn" aria-expanded="false" style="cursor: pointer;">
+            <span>🐙 Ośmiornica</span>
+            <span class="dropdown-chevron">▾</span>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu">
+            <a href="pies.html" class="nav-dropdown-item"><span class="item-emoji">🐕</span> Pies domowy</a>
+            <a href="kot.html" class="nav-dropdown-item"><span class="item-emoji">🐈</span> Kot domowy</a>
+            <a href="dzik.html" class="nav-dropdown-item"><span class="item-emoji">🐗</span> Dzik euroazjatycki</a>
+            <a href="wilk.html" class="nav-dropdown-item"><span class="item-emoji">🐺</span> Wilk szary</a>
+            <a href="nietoperz.html" class="nav-dropdown-item"><span class="item-emoji">🦇</span> Nietoperz</a>
+            <a href="zmija.html" class="nav-dropdown-item"><span class="item-emoji">🐍</span> Żmija zygzakowata</a>
+            <a href="sowa.html" class="nav-dropdown-item"><span class="item-emoji">🦉</span> Sowa (Płomykówka)</a>
+            <a href="niedzwiedz.html" class="nav-dropdown-item"><span class="item-emoji">🐻</span> Niedźwiedź brunatny</a>
+            <a href="pszczola.html" class="nav-dropdown-item"><span class="item-emoji">🐝</span> Pszczoła miodna</a>
+            <a href="lis.html" class="nav-dropdown-item"><span class="item-emoji">🦊</span> Lis rudy</a>
+            <a href="jez.html" class="nav-dropdown-item"><span class="item-emoji">🦔</span> Jeż zachodni</a>
+            <a href="orzel.html" class="nav-dropdown-item"><span class="item-emoji">🦅</span> Orzeł przedni</a>
+            <a href="delfin.html" class="nav-dropdown-item"><span class="item-emoji">🐬</span> Delfin butlonosy</a>
+            <a href="rekin.html" class="nav-dropdown-item"><span class="item-emoji">🦈</span> Żarłacz błękitny</a>
+            <a href="osmiornica.html" class="nav-dropdown-item active"><span class="item-emoji">🐙</span> Ośmiornica zwyczajna</a>
+          </div>
+        </div>
+
+        <!-- Creator Chip (Dorian Kalinowski) -->
+        <div class="creator-chip" id="authorChip" title="Dowiedz się więcej o autorze">
+          <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="creator-avatar">
+          <div class="creator-text">
+            <span class="creator-name">Dorian Kalinowski</span>
+            <span class="creator-role">Twórca aplikacji</span>
+          </div>
+        </div>
+
+        <!-- Language Switcher (PL / USA) -->
+        <div class="lang-switch" id="langSwitch" role="group" aria-label="Wybór języka / Language selection">
+          <button type="button" class="lang-btn active" data-lang="pl" title="Polski" aria-label="Język polski">
+            <span class="lang-flag">🇵🇱</span>
+            <span class="lang-code">PL</span>
+          </button>
+          <button type="button" class="lang-btn" data-lang="en" title="American English" aria-label="American English">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-code">USA</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Animal Page Hero -->
+  <header class="animal-hero" id="top" style="background: linear-gradient(180deg, rgba(168, 85, 247, 0.18) 0%, rgba(9, 13, 19, 0) 100%);">
+    <div class="container">
+      <div class="animal-hero-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="index.html">Główna</a>
+            <span>›</span>
+            <span>Głowonogi (Cephalopoda)</span>
+            <span>›</span>
+            <span style="color: var(--purple-light);">Ośmiornica</span>
+          </div>
+          <h1>Ośmiornica: <span style="color: var(--purple-light);">Inteligencja Bez Kości i Kamuflaż</span></h1>
+          <p class="hero-latin">Octopus vulgaris • Zmysł dotyku, chemorecepcja i dynamiczny kamuflaż</p>
+          <p class="hero-desc">
+            Ośmiornica to najbardziej niezwykły umysł na Ziemi: <strong>500 milionów neuronów</strong> (w tym 350 milionów w 8 autonomicznych ramionach). Skóra potrafi zmienić kolor i strukturę 3D w <strong>200 milisekund</strong>, 1600 przyssawek czuje smak otoczenia, a 3 serca pompują szafirową krew z miedzią.
+          </p>
+
+          <div class="hero-stats-grid">
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--purple-light);">500 mln</span>
+              <span class="stat-label">Neuronów (350 mln w 8 ramionach)</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: #EC4899;">200 ms</span>
+              <span class="stat-label">Czas zmiany barwy i tekstury skóry</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--cyan-light);">3 serca</span>
+              <span class="stat-label">I błękitna krew z miedzią (hemocyjanina)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="animal-portrait-card" style="border-color: rgba(168, 85, 247, 0.35); background: radial-gradient(circle at center, rgba(168, 85, 247, 0.18) 0%, rgba(19, 27, 39, 0.8) 70%);">
+          <div class="animal-portrait-glow" style="background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 70%);"></div>
+          <div class="animal-portrait-emoji" role="img" aria-label="Ośmiornica">🐙</div>
+          <div class="portrait-tags">
+            <span class="portrait-tag">Gromada: Cephalopoda (głowonogi)</span>
+            <span class="portrait-tag">Zmysł: Chromatofory i irydofory</span>
+            <span class="portrait-tag">Chemorecepcja: Smakujące przyssawki</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Subnavigation -->
+  <div class="sticky-subnav">
+    <div class="sticky-subnav-inner">
+      <a href="#historia" class="subnav-pill active">📜 Ewolucja</a>
+      <a href="#zmysly" class="subnav-pill">🎨 Kamuflaż & Smak</a>
+      <a href="#anatomia" class="subnav-pill">🧬 Anatomia</a>
+      <a href="#bezpieczenstwo" class="subnav-pill">🛡️ Toksyny & Etyka</a>
+      <a href="#ciekawostki" class="subnav-pill">💡 Ciekawostki</a>
+      <a href="#gra" class="subnav-pill">🎮 Mini Gra</a>
+      <a href="#quiz" class="subnav-pill">🎯 Mini Quiz</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================
+         SEKCJA 1: EWOLUCJA I BIOLOGIA W PIGUŁCE
+         ============================================================ -->
+    <section class="section" id="historia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--purple-light); border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1);">Historia i Ewolucja</span>
+          <h2>500 Milionów Lat Głowonogów: Inteligencja Bez Kości</h2>
+          <p>Podczas gdy kręgowce budowały szkielet wewnętrzny i centralizowały mózg w czaszce, głowonogi wybrały zupełnie inną ścieżkę ewolucyjną: porzuciły zewnętrzną muszlę i rozproszyły swój układ nerwowy po całym ciele.</p>
+        </div>
+
+        <div class="timeline-stepper">
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--purple-light); box-shadow: 0 0 12px var(--purple);"></div>
+            <div class="step-header">
+              <span class="step-title">Pierwsze głowonogi w kambrze</span>
+              <span class="step-period">~500 mln lat temu</span>
+            </div>
+            <p class="step-body">
+              Przodkowie ośmiornic byli ciężkimi mięczakami o spiralnych lub stożkowatych muszlach (przypominającymi dzisiejsze łodziki). Byli pierwszymi aktywnymi drapieżnikami pływającymi w toni pradavnych oceanów.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--purple-light); box-shadow: 0 0 12px var(--purple);"></div>
+            <div class="step-header">
+              <span class="step-title">Utrata muszli i eksplozja elastyczności</span>
+              <span class="step-period">Jura (~160 mln lat temu)</span>
+            </div>
+            <p class="step-body">
+              Ośmiornice dokonały rewolucyjnego kroku: całkowicie zredukowały twardą muszlę. Stały się miękkie i podatne na ataki drapieżników, co wymusiło wykształcenie potężnego mózgu, kamuflażu optycznego i prędkości odrzutowej.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--purple-light); box-shadow: 0 0 12px var(--purple);"></div>
+            <div class="step-header">
+              <span class="step-title">Ewolucja zdecentralizowanego umysłu</span>
+              <span class="step-period">Kreda (~90 mln lat temu)</span>
+            </div>
+            <p class="step-body">
+              Koordynacja 8 nieskończenie giętkich ramion bez stawów przerosłaby pojedynczy mózg. Ośmiornica rozwinęła zwoje nerwowe w każdym ramieniu — ramiona potrafią badać otoczenie, chwytać i smakować pokarm bez udziału mózgu centralnego.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step-dot" style="border-color: var(--purple-light); box-shadow: 0 0 12px var(--purple);"></div>
+            <div class="step-header">
+              <span class="step-title">Świat współczesny i używanie narzędzi</span>
+              <span class="step-period">Współczesność</span>
+            </div>
+            <p class="step-body">
+              Ośmiornice są jedynymi bezkręgowcami oficjalnie uznanymi za zdolne do używania narzędzi (noszą połówki łupin orzecha kokosowego jako mobilne schronienie) oraz posiadające świadomość percepcyjną i fazy snu REM.
+            </p>
+          </div>
+        </div>
+
+        <div class="evolution-insight-box" style="border-color: rgba(168, 85, 247, 0.3); background: linear-gradient(135deg, rgba(168, 85, 247, 0.08) 0%, rgba(19, 27, 39, 0.6) 100%);">
+          <div class="insight-col">
+            <h4 style="color: var(--purple-light);">🐙 Trzy serca i szafirowa błękitna krew:</h4>
+            <ul class="insight-list">
+              <li>Ludzka krew używa żelaza (czerwona hemoglobina). Krew ośmiornicy opiera się na <strong>miedzi (hemocyjanina)</strong>, co nadaje jej intensywny, błękitny kolor. Miedź wiąże tlen znacznie wydajniej w lodowatej wodzie o niskim natlenieniu.</li>
+              <li>Ośmiornica posiada trzy serca: dwa serca skrzelowe pompują krew do skrzeli, a jedno serce systemowe tłoczy utlenowaną krew do narządów ciała. Co ciekawe, serce systemowe zatrzymuje się, gdy zwierzę pływa!</li>
+            </ul>
+          </div>
+          <div class="insight-col">
+            <h4 style="color: #EC4899;">🔓 Płynne ciało: Ucieczka przez dziurkę od klucza:</h4>
+            <ul class="insight-list">
+              <li>Ośmiornica nie posiada ani jednej kości. Jedyną sztywną strukturą w całym jej ciele jest chitynowy dziób przypominający dziób papugi.</li>
+              <li>Jeśli dziób zdoła przejść przez otwór, 10-kilogramowa ośmiornica potrafi bez trudu przecisnąć całe swoje ciało przez szczelinę o średnicy monety 5-złotowej!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 2: LABORATORIUM ZMYSŁÓW
+         ============================================================ -->
+    <section class="section" id="zmysly">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--purple-light);">Kamuflaż Chromatoforów i Chemorecepcja</span>
+          <h2>Skóra, która Widzi i Ramiona, które Smakują</h2>
+          <p>Odkryj zmysły, w których granica między widzeniem, dotykiem a smakiem całkowicie zanika.</p>
+        </div>
+
+        <div class="senses-container">
+          <!-- Sensory Card 1: Dynamic Camouflage Simulator -->
+          <div class="sensory-card">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(168, 85, 247, 0.2); border: 1px solid #A855F7; color: var(--purple-light);">🎨</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: var(--purple-light);">Fizjologia Skóry • Chromatofory i Brodawki</span>
+                <h3>Symulator Dynamicznego Kamuflażu Skóry Ośmiornicy</h3>
+                <p>Każdy milimetr skóry ośmiornicy zawiera tysiące elastycznych woreczków z pigmentem (chromatoforów) kontrolowanych bezpośrednio przez nerwy. Wybierz podłoże morskie i dopasuj barwę oraz teksturę 3D!</p>
+              </div>
+            </div>
+
+            <div style="background: #090D14; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px;">
+              <!-- Substrate selector chips -->
+              <div style="margin-bottom: 18px;">
+                <label style="font-weight: 700; font-size: 0.92rem; display: block; margin-bottom: 10px;">
+                  1. Wybierz otoczenie morskie (tło rafowe):
+                </label>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                  <button class="sound-toggle-btn active" data-octopus-bg="sand" style="border-color: rgba(245, 158, 11, 0.4); color: var(--amber-light);">
+                    🏖️ Piaszczysta mielizna
+                  </button>
+                  <button class="sound-toggle-btn" data-octopus-bg="coral" style="border-color: rgba(236, 72, 153, 0.4); color: #F472B6;">
+                    🪸 Koralowiec purpurowo-czerwony
+                  </button>
+                  <button class="sound-toggle-btn" data-octopus-bg="rock" style="border-color: rgba(148, 163, 184, 0.4); color: #94A3B8;">
+                    🪨 Bazaltowa skała podmorska
+                  </button>
+                  <button class="sound-toggle-btn" data-octopus-bg="algae" style="border-color: rgba(16, 185, 129, 0.4); color: var(--emerald-light);">
+                    🌿 Łąka traw morskich i alg
+                  </button>
+                </div>
+              </div>
+
+              <!-- Skin Texture Slider (Papillae contraction) -->
+              <div style="margin-bottom: 20px;">
+                <label style="font-weight: 700; font-size: 0.92rem; display: block; margin-bottom: 8px;">
+                  2. Napięcie mięśniowe brodawek skórnych (tekstura 3D):
+                </label>
+                <input type="range" id="octopusTextureSlider" min="0" max="100" value="15" style="width: 100%; accent-color: var(--purple);">
+                <div style="display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">
+                  <span>Gładka jak jedwab (0%)</span>
+                  <span id="octopusTextureDisplay" style="color: var(--purple-light); font-weight: 700;">Tekstura: Delikatne bruzdy (15%)</span>
+                  <span>Chropowata / Kolczasta rafa (100%)</span>
+                </div>
+              </div>
+
+              <!-- Live Camouflage Simulation Screen -->
+              <div id="octopusCamoStage" style="height: 190px; border-radius: var(--radius-md); background: #D97706; border: 1px solid rgba(168, 85, 247, 0.4); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; transition: background 0.4s ease;">
+                <!-- Octopus Body with dynamic skin texture and pattern -->
+                <div id="octopusCamoSubject" style="width: 140px; height: 110px; border-radius: 50% 50% 40% 40%; background: #D97706; box-shadow: 0 4px 15px rgba(0,0,0,0.4); position: relative; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 2px solid rgba(0,0,0,0.15);">
+                  <div id="octopusSkinPattern" style="position: absolute; inset: 0; border-radius: inherit; opacity: 0.5; background-size: 20px 20px; transition: all 0.3s ease;"></div>
+                  <div style="position: relative; z-index: 5; text-align: center;">
+                    <span style="font-size: 2.2rem; display: block;">🐙</span>
+                    <span id="octopusCamoScoreBadge" style="font-size: 0.75rem; background: rgba(0,0,0,0.75); padding: 2px 8px; border-radius: 4px; color: #E2E8F0; font-family: var(--font-mono);">Kamuflaż: 88%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+                <button class="sound-toggle-btn" id="playCamouflageShiftBtn" style="border-color: rgba(168, 85, 247, 0.4); color: var(--purple-light);">
+                  ⚡ Dźwięk skurczu chromatoforów (Impuls nerwowy 200 ms)
+                </button>
+                <div id="octopusCamoStatusText" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--purple-light);">
+                  Stan skóry: Dopasowana do podłoża piaszczystego
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sensory Card 2: Tasting Suckers & Chemoreception -->
+          <div class="sensory-card">
+            <div class="sensory-card-header">
+              <div class="sensory-icon-badge" style="background: rgba(236, 72, 153, 0.2); border: 1px solid #EC4899; color: #F472B6;">👅</div>
+              <div class="sensory-title-wrap">
+                <span class="overline" style="margin-bottom: 4px; color: #F472B6;">Chemorecepcja • Smakujące Przyssawki</span>
+                <h3>Przyssawki o Zmyśle Smaku: 10 000 Chemoreceptorów na Jednej Przyssawce</h3>
+                <p>Ośmiornica nie musi wkładać jedzenia do dzioba, by dowiedzieć się, jak smakuje. Każda z jej 1600 przyssawek pokryta jest komórkami smakowymi i dotykowymi. Wybierz obiekt do zbadania przyssawką:</p>
+              </div>
+            </div>
+
+            <div style="background: #090D14; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px;">
+              <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;">
+                <button class="sound-toggle-btn active" data-octopus-taste="crab" style="border-color: rgba(16, 185, 129, 0.4); color: var(--emerald-light);">
+                  🦀 Krab brzegowy (Białka i aminokwasy)
+                </button>
+                <button class="sound-toggle-btn" data-octopus-taste="plastic" style="border-color: rgba(148, 163, 184, 0.4); color: #94A3B8;">
+                  🥤 Kawałek plastiku (Polimer obojętny)
+                </button>
+                <button class="sound-toggle-btn" data-octopus-taste="snail" style="border-color: rgba(239, 68, 68, 0.4); color: #F87171;">
+                  🐚 Ślimak stożek (Toksyna alarmowa)
+                </button>
+              </div>
+
+              <!-- Tasting Result Panel -->
+              <div id="octopusTasteFeedbackBox" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                  <span id="octopusTasteIcon" style="font-size: 2rem;">🦀</span>
+                  <div>
+                    <h4 id="octopusTasteTitle" style="color: var(--emerald-light); margin: 0; font-size: 1.05rem;">Wykryto aminokwasy skorupiaka: Cel jadalny!</h4>
+                    <span id="octopusTasteSub" style="font-size: 0.8rem; color: var(--text-muted);">Reakcja chemoreceptorów przyssawki: Aktywacja odruchu chwytnego</span>
+                  </div>
+                </div>
+                <p id="octopusTasteDesc" style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+                  Przyssawka natychmiast wyczuwa stężenie kwasu glutaminowego i tauryny wydzielanych przez kraba. Ramię samoistnie owija się wokół zdobyczy i kieruje ją prosto w stronę dzioba, bez konieczności angażowania centralnego mózgu!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 3: ANATOMIA I BIOMECHANIKA
+         ============================================================ -->
+    <section class="section" id="anatomia">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--purple-light);">Biomechanika i Zdecentralizowany Umysł</span>
+          <h2>Anatomia Ośmiornicy: Cud Ewolucji Bezkręgowców</h2>
+          <p>Klikaj w ponumerowane punkty lub wybierz kafelki pod spodem, by poznać budowę oka z poziomą źrenicą, chitynowego dzioba, syfonu odrzutowego i 8 autonomicznych ramion.</p>
+        </div>
+
+        <div class="sensory-card">
+          <div class="body-language-inspector">
+            <div class="anatomy-diagram-stage" style="border-color: rgba(168, 85, 247, 0.35);">
+              <div class="anatomy-diagram-wrapper">
+                <svg class="anatomy-silhouette-svg" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                  <defs>
+                    <radialGradient id="octoGlowGrad" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.3"/>
+                      <stop offset="100%" stop-color="#A855F7" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="octoSkinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#C084FC"/>
+                      <stop offset="50%" stop-color="#9333EA"/>
+                      <stop offset="100%" stop-color="#581C87"/>
+                    </linearGradient>
+                    <filter id="octoNeon" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#C084FC" flood-opacity="0.5"/>
+                    </filter>
+                  </defs>
+
+                  <!-- Background Aura -->
+                  <circle cx="250" cy="160" r="140" fill="url(#octoGlowGrad)"/>
+
+                  <!-- Bulbous Mantle Head -->
+                  <path d="M 180 130 C 180 50, 320 50, 320 130 C 320 160, 300 180, 250 180 C 200 180, 180 160, 180 130 Z" 
+                        fill="url(#octoSkinGrad)" stroke="#C084FC" stroke-width="2.5" filter="url(#octoNeon)"/>
+
+                  <!-- Funnel / Siphon (Syfon odrzutowy) -->
+                  <path d="M 210 165 L 170 190 L 180 205 L 225 175 Z" fill="#7E22CE" stroke="#C084FC" stroke-width="2"/>
+
+                  <!-- 8 Wavy Sinuous Arms -->
+                  <!-- Left Arm 1 -->
+                  <path d="M 200 175 Q 140 190 90 230 T 40 290" fill="none" stroke="#9333EA" stroke-width="14" stroke-linecap="round"/>
+                  <path d="M 200 175 Q 140 190 90 230 T 40 290" fill="none" stroke="#C084FC" stroke-width="3" stroke-linecap="round"/>
+
+                  <!-- Left Arm 2 -->
+                  <path d="M 215 180 Q 170 220 130 260 T 90 310" fill="none" stroke="#7E22CE" stroke-width="12" stroke-linecap="round"/>
+
+                  <!-- Left Arm 3 -->
+                  <path d="M 230 185 Q 200 235 180 280 T 170 315" fill="none" stroke="#9333EA" stroke-width="12" stroke-linecap="round"/>
+
+                  <!-- Center Left Arm 4 -->
+                  <path d="M 245 185 Q 235 240 230 285 T 235 320" fill="none" stroke="#6B21A8" stroke-width="11" stroke-linecap="round"/>
+
+                  <!-- Center Right Arm 5 -->
+                  <path d="M 255 185 Q 265 240 270 285 T 265 320" fill="none" stroke="#6B21A8" stroke-width="11" stroke-linecap="round"/>
+
+                  <!-- Right Arm 6 -->
+                  <path d="M 270 185 Q 300 235 320 280 T 330 315" fill="none" stroke="#9333EA" stroke-width="12" stroke-linecap="round"/>
+
+                  <!-- Right Arm 7 -->
+                  <path d="M 285 180 Q 330 220 370 260 T 410 310" fill="none" stroke="#7E22CE" stroke-width="12" stroke-linecap="round"/>
+
+                  <!-- Right Arm 8 -->
+                  <path d="M 300 175 Q 360 190 410 230 T 460 290" fill="none" stroke="#9333EA" stroke-width="14" stroke-linecap="round"/>
+                  <path d="M 300 175 Q 360 190 410 230 T 460 290" fill="none" stroke="#C084FC" stroke-width="3" stroke-linecap="round"/>
+
+                  <!-- Detailed Suckers on bottom-right arm -->
+                  <circle cx="360" cy="215" r="4.5" fill="#F472B6" stroke="#FFF" stroke-width="1"/>
+                  <circle cx="380" cy="230" r="4.5" fill="#F472B6" stroke="#FFF" stroke-width="1"/>
+                  <circle cx="400" cy="250" r="4" fill="#F472B6" stroke="#FFF" stroke-width="1"/>
+                  <circle cx="420" cy="270" r="3.5" fill="#F472B6" stroke="#FFF" stroke-width="1"/>
+
+                  <!-- Large camera-like Eyes with horizontal rectangular pupil -->
+                  <ellipse cx="215" cy="140" rx="14" ry="12" fill="#020617" stroke="#C084FC" stroke-width="2.5"/>
+                  <rect x="207" y="137" width="16" height="6" rx="2" fill="#FDE047"/>
+
+                  <ellipse cx="285" cy="140" rx="14" ry="12" fill="#020617" stroke="#C084FC" stroke-width="2.5"/>
+                  <rect x="277" y="137" width="16" height="6" rx="2" fill="#FDE047"/>
+
+                  <!-- Sharp Chitinous Beak in the central oral cavity -->
+                  <path d="M 245 168 L 255 168 L 250 178 Z" fill="#0F172A" stroke="#F59E0B" stroke-width="2"/>
+                </svg>
+
+                <!-- 5 Well-Spaced Hotspot Buttons (>16% apart, zero collisions) -->
+                <button class="octopus-hotspot active" data-octopus-anatomy="eyes" style="left: 50%; top: 25%;" aria-label="1. Kamera oka i prostokątna źrenica" title="1. Kamera oka i prostokątna źrenica">1</button>
+                <button class="octopus-hotspot" data-octopus-anatomy="beak" style="left: 50%; top: 52%;" aria-label="2. Chitynowy dziób i gruczoł jadowy" title="2. Chitynowy dziób i gruczoł jadowy">2</button>
+                <button class="octopus-hotspot" data-octopus-anatomy="arms" style="left: 24%; top: 72%;" aria-label="3. Osiem autonomicznych ramion" title="3. Osiem autonomicznych ramion">3</button>
+                <button class="octopus-hotspot" data-octopus-anatomy="suckers" style="left: 76%; top: 72%;" aria-label="4. Smakujące przyssawki" title="4. Smakujące przyssawki">4</button>
+                <button class="octopus-hotspot" data-octopus-anatomy="siphon" style="left: 34%; top: 38%;" aria-label="5. Syfon odrzutowy i worek czernidłowy" title="5. Syfon odrzutowy i worek czernidłowy">5</button>
+              </div>
+
+              <!-- Quick Selector Chips for Touch & Accessibility -->
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1.25rem;">
+                <button class="anatomy-btn active" data-octopus-anatomy="eyes">1. Kamera Oka (Prostokątna Źrenica)</button>
+                <button class="anatomy-btn" data-octopus-anatomy="beak">2. Chitynowy Dziób</button>
+                <button class="anatomy-btn" data-octopus-anatomy="arms">3. Autonomiczne Ramiona (Mini-Mózgi)</button>
+                <button class="anatomy-btn" data-octopus-anatomy="suckers">4. Przyssawki (Smak i Dotyk)</button>
+                <button class="anatomy-btn" data-octopus-anatomy="siphon">5. Syfon i Czernidło</button>
+              </div>
+            </div>
+
+            <!-- Detail Panel -->
+            <div class="anatomy-info-panel" style="border-color: rgba(168, 85, 247, 0.3);">
+              <span class="overline" style="color: var(--purple-light);">Aktywny Punkt Anatomiczny</span>
+              <h3 id="octopusAnatomyTitle" style="color: var(--purple-light); margin-bottom: 10px;">Kamera Oka — Brak Martwego Pola i Polaryzacja Światła</h3>
+              <p id="octopusAnatomyDesc" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 20px;">
+                Oko głowonoga to arcydzieło ewolucji konwergentnej. W przeciwieństwie do oka ludzkiego, nerwy siatkówki biegną z tyłu fotoreceptorów, co oznacza brak plamki ślepej! Pozioma, prostokątna źrenica zawsze utrzymuje idealny poziom dzięki grawitacyjnym statocystom w głowie, a rewelacyjna czułość na polaryzację światła pozwala widzieć przezroczyste meduzy.
+              </p>
+              <div style="background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: var(--radius-md); padding: 14px 18px;">
+                <span style="font-size: 0.8rem; color: var(--purple-light); font-weight: 700;">PARAMETR ANATOMICZNY:</span>
+                <div id="octopusAnatomyStat" style="font-size: 1.1rem; font-weight: 800; color: #fff; margin-top: 4px;">Plamka ślepa: 0% • Automatyczna stabilizacja źrenicy w pionie grawitacyjnym</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 4: BEZPIECZEŃSTWO I ETYKA RAFOWA
+         ============================================================ -->
+    <section class="section" id="bezpieczenstwo">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: #EC4899;">Ekologia, Toksyny i Etyka Nurkowania</span>
+          <h2>Spotkanie z Ośmiornicą: Jak Postępować Bezpiecznie i Odpowiedzialnie?</h2>
+          <p>Ośmiornice to fascynujące stworzenia o wysokiej inteligencji, ale niektóre gatunki posiadają jedną z najpotężniejszych trucizn na Ziemi. Poznaj zasady etycznej interakcji.</p>
+        </div>
+
+        <div class="safety-grid">
+          <div class="toxic-food-card" style="border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05);">
+            <div class="toxic-food-header">
+              <span>⚠️</span>
+              <h5 style="color: #F87171;">1. Ośmiornica niebieskopierścieniowa (*Hapalochlaena*)</h5>
+            </div>
+            <p>Ta miniaturowa (5–10 cm) ośmiornica z basenu Indo-Pacyfiku nosi w ślinie <strong>tetrodotoksynę (TTX)</strong> — truciznę 1200 razy silniejszą od cyjanku. Ukąszenie jest bezbolesne, ale paraliżuje mięśnie oddechowe w kilkanaście minut. <strong>NIGDY nie dotykaj małych ośmiornic o pulsujących, niebieskich pierścieniach!</strong></p>
+          </div>
+
+          <div class="toxic-food-card" style="border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.05);">
+            <div class="toxic-food-header">
+              <span>🤿</span>
+              <h5 style="color: var(--emerald-light);">2. Obserwuj z dystansu — nie wyciągaj z wody!</h5>
+            </div>
+            <p>Ośmiornice oddychają skrzelami. Wyjęcie na piasek czy skałę powoduje u nich natychmiastowe duszenie i pękanie delikatnych naczyń włosowatych. Zawsze podziwiaj je pod wodą z odległości co najmniej 1 metra.</p>
+          </div>
+
+          <div class="toxic-food-card" style="border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.05);">
+            <div class="toxic-food-header">
+              <span>🖤</span>
+              <h5 style="color: var(--amber-light);">3. Nie zmuszaj do wyrzutu chmury czernidła</h5>
+            </div>
+            <p>Wyrzut atramentu to dla ośmiornicy ostateczny, kosztowny energetycznie manewr obronny. Śluz czernidłowy zawiera tyrozynazę, która czasowo paraliżuje zmysł węchu drapieżników. Nękanie zwierzęcia dla „efektownego zdjęcia” jest znęcaniem się nad dziką przyrodą.</p>
+          </div>
+
+          <div class="toxic-food-card" style="border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.05);">
+            <div class="toxic-food-header">
+              <span>🧠</span>
+              <h5 style="color: var(--purple-light);">4. Szacunek dla inteligencji i używania narzędzi</h5>
+            </div>
+            <p>Badania etologiczne udowodniły, że ośmiornice pamiętają ludzkie twarze, odczuwają ból i frustrację, bawią się przedmiotami oraz rozwiązują wieloetapowe zagadki. Traktuj je jak istoty o wysokiej samoświadomości.</p>
+          </div>
+        </div>
+
+        <!-- Crisis Simulator -->
+        <div style="margin-top: 36px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px;">
+          <h4 style="margin-bottom: 8px;">🎮 Symulator Decyzji: Podczas spaceru po rafie koralowej w Australii zauważasz w kałuży pływowej małą, 6-centymetrową ośmiorniczkę, której skóra nagle zaczyna pulsować neonowymi, niebieskimi kółkami. Co robisz?</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+            Wybierz właściwy protokół zachowania:
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 20px;">
+            <div class="crisis-option-card octopus-crisis-card" data-action="touch_blue_ring">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">🖐️</span>
+              <strong>Biorę ją na dłoń, żeby zrobić selfie z ładnym niebieskim wzorkiem</strong>
+            </div>
+            <div class="crisis-option-card octopus-crisis-card" data-action="keep_distance_admire">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">📸</span>
+              <strong>Zachowuję bezpieczny dystans min. 2 metrów, nie dotykam jej i podziwiam z daleka</strong>
+            </div>
+            <div class="crisis-option-card octopus-crisis-card" data-action="pick_bucket">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">🪣</span>
+              <strong>Zgarniam ją patykiem do plastikowego kubka, by zabrać do hotelu</strong>
+            </div>
+            <div class="crisis-option-card octopus-crisis-card" data-action="pour_freshwater">
+              <span style="font-size: 2rem; margin-bottom: 8px; display: block;">🚰</span>
+              <strong>Wlewam do kałuży słodką wodę mineralną z butelki, by ją „napoić”</strong>
+            </div>
+          </div>
+
+          <div id="octopusCrisisResult" class="crisis-feedback-box"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 5: FASCYNUJĄCE CIEKAWOSTKI
+         ============================================================ -->
+    <section class="section" id="ciekawostki" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--purple-light); border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1);">Sekrety Natury</span>
+          <h2>Niezwykłe Fakty o Ośmiornicach</h2>
+          <p>Oto zjawiska biologiczne, które potwierdzają, jak niezwykłym organizmem jest ten morski głowonóg.</p>
+        </div>
+
+        <div class="curiosity-grid">
+          <div class="curiosity-card" style="border-color: rgba(168, 85, 247, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">😴</span>
+              <h4 style="color: var(--purple-light);">Faza snu REM i sny pełne barw</h4>
+            </div>
+            <p>
+              Badania laboratoryjne wykazały, że ośmiornice śpią w dwóch fazach: spokojnej i aktywnej (odpowiednik ludzkiego REM). Podczas fazy aktywnej ich ciało gwałtownie zmienia kolory i faktury — naukowcy podejrzewają, że ośmiornice „przeżywają na nowo” dzienne polowania i maskowania w swoich snach!
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(236, 72, 153, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">🥥</span>
+              <h4 style="color: #F472B6);">Mistrzowie inżynierii: Dom z orzecha kokosowego</h4>
+            </div>
+            <p>
+              Ośmiornica żyłkowana (*Amphioctopus marginatus*) wykopuje z dna połówki łupin orzechów kokosowych, czyści je z mułu, po czym układa jedna na drugiej i niesie pod ramionami przez dziesiątki metrów, by w razie ataku drapieżnika zamknąć się w środku jak w pancerzu.
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(6, 182, 212, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">💙</span>
+              <h4 style="color: var(--cyan-light);">Autotomia ramion: Regeneracja bez blizny</h4>
+            </div>
+            <p>
+              W sytuacji zagrożenia życia ośmiornica potrafi odrzucić schwytane przez murenę ramię. Odcięte ramię wije się jeszcze przez kilkanaście minut, odwracając uwagę wroga. W ciągu kilku tygodni na jego miejscu wyrasta w 100% sprawne, nowe ramię z pełnym zestawem zwojów nerwowych i przyssawek!
+            </p>
+          </div>
+
+          <div class="curiosity-card" style="border-color: rgba(16, 185, 129, 0.25);">
+            <div class="curiosity-card-header">
+              <span class="curiosity-icon">💡</span>
+              <h4 style="color: var(--emerald-light);">Edycja własnego RNA w locie</h4>
+            </div>
+            <p>
+              Większość zwierząt polega na powolnych mutacjach w DNA. Ośmiornice potrafią masowo edytować własne matrycowe RNA! Pozwala im to błyskawicznie przeprogramować białka układu nerwowego, gdy temperatura wody nagle spada z 25°C do 4°C, zachowując pełną szybkość reakcji neuronów.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 6: 10-POZIOMOWA MINI GRA
+         ============================================================ -->
+    <section class="section" id="gra">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--purple-light); border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1);">🎮 Zagraj i Opanuj Maskowanie</span>
+          <h2>Mini Gra: Głębinowy Kamuflaż i Łowy na Kraby</h2>
+          <p>Steruj ośmiornicą na dnie morza. Podłoże zmienia barwę (klawisz C lub przycisk zmienia Twój kamuflaż). Gdy jesteś zamaskowany pod kolor rafy, patrolujące mureny Cię nie widzą! Zbieraj chrupiące kraby!</p>
+        </div>
+
+        <div class="minigame-card" style="border-color: rgba(168, 85, 247, 0.35);">
+          <!-- Level Header & Progress Dots -->
+          <div class="minigame-level-header">
+            <div class="minigame-level-badge" id="octopusGameLevelBadge" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: var(--purple-light);">
+              <span>Misja 1/10:</span> Płytka Rafa i Złote Kraby 🦀🐙
+            </div>
+            <div class="minigame-level-dots" id="octopusGameLevelDots">
+              <span class="level-dot active"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+              <span class="level-dot"></span>
+            </div>
+          </div>
+
+          <!-- HUD -->
+          <div class="minigame-hud">
+            <div class="hud-item">
+              <span>🦀 Schwytane kraby:</span>
+              <span class="hud-val" id="octopusGameCrabs" style="color: #F472B6;">0 / 3</span>
+            </div>
+            <div class="hud-item">
+              <span>⏱️ Czas łowów:</span>
+              <span class="hud-val" id="octopusGameTimer" style="color: var(--emerald-light);">40s</span>
+            </div>
+            <div class="hud-item">
+              <span>Kamuflaż skóry:</span>
+              <span class="hud-val" id="octopusGameCamoStatus" style="color: var(--purple-light);">🏖️ Piasek (Żółty)</span>
+            </div>
+          </div>
+
+          <div class="minigame-viewport">
+            <canvas id="octopusGameCanvas" class="minigame-canvas" style="background: #0A0F1D;"></canvas>
+
+            <!-- Game Overlay -->
+            <div class="minigame-overlay" id="octopusGameOverlay">
+              <div style="font-size: 3.5rem; margin-bottom: 12px;" id="octopusGameOverIcon">🐙🎨🦀</div>
+              <h4 id="octopusGameOverTitle">Głębinowy Kamuflaż Chromatoforów</h4>
+              <p id="octopusGameOverDesc">
+                Płyń ośmiornicą po dnie oceanu. Dopasowuj kolor skóry (klawisz C lub przycisk na dole) do koloru strefy dna, by stać się niewidocznym dla muren i bezpiecznie schwytać wszystkie kraby!
+              </p>
+              <div class="overlay-actions">
+                <button class="btn btn-primary" id="startOctopusGameBtn">Rozpocznij polowanie w kamuflażu 🐙</button>
+                <button class="btn btn-primary" id="nextOctopusLevelBtn" style="display: none;">Kolejna głębia →</button>
+                <button class="btn btn-secondary" id="restartOctopusGameBtn" style="display: none;">Powtórz misję ↺</button>
+                <button class="btn btn-secondary" id="resetOctopusCampaignBtn" style="display: none;">Zacznij od poziomu 1 ↺</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Touch camouflage toggle button for mobile -->
+          <div style="display: flex; justify-content: center; margin-top: 14px;">
+            <button class="btn btn-secondary" id="octopusCamouflageToggleInGameBtn" style="padding: 10px 24px; font-size: 0.92rem; border-color: rgba(168, 85, 247, 0.4); color: var(--purple-light);">
+              🎨 Zmień Barwę Chromatoforów (Klawisz C / Dotknij)
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEKCJA 7: INTERAKTYWNY MINI QUIZ
+         ============================================================ -->
+    <section class="section" id="quiz" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="overline" style="color: var(--purple-light); border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1);">Sprawdź swoją wiedzę</span>
+          <h2>Mini Quiz Mistrza Zmysłów Ośmiornicy</h2>
+          <p>5 pytań weryfikujących wiedzę o decentralizacji układu nerwowego, chromatoforach, toksynach i biologii głowonogów.</p>
+        </div>
+
+        <div class="quiz-wrapper" style="border-color: rgba(168, 85, 247, 0.3);">
+          <div class="quiz-meter-bar">
+            <div class="quiz-meter-progress" id="octopusQuizMeterProgress" style="background: linear-gradient(90deg, #A855F7 0%, #EC4899 100%);"></div>
+          </div>
+          <div id="octopusQuizDynamicBody">
+            <!-- Rendered dynamically by js/octopus-simulators.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- ============================================================
+         SEKCJA: NAWIGACJA PO GATUNKACH I PRZEJŚCIE DO KATALOGU
+         ============================================================ -->
+    <section class="section animal-navigation-hub">
+      <div class="container">
+        <div class="animal-navigation-card">
+          <span class="overline" style="color: var(--amber);">Nawigacja po świecie zmysłów</span>
+          <h3 style="font-size: 1.75rem; margin: 8px 0 12px;">Poznaj zmysły innych zwierząt</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.6; max-width: 620px; margin-left: auto; margin-right: auto;">
+            Odkryj percepcję kolejnego gatunku lub otwórz pełny, interaktywny katalog wszystkich 15 zwierząt:
+          </p>
+
+          <!-- Stepper: Poprzednie / Główny katalog / Następne -->
+          <div class="animal-nav-stepper">
+            <a href="rekin.html" class="animal-nav-btn animal-nav-btn-prev" title="Poprzednie zwierzę: Żarłacz błękitny">
+              <span>←</span>
+              <span>🦈 Rekin</span>
+            </a>
+
+            <button class="animal-nav-btn animal-nav-btn-catalog animal-catalog-trigger" title="Otwórz pełny katalog ze wszystkimi 15 zwierzętami">
+              <span>🐾 Pełny katalog (15 zwierząt)</span>
+            </button>
+
+            <a href="pies.html" class="animal-nav-btn animal-nav-btn-next" title="Następne zwierzę: Pies domowy">
+              <span>🐕 Pies</span>
+              <span>→</span>
+            </a>
+          </div>
+
+          <!-- Szybki skok do każdego zwierzęcia -->
+          <div class="animal-quick-jump-wrap">
+            <div class="animal-quick-jump-title">
+              Szybki skok do dowolnego gatunku (15):
+            </div>
+            <div class="animal-quick-jump-bar">
+                <a href="pies.html" class="animal-quick-chip"><span>🐕</span> <span>Pies</span></a>
+                <a href="kot.html" class="animal-quick-chip"><span>🐈</span> <span>Kot</span></a>
+                <a href="dzik.html" class="animal-quick-chip"><span>🐗</span> <span>Dzik</span></a>
+                <a href="wilk.html" class="animal-quick-chip"><span>🐺</span> <span>Wilk</span></a>
+                <a href="nietoperz.html" class="animal-quick-chip"><span>🦇</span> <span>Nietoperz</span></a>
+                <a href="zmija.html" class="animal-quick-chip"><span>🐍</span> <span>Żmija</span></a>
+                <a href="sowa.html" class="animal-quick-chip"><span>🦉</span> <span>Sowa</span></a>
+                <a href="niedzwiedz.html" class="animal-quick-chip"><span>🐻</span> <span>Niedźwiedź</span></a>
+                <a href="pszczola.html" class="animal-quick-chip"><span>🐝</span> <span>Pszczoła</span></a>
+                <a href="lis.html" class="animal-quick-chip"><span>🦊</span> <span>Lis</span></a>
+                <a href="jez.html" class="animal-quick-chip"><span>🦔</span> <span>Jeż</span></a>
+                <a href="orzel.html" class="animal-quick-chip"><span>🦅</span> <span>Orzeł</span></a>
+                <a href="delfin.html" class="animal-quick-chip"><span>🐬</span> <span>Delfin</span></a>
+                <a href="rekin.html" class="animal-quick-chip"><span>🦈</span> <span>Rekin</span></a>
+                <a href="osmiornica.html" class="animal-quick-chip active"><span>🐙</span> <span>Ośmiornica</span></a>
+            </div>
+          </div>
+
+          <!-- Powrót na stronę główną -->
+          <div class="animal-home-return">
+            <a href="index.html#zwierzeta">
+              <span>🏠 Wróć do spisu na stronie głównej</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Author Profile Modal (Dorian Kalinowski) -->
+  <div class="modal-backdrop" id="authorModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeAuthorModal" aria-label="Zamknij okno">✕</button>
+      <img src="img/dorian-kalinowski.png" alt="Dorian Kalinowski" class="author-avatar-big">
+      <h3 class="author-modal-name">Dorian Kalinowski</h3>
+      <div class="author-modal-role">Twórca projektu i miłośnik zwierząt</div>
+      <p class="author-bio">
+        Cześć! Mam na imię Dorian. Od zawsze fascynowało mnie to, jak zwierzęta odbierają otaczający nas świat – zupełnie inaczej niż my, ludzie. Na mojej stronie możesz na własne oczy i uszy sprawdzić ich perspektywę oraz dowiedzieć się, kiedy i dlaczego dochodzi do niebezpiecznych spięć. Wierzę, że gdybyśmy naprawdę rozumieli, jak zwierzęta myślą, widzą i czują, byłoby między nami znacznie mniej strachu i niepotrzebnych konfrontacji.
+      </p>
+      <div style="text-align: center;">
+        <button class="btn btn-primary" id="confirmAuthorModal">Zamknij</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PWA Install Prompt Banner -->
+  <div class="pwa-install-banner" id="pwaBanner">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 1.6rem;">📱</span>
+      <div>
+        <div style="font-size: 0.92rem; font-weight: 700;">Zainstaluj jako aplikację PWA</div>
+        <div style="font-size: 0.78rem; color: var(--text-muted);">Szybki dostęp i działanie offline bez przeglądarki</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="pwaInstallBtn" style="padding: 8px 18px; font-size: 0.85rem;">Instaluj</button>
+    <button class="modal-close-btn" id="pwaDismissBtn" style="position: static; width: 28px; height: 28px; font-size: 0.8rem;">✕</button>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <div class="mobile-bottom-bar" role="navigation" aria-label="Nawigacja mobilna">
+    <a href="index.html" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🏠</span>
+      <span>Główna</span>
+    </a>
+    <button class="bottom-bar-item animal-catalog-trigger">
+      <span class="bottom-bar-icon">🐾</span>
+      <span>Katalog</span>
+    </button>
+    <a href="osmiornica.html" class="bottom-bar-item active">
+      <span class="bottom-bar-icon">🐙</span>
+      <span>Ośmiornica</span>
+    </a>
+    <a href="#bezpieczenstwo" class="bottom-bar-item">
+      <span class="bottom-bar-icon">🛡️</span>
+      <span>Zasady</span>
+    </a>
+    <button class="bottom-bar-item" id="mobileAuthorTrigger">
+      <span class="bottom-bar-icon">👤</span>
+      <span>Autor</span>
+    </button>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-author">
+        Zaprojektowane i stworzone przez: <strong>Dorian Kalinowski</strong>
+      </p>
+      <p class="footer-rights">
+        © 2026 Świat zmysłami zwierząt V1.1 • Projekt edukacyjny non-profit • Wersja V1.1
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/octopus-simulators.js"></script>
+</body>
+</html>

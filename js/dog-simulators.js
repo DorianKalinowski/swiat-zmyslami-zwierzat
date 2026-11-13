@@ -1061,12 +1061,15 @@ function initDogScentGame() {
 
   function updateHUD() {
     const lvl = levels[currentLevelIdx];
+    const isEn = window.i18n && window.i18n.currentLang === 'en';
     if (levelBadge) {
-      levelBadge.innerHTML = `<span>Misja ${currentLevelIdx + 1}/${levels.length}:</span> ${lvl.name}`;
+      const missionPrefix = isEn ? 'Mission' : 'Misja';
+      const lvlName = window.t ? window.t(lvl.name) : lvl.name;
+      levelBadge.innerHTML = `<span>${missionPrefix} ${currentLevelIdx + 1}/${levels.length}:</span> ${lvlName}`;
     }
     if (levelDotsContainer) {
       if (levelDotsContainer.children.length !== levels.length) {
-        levelDotsContainer.innerHTML = levels.map((_, i) => `<span class="level-dot" title="Poziom ${i + 1}"></span>`).join('');
+        levelDotsContainer.innerHTML = levels.map((_, i) => `<span class="level-dot" title="${isEn ? 'Level ' + (i + 1) : 'Poziom ' + (i + 1)}"></span>`).join('');
       }
       const dots = levelDotsContainer.querySelectorAll('.level-dot');
       dots.forEach((dot, idx) => {
@@ -1077,7 +1080,8 @@ function initDogScentGame() {
     }
     foundVal.textContent = `0 / ${lvl.targets.length}`;
     timerVal.textContent = `${lvl.time}s`;
-    currentTargetName.textContent = lvl.targets[0].name;
+    const targetObj = lvl.targets[currentTargetIndex || 0];
+    currentTargetName.textContent = window.t ? window.t(targetObj.name) : targetObj.name;
     radarFill.style.width = '0%';
   }
 
@@ -1153,6 +1157,8 @@ function initDogScentGame() {
     resetBtn.style.display = 'none';
 
     const lvl = levels[currentLevelIdx];
+    const isEn = window.i18n && window.i18n.currentLang === 'en';
+    const lvlName = window.t ? window.t(lvl.name) : lvl.name;
 
     if (isWin) {
       beep(587, 0.1);
@@ -1161,8 +1167,11 @@ function initDogScentGame() {
       if (currentLevelIdx < levels.length - 1) {
         // Level completed, more levels remaining
         overlayIcon.textContent = '🎉🐾✨';
-        overlayTitle.textContent = `Misja ${currentLevelIdx + 1} Ukończona!`;
-        overlayDesc.innerHTML = `
+        overlayTitle.textContent = isEn ? `Mission ${currentLevelIdx + 1} Completed!` : `Misja ${currentLevelIdx + 1} Ukończona!`;
+        overlayDesc.innerHTML = isEn ? `
+          You found all targets of level <strong>${lvlName}</strong> in <strong>${lvl.time - timeLeft}s</strong>!<br>
+          Your dog demonstrated extraordinary olfactory prowess. Ahead lies the next, harder challenge!
+        ` : `
           Znalazłeś wszystkie cele poziomu <strong>${lvl.name}</strong> w czasie <strong>${lvl.time - timeLeft}s</strong>!<br>
           Twój pies udowodnił niezwykłą sprawność węchową. Przed Tobą kolejne, trudniejsze wyzwanie!
         `;
@@ -1171,9 +1180,12 @@ function initDogScentGame() {
       } else {
         // Campaign Complete
         overlayIcon.textContent = '🏅🐕🏆';
-        overlayTitle.textContent = 'Certyfikowany Mistrz Tropienia K-9!';
-        overlayDesc.innerHTML = `
-          <strong>Ukończyłeś wszystkie 3 poziomy tropienia!</strong><br>
+        overlayTitle.textContent = isEn ? 'Certified K-9 Tracking Master!' : 'Certyfikowany Mistrz Tropienia K-9!';
+        overlayDesc.innerHTML = isEn ? `
+          <strong>You completed all 10 tracking levels!</strong><br>
+          You overcame strong crosswinds and urban distractions. Your dog tracked down every lost item with the precision of a true mountain rescue dog.
+        ` : `
+          <strong>Ukończyłeś wszystkie 10 poziomy tropienia!</strong><br>
           Pokonałeś trudny boczny wiatr i miejskie rozpraszacze. Twój pies wytropił każdy zaginiony przedmiot z precyzją prawdziwego psa ratownika GOPR.
         `;
         resetBtn.style.display = 'inline-flex';
@@ -1182,8 +1194,11 @@ function initDogScentGame() {
       // Level Failed
       playBuzzer();
       overlayIcon.textContent = '⏰🌧️🐕';
-      overlayTitle.textContent = 'Czas minął — zapach wywietrzał!';
-      overlayDesc.innerHTML = `
+      overlayTitle.textContent = isEn ? 'Time is up — the scent has faded!' : 'Czas minął — zapach wywietrzał!';
+      overlayDesc.innerHTML = isEn ? `
+        Failed to find all scents on level <strong>${lvlName}</strong>.<br>
+        Watch the scent radar bar closely and search in a zig-zag. Try again!
+      ` : `
         Nie udało się odnaleźć wszystkich zapachów na poziomie <strong>${lvl.name}</strong>.<br>
         Śledź uważnie pasek sonaru i węszyj zygzakiem. Spróbuj ponownie!
       `;
@@ -1221,7 +1236,8 @@ function initDogScentGame() {
       ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
       ctx.font = '12px var(--font-mono)';
       ctx.textAlign = 'right';
-      ctx.fillText('💨 Wiatr boczny: 25 km/h →', width - 20, 26);
+      const windTxt = window.t ? window.t('💨 Wiatr boczny: 25 km/h →') : '💨 Wiatr boczny: 25 km/h →';
+      ctx.fillText(windTxt, width - 20, 26);
     }
 
     // Active Target
@@ -1271,7 +1287,8 @@ function initDogScentGame() {
         ctx.fillStyle = '#EF4444';
         ctx.font = '12px sans-serif';
         ctx.textAlign = 'center';
-        ctx.fillText('Rozproszenie! ⚠️', dogX, dogY - 36);
+        const distractTxt = window.t ? window.t('Rozproszenie! ⚠️') : 'Rozproszenie! ⚠️';
+        ctx.fillText(distractTxt, dogX, dogY - 36);
       }
       // Draw distractor item
       ctx.font = '22px sans-serif';
@@ -1291,7 +1308,8 @@ function initDogScentGame() {
       ctx.fillStyle = '#FFF';
       ctx.font = '12px sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText('Węszy...', dogX, dogY - 38);
+      const sniffTxt = window.t ? window.t('Węszy...') : 'Węszy...';
+      ctx.fillText(sniffTxt, dogX, dogY - 38);
 
       if (digProgress >= 1) {
         activeTarget.found = true;
@@ -1306,7 +1324,8 @@ function initDogScentGame() {
           endGame(true);
           return;
         } else {
-          currentTargetName.textContent = lvl.targets[currentTargetIndex].name;
+          const nextTarget = lvl.targets[currentTargetIndex];
+          currentTargetName.textContent = window.t ? window.t(nextTarget.name) : nextTarget.name;
         }
       }
     } else {
@@ -1339,6 +1358,10 @@ function initDogScentGame() {
   nextBtn.addEventListener('click', () => startLevel(currentLevelIdx + 1));
   restartBtn.addEventListener('click', () => startLevel(currentLevelIdx));
   resetBtn.addEventListener('click', () => startLevel(0));
+
+  document.addEventListener('languageChanged', () => {
+    updateHUD();
+  });
 
   updateHUD();
 }

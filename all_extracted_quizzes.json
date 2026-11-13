@@ -1,0 +1,772 @@
+[
+  {
+    "animal": "bat",
+    "q": "Do jakiej częstotliwości sięgają ultradźwięki sonaru polskich nietoperzy?",
+    "options": [
+      "Do 20 000 Hz (jak granica ludzkiego słuchu)",
+      "Do ok. 40 000 Hz",
+      "Aż do 120 000 Hz (120 kHz!)",
+      "Nietoperze posługują się wyłącznie infradźwiękami poniżej 20 Hz"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "bat",
+    "q": "W jaki sposób nietoperz nie ogłusza samego siebie, krzycząc z siłą ponad 130 dB?",
+    "options": [
+      "Zatyka uszy skrzydłami w trakcie lotu",
+      "Mięsień strzemiączkowy odłącza kosteczki słuchowe na ułamek sekundy podczas każdego krzyku",
+      "Nietoperze są w 100% głuche na własny głos",
+      "Wydaje dźwięk z taką prędkością, że fala dźwiękowa ucieka do przodu"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "bat",
+    "q": "Czy nietoperz wlatujący do pokoju próbuje wkręcić się człowiekowi we włosy?",
+    "options": [
+      "Tak, przyciąga go zapach ludzkiego szamponu i ciepło głowy",
+      "Nie, to absolutny zabobon — jego sonar wykrywa przeszkodę grubości włosa i omija człowieka z daleka",
+      "Tylko w okresie godowym jesienią",
+      "Robi to wyłącznie wtedy, gdy w pokoju pali się jasne światło"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "bat",
+    "q": "Co należy zrobić, gdy w letni wieczór nietoperz wpadnie przez okno do mieszkania?",
+    "options": [
+      "Próbować strącić go miotłą lub zrolowaną gazetą",
+      "Zgasić światło, otworzyć okno na oścież, zamknąć drzwi do pokoju i wyjść na 10 minut",
+      "Złapać go w locie gołymi rękami i wyrzucić przez balkon",
+      "Użyć odkurzacza lub sprayu na owady"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "bat",
+    "q": "Jaką rolę w ekosystemie Polski pełnią nietoperze?",
+    "options": [
+      "Są szkodnikami niszczącymi konstrukcje dachowe budynków",
+      "Żywią się krwią zwierząt hodowlanych (wampiryzm)",
+      "Są nieocenionymi sprzymierzeńcami — jeden nietoperz pożera nawet 1000 komarów i szkodników na godzinę",
+      "Nie mają wpływu na liczebność owadów"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "bear",
+    "q": "O ile razy węch niedźwiedzia brunatnego przewyższa węch psa domowego (np. bloodhounda)?",
+    "options": [
+      "Jest słabszy od węchu psa",
+      "Jest dokładnie taki sam",
+      "Jest około 7 razy czulszy od węchu psa (i ponad 2100 razy czulszy od człowieka!)",
+      "Niedźwiedzie w ogóle nie posługują się węchem"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "bear",
+    "q": "Dlaczego ucieczka sprintem lub wdrapywanie się na drzewo przed niedźwiedziem to fatalny błąd?",
+    "options": [
+      "Niedźwiedź biega z prędkością do 50 km/h, świetnie wspina się na drzewa, a bieg wyzwala u niego instynkt pogoni",
+      "Na drzewach w polskich lasach nie ma wystarczająco grubych gałęzi",
+      "Niedźwiedzie potrafią latać",
+      "Ucieczka jest akurat najlepszą i w 100% skuteczną metodą"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "bear",
+    "q": "Jak należy się zachować, jeśli dojdzie do bezpośredniego ataku niedźwiedzia i kontaktu fizycznego?",
+    "options": [
+      "Krzyczeć głośno i zadawać ciosy pięściami w pysk",
+      "Przyjąć pozycję „żółwia”: położyć się płasko na brzuchu, spleść dłonie na karku i osłonić łokciami głowę i twarz",
+      "Próbować złapać niedźwiedzia za uszy",
+      "Zacząć gwałtownie turlać się w dół zbocza"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "bear",
+    "q": "Co w rzeczywistości oznacza, gdy niedźwiedź na szlaku staje na tylnych łapach?",
+    "options": [
+      "To bezpośrednia zapowiedź skoku i ataku bojowego",
+      "Niedźwiedź prosi o jedzenie jak pies w cyrku",
+      "Próbuje lepiej zwęszyć otoczenie i rozejrzeć się ponad krzakami — to gest zaciekawienia, a nie agresji",
+      "Świadczy o tym, że niedźwiedź jest chory na wściekliznę"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "bear",
+    "q": "Z czego składa się większość diety polskiego niedźwiedzia brunatnego w Bieszczadach i Tatrach?",
+    "options": [
+      "Jest bezwzględnym mięsożercą polującym wyłącznie na jelenie i sarny",
+      "Jest wszystkożerny — aż 70–80% jego pożywienia stanowią rośliny: jagody, pędy, orzeszki bukowe (bukiew), trawy i owady",
+      "Żywi się wyłącznie rybami łososiowatymi jak niedźwiedź na Alasce",
+      "Zjada wyłącznie miód z barci"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "bee",
+    "q": "Jakiego koloru widzialnego dla człowieka pszczoła miodna NIE dostrzega i widzi go jako czerń?",
+    "options": [
+      "Koloru żółtego",
+      "Koloru niebieskiego",
+      "Koloru czerwonego (nie posiada receptorów czerwieni)",
+      "Pszczoły widzą dokładnie wszystkie kolory co człowiek"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "bee",
+    "q": "Czym są tzw. „ścieżki nektarowe” (nectar guides) na płatkach kwiatów?",
+    "options": [
+      "Sztucznymi ścieżkami wydeptanymi przez mrówki",
+      "Wzorami i pasami widocznymi wyłącznie w ultrafiolecie (UV), które wskazują pszczole drogę do nektaru niczym pas startowy",
+      "Kroplami rosy odbijającymi światło słoneczne",
+      "Śladami zapachowymi zostawianymi przez trutnie"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "bee",
+    "q": "Jak należy prawidłowo usunąć żądło pszczoły ze skóry po użądleniu?",
+    "options": [
+      "Ścisnąć mocno pęsetą lub dwoma palcami i pociągnąć",
+      "Zeskrobać żądło płasko przy skórze kartą płatniczą, dowodem lub paznokciem, by nie ścisnąć woreczka jadowego",
+      "Naciąć skórę i wycisnąć jad",
+      "Polać żądło wrzątkiem lub spirytusem"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "bee",
+    "q": "W jaki sposób pszczoła zwiadowczyni informuje siostry w ulu o odległości i kierunku nowego pożytku kwiatowego?",
+    "options": [
+      "Wydaje ultradźwiękowe piski jak nietoperz",
+      "Wylatuje z ula i prowadzi cały rój za sobą",
+      "Wykonuje na pionowym plastrze w ulu tzw. taniec wywijany (waggle dance), wskazując kąt względem słońca",
+      "Wydziela feromon strachu"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "bee",
+    "q": "Dlaczego pszczoła robotnica ginie po użądleniu człowieka, podczas gdy osa może żądlić wielokrotnie?",
+    "options": [
+      "Pszczoła umiera z żalu po użądleniu",
+      "Żądło pszczoły ma mikroskopijne zadziory, które zakotwiczają się w elastycznej skórze ssaków i odrywają się wraz z odwłokiem",
+      "Jad pszczeli jest trujący dla samej pszczoły",
+      "Pszczoła ma za mało energii, by przeżyć użądlenie"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "boar",
+    "q": "Jaki zmysł dzika jest absolutną supermocą lasu?",
+    "options": [
+      "Wzrok — dzik widzi w podczerwieni",
+      "Węch — wyczuwa żołędzie 1 m pod ziemią i człowieka z ponad 500 m",
+      "Smak — potrafi odróżniać rodzaje kory",
+      "Echolokacja ultradźwiękowa"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "boar",
+    "q": "Co jest statystycznie NAJCZĘSTSZYM powodem ataku dzika na człowieka w Polsce?",
+    "options": [
+      "Głód dzika w środku zimy",
+      "Kolor ubrań spacerowicza",
+      "Pies biegający bez smyczy, który prowokuje dzika i ucieka pod nogi właściciela",
+      "Śpiewanie piosenek w lesie"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "boar",
+    "q": "Dlaczego człowiek stojący w bezruchu pod wiatr jest dla dzika niemal niewidzialny?",
+    "options": [
+      "Bo dzik jest skrajnym krótkowidzem i reaguje niemal wyłącznie na ruch",
+      "Bo dziki zamykają oczy podczas buchtowania",
+      "Dzik widzi tylko obiekty w kolorze czerwonym",
+      "Dzik ignoruje obiekty wyższe niż 1 metr"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "boar",
+    "q": "Co oznacza głośne zgrzytanie szablami (kłapanie zębami) u odyńca?",
+    "options": [
+      "Dzik czyści zęby po zjedzeniu żołędzi",
+      "Ostateczne ostrzeżenie przed atakiem — za ułamek sekundy może nastąpić szarża",
+      "Sygnał powitania dla watahy",
+      "Prośba o jedzenie"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "boar",
+    "q": "Dlaczego dzików w miastach NIE WOLNO dokarmiać resztkami ze stołu?",
+    "options": [
+      "Bo dziki jedzą wyłącznie mięso",
+      "Bo tracą naturalny lęk przed ludźmi i stają się roszczeniowe, co kończy się ich odstrzałem",
+      "Bo od pieczywa wypadają im szable",
+      "Dziki w mieście i tak mają za dużo jedzenia"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "cat",
+    "q": "Dlaczego kot domowy nie jest w stanie poczuć smaku słodkiego?",
+    "options": [
+      "Bo koty nie lubią deserów",
+      "Z powodu trwałej mutacji genu Tas1r2 — kot jest bezwzględnym mięsożercą",
+      "Bo cukier natychmiast znieczula ich język",
+      "Koty czują słodycz lepiej niż ludzie"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "cat",
+    "q": "Do jakiej częstotliwości sięga słuch kota domowego?",
+    "options": [
+      "Do 20 000 Hz (jak człowiek)",
+      "Do 40 000 Hz",
+      "Do 65 000 Hz (jak pies)",
+      "Aż do 85 000 Hz (znacznie przewyższa słuch psa i człowieka!)"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "cat",
+    "q": "Co oznacza, gdy kot kładzie się na plecach i odsłania brzuch?",
+    "options": [
+      "Prosi o energiczne podrapanie po brzuszku",
+      "Pokazuje bezgraniczne zaufanie lub pozycję obronną — dotknięcie grozi atakiem!",
+      "Jest głodny i czeka na miskę",
+      "Ma gorączkę i chłodzi ciało"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "cat",
+    "q": "Która roślina jest dla kota ŚMIERTELNĄ trucizną nawet w ilości ziarenka pyłku?",
+    "options": [
+      "Zielistka (Spider plant)",
+      "Kocimiętka",
+      "Lilia (Liliaceae) — każda jej część wywołuje ostrą martwicę nerek",
+      "Owies dla kota"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "cat",
+    "q": "Dlaczego koty zostawiają chrupki na dnie głębokiej miski i miauczą o więcej?",
+    "options": [
+      "Bo jedzenie na dnie jest dla nich za stare",
+      "Cierpią na Whisker Fatigue (zmęczenie wibrysów) — uderzanie wąsami o ścianki wywołuje ból",
+      "Bo chcą zwrócić na siebie uwagę",
+      "Koty nie widzą nic na odległość mniejszą niż 1 metr"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "dog",
+    "q": "Jak pies widzi czerwoną piłkę rzuconą na zieloną trawę?",
+    "options": [
+      "Widzi jaskrawą czerwień i zieleń jak człowiek",
+      "Widzi czarno-białe piksele",
+      "Widzi ją jako żółtawo-szarą na żółto-brązowej trawie (dichromatyzm)",
+      "Nie widzi jej wcale, bo jest całkowicie niewidoczna"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "dog",
+    "q": "Dlaczego u psa warczenie jest sygnałem, za który NIE wolno go karać?",
+    "options": [
+      "Bo pies warczy tylko wtedy, gdy się cieszy",
+      "Bo warczenie to bezpiecznik komunikacyjny — ukarany pies ugryzie bez ostrzeżenia",
+      "Bo warczenie oznacza, że pies prosi o jedzenie",
+      "Bo pies i tak nic z tego nie rozumie"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "dog",
+    "q": "Do jakiej częstotliwości sięga słuch psa domowego?",
+    "options": [
+      "Do 20 000 Hz (identycznie jak ucho ludzkie)",
+      "Do 30 000 Hz",
+      "Aż do ok. 65 000 Hz (ultradźwięki niesłyszalne dla człowieka)",
+      "Pies słyszy tylko dźwięki poniżej 100 Hz"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "dog",
+    "q": "Który z poniższych produktów jest dla psa ŚMIERTELNĄ trucizną nawet w małej dawce?",
+    "options": [
+      "Marchewka",
+      "Ksylitol (słodzik w gumach do żucia) i czekolada",
+      "Ugotowane mięso z indyka",
+      "Kawałek jabłka bez pestek"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "dog",
+    "q": "Co oznacza zjawisko „Whale Eye",
+    "options": [
+      "Pies ma wadę wzroku i potrzebuje okularów",
+      "Widoczne białka oczu — sygnał skrajnego stresu, strachu i ryzyka obrony",
+      "Pies mruga z sympatii do właściciela",
+      "Pies widzi obiekty pod wodą"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "dolphin",
+    "q": "Jaką rolę pełni melon czołowy w aparacie zmysłowym delfina?",
+    "options": [
+      "Służy jako taran do rozbijania lodu na powierzchni",
+      "Działa jak soczewka akustyczna — ogniskuje i kieruje wiązkę ultradźwięków sonaru w wąski stożek",
+      "Jest narządem magazynującym tlen pod wodą",
+      "Wytwarza prąd elektryczny do paraliżowania ryb"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "dolphin",
+    "q": "W jaki sposób echo powracające z sonaru trafia do ucha wewnętrznego delfina?",
+    "options": [
+      "Przez widoczne małżowiny uszne na głowie",
+      "Przez cienką kość dolnej żuchwy wypełnioną tłuszczem przewodzącym dźwięk",
+      "Przez płetwy piersiowe rejestrujące wibracje",
+      "Przez odpowietrznik na czubku głowy"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "dolphin",
+    "q": "Czym jest tzw. sen unihemisferyczny u delfinów?",
+    "options": [
+      "Snem w pozycji pionowej na dnie oceanu",
+      "Odpoczynkiem jednej półkuli mózgu na raz — druga półkula czuwa i kontroluje wynurzanie po tlen",
+      "Całkowitym brakiem snu przez całe dorosłe życie",
+      "Snem zimowym trwającym 3 miesiące"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "dolphin",
+    "q": "Czym są tzw. „gwizdy podpisowe” (signature whistles) delfinów butlonosych?",
+    "options": [
+      "Odgłosem ostrzegającym przed nadejściem sztormu",
+      "Indywidualnymi imionami akustycznymi — każdy delfin tworzy swój własny unikalny gwizd",
+      "Dźwiękiem uderzania ogonem o wodę",
+      "Mechanicznym dźwiękiem tarcia płetw"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "dolphin",
+    "q": "Dlaczego wojskowe sonary niskich częstotliwości są śmiertelnie groźne dla waleni?",
+    "options": [
+      "Zmieniają temperaturę wody w oceanie",
+      "Generują falę akustyczną o natężeniu do 230 dB, wywołującą krwotoki w uszach i paniczne wynurzanie z chorobą dekompresyjną",
+      "Niszczą plankton, którym żywią się delfiny",
+      "Odstraszają ryby na setki kilometrów"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "eagle",
+    "q": "Ile dołków środkowych (fovea centralis) posiada orzeł w każdym oku i jaką pełnią funkcję?",
+    "options": [
+      "Tylko jeden dołek, tak jak człowiek",
+      "Dwa dołki: boczny o szerokim kącie i centralny działający jak teleobiektyw powiększający cel 8-krotnie",
+      "Trzy dołki: do widzenia w nocy, w dzień i pod wodą",
+      "Nie ma dołków siatkówki"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "eagle",
+    "q": "W jaki sposób widzenie w ultrafiolecie (UV) ułatwia orłom polowanie na nornice?",
+    "options": [
+      "Mocz nornic świeci w ultrafiolecie, ujawniając ich podziemne autostrady w trawie",
+      "Ultrafiolet prześwietla ziemię jak promienie Rentgena",
+      "Ciała gryzoni w nocy emitują ciepło UV",
+      "Ultrafiolet pozwala widzieć przez korony drzew"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "eagle",
+    "q": "Jaki promień strefy ochronnej wokół gniazda orła przedniego i bielika obowiązuje w okresie lęgowym w Polsce?",
+    "options": [
+      "50 metrów",
+      "500 metrów (od 1 stycznia do 31 lipca)",
+      "2 kilometry",
+      "Brak stref — ptaki chronione są tylko w parkach narodowych"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "eagle",
+    "q": "Dlaczego bielik w polskim herbie z biologicznego punktu widzenia nie jest prawdziwym orłem?",
+    "options": [
+      "Jest sokołem wędrownym",
+      "Należy do orłanów (rodzaj Haliaeetus) — ptaków związanych ze środowiskiem wodnym i rybożernych z nieopierzonymi skokami",
+      "Jest podgatunkiem jastrzębia gołębiarza",
+      "Bielik to sztuczny ptak legendarny, który nie występuje w naturze"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "eagle",
+    "q": "Co jest jedną z głównych przyczyn zatruć i śmierci dorosłych bielików w Polsce?",
+    "options": [
+      "Zatrucie solą drogową zimą",
+      "Ołowica wywołana zjadaniem resztek postrzelonych zwierząt z ołowianą amunicją myśliwską",
+      "Ukąszenia kleszczy",
+      "Alergia na rybie ości"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "fox",
+    "q": "W jakim kierunku geograficznym skoki myszkujące lisa rudego przynoszą statystycznie aż 73% sukcesu (w porównaniu do zaledwie 18% w innych kierunkach)?",
+    "options": [
+      "Kierunek nie ma znaczenia — liczy się tylko prędkość biegu",
+      "Północny Wschód (około 20° azymutu, zgodnie z wektorem nachylenia ziemskiego pola magnetycznego)",
+      "Ściśle na Południe, by słońce świeciło w oczy ofiary",
+      "Zawsze dokładnie pod wiatr"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "fox",
+    "q": "Jaka unikalna cecha budowy oka odróżnia lisa rudego od WSZYSTKICH innych dzikich psowatych (Canidae), takich jak wilki czy szakale?",
+    "options": [
+      "Całkowity brak widzenia barwnego (achromatopsja)",
+      "Oczy umieszczone symetrycznie z tyłu głowy",
+      "Pionowe źrenice szczelinowe (identyczne jak u kotów)",
+      "Czwarta powieka chroniąca przed mrozem"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "fox",
+    "q": "Dlaczego epidemiolodzy i służby sanitarne bezwzględnie nakazują dokładne mycie leśnych jagód, poziomek i borówek przed spożyciem?",
+    "options": [
+      "Owoce leśne mogą zawierać mikroskopijne jaja tasiemca bąblowcowego (Echinococcus multilocularis) wydalane przez lisy",
+      "Aby zmyć naturalny kwas szczawiowy z leśnego runa",
+      "Leśne jagody bez umycia tracą witaminy w żołądku",
+      "Żeby usunąć pyłki iglaste utrudniające trawienie"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "fox",
+    "q": "Co udowodnił słynny, trwający ponad 50 lat eksperyment prof. Dymitra Biełajewa nad udomowieniem lisów srebrzystych?",
+    "options": [
+      "Że lisy są genetycznie niezdolne do oswojenia przez człowieka",
+      "Że selekcja wyłącznie pod kątem braku agresji wywołała tzw. zespół udomowienia: merdanie ogonem, oklapnięte uszy i plamiste futro",
+      "Że udomowione lisy zaczęły znosić jaja",
+      "Że lisy tracą zdolność słyszenia ultradźwięków"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "fox",
+    "q": "Dlaczego widok lisa spokojnie spacerującego w środku dnia po osiedlu mieszkaniowym w polskim mieście NIE oznacza zazwyczaj wścieklizny?",
+    "options": [
+      "Wszystkie lisy w Polsce rodzą się z wrodzoną odpornością na wirusa wścieklizny",
+      "Lisy miejskie są wypuszczane ze schronisk dla zwierząt",
+      "Wścieklizna u dzikich lisów w Polsce została praktycznie wyeliminowana dzięki zrzutom szczepionek, a lisy miejskie szukają łatwego pożywienia w śmietnikach",
+      "Wirus wścieklizny nie występuje na terenach zurbanizowanych"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "hedgehog",
+    "q": "Dlaczego krowie mleko jest śmiertelnie niebezpieczne dla jeża?",
+    "options": [
+      "Ponieważ zawiera za dużo tłuszczu i jeż nie może się zwinąć w kulkę",
+      "Jeże nie wytwarzają laktazy — mleko wywołuje ciężką, odwadniającą biegawkę i martwicę jelit",
+      "Mleko przyciąga lisy, które polują na jeże",
+      "Mleko zmiękcza keratynę w kolcach jeża"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "hedgehog",
+    "q": "Co robi jeż podczas zjawiska tzw. samosmarowania (self-anointing)?",
+    "options": [
+      "Zanurza się w błocie, by schłodzić organizm w upalny dzień",
+      "Żuje intensywny zapach, spienia ślinę i językiem nanosi białą pianę na swoje kolce",
+      "Ociera się o sierść psa, by przejąć jego zapach",
+      "Czyści kolce za pomocą rosy z porannych traw"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "hedgehog",
+    "q": "Dzięki jakiemu białku jeż jest odporny na jad żmii zygzakowatej?",
+    "options": [
+      "Mioglobinie",
+      "Erinaceinie — inhibitorowi krwotocznych metaloproteinaz jadu",
+      "Hemoglobinie typu B",
+      "Keratynie we krwi"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "hedgehog",
+    "q": "Ile minimalnie powinien ważyć młody jeż w listopadzie, aby bezpiecznie przetrwać hibernację?",
+    "options": [
+      "Około 150–200 gramów",
+      "Minimum 600–700 gramów",
+      "Co najmniej 2 kilogramy",
+      "Waga nie ma żadnego znaczenia"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "hedgehog",
+    "q": "Jaka jest prawdziwa natura diety jeża w naturze?",
+    "options": [
+      "Jest roślinożercą i żywi się głównie spadłymi jabłkami i gruszkami",
+      "Jest drapieżnym owadożercą — zjada ślimaki, chrząszcze, pędraki, dżdżownice i padlinę",
+      "Odżywia się wyłącznie korzonkami traw i grzybami",
+      "Żywi się nasionami zbóż i orzechami"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "octopus",
+    "q": "Gdzie znajduje się większość (ok. 2/3) neuronów ośmiornicy?",
+    "options": [
+      "W potężnym mózgu umieszczonym wewnątrz chitynowego dzioba",
+      "W ośmiu ramionach, z których każde posiada autonomiczny zwój nerwowy",
+      "W worku czernidłowym odpowiedzialnym za obronę",
+      "W trzech sercach pompujących błękitną krew"
+    ],
+    "explain": "Aż 350 milionów z 500 milionów neuronów ośmiornicy zlokalizowanych jest w ramionach. Pozwala to każdemu ramieniu na samodzielne badanie otoczenia, poruszanie się i smakowanie pokarmu."
+  },
+  {
+    "animal": "octopus",
+    "q": "Dlaczego krew ośmiornicy jest intensywnie błękitna, a nie czerwona?",
+    "options": [
+      "Ponieważ zawiera barwnik melaninowy pobrany z worka czernidłowego",
+      "Ośmiornica absorbuje sole kobaltu z wody morskiej",
+      "Zamiast żelaza opiera się na miedzi (hemocyjanina), która w zimnej wodzie wydajniej wiąże tlen",
+      "Jej krew nie zawiera żadnych cząsteczek transportujących tlen"
+    ],
+    "explain": "Krew głowonogów wykorzystuje cząsteczki hemocyjaniny oparte na atomach miedzi. Po natlenieniu hemocyjanina przybiera piękny błękitny kolor i świetnie sprawdza się w zimnych, słabo natlenionych głębinach."
+  },
+  {
+    "animal": "octopus",
+    "q": "Jakie zagrożenie niesie ze sobą dotknięcie małej ośmiornicy niebieskopierścieniowej (Hapalochlaena)?",
+    "options": [
+      "Może jedynie ubrudzić skórę trwałym atramentem",
+      "Wydziela śmiertelną tetrodotoksynę (TTX), która paraliżuje mięśnie oddechowe człowieka w kilkanaście minut",
+      "Powoduje lekkie swędzenie dłoni przypominające poparzenie pokrzywą",
+      "Nie niesie żadnego zagrożenia, te ośmiornice nie mają jadu"
+    ],
+    "explain": "Ośmiornica niebieskopierścieniowa przenosi w ślinie tetrodotoksynę (TTX) produkowaną przez bakterie symbiotyczne. Trucizna jest ponad 1000 razy silniejsza od cyjanku i nie ma na nią antidotum!"
+  },
+  {
+    "animal": "octopus",
+    "q": "Jaka jest jedyna twarda część ciała ośmiornicy decydująca o tym, przez jaką szczelinę zdoła się przecisnąć?",
+    "options": [
+      "Szkielet wewnętrzny głowotułowia",
+      "Chitynowy dziób w centrum ramion (przypominający dziób papugi)",
+      "Pierścienie chrzęstne syfonu odrzutowego",
+      "Wapienne tarczki na przyssawkach"
+    ],
+    "explain": "Ośmiornica nie posiada ani jednej kości. Jedynym sztywnym elementem jest twardy dziób. Jeśli dziób przejdzie przez otwór, całe ciało bez trudu przeciśnie się za nim."
+  },
+  {
+    "animal": "octopus",
+    "q": "Jak szybko ośmiornica potrafi zmienić kolor i strukturę 3D swojej skóry dzięki chromatoforom?",
+    "options": [
+      "Potrzebuje około 2–3 godzin na powolną syntezę barwników",
+      "Około 15 minut (podobnie jak kameleon)",
+      "W zaledwie 200 milisekund (ułamek sekundy) dzięki bezpośredniej kontroli nerwowej mięśni chromatoforów",
+      "Zmienia kolor tylko raz w roku podczas linienia"
+    ],
+    "explain": "W przeciwieństwie do kameleona, który polega na hormonach, chromatofory ośmiornicy są połączone bezpośrednio z układem nerwowym. Zmiana barwy i faktury następuje w zawrotnym tempie ok. 200 ms!"
+  },
+  {
+    "animal": "owl",
+    "q": "Dlaczego sowa potrafi obrócić głowę aż o 270 stopni w obu kierunkach?",
+    "options": [
+      "Jej szyja nie ma kręgów i jest zbudowana z czystej chrząstki",
+      "Jej oczy są cylindryczne i nieruchome w czaszce, a szyja ma aż 14 kręgów (2x więcej niż u człowieka)",
+      "Sowa obraca całe ciało na gałęzi, a nie tylko głowę",
+      "To złudzenie optyczne spowodowane puszystymi piórami"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "owl",
+    "q": "W jaki sposób sowa bezbłędnie określa, czy dźwięk dobiega z góry, czy z dołu?",
+    "options": [
+      "Dzięki asymetrii uszu: prawe ucho jest wyżej i skierowane w dół, a lewe niżej i skierowane w górę",
+      "Wysyła ultradźwiękowy pisk sonaru jak nietoperz",
+      "Używa dzioba jako wskaźnika poziomu dźwięku",
+      "Odbiera fale wyłącznie przez wibrujące pióra ogona"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "owl",
+    "q": "Czym jest szlara twarzowa sowy i jaką pełni funkcję?",
+    "options": [
+      "To ozdobny kołnierz służący do odstraszania drapieżników",
+      "To wieniec sztywnych, ułożonych promieniście piór działający jak talerz satelitarny skupiający fale dźwiękowe",
+      "To warstwa tłuszczu chroniąca twarz sowy przed mrozem",
+      "To narząd węchu chemicznego do tropienia myszy"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "owl",
+    "q": "Co sprawia, że lot sowy jest niemal w 100% bezgłośny dla ucha gryzonia?",
+    "options": [
+      "Sowa nie macha skrzydłami i tylko spada na ofiarę",
+      "Aksamitny meszek pochłaniający dźwięk oraz grzebykowate ząbki (serracje) na krawędzi lotek rozbijające wiry powietrza",
+      "Sowa porusza się tak wolno, że powietrze nie stawia oporu",
+      "Pióra sowy są pokryte śluzem zmniejszającym tarcie"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "owl",
+    "q": "Znalazłeś w lesie młodego, opierzonego podlota sowy siedzącego na trawie pod drzewem. Co robisz?",
+    "options": [
+      "Zabierasz go natychmiast do domu i karmisz surowym mięsem z kurczaka",
+      "Zostawiasz go w spokoju (ewentualnie sadzasz na bezpiecznej, wyższej gałęzi) — rodzice są w pobliżu i karmią go w nocy",
+      "Wzywasz straż pożarną do transportu na czubek drzewa",
+      "Polewasz go wodą, by go ochłodzić"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "shark",
+    "q": "Do czego służą ampułki Lorenziniego zlokalizowane na pysku rekina?",
+    "options": [
+      "Do filtrowania planktonu i soli z wody morskiej",
+      "Do detekcji mikro-pól elektrycznych generowanych przez skurcze mięśni i bicie serca",
+      "Do świecenia w ciemnościach głębinowych (bioluminescencja)",
+      "Do regulowania ciśnienia w pęcherzu pławnym"
+    ],
+    "explain": "Ampułki Lorenziniego to pory wypełnione żelem o najwyższym znanym biologicznym przewodnictwie. Wykrywają one napięcia rzędu nanowoltów emitowane przez żywe organizmy."
+  },
+  {
+    "animal": "shark",
+    "q": "Z czego składa się szkielet rekina?",
+    "options": [
+      "Z twardych kości pneumatycznych wypełnionych powietrzem",
+      "Z chitynowych płytek pancerza zewnętrznego",
+      "W 100% ze sprężystej chrząstki (brak tradycyjnych kości)",
+      "Ze zmineralizowanych łusek rogowych"
+    ],
+    "explain": "Rekiny należą do ryb chrzęstnoszkieletowych. Ich szkielet jest o połowę lżejszy od kości, nie ulega złamaniom i zapewnia niespotykaną zwrotność."
+  },
+  {
+    "animal": "shark",
+    "q": "Co powinieneś zrobić, gdy podczas pływania na rafie zauważysz zbliżającego się rekina?",
+    "options": [
+      "Panicznie chlapać rękami i nogami oraz płynąć sprintem do brzegu",
+      "Utrzymywać stały kontakt wzrokowy, przyjąć pozycję pionową i spokojnie się wycofywać",
+      "Wypuścić powietrze z płuc i natychmiast uderzyć rekina w pysk",
+      "Udać martwego unosząc się bezwładnie na powierzchni"
+    ],
+    "explain": "Rekin to drapieżnik z zasadzki. Gdy widzi, że stale na niego patrzysz, wie, że stracił element zaskoczenia i zazwyczaj odpływa. Chlapanie prowokuje atak!"
+  },
+  {
+    "animal": "shark",
+    "q": "W jaki sposób ząbki skórne (łuski plakoidalne) pomagają rekinowi w polowaniu?",
+    "options": [
+      "Świecą w ciemności, przywabiając małe krewetki",
+      "Wytwarzają rowki redukujące mikrowiry wody, umożliwiając cichy i szybki pływ bez oporu",
+      "Wydzielają silną truciznę paraliżującą przeciwnika",
+      "Zmieniają kolor w zależności od temperatury wody"
+    ],
+    "explain": "Ząbki skórne rekina przypominają miniaturowe zęby ze szkliwa. Wyciszają szum opływającej wody i drastycznie zmniejszają opór hydrodynamiczny."
+  },
+  {
+    "animal": "shark",
+    "q": "Ile zębów rekin może wytworzyć i wymienić w ciągu swojego życia?",
+    "options": [
+      "Tylko 32 zęby, podobnie jak dorosły człowiek",
+      "Około 150 zębów (wymieniane raz na 10 lat)",
+      "Nawet do 30 000 zębów na przesuwającej się „taśmie transmisyjnej” dziąseł",
+      "Rekiny rodzą się z jednym zestawem zębów, który nie odrasta"
+    ],
+    "explain": "Zęby rekina ułożone są w wielu rzędach. Gdy jeden ząb wypadnie, w ciągu 24–48 godzin na jego miejsce przesuwa się kolejny z tylnego rzędu."
+  },
+  {
+    "animal": "viper",
+    "q": "Po jakich dwóch cechach najpewniej odróżnisz jadowitą żmiję zygzakowatą od niejadowitego zaskrońca?",
+    "options": [
+      "Żmija ma pionową źrenicę oka i wstęgę kainową (zygzak), a zaskroniec okrągłą źrenicę i żółte plamy za skroniami",
+      "Żmija zawsze głośno grzechocze ogonem, a zaskroniec szczeka",
+      "Żmija jest zielona, a zaskroniec zawsze czarny",
+      "Żmija ma nogi, a zaskroniec nie ma"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "viper",
+    "q": "W jaki sposób żmija „słyszy” zbliżającego się człowieka, skoro nie posiada uszu zewnętrznych ani błony bębenkowej?",
+    "options": [
+      "Wyłącznie za pomocą oczu",
+      "Odbiera drgania sejsmiczne podłoża dolną szczęką i kością kwadratową połączoną z uchem wewnętrznym",
+      "Czuje zapach perfum z odległości 2 kilometrów",
+      "W ogóle nie słyszy ani nie czuje obecności człowieka"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "viper",
+    "q": "Co należy zrobić w pierwszej kolejności, jeśli dojdzie do ukąszenia przez żmiję?",
+    "options": [
+      "Naciąć nożem ranę i wysysać jad ustami",
+      "Założyć ciasną opaskę uciskową powyżej rany",
+      "Unieruchomić ukąszoną kończynę poniżej poziomu serca, zachować spokój i wezwać pogotowie (112)",
+      "Biec jak najszybciej do najbliższego szpitala"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "viper",
+    "q": "Czym jest tzw. „suche ukąszenie” (dry bite)?",
+    "options": [
+      "Ukąszeniem przez martwego węża",
+      "Ukąszeniem obronnym, w którym żmija wbija zęby, ale nie wstrzykuje ani kropli jadu",
+      "Ukąszeniem w trakcie upalnego, suchego lata",
+      "Ukąszeniem przez młodego węża, który nie ma jeszcze zębów"
+    ],
+    "explain": ""
+  },
+  {
+    "animal": "viper",
+    "q": "Do czego służy żmii rozwidlony język i narząd Jacobsona?",
+    "options": [
+      "Do wstrzykiwania jadu w ciało ofiary",
+      "Do termoregulacji i chłodzenia pyszczka",
+      "Do chemicznego stereo-węchu: język zbiera cząsteczki zapachu i przenosi je do receptorów na podniebieniu",
+      "Do wydawania ostrzegawczego syku"
+    ],
+    "explain": ""
+  }
+]
